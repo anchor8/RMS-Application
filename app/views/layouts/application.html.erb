@@ -26,7 +26,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 
       <!-- Title Button (Top) -->
-      <a class="navbar-brand" href="index">D.A.T.A.</a>
+      <%= link_to(dashboard_url, class: "nav-link") do %>
+        <span class="navbar-brand">D.A.T.A.</span>
+      <% end %>
 
       <!-- Nav -->
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -36,10 +38,11 @@
 
           <!-- Dashbaord Nav Button -->
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <%= link_to("dashboard", controller: "pages", class: "nav-link") do %>
+            <%= link_to(dashboard_url, class: "nav-link") do %>
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">Dashboard</span>
             <% end %>
+
           </li>
 
           <!-- Charts Nav Button

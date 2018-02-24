@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :employees
-  root 'pages#dashboard'
+  root 'pages#index'
   get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get 'pages/usermgmt', to: 'pages#usermgmt', as: 'usermgmt'
 
