@@ -5,7 +5,7 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="#">Dashboard</a>
+        <%= link_to_unless_current("Dashboard", dashboard_url) %>
       </li>
       <li class="breadcrumb-item active">User Management</li>
     </ol>

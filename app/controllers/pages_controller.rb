@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  def index
+  def dashboard
   end
 
-  def dashboard
+  def usermgmt
   end
 end
