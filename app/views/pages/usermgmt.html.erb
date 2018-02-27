@@ -17,7 +17,7 @@
 
       <p>
         <%= link_to(edit_employee_registration_path) do %>
-        <button class="btn" type="button">Edit</button>
+        <button class="btn" type="button" data-toggle="modal" data-target="#editModal">Edit</button>
       <% end %>
     </p>
 
@@ -539,7 +539,9 @@
         </div>
 
         <!-- Modal Body -->
-        <div class="modal-body"></div>
+        <div class="modal-body">
+          Test
+        </div>
 
         <!-- Footer Buttons -->
         <div class="modal-footer">
