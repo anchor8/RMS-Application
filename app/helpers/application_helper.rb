@@ -1,17 +1,17 @@
 module ApplicationHelper
   def resource_name
-    :user
+    :employee
   end
 
   def resource
-    resource || User.new
+    @resource ||= Employee.new
   end
 
   def devise_mapping
-    devise_mapping || Devise.mappings[:user]
+    @devise_mapping ||= Devise.mappings[:employee]
   end
 
   def resource_class
-    User
+    Employee
   end
 end
