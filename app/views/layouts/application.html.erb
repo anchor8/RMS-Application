@@ -38,17 +38,55 @@
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">Dashboard</span>
             <% end %>
-
           </li>
 
-          <!-- Charts Nav Button
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-            <a class="nav-link" href="charts_path">
-              <i class="fa fa-fw fa-area-chart"></i>
-              <span class="nav-link-text">Charts</span>
-            </a>
+          <!-- Customer Management Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customer Management">
+            <%= link_to(customermgmt_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Customer Management</span>
+            <% end %>
           </li>
-          -->
+
+          <!-- Vendor Management Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vendor Management">
+            <%= link_to(vendormgmt_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Vendor Management</span>
+            <% end %>
+          </li>
+
+          <!-- Shipping Management Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Shipping Management">
+            <%= link_to(shippingmgmt_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Shipping Management</span>
+            <% end %>
+          </li>
+
+          <!-- Order Management Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order Management">
+            <%= link_to(ordermgmt_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Order Management</span>
+            <% end %>
+          </li>
+
+          <!-- Reports Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
+            <%= link_to(reports_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Reports</span>
+            <% end %>
+          </li>
+
+          <!-- Datatables Nav Button -->
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Data Tables">
+            <%= link_to(datatables_url, class: "nav-link") do %>
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">Data Tables</span>
+            <% end %>
+          </li>
 
         </ul>
 
