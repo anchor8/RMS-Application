@@ -1,3 +1,3 @@
 class EmployeesController < Devise::RegistrationsController
-  layout "logged-in"
+  layout 'logged-in'
 end
