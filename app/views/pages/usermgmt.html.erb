@@ -14,11 +14,9 @@
         Current user:
         <%= current_employee.email %>
       </p>
-
+        <button class="btn" type="button" data-toggle="modal" data-target="#editModal">Edit</button>
       <p>
-        <%= link_to(edit_employee_registration_path) do %>
-        <button class="btn" type="button">Edit</button>
-      <% end %>
+
     </p>
 
   </div>
@@ -539,12 +537,8 @@
         </div>
 
         <!-- Modal Body -->
-        <div class="modal-body"></div>
-
-        <!-- Footer Buttons -->
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="" data-method="update" rel="nofollow">Submit</a>
+        <div class="modal-body">
+          <%= render :template => "devise/registrations/edit" %>
         </div>
 
       </div>
