@@ -1,3 +1,3 @@
 # README
 
-# RMS-Application
+# D.A.T.A (Data and Trends Application)
