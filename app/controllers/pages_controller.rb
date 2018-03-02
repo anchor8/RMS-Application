@@ -19,6 +19,9 @@ class PagesController < ApplicationController
 
     # Employee Table
     @employee_data = Employee.all
+
+    # Last Date for New Employee
+    @employee_last_date = Employee.last.created_at
   end
 
   def customermgmt
