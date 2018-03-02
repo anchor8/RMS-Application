@@ -524,26 +524,7 @@
   <% end %>
 
   <!-- Edit Modal-->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-
-        <!-- Modal Title Bar -->
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Current User</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <%= render :template => "devise/registrations/edit" %>
-        </div>
-
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'partials/modals/edit-user-modal' %>
 
 </div>
 </div>
