@@ -1,3 +1,4 @@
+# Application Helper
 module ApplicationHelper
   def resource_name
     :employee
