@@ -54,6 +54,9 @@ gem 'bootstrap', '~> 4.0.0'
 # Use font awesome for fonts and images
 gem 'font-awesome-rails'
 
+# Use breadcrumbs on rails for managing Breadcrumbs
+gem 'breadcrumbs_on_rails'
+
 # If Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
