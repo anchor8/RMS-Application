@@ -16,6 +16,9 @@ class PagesController < ApplicationController
   def usermgmt
     # Breadcrumb for User Management
     add_breadcrumb 'User Management', usermgmt_path
+
+    # Employee Table
+    @employee_data = Employee.all
   end
 
   def customermgmt
