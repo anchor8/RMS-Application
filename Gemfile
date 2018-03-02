@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +50,12 @@ gem 'jquery-rails'
 
 # Use bootstrap for styling
 gem 'bootstrap', '~> 4.0.0'
+
+# Use font awesome for fonts and images
+gem 'font-awesome-rails'
+
+# If Windows
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
