@@ -1,9 +1,9 @@
 # Pages Controller
 class PagesController < ApplicationController
-  add_breadcrumb 'Dashboard', :root_path
+  # add_breadcrumb 'Home', :root_path
 
   def index
-    add_breadcrumb 'Dashboard', dashboard_path
+    # add_breadcrumb 'Dashboard', dashboard_path
   end
 
   def dashboard
