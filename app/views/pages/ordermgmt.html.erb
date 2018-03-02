@@ -2,12 +2,7 @@
   <div class="container-fluid">
 
     <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <%= link_to_unless_current("Dashboard", dashboard_url) %>
-      </li>
-      <li class="breadcrumb-item active">Order Management</li>
-    </ol>
+    <%= render partial: 'partials/breadcrumbs' %>
 
   </div>
 </div>
