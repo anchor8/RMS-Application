@@ -11,57 +11,68 @@
 
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-        <!-- Top Column Names -->
-        <thead>
-          <tr>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-            <th>Email</th>
-            <th>Sign-in Count</th>
-            <th>Last Sign-in</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>Admin</th>
-
-          </tr>
-        </thead>
-
-        <!-- Bottom Column Names -->
-        <tfoot>
-          <tr>
-
-            <th>Email</th>
-            <th>Sign-in Count</th>
-            <th>Last Sign-in</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>Admin</th>
-
-          </tr>
-        </tfoot>
-
-        <!-- Content -->
-        <tbody>
-
-          <!-- Load employee data -->
-          <% @employee_data.each do |employee_data| %>
+          <!-- Top Column Names -->
+          <thead>
             <tr>
 
-              <!-- Columns to pull from employee data -->
-              <td><%= employee_data.email %></td>
-              <td><%= employee_data.sign_in_count %></td>
-              <td><%= employee_data.last_sign_in_at %></td>
-              <td><%= employee_data.created_at %></td>
-              <td><%= employee_data.updated_at %></td>
-              <td><%= employee_data.admin %></td>
+              <th>Select</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Sign-in Count</th>
+              <th>Last Sign-in</th>
+              <th>Created</th>
+              <th>Updated</th>
+              <th>Admin</th>
 
             </tr>
-          <% end %>
+          </thead>
 
-        </tbody>
+          <!-- Bottom Column Names -->
+          <tfoot>
+            <tr>
 
-      </table>
+              <th>Select</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Sign-in Count</th>
+              <th>Last Sign-in</th>
+              <th>Created</th>
+              <th>Updated</th>
+              <th>Admin</th>
+
+            </tr>
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load employee data -->
+            <% @employee.each do |employee| %>
+              <tr>
+
+                <!-- Columns to pull from employee data -->
+                <td><%= button_to 'Delete', destroy_employee_path(employee.id),
+                        :method => :delete,
+                        :class => 'btn',
+                        :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                <td><%= employee.id %></td>
+                <td><%= employee.email %></td>
+                <td><%= employee.sign_in_count %></td>
+                <td><%= employee.last_sign_in_at %></td>
+                <td><%= employee.created_at %></td>
+                <td><%= employee.updated_at %></td>
+                <td><%= employee.admin %></td>
+
+              </tr>
+            <% end %>
+
+          </tbody>
+
+        </table>
+
     </div>
   </div>
 

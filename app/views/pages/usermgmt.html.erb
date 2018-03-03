@@ -4,33 +4,39 @@
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Above Employee Table -->
     <div>
+
+      <!-- Display Information -->
       <p>
-        Current User:
+        Logged in as:
         <%= current_employee.email %>
       </p>
-        <button class="btn" type="button" data-toggle="modal" data-target="#editModal">Edit</button>
-      <p>
 
-    </p>
+      <!-- Edit Employee Button -->
+      <p>
+        <button class="btn" type="button" data-toggle="modal" data-target="#edit-current-employee-modal">Edit</button>
+      </p>
+
+    </div>
+
+    <!-- Show If Admin -->
+    <% if current_employee.admin? %>
+
+      <!-- Add, Remove, Update Buttons -->
+      <div>
+        <button class="btn" type="button">Add</button>
+        <button class="btn" type="button">Update</button>
+      </div>
+
+      <!-- Employee Table-->
+      <%= render partial: 'partials/tables/employee-table' %>
+
+    <% end %>
+
+    <!-- Edit Modal-->
+    <%= render partial: 'partials/modals/edit-current-employee-modal' %>
+    <%= render partial: 'partials/modals/remove-employee-modal' %>
 
   </div>
-
-  <% if current_employee.admin? %>
-
-    <!-- Employee Table-->
-    <p>
-      <button class="btn" type="button">Add</button>
-      <button class="btn" type="button">Remove</button>
-      <button class="btn" type="button">Update</button>
-    </p>
-
-    <%= render partial: 'partials/tables/employee-table' %>
-
-  <% end %>
-
-  <!-- Edit Modal-->
-  <%= render partial: 'partials/modals/edit-user-modal' %>
-
-</div>
 </div>
