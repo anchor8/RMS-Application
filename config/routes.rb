@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  # Devise
   devise_for :employees
+
+  # Resources
+  resources :employees
+
+  # Root
   root 'pages#index'
+
+  # Destroy Employee
+  match '/pages/:id', to: 'pages#destroy_employee', as: 'destroy_employee', via: 'delete'
+
+  # Pages
   get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get 'pages/usermgmt', to: 'pages#usermgmt', as: 'usermgmt'
   get 'pages/customermgmt', to: 'pages#customermgmt', as: 'customermgmt'
