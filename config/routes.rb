@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Devise
-  devise_for :employees
+  devise_for :employees, :controllers => { :registrations => 'employees/registrations' }
 
   # Resources
   resources :employees
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   # Destroy Employee
-  match '/pages/:id', to: 'pages#destroy_employee', as: 'destroy_employee', via: 'delete'
+  match '/pages/:id', to: 'pages#toggle_employee', as: 'toggle_employee', via: 'put'
 
   # Pages
   get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'

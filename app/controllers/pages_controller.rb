@@ -16,17 +16,14 @@ class PagesController < ApplicationController
   def usermgmt
     # Breadcrumb for User Management
     add_breadcrumb 'User Management', usermgmt_path
-
-    # Employee Table
     @employee = Employee.all
-
     # Last Date for New Employee
     @employee_last_date = Employee.last.created_at
   end
 
-  def destroy_employee
+  def toggle_employee
     # Get employee id and destroy that employee
-    @employee = Employee.find(params[:id]).destroy
+    @employee = Employee.find(params[:id]).toggle_employee
     flash[:success] = 'Employee destroyed.'
     redirect_to usermgmt_path
   end

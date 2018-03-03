@@ -25,6 +25,7 @@
               <th>Last Sign-in</th>
               <th>Created</th>
               <th>Updated</th>
+              <th>Deleted</th>
               <th>Admin</th>
 
             </tr>
@@ -41,6 +42,7 @@
               <th>Last Sign-in</th>
               <th>Created</th>
               <th>Updated</th>
+              <th>Deleted</th>
               <th>Admin</th>
 
             </tr>
@@ -54,16 +56,19 @@
               <tr>
 
                 <!-- Columns to pull from employee data -->
-                <td><%= button_to 'Delete', destroy_employee_path(employee.id),
-                        :method => :delete,
-                        :class => 'btn',
-                        :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                <td>
+                  <% if !employee.deleted_at %>
+                    <%= button_to 'Delete', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-danger', :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                  <% else %>
+                    <%= button_to 'Restore', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-success', :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                  <% end %>
                 <td><%= employee.id %></td>
                 <td><%= employee.email %></td>
                 <td><%= employee.sign_in_count %></td>
                 <td><%= employee.last_sign_in_at %></td>
                 <td><%= employee.created_at %></td>
                 <td><%= employee.updated_at %></td>
+                <td><%= employee.deleted_at %></td>
                 <td><%= employee.admin %></td>
 
               </tr>
