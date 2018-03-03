@@ -23,7 +23,8 @@ class PagesController < ApplicationController
 
   def toggle_employee
     # Get employee id and destroy that employee
-    @employee = Employee.find(params[:id]).toggle_employee
+    @employee = Employee.find(params[:id])
+    @employee.toggle_employee
     flash[:success] = 'Employee destroyed.'
     redirect_to usermgmt_path
   end

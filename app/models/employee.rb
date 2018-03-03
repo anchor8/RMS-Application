@@ -23,4 +23,12 @@ class Employee < ApplicationRecord
   def inactive_message
     !deleted_at ? super : :deleted_account
   end
+
+  def timeout_in
+    if !deleted_at
+      1.year
+    else
+      1.second
+    end
+  end
 end
