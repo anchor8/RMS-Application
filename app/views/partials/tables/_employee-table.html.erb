@@ -58,9 +58,9 @@
                 <!-- Columns to pull from employee data -->
                 <td>
                   <% if !employee.deleted_at %>
-                    <%= button_to 'Delete', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-danger', :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                    <%= button_to 'Disable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-danger', :data => { :confirm => "Are you that you want to disable " + employee.email + "?" } %></td>
                   <% else %>
-                    <%= button_to 'Restore', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-success', :data => { :confirm => "Are you that you want to delete " + employee.email + "?" } %></td>
+                    <%= button_to 'Enable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-success', :data => { :confirm => "Are you that you want to enable " + employee.email + "?" } %></td>
                   <% end %>
                 <td><%= employee.id %></td>
                 <td><%= employee.email %></td>
