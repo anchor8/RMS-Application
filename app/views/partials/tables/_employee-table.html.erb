@@ -9,13 +9,13 @@
       Employee Table
 
       <!-- Add, Remove, Update Buttons -->
-      <div class="btn-group table-button">
+      <div class="btn-group offset-8">
 
-        <button class="btn btn-primary"
+        <button class="btn btn-outline-primary"
                 type="button"
                 data-toggle="modal"
                 data-target="#add-employee-modal">
-                Add
+                Add New Employee
         </button>
 
       </div>
@@ -78,8 +78,8 @@
                 <td>
                   <% if current_employee == employee %>
 
-                      <button class="btn btn-dark disabled"
-                              aria-disabled="true">
+                      <button class="btn btn-outline-dark"
+                              disabled>
                               Current
                       </button>
 
@@ -90,7 +90,7 @@
                       <%= button_to 'Disable',
                           toggle_employee_path(employee.id),
                           :method => :put,
-                          :class => 'btn btn-danger',
+                          :class => 'btn btn-outline-danger',
                           :data => {
                             :confirm => "Are you that you want to disable " +
                                          employee.email + "?" } %></td>
@@ -100,7 +100,7 @@
                       <%= button_to 'Enable',
                           toggle_employee_path(employee.id),
                           :method => :put,
-                          :class => 'btn btn-success',
+                          :class => 'btn btn-outline-success',
                           :data => {
                             :confirm => "Are you that you want to enable " +
                                          employee.email + "?" } %></td>
