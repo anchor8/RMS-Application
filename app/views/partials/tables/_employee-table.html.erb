@@ -1,4 +1,5 @@
 <div class="card mb-3">
+
   <div class="card-header">
 
       <!-- Table Icon -->
@@ -9,18 +10,27 @@
 
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-group table-button">
-        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#add-employee-modal">Add</button>
+
+        <button class="btn btn-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="#add-employee-modal">
+                Add
+        </button>
+
       </div>
 
   </div>
 
   <div class="card-body">
+
     <div class="table-responsive">
 
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
           <thead>
+
             <tr>
 
               <th>Toggle</th>
@@ -34,10 +44,12 @@
               <th>Admin</th>
 
             </tr>
+
           </thead>
 
           <!-- Bottom Column Names -->
           <tfoot>
+
             <tr>
 
               <th>Toggle</th>
@@ -51,6 +63,7 @@
               <th>Admin</th>
 
             </tr>
+
           </tfoot>
 
           <!-- Content -->
@@ -58,15 +71,22 @@
 
             <!-- Load employee data -->
             <% @employee.each do |employee| %>
+
               <tr>
 
                 <!-- Columns to pull from employee data -->
                 <td>
+
                   <% if !employee.deleted_at %>
+
                     <%= button_to 'Disable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-danger', :data => { :confirm => "Are you that you want to disable " + employee.email + "?" } %></td>
+
                   <% else %>
+
                     <%= button_to 'Enable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-success', :data => { :confirm => "Are you that you want to enable " + employee.email + "?" } %></td>
+
                   <% end %>
+
                 <td><%= employee.id %></td>
                 <td><%= employee.email %></td>
                 <td><%= employee.sign_in_count %></td>
@@ -77,6 +97,7 @@
                 <td><%= employee.admin %></td>
 
               </tr>
+
             <% end %>
 
           </tbody>
@@ -84,10 +105,15 @@
         </table>
 
     </div>
+
   </div>
 
   <!-- Footnote: Lastest date a employee was created -->
-  <div class="card-footer small text-muted">Updated: <%= @employee_last_date %></div>
+  <div class="card-footer small text-muted">
+
+       Updated: <%= @employee_last_date %>
+       
+  </div>
 
 </div>
 
