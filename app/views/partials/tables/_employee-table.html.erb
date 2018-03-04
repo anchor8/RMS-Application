@@ -8,9 +8,8 @@
       Employee Table
 
       <!-- Add, Remove, Update Buttons -->
-      <div class="btn-group">
-        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#edit-current-employee-modal">Add</button>
-        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#update-employee-modal">Update</button>
+      <div class="btn-group table-button">
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#add-employee-modal">Add</button>
       </div>
 
   </div>
@@ -91,3 +90,6 @@
   <div class="card-footer small text-muted">Updated: <%= @employee_last_date %></div>
 
 </div>
+
+<!-- Add Employee Modal-->
+<%= render partial: 'partials/modals/add-employee-modal' %>
