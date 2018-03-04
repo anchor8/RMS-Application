@@ -76,14 +76,36 @@
 
                 <!-- Columns to pull from employee data -->
                 <td>
+                  <% if current_employee == employee %>
 
-                  <% if !employee.deleted_at %>
-
-                    <%= button_to 'Disable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-danger', :data => { :confirm => "Are you that you want to disable " + employee.email + "?" } %></td>
+                      <button class="btn btn-dark disabled"
+                              aria-disabled="true">
+                              Current
+                      </button>
 
                   <% else %>
 
-                    <%= button_to 'Enable', toggle_employee_path(employee.id), :method => :put, :class => 'btn btn-success', :data => { :confirm => "Are you that you want to enable " + employee.email + "?" } %></td>
+                    <% if !employee.deleted_at%>
+
+                      <%= button_to 'Disable',
+                          toggle_employee_path(employee.id),
+                          :method => :put,
+                          :class => 'btn btn-danger',
+                          :data => {
+                            :confirm => "Are you that you want to disable " +
+                                         employee.email + "?" } %></td>
+
+                    <% else %>
+
+                      <%= button_to 'Enable',
+                          toggle_employee_path(employee.id),
+                          :method => :put,
+                          :class => 'btn btn-success',
+                          :data => {
+                            :confirm => "Are you that you want to enable " +
+                                         employee.email + "?" } %></td>
+
+                    <% end %>
 
                   <% end %>
 
@@ -112,7 +134,7 @@
   <div class="card-footer small text-muted">
 
        Updated: <%= @employee_last_date %>
-       
+
   </div>
 
 </div>

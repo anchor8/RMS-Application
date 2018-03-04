@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   def toggle_employee
     # Get employee id and destroy that employee
     @employee = Employee.find(params[:id])
-    @employee.toggle_employee
+    @employee.toggle_employee if current_employee != @employee
     flash[:success] = 'Employee destroyed.'
     redirect_to usermgmt_path
   end
