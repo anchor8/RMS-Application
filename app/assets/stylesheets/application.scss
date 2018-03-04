@@ -4813,9 +4813,10 @@ tbody.collapse.show {
   display: flex;
   flex-wrap: wrap;
   padding: 0.75rem 1rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: #dbd8d8;
   border-radius: 0.25rem;
 }
 
@@ -7900,7 +7901,11 @@ button.bg-dark:focus {
 /* line 13, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/utilities/_spacing.scss */
 .mt-5,
 .my-5 {
-  margin-top: 3rem !important;
+  margin-top: 6rem !important;
+}
+
+.items-centered {
+  align-items: center;
 }
 
 /* line 17, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/utilities/_spacing.scss */
