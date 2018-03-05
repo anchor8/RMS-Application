@@ -2646,6 +2646,13 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.btn-right {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
 /* line 19, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/mixins/_hover.scss */
 .btn:hover, .btn:focus {
   text-decoration: none;
