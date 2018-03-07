@@ -3,15 +3,8 @@
      id="mainNav">
 
   <!-- Title Button (Top) -->
-  <%= link_to(dashboard_url, class: "nav-link") do %>
 
-    <span class="navbar-brand">
-
-          D.A.T.A.
-
-    </span>
-
-  <% end %>
+  <%= link_to image_tag("appLOGO.png", width: '60px'), dashboard_url, class: "nav-link" %>
 
   <!-- Nav -->
   <div class="collapse navbar-collapse"
@@ -49,7 +42,7 @@
 
         <%= link_to(customermgmt_url, class: "nav-link") do %>
 
-          <i class="fa fa-fw fa-dashboard"></i>
+          <i class="fa fa-group"></i>
 
           <span class="nav-link-text">
 
@@ -69,7 +62,7 @@
 
         <%= link_to(vendormgmt_url, class: "nav-link") do %>
 
-          <i class="fa fa-fw fa-dashboard"></i>
+          <i class="fa fa-handshake-o"></i>
 
           <span class="nav-link-text">
 
@@ -89,7 +82,7 @@
 
         <%= link_to(shippingmgmt_url, class: "nav-link") do %>
 
-          <i class="fa fa-fw fa-dashboard"></i>
+          <i class="fa fa-plane"></i>
 
           <span class="nav-link-text">
 
@@ -109,7 +102,7 @@
 
         <%= link_to(ordermgmt_url, class: "nav-link") do %>
 
-          <i class="fa fa-fw fa-dashboard"></i>
+          <i class="fa fa-file-text-o"></i>
 
           <span class="nav-link-text">
 
@@ -129,7 +122,7 @@
 
         <%= link_to(reports_url, class: "nav-link") do %>
 
-          <i class="fa fa-fw fa-dashboard"></i>
+          <i class="	fa fa-bar-chart"></i>
 
           <span class="nav-link-text">
 
@@ -172,9 +165,13 @@
     <!-- Top Nav -->
     <ul class="navbar-nav ml-auto">
 
+
+
       <!-- User Management -->
       <li class="nav-item"
           title="User Management">
+
+
 
         <%= link_to("User Management", usermgmt_url, class: "nav-link") %>
 
