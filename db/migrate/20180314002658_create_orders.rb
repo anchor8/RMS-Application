@@ -23,5 +23,18 @@ class CreateOrders < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    create_table :orders do |t|
+      t.belongs_to :order, index: true
+      t.integer :item_number
+      t.string :item_description
+      t.integer :item_quantity
+      t.decimal :item_price
+      t.decimal :item_total_cost
+      t.decimal :tax_rate
+      t.decimal :tax_amount
+
+      t.timestamps
+    end
   end
 end
