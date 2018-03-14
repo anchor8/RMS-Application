@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor: one
+  order_status: one
+  customer: one
+  country: one
+  employee: one
+  payment_type: one
+  ship_via: one
+  order_line: one
+  state: one
+  ShippingNumber: 1
+  CustomerName: MyString
+  PurchaseOrderNumber: 1
+  OrderDate: 2018-03-13 19:26:58
+  ShipOnDate: 2018-03-13 19:26:58
+  OrderTotal: 9.99
+  StreetAddress1: MyString
+  StreetAddress2: MyString
+  City: MyString
+  Zipcode: MyString
+
+two:
+  vendor: two
+  order_status: two
+  customer: two
+  country: two
+  employee: two
+  payment_type: two
+  ship_via: two
+  order_line: two
+  state: two
+  ShippingNumber: 1
+  CustomerName: MyString
+  PurchaseOrderNumber: 1
+  OrderDate: 2018-03-13 19:26:58
+  ShipOnDate: 2018-03-13 19:26:58
+  OrderTotal: 9.99
+  StreetAddress1: MyString
+  StreetAddress2: MyString
+  City: MyString
+  Zipcode: MyString

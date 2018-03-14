@@ -1,0 +1,2 @@
+class VendorStatus < ApplicationRecord
+end

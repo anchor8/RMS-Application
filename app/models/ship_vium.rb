@@ -1,0 +1,2 @@
+class ShipVium < ApplicationRecord
+end
