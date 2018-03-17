@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: one
+  vendor_status: one
+  VendorName: MyString
+  ContactName: MyString
+  JobTitle: MyString
+  WorkPhone: MyString
+  Mobile: MyString
+  Fax: MyString
+  VendorEmail: MyString
+  VendorCCEmail: MyString
+  Website: MyString
+  StreetAddress1: MyString
+  StreetAddress2: MyString
+  City: MyString
+  Zipcode: MyString
+
+two:
+  state: two
+  vendor_status: two
+  VendorName: MyString
+  ContactName: MyString
+  JobTitle: MyString
+  WorkPhone: MyString
+  Mobile: MyString
+  Fax: MyString
+  VendorEmail: MyString
+  VendorCCEmail: MyString
+  Website: MyString
+  StreetAddress1: MyString
+  StreetAddress2: MyString
+  City: MyString
+  Zipcode: MyString

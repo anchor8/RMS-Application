@@ -1,0 +1,92 @@
+<%= form_with(model: vendor, local: true) do |form| %>
+  <% if vendor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+
+      <ul>
+      <% vendor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :vendor_state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vendor_status_id %>
+    <%= form.text_field :vendor_status_id, id: :vendor_vendor_status_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :VendorName %>
+    <%= form.text_field :VendorName, id: :vendor_VendorName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ContactName %>
+    <%= form.text_field :ContactName, id: :vendor_ContactName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :JobTitle %>
+    <%= form.text_field :JobTitle, id: :vendor_JobTitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :WorkPhone %>
+    <%= form.text_field :WorkPhone, id: :vendor_WorkPhone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mobile %>
+    <%= form.text_field :Mobile, id: :vendor_Mobile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fax %>
+    <%= form.text_field :Fax, id: :vendor_Fax %>
+  </div>
+
+  <div class="field">
+    <%= form.label :VendorEmail %>
+    <%= form.text_field :VendorEmail, id: :vendor_VendorEmail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :VendorCCEmail %>
+    <%= form.text_field :VendorCCEmail, id: :vendor_VendorCCEmail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Website %>
+    <%= form.text_field :Website, id: :vendor_Website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :StreetAddress1 %>
+    <%= form.text_field :StreetAddress1, id: :vendor_StreetAddress1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :StreetAddress2 %>
+    <%= form.text_field :StreetAddress2, id: :vendor_StreetAddress2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :City %>
+    <%= form.text_field :City, id: :vendor_City %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Zipcode %>
+    <%= form.text_field :Zipcode, id: :vendor_Zipcode %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
