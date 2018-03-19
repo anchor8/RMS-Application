@@ -46,16 +46,25 @@ employee3 = Employee.new(
 )
 employee3.save!
 
-####### vendor data ########
+#### vendor_status data ####
 
-#vendor = Vendor.create([
-#  {name: }
+vendor_status = VendorStatus.create([
+    {VendorStatusType: 'Inactive'},
+    {VendorStatusType: 'Active'}
+                                    ])
+
+
+
+#### vendor data ####
+
+vendor = Vendor.create([
+  {state_id: 45, vendor_status_id: 2, VendorName: 'Big Dumb Vendor Co.', ContactName: 'Julius Agno', JobTitle: 'Chief Anime Officer', WorkPhone: '281-935-6807', Mobile: '281-935-6807', Fax: 'no fax', VendorEmail: 'agno.julius@gmail.com', VendorCCEmail: 'blank', Website: 'www.google.com', StreetAddress1: '123 Big Wok Way', StreetAddress2: 'test', City: 'Houston', Zipcode: '77001'},
 
 
 
 
 
-#])
+])
 
 
 
