@@ -1,0 +1,133 @@
+<div class="card mb-3">
+
+  <div class="card-header">
+
+      <!-- Table Icon -->
+      <i class="fa fa-table"></i>
+
+      <!-- Table Name -->
+      Customer Table
+
+      <!-- Add, Remove, Update Buttons -->
+      <div class="btn-right">
+
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="#add-employee-modal">
+                Add New Customer
+        </button>
+
+      </div>
+
+  </div>
+
+  <div class="card-body">
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+          <!-- Top Column Names -->
+          <thead>
+
+            <tr>
+
+              <th>State</th>
+              <th>Company</th>
+              <th>First</th>
+              <th>Last</th>
+              <th>Job</th>
+              <th>Work</th>
+              <th>Mobile</th>
+              <th>Fax</th>
+              <th>Email</th>
+              <th>CC Email</th>
+              <th>Website</th>
+              <th>Social Media</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </thead>
+
+          <!-- Bottom Column Names -->
+          <tfoot>
+
+            <tr>
+
+              <th>State</th>
+              <th>Company</th>
+              <th>First</th>
+              <th>Last</th>
+              <th>Job</th>
+              <th>Work</th>
+              <th>Mobile</th>
+              <th>Fax</th>
+              <th>Email</th>
+              <th>CC Email</th>
+              <th>Website</th>
+              <th>Social Media</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load customer data -->
+              <% @customers.each do |customer| %>
+
+                <tr>
+
+                  <!-- Columns to pull from customer data -->
+                  <td><%= customer.state.StateName %></td>
+                  <td><%= customer.CompanyName %></td>
+                  <td><%= customer.CustomerFirstName %></td>
+                  <td><%= customer.CustomerLastName %></td>
+                  <td><%= customer.JobTitle %></td>
+                  <td><%= customer.WorkPhone %></td>
+                  <td><%= customer.Mobile %></td>
+                  <td><%= customer.Fax %></td>
+                  <td><%= customer.CustomerEmail %></td>
+                  <td><%= customer.CCEmail %></td>
+                  <td><%= customer.Website %></td>
+                  <td><%= customer.SocialMediaAddress %></td>
+                  <td><%= customer.StreetAddress1 %></td>
+                  <td><%= customer.StreetAddress2 %></td>
+                  <td><%= customer.City %></td>
+                  <td><%= customer.Zipcode %></td>
+
+                </tr>
+
+              <% end %>
+
+          </tbody>
+
+        </table>
+
+    </div>
+
+  </div>
+
+  <!-- Footnote: Lastest date a employee was created -->
+  <div class="card-footer small text-muted">
+
+       
+
+  </div>
+
+
+
+</div>
+
+<!-- Add Employee Modal-->
+<%= render partial: 'partials/modals/add-employee-modal' %>

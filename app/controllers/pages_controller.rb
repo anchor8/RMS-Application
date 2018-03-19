@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   def usermgmt
     # Breadcrumb for User Management
     add_breadcrumb 'User Management', usermgmt_path
-    @employee = Employee.all
+    @employees = Employee.all
     # Last Date for New Employee
     @employee_last_date = Employee.last.created_at
   end
@@ -32,6 +32,7 @@ class PagesController < ApplicationController
   def customermgmt
     # Breadcrumb for Customer Management
     add_breadcrumb 'Customer Management', customermgmt_path
+    @customers = Customer.all
   end
 
   def vendormgmt
