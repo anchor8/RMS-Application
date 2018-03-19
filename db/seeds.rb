@@ -10,10 +10,10 @@
 
 #### employee status data ####
 
-employee_status_1 = EmployeeStatus.create([
-                                            { employee_status_type: 'Active' }
-                                          ])
-
+EmployeeStatus.create([
+                        { id: 1,
+                          employee_status_type: 'Active' }
+                      ])
 
 #### employee data ####
 
@@ -59,8 +59,8 @@ VendorStatus.create([
 #### order_status data ####
 
 OrderStatus.create([
-                    { order_status_description: 'Order has not been shipped to customer yet' }
-                  ])
+                     { order_status_description: 'Order has not been shipped to customer yet' }
+                   ])
 
 #### country data ####
 
