@@ -118,13 +118,19 @@ state = State.create([
     {id: '52', StateName: 'Wyoming'}
 ])
 
+
+#### customer data ####
+
+customer = Customer.create([
+    {id: '1', state_id: '45', CompanyName: 'Home Depot', CustomerFirstName: 'Julius', CustomerLastName: 'Agno', JobTitle: 'Assistant Manager', WorkPhone: '281-590-2932', Mobile: '281-590-2932', Fax: '', CustomerEmail: 'JuliusA@gmail.com', CCEmail: '', Website: 'www.homedepot.com', SocialMediaAddress: '', StreetAddress1: '12832 W Tomball Highway', StreetAddress2: '', City: 'Tomball', Zipcode: '77377'},
+    {id: '2', state_id: '45', CompanyName: 'Lowes', CustomerFirstName: 'John', CustomerLastName: 'Doe', JobTitle: 'Manager', WorkPhone: '713-584-3884', Mobile: '713-584-3884', Fax: '', CustomerEmail: 'JD@gmail.com', CCEmail: '', Website: 'www.lowes.com', SocialMediaAddress: '', StreetAddress1: '2345 antoine rd', StreetAddress2: '', City: 'Houston', Zipcode: '77066'}
+])
+
+
 #### vendor data ####
 
 vendor = Vendor.create([
     {state_id: 45, vendor_status_id: 2, VendorName: 'Big Dumb Vendor Co.', ContactName: 'Julius Agno', JobTitle: 'Chief Anime Officer', WorkPhone: '281-935-6807', Mobile: '281-935-6807', Fax: 'no fax', VendorEmail: 'agno.julius@gmail.com', VendorCCEmail: 'blank', Website: 'www.google.com', StreetAddress1: '123 Big Wok Way', StreetAddress2: 'test', City: 'Houston', Zipcode: '77001'},
-
-
-
 
 
 ])
