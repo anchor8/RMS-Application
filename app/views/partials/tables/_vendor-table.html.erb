@@ -6,7 +6,7 @@
       <i class="fa fa-table"></i>
 
       <!-- Table Name -->
-      Customer Table
+      Vendor Table
 
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-right">
@@ -15,7 +15,7 @@
                 type="button"
                 data-toggle="modal"
                 data-target="#add-employee-modal">
-                Add New Customer
+                Add New Vendor
         </button>
 
       </div>
@@ -34,9 +34,9 @@
             <tr>
 
               <th>State</th>
-              <th>Company</th>
-              <th>First</th>
-              <th>Last</th>
+              <th>Status</th>
+              <th>Vendor</th>
+              <th>Contact</th>
               <th>Job</th>
               <th>Work</th>
               <th>Mobile</th>
@@ -44,7 +44,6 @@
               <th>Email</th>
               <th>CC Email</th>
               <th>Website</th>
-              <th>Social Media</th>
               <th>Addr. 1</th>
               <th>Addr. 2</th>
               <th>City</th>
@@ -60,9 +59,9 @@
             <tr>
 
               <th>State</th>
-              <th>Company</th>
-              <th>First</th>
-              <th>Last</th>
+              <th>Status</th>
+              <th>Vendor</th>
+              <th>Contact</th>
               <th>Job</th>
               <th>Work</th>
               <th>Mobile</th>
@@ -70,7 +69,6 @@
               <th>Email</th>
               <th>CC Email</th>
               <th>Website</th>
-              <th>Social Media</th>
               <th>Addr. 1</th>
               <th>Addr. 2</th>
               <th>City</th>
@@ -83,28 +81,27 @@
           <!-- Content -->
           <tbody>
 
-            <!-- Load customer data -->
-              <% @customers.each do |customer| %>
+            <!-- Load vendor data -->
+              <% @vendors.each do |vendor| %>
 
                 <tr>
 
-                  <!-- Columns to pull from customer data -->
-                  <td><%= customer.state.StateName %></td>
-                  <td><%= customer.CompanyName %></td>
-                  <td><%= customer.CustomerFirstName %></td>
-                  <td><%= customer.CustomerLastName %></td>
-                  <td><%= customer.JobTitle %></td>
-                  <td><%= customer.WorkPhone %></td>
-                  <td><%= customer.Mobile %></td>
-                  <td><%= customer.Fax %></td>
-                  <td><%= customer.CustomerEmail %></td>
-                  <td><%= customer.CCEmail %></td>
-                  <td><%= customer.Website %></td>
-                  <td><%= customer.SocialMediaAddress %></td>
-                  <td><%= customer.StreetAddress1 %></td>
-                  <td><%= customer.StreetAddress2 %></td>
-                  <td><%= customer.City %></td>
-                  <td><%= customer.Zipcode %></td>
+                  <!-- Columns to pull from vendor data -->
+                  <td><%= vendor.state.StateName %></td>
+                  <td><%= vendor.vendor_status.VendorStatusType %></td>
+                  <td><%= vendor.VendorName %></td>
+                  <td><%= vendor.ContactName %></td>
+                  <td><%= vendor.JobTitle %></td>
+                  <td><%= vendor.WorkPhone %></td>
+                  <td><%= vendor.Mobile %></td>
+                  <td><%= vendor.Fax %></td>
+                  <td><%= vendor.VendorEmail %></td>
+                  <td><%= vendor.VendorCCEmail %></td>
+                  <td><%= vendor.Website %></td>
+                  <td><%= vendor.StreetAddress1 %></td>
+                  <td><%= vendor.StreetAddress2 %></td>
+                  <td><%= vendor.City %></td>
+                  <td><%= vendor.Zipcode %></td>
 
                 </tr>
 
@@ -118,7 +115,7 @@
 
   </div>
 
-  <!-- Footnote: Lastest date a customer was updated -->
+  <!-- Footnote: Lastest date a employee was created -->
   <div class="card-footer small text-muted">
 
 

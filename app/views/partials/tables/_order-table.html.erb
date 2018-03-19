@@ -1,0 +1,136 @@
+<div class="card mb-3">
+
+  <div class="card-header">
+
+      <!-- Table Icon -->
+      <i class="fa fa-table"></i>
+
+      <!-- Table Name -->
+      Order Table
+
+      <!-- Add, Remove, Update Buttons -->
+      <div class="btn-right">
+
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="#add-employee-modal">
+                Add New Order
+        </button>
+
+      </div>
+
+  </div>
+
+  <div class="card-body">
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+          <!-- Top Column Names -->
+          <thead>
+
+            <tr>
+
+              <th>Vendor</th>
+              <th>Status</th>
+              <th>Customer</th>
+              <th>Country</th>
+              <th>Employee</th>
+              <th>Payment Type</th>
+              <th>Ship Via</th>
+              <th>Order Line</th>
+              <th>State</th>
+              <th>Shipping No.</th>
+              <th>Purchase Order No.</th>
+              <th>Shipped</th>
+              <th>Total</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </thead>
+
+          <!-- Bottom Column Names -->
+          <tfoot>
+
+            <tr>
+
+              <th>Vendor</th>
+              <th>Status</th>
+              <th>Company</th>
+              <th>Country</th>
+              <th>Employee</th>
+              <th>Payment Type</th>
+              <th>Ship Via</th>
+              <th>Order Line</th>
+              <th>State</th>
+              <th>Shipping No.</th>
+              <th>Customer</th>
+              <th>Purchase Order No.</th>
+              <th>Shipped</th>
+              <th>Total</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load order data -->
+              <% @orders.each do |order| %>
+
+                <tr>
+
+                  <!-- Columns to pull from order data -->
+                  <td><%= order.vendor.VendorName %></td>
+                  <td><%= order.order_status.OrderStatusDescription %></td>
+                  <td><%= order.customer.CompanyName %></td>
+                  <td><%= order.country.CountryName %></td>
+                  <td><%= order.employee.Lname %></td>
+                  <td><%= order.payment_type.PaymentTypeDescription %></td>
+                  <td><%= order.ship_via.ShipViaDescription %></td>
+                  <td><%= order.order_line.ItemNumber %></td>
+                  <td><%= order.state.StateName %></td>
+                  <td><%= order.ShippingNumber %></td>
+                  <td><%= order.customer.CustomerLastName %></td>
+                  <td><%= order.PurchaseOrderNumber %></td>
+                  <td><%= order.OrderDate %></td>
+                  <td><%= order.ShipOnDate %></td>
+                  <td><%= order.OrderTotal %></td>
+                  <td><%= order.StreetAddress1 %></td>
+                  <td><%= order.StreetAddress2 %></td>
+                  <td><%= order.City %></td>
+                  <td><%= order.Zipcode %></td>
+
+                </tr>
+
+              <% end %>
+
+          </tbody>
+
+        </table>
+
+    </div>
+
+  </div>
+
+  <!-- Footnote: Lastest date a order was created -->
+  <div class="card-footer small text-muted">
+
+
+
+  </div>
+
+
+
+</div>
