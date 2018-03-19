@@ -8,10 +8,14 @@
 #  movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #  Character.create(name: 'Luke', movie: movies.first)
 
+#### employee status data ####
+
 employee_status_1 = EmployeeStatus.new(
   employee_status_type: 'Active'
 )
 employee_status_1.save
+
+#### employee data ####
 
 admin = Employee.new(
   email: 'admin@rms.com',
@@ -52,13 +56,44 @@ vendor_status = VendorStatus.create([
     {VendorStatusType: 'Inactive'},
     {VendorStatusType: 'Active'}
                                     ])
+#### order_status data ####
 
+order_status = OrderStatus.create([
+    {order_status_description: 'Order has not been shipped to customer yet'}
+                                  ])
 
+#### country data ####
 
+country = Country.create([
+    {id: '1', country_name: 'United States of America'}
+                         ])
 
+#### payment type data ####
 
+payment_type = PaymentType.create([
+    {id: '1', payment_type_description: 'Cash'},
+    {id: '2', payment_type_description: 'Credit'},
+    {id: '3', payment_type_description: 'Debit'},
+    {id: '4', payment_type_description: 'Check'},
+    {id: '5', payment_type_description: 'Paypal'}
+                                  ])
 
+#### ship_vium data ####
 
+ship_vium = ShipVium.create([
+    {id: '1', ship_via_description: 'USPS Express Mail'},
+    {id: '2', ship_via_description: 'USPS Priority Mail'},
+    {id: '3', ship_via_description: 'USPS First Class Mail'},
+    {id: '4', ship_via_description: 'FedEx'},
+    {id: '5', ship_via_description: 'FedEx Freight'},
+    {id: '6', ship_via_description: 'DHL'}
+                           ])
+
+#### Order Line Data ####
+
+order_line = OrderLine.create([
+    {id: '1', item_number: '235236', item_description: 'Stainless AMV - Auto Manual Valve', item_quantity: '10', item_price: '500.00', item_total_cost: '5000.00', tax_rate: '8.25', tax_amount: '412.5'}
+                                 ])
 
 #### state data ####
 
@@ -134,3 +169,4 @@ vendor = Vendor.create([
 
 
 ])
+
