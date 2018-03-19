@@ -45,3 +45,75 @@ employee3 = Employee.new(
   employee_status_id: 1
 )
 employee3.save!
+
+####### vendor data ########
+
+#vendor = Vendor.create([
+#  {name: }
+
+
+
+
+
+#])
+
+
+
+
+#### state data ####
+
+state = State.create([
+
+    {id: '1', StateName: 'Alabama'},
+    {id: '2', StateName: 'Alaska'},
+    {id: '3', StateName: 'Arizona'},
+    {id: '4', StateName: 'Arkansas'},
+    {id: '5', StateName: 'California'},
+    {id: '6', StateName: 'Colorado'},
+    {id: '7', StateName: 'Connecticut'},
+    {id: '8', StateName: 'Delaware'},
+    {id: '9', StateName: 'District of Columbia'},
+    {id: '10', StateName: 'Florida'},
+    {id: '11', StateName: 'Georgia'},
+    {id: '12', StateName: 'Hawaii'},
+    {id: '13', StateName: 'Idaho'},
+    {id: '14', StateName: 'Illinois'},
+    {id: '15', StateName: 'Indiana'},
+    {id: '16', StateName: 'Iowa'},
+    {id: '17', StateName: 'Kansas'},
+    {id: '18', StateName: 'Kentucky'},
+    {id: '19', StateName: 'Louisiana'},
+    {id: '20', StateName: 'Maine'},
+    {id: '21', StateName: 'Maryland'},
+    {id: '22', StateName: 'Massachusetts'},
+    {id: '23', StateName: 'Michigan'},
+    {id: '24', StateName: 'Minnesota'},
+    {id: '25', StateName: 'Mississippi'},
+    {id: '26', StateName: 'Missouri'},
+    {id: '27', StateName: 'Montana'},
+    {id: '28', StateName: 'Nebraska'},
+    {id: '29', StateName: 'Nevada'},
+    {id: '30', StateName: 'New Hampshire'},
+    {id: '31', StateName: 'New Jersey'},
+    {id: '32', StateName: 'New Mexico'},
+    {id: '33', StateName: 'New York'},
+    {id: '34', StateName: 'North Carolina'},
+    {id: '35', StateName: 'North Dakota'},
+    {id: '36', StateName: 'Ohio'},
+    {id: '37', StateName: 'Oklahoma'},
+    {id: '38', StateName: 'Oregon'},
+    {id: '39', StateName: 'Pennsylvania'},
+    {id: '40', StateName: 'Puerto Rico'},
+    {id: '41', StateName: 'Rhode Island'},
+    {id: '42', StateName: 'South Carolina'},
+    {id: '43', StateName: 'South Dakota'},
+    {id: '44', StateName: 'Tennessee'},
+    {id: '45', StateName: 'Texas'},
+    {id: '46', StateName: 'Utah'},
+    {id: '47', StateName: 'Vermont'},
+    {id: '48', StateName: 'Virginia'},
+    {id: '49', StateName: 'Washington'},
+    {id: '50', StateName: 'West Virginia'},
+    {id: '51', StateName: 'Wisconsin'},
+    {id: '52', StateName: 'Wyoming'}
+])
