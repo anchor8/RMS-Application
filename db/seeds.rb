@@ -55,16 +55,7 @@ vendor_status = VendorStatus.create([
 
 
 
-#### vendor data ####
 
-vendor = Vendor.create([
-  {state_id: 45, vendor_status_id: 2, VendorName: 'Big Dumb Vendor Co.', ContactName: 'Julius Agno', JobTitle: 'Chief Anime Officer', WorkPhone: '281-935-6807', Mobile: '281-935-6807', Fax: 'no fax', VendorEmail: 'agno.julius@gmail.com', VendorCCEmail: 'blank', Website: 'www.google.com', StreetAddress1: '123 Big Wok Way', StreetAddress2: 'test', City: 'Houston', Zipcode: '77001'},
-
-
-
-
-
-])
 
 
 
@@ -125,4 +116,15 @@ state = State.create([
     {id: '50', StateName: 'West Virginia'},
     {id: '51', StateName: 'Wisconsin'},
     {id: '52', StateName: 'Wyoming'}
+])
+
+#### vendor data ####
+
+vendor = Vendor.create([
+    {state_id: 45, vendor_status_id: 2, VendorName: 'Big Dumb Vendor Co.', ContactName: 'Julius Agno', JobTitle: 'Chief Anime Officer', WorkPhone: '281-935-6807', Mobile: '281-935-6807', Fax: 'no fax', VendorEmail: 'agno.julius@gmail.com', VendorCCEmail: 'blank', Website: 'www.google.com', StreetAddress1: '123 Big Wok Way', StreetAddress2: 'test', City: 'Houston', Zipcode: '77001'},
+
+
+
+
+
 ])
