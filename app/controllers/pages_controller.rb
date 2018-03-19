@@ -38,11 +38,13 @@ class PagesController < ApplicationController
   def vendormgmt
     # Breadcrumb for Vendor Management
     add_breadcrumb 'Vendor Management', vendormgmt_path
+    @vendors = Vendor.all
   end
 
   def ordermgmt
     # Breadcrumb for Order Management
     add_breadcrumb 'Order Management', ordermgmt_path
+    @orders = Order.all
   end
 
   def shippingmgmt
