@@ -117,3 +117,10 @@ state = State.create([
     {id: '51', StateName: 'Wisconsin'},
     {id: '52', StateName: 'Wyoming'}
 ])
+
+#### customer data ####
+
+customer = Customer.create([
+    {id: '1', state_id: '45', CompanyName: 'Home Depot', CustomerFirstName: 'Julius', CustomerLastName: 'Agno', JobTitle: 'Assistant Manager', WorkPhone: '281-590-2932', Mobile: '281-590-2932', Fax: '', CustomerEmail: 'JuliusA@gmail.com', CCEmail: '', Website: 'www.homedepot.com', SocialMediaAddress: '', StreetAddress1: '12832 W Tomball Highway', StreetAddress2: '', City: 'Tomball', Zipcode: '77377'},
+    {id: '2', state_id: '45', CompanyName: 'Lowes', CustomerFirstName: 'John', CustomerLastName: 'Doe', JobTitle: 'Manager', WorkPhone: '713-584-3884', Mobile: '713-584-3884', Fax: '', CustomerEmail: 'JD@gmail.com', CCEmail: '', Website: 'www.lowes.com', SocialMediaAddress: '', StreetAddress1: '2345 antoine rd', StreetAddress2: '', City: 'Houston', Zipcode: '77066'}
+])
