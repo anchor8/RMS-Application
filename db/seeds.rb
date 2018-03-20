@@ -24,7 +24,9 @@ admin = Employee.new(
   password: 'password',
   password_confirmation: 'password',
   admin: true,
-  employee_status_id: 1
+  employee_status_id: 1,
+  fname: 'john',
+  lname: 'doe'
 )
 admin.save!
 
@@ -32,7 +34,9 @@ employee1 = Employee.new(
   email: 'employee1@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1
+  employee_status_id: 1,
+  fname: 'jane',
+  lname: 'smith'
 )
 employee1.save!
 
@@ -40,7 +44,9 @@ employee2 = Employee.new(
   email: 'employee2@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1
+  employee_status_id: 1,
+  fname: 'bob',
+  lname: 'dillo'
 )
 employee2.save!
 
@@ -48,7 +54,9 @@ employee3 = Employee.new(
   email: 'employee3@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1
+  employee_status_id: 1,
+  fname: 'craig',
+  lname: 'schmit'
 )
 employee3.save!
 
