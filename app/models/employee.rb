@@ -1,7 +1,5 @@
 # Employee model (devise)
 class Employee < ApplicationRecord
-  belongs_to :employee_status
-  has_many :orders
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

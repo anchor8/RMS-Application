@@ -4,17 +4,6 @@ Rails.application.routes.draw do
 
   # Resources
   resources :employees
-  resources :orders
-  resources :customers
-  resources :vendors
-  resources :employee_statuses
-  resources :order_lines
-  resources :ship_via
-  resources :payment_types
-  resources :countries
-  resources :order_statuses
-  resources :vendor_statuses
-  resources :states
 
   # Root
   root 'pages#index'
