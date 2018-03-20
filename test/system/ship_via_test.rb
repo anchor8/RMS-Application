@@ -4,6 +4,6 @@ class ShipViaTest < ApplicationSystemTestCase
   # test "visiting the index" do
   #   visit ship_via_url
   #
-  #   assert_selector "h1", text: "ShipVium"
+  #   assert_selector "h1", text: "ShipVia"
   # end
 end
