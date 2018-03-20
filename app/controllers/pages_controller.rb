@@ -50,6 +50,7 @@ class PagesController < ApplicationController
   def shippingmgmt
     # Breadcrumb for Shipping Management
     add_breadcrumb 'Shipping Management', shippingmgmt_path
+    @orders = Order.all
   end
 
   def reports
