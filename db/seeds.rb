@@ -61,8 +61,10 @@ VendorStatus.create([
 #### order_status data ####
 
 OrderStatus.create([
+
                      { order_status_description: 'Not Shipped' },
                      { order_status_description: 'Shipped' }
+
                    ])
 
 #### country data ####
@@ -107,105 +109,18 @@ PaymentType.create([
 
 #### ship_vium data ####
 
-ShipVium.create([
-                  { id: '1',
-                    ship_via_description: 'USPS Express Mail' },
-                  { id: '2',
-                    ship_via_description: 'USPS Priority Mail' },
-                  { id: '3',
-                    ship_via_description: 'USPS First Class Mail' },
-                  { id: '4',
-                    ship_via_description: 'FedEx' },
-                  { id: '5',
-                    ship_via_description: 'FedEx Freight' },
-                  { id: '6',
-                    ship_via_description: 'DHL' }
+
+ShipVia.create([
+                  { id: '1', ship_via_description: 'USPS Express Mail' },
+                  { id: '2', ship_via_description: 'USPS Priority Mail' },
+                  { id: '3', ship_via_description: 'USPS First Class Mail' },
+                  { id: '4', ship_via_description: 'FedEx' },
+                  { id: '5', ship_via_description: 'FedEx Freight' },
+                  { id: '6', ship_via_description: 'DHL' }
+
                 ])
 
-#### Order Line Data ####
 
-OrderLine.create([
-                   { id: '1',
-                     item_number: '235236',
-                     item_description: 'Stainless AMV - Auto Manual Valve',
-                     item_quantity: '10',
-                     item_price: '500.00',
-                     item_total_cost: '5000.00',
-                     tax_rate: '8.25',
-                     tax_amount: '412.50' },
-                   { id: '2',
-                     item_number: '765416',
-                     item_description: 'Generic Valve',
-                     item_quantity: '150',
-                     item_price: '50.00',
-                     item_total_cost: '7500.00',
-                     tax_rate: '8.25',
-                     tax_amount: '618.75' },
-                   { id: '3',
-                     item_number: '444211',
-                     item_description: 'Generic Fitting',
-                     item_quantity: '100',
-                     item_price: '100.00',
-                     item_total_cost: '10000.00',
-                     tax_rate: '8.25',
-                     tax_amount: '825.00' },
-                   { id: '4',
-                     item_number: '141134',
-                     item_description: 'Steel Piping',
-                     item_quantity: '5',
-                     item_price: '500.00',
-                     item_total_cost: '2500.00',
-                     tax_rate: '8.25',
-                     tax_amount: '206.25' },
-                   { id: '5',
-                     item_number: '144321',
-                     item_description: 'Steel Corner Piping',
-                     item_quantity: '15',
-                     item_price: '50.00',
-                     item_total_cost: '750.00',
-                     tax_rate: '8.25',
-                     tax_amount: '61.875' },
-                   { id: '6',
-                     item_number: '111236',
-                     item_description: 'Steel U Piping',
-                     item_quantity: '10',
-                     item_price: '100.00',
-                     item_total_cost: '1000.00',
-                     tax_rate: '8.25',
-                     tax_amount: '82.50' },
-                   { id: '7',
-                     item_number: '146126',
-                     item_description: 'PVC Fitting',
-                     item_quantity: '170',
-                     item_price: '130.00',
-                     item_total_cost: '22100.00',
-                     tax_rate: '8.25',
-                     tax_amount: '1823.25' },
-                   { id: '8',
-                     item_number: '131256',
-                     item_description: 'PVC Piping',
-                     item_quantity: '140',
-                     item_price: '110.00',
-                     item_total_cost: '15400.00',
-                     tax_rate: '8.25',
-                     tax_amount: '1270.50' },
-                   { id: '9',
-                     item_number: '164236',
-                     item_description: 'PVC Corner',
-                     item_quantity: '120',
-                     item_price: '180.00',
-                     item_total_cost: '21600.00',
-                     tax_rate: '8.25',
-                     tax_amount: '1782.00' },
-                   { id: '10',
-                     item_number: '645236',
-                     item_description: 'PVC U Piping',
-                     item_quantity: '110',
-                     item_price: '170.00',
-                     item_total_cost: '18700.00',
-                     tax_rate: '8.25',
-                     tax_amount: '1542.75' }
-                 ])
 
 #### state data ####
 
@@ -374,3 +289,116 @@ Vendor.create([
                   City: 'Houston',
                   Zipcode: '77001' }
               ])
+
+
+
+
+
+#### Order Line Data ####
+
+OrderLine.create([
+                   { id: '1',
+                     item_number: '235236',
+                     item_description: 'Stainless AMV - Auto Manual Valve',
+                     item_quantity: '10',
+                     item_price: '500.00',
+                     item_total_cost: '5000.00',
+                     tax_rate: '8.25',
+                     tax_amount: '412.50' },
+                   { id: '2',
+                     item_number: '765416',
+                     item_description: 'Generic Valve',
+                     item_quantity: '150',
+                     item_price: '50.00',
+                     item_total_cost: '7500.00',
+                     tax_rate: '8.25',
+                     tax_amount: '618.75' },
+                   { id: '3',
+                     item_number: '444211',
+                     item_description: 'Generic Fitting',
+                     item_quantity: '100',
+                     item_price: '100.00',
+                     item_total_cost: '10000.00',
+                     tax_rate: '8.25',
+                     tax_amount: '825.00' },
+                   { id: '4',
+                     item_number: '141134',
+                     item_description: 'Steel Piping',
+                     item_quantity: '5',
+                     item_price: '500.00',
+                     item_total_cost: '2500.00',
+                     tax_rate: '8.25',
+                     tax_amount: '206.25' },
+                   { id: '5',
+                     item_number: '144321',
+                     item_description: 'Steel Corner Piping',
+                     item_quantity: '15',
+                     item_price: '50.00',
+                     item_total_cost: '750.00',
+                     tax_rate: '8.25',
+                     tax_amount: '61.875' },
+                   { id: '6',
+                     item_number: '111236',
+                     item_description: 'Steel U Piping',
+                     item_quantity: '10',
+                     item_price: '100.00',
+                     item_total_cost: '1000.00',
+                     tax_rate: '8.25',
+                     tax_amount: '82.50' },
+                   { id: '7',
+                     item_number: '146126',
+                     item_description: 'PVC Fitting',
+                     item_quantity: '170',
+                     item_price: '130.00',
+                     item_total_cost: '22100.00',
+                     tax_rate: '8.25',
+                     tax_amount: '1823.25' },
+                   { id: '8',
+                     item_number: '131256',
+                     item_description: 'PVC Piping',
+                     item_quantity: '140',
+                     item_price: '110.00',
+                     item_total_cost: '15400.00',
+                     tax_rate: '8.25',
+                     tax_amount: '1270.50' },
+                   { id: '9',
+                     item_number: '164236',
+                     item_description: 'PVC Corner',
+                     item_quantity: '120',
+                     item_price: '180.00',
+                     item_total_cost: '21600.00',
+                     tax_rate: '8.25',
+                     tax_amount: '1782.00' },
+                   { id: '10',
+                     item_number: '645236',
+                     item_description: 'PVC U Piping',
+                     item_quantity: '110',
+                     item_price: '170.00',
+                     item_total_cost: '18700.00',
+                     tax_rate: '8.25',
+                     tax_amount: '1542.75' }
+                 ])
+
+#### order data ####
+
+Order.create([
+                 { vendor_id: 1,
+                   order_status_id: 2,
+                   customer_id: 1,
+                   country_id: 1,
+                   employee_id: 1,
+                   payment_type_id: 2,
+                   ship_via_id: 1,
+                   order_line_id: 1,
+                   state_id: 45,
+                   ShippingNumber: '12345',
+                   CustomerName: 'Home Depot',
+                   PurchaseOrderNumber: '1',
+                   OrderDate: '2017-01-16 14:12:01',
+                   ShipOnDate: '2017-2-16 12:00:00',
+                   OrderTotal: '5412.5',
+                   StreetAddress1: '12832 W Tomball Highway',
+                   StreetAddress2: 'numbers',
+                   City: 'Tomball',
+                   Zipcode: '77377'   }
+])

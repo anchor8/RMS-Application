@@ -16,11 +16,11 @@ class ShipViaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create ship_vium" do
-    assert_difference('ShipVium.count') do
+    assert_difference('ShipVia.count') do
       post ship_via_url, params: { ship_vium: { ship_via_description: @ship_vium.ship_via_description } }
     end
 
-    assert_redirected_to ship_vium_url(ShipVium.last)
+    assert_redirected_to ship_vium_url(ShipVia.last)
   end
 
   test "should show ship_vium" do
@@ -39,7 +39,7 @@ class ShipViaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy ship_vium" do
-    assert_difference('ShipVium.count', -1) do
+    assert_difference('ShipVia.count', -1) do
       delete ship_vium_url(@ship_vium)
     end
 
