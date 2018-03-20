@@ -211,7 +211,7 @@ Vendor.create([
                   Zipcode: '77001' }
               ])
 
-<<<<<<< HEAD
+
 
 
 
@@ -250,3 +250,4 @@ Order.create([
                    StreetAddress2: 'numbers',
                    City: 'Tomball',
                    Zipcode: '77377'   }
+])
