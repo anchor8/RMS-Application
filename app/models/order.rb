@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   belongs_to :country
   belongs_to :employee
   belongs_to :payment_type
-  belongs_to :ship_via
-  belongs_to :state
+  belongs_to :shipper
   belongs_to :order_line
+  belongs_to :state
 end

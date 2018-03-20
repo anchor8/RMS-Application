@@ -7,19 +7,19 @@ one:
   country: one
   employee: one
   payment_type: one
-  ship_via: one
+  shipper: one
   order_line: one
   state: one
-  ShippingNumber: 1
-  CustomerName: MyString
-  PurchaseOrderNumber: 1
-  OrderDate: 2018-03-13 19:26:58
-  ShipOnDate: 2018-03-13 19:26:58
-  OrderTotal: 9.99
-  StreetAddress1: MyString
-  StreetAddress2: MyString
-  City: MyString
-  Zipcode: MyString
+  shipping_number: 1
+  customer_name: MyString
+  purchase_order_number: 1
+  order_date: 2018-03-19 22:48:56
+  ship_date: 2018-03-19 22:48:56
+  order_total: 9.99
+  street_address_1: MyString
+  street_address_2: MyString
+  city: MyString
+  zip_code: MyString
 
 two:
   vendor: two
@@ -28,16 +28,16 @@ two:
   country: two
   employee: two
   payment_type: two
-  ship_via: two
+  shipper: two
   order_line: two
   state: two
-  ShippingNumber: 1
-  CustomerName: MyString
-  PurchaseOrderNumber: 1
-  OrderDate: 2018-03-13 19:26:58
-  ShipOnDate: 2018-03-13 19:26:58
-  OrderTotal: 9.99
-  StreetAddress1: MyString
-  StreetAddress2: MyString
-  City: MyString
-  Zipcode: MyString
+  shipping_number: 1
+  customer_name: MyString
+  purchase_order_number: 1
+  order_date: 2018-03-19 22:48:56
+  ship_date: 2018-03-19 22:48:56
+  order_total: 9.99
+  street_address_1: MyString
+  street_address_2: MyString
+  city: MyString
+  zip_code: MyString

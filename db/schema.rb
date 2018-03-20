@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314163221) do
+ActiveRecord::Schema.define(version: 20180320034856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,21 +23,21 @@ ActiveRecord::Schema.define(version: 20180314163221) do
 
   create_table "customers", force: :cascade do |t|
     t.bigint "state_id"
-    t.string "CompanyName"
-    t.string "CustomerFirstName"
-    t.string "CustomerLastName"
-    t.string "JobTitle"
-    t.string "WorkPhone"
-    t.string "Mobile"
-    t.string "Fax"
-    t.string "CustomerEmail"
-    t.string "CCEmail"
-    t.string "Website"
-    t.string "SocialMediaAddress"
-    t.string "StreetAddress1"
-    t.string "StreetAddress2"
-    t.string "City"
-    t.string "Zipcode"
+    t.string "company_name"
+    t.string "customer_first_name"
+    t.string "customer_last_name"
+    t.string "job_title"
+    t.string "work_phone"
+    t.string "mobile"
+    t.string "fax"
+    t.string "customer_email"
+    t.string "customer_cc_email"
+    t.string "website"
+    t.string "social_media_address"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_customers_on_state_id"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 20180314163221) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
     t.datetime "deleted_at"
-    t.bigint "employee_status_id"
     t.string "fname"
     t.string "lname"
     t.string "phone"
+    t.bigint "employee_status_id"
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["employee_status_id"], name: "index_employees_on_employee_status_id"
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
@@ -98,19 +98,19 @@ ActiveRecord::Schema.define(version: 20180314163221) do
     t.bigint "country_id"
     t.bigint "employee_id"
     t.bigint "payment_type_id"
-    t.bigint "ship_via_id"
+    t.bigint "shipper_id"
     t.bigint "order_line_id"
     t.bigint "state_id"
-    t.integer "ShippingNumber"
-    t.string "CustomerName"
-    t.integer "PurchaseOrderNumber"
-    t.datetime "OrderDate"
-    t.datetime "ShipOnDate"
-    t.decimal "OrderTotal"
-    t.string "StreetAddress1"
-    t.string "StreetAddress2"
-    t.string "City"
-    t.string "Zipcode"
+    t.integer "shipping_number"
+    t.string "customer_name"
+    t.integer "purchase_order_number"
+    t.datetime "order_date"
+    t.datetime "ship_date"
+    t.decimal "order_total"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_orders_on_country_id"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20180314163221) do
     t.index ["order_line_id"], name: "index_orders_on_order_line_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["payment_type_id"], name: "index_orders_on_payment_type_id"
-    t.index ["ship_via_id"], name: "index_orders_on_ship_via_id"
+    t.index ["shipper_id"], name: "index_orders_on_shipper_id"
     t.index ["state_id"], name: "index_orders_on_state_id"
     t.index ["vendor_id"], name: "index_orders_on_vendor_id"
   end
@@ -130,20 +130,20 @@ ActiveRecord::Schema.define(version: 20180314163221) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ship_via", force: :cascade do |t|
-    t.string "ship_via_description"
+  create_table "shippers", force: :cascade do |t|
+    t.string "shipper_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "states", force: :cascade do |t|
-    t.string "StateName"
+    t.string "state_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "vendor_statuses", force: :cascade do |t|
-    t.string "VendorStatusType"
+    t.string "vendor_status_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -151,19 +151,19 @@ ActiveRecord::Schema.define(version: 20180314163221) do
   create_table "vendors", force: :cascade do |t|
     t.bigint "state_id"
     t.bigint "vendor_status_id"
-    t.string "VendorName"
-    t.string "ContactName"
-    t.string "JobTitle"
-    t.string "WorkPhone"
-    t.string "Mobile"
-    t.string "Fax"
-    t.string "VendorEmail"
-    t.string "VendorCCEmail"
-    t.string "Website"
-    t.string "StreetAddress1"
-    t.string "StreetAddress2"
-    t.string "City"
-    t.string "Zipcode"
+    t.string "vendor_name"
+    t.string "contact_name"
+    t.string "job_title"
+    t.string "work_phone"
+    t.string "mobile"
+    t.string "fax"
+    t.string "vendor_email"
+    t.string "vendor_cc_email"
+    t.string "website"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_vendors_on_state_id"
@@ -178,7 +178,7 @@ ActiveRecord::Schema.define(version: 20180314163221) do
   add_foreign_key "orders", "order_lines"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "orders", "payment_types"
-  add_foreign_key "orders", "ship_via", column: "ship_via_id"
+  add_foreign_key "orders", "shippers"
   add_foreign_key "orders", "states"
   add_foreign_key "orders", "vendors"
   add_foreign_key "vendors", "states"
