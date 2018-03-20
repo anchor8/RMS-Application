@@ -219,7 +219,7 @@ Vendor.create([
                   Zipcode: '77001' }
               ])
 
-Order.create([
+Order.create!([
     {vendor_id: 1, order_status_id: 2, customer_id: 1, country_id: 1, employee_id: 1, payment_type_id: 2, ship_via_id: 1, order_line_id: 1, state_id: 45, ShippingNumber: '12345', CustomerName: 'Home Depot', PurchaseOrderNumber: '1', OrderDate: '2017-01-16 14:12:01', ShipOnDate: '2017-2-16 12:00:00', OrderTotal: '5412.5', StreetAddress1: '12832 W Tomball Highway', StreetAddress2: '', City: 'Tomball', Zipcode: '77377'   }
 
 
