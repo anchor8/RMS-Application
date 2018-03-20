@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  # Devise
+  devise_for :employees
+
+  # Resources
+  resources :employees
   resources :orders
   resources :customers
   resources :vendors
@@ -10,11 +16,6 @@ Rails.application.routes.draw do
   resources :order_statuses
   resources :vendor_statuses
   resources :states
-  # Devise
-  devise_for :employees
-
-  # Resources
-  resources :employees
 
   # Root
   root 'pages#index'
