@@ -69,6 +69,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:state_id, :vendor_status_id, :VendorName, :ContactName, :JobTitle, :WorkPhone, :Mobile, :Fax, :VendorEmail, :VendorCCEmail, :Website, :StreetAddress1, :StreetAddress2, :City, :Zipcode)
+      params.require(:vendor).permit(:state_id, :vendor_status_id, :vendor_name, :contact_name, :job_title, :work_phone, :mobile, :fax, :vendor_email, :vendor_cc_email, :website, :street_address_1, :street_address_2, :city, :zip_code)
     end
 end

@@ -17,7 +17,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create customer" do
     assert_difference('Customer.count') do
-      post customers_url, params: { customer: { CCEmail: @customer.CCEmail, City: @customer.City, CompanyName: @customer.CompanyName, CustomerEmail: @customer.CustomerEmail, CustomerFirstName: @customer.CustomerFirstName, CustomerLastName: @customer.CustomerLastName, Fax: @customer.Fax, JobTitle: @customer.JobTitle, Mobile: @customer.Mobile, SocialMediaAddress: @customer.SocialMediaAddress, StreetAddress1: @customer.StreetAddress1, StreetAddress2: @customer.StreetAddress2, Website: @customer.Website, WorkPhone: @customer.WorkPhone, Zipcode: @customer.Zipcode, state_id: @customer.state_id } }
+      post customers_url, params: { customer: { city: @customer.city, company_name: @customer.company_name, customer_cc_email: @customer.customer_cc_email, customer_email: @customer.customer_email, customer_first_name: @customer.customer_first_name, customer_last_name: @customer.customer_last_name, fax: @customer.fax, job_title: @customer.job_title, mobile: @customer.mobile, social_media_address: @customer.social_media_address, state_id: @customer.state_id, street_address_1: @customer.street_address_1, street_address_2: @customer.street_address_2, website: @customer.website, work_phone: @customer.work_phone, zip_code: @customer.zip_code } }
     end
 
     assert_redirected_to customer_url(Customer.last)
@@ -34,7 +34,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update customer" do
-    patch customer_url(@customer), params: { customer: { CCEmail: @customer.CCEmail, City: @customer.City, CompanyName: @customer.CompanyName, CustomerEmail: @customer.CustomerEmail, CustomerFirstName: @customer.CustomerFirstName, CustomerLastName: @customer.CustomerLastName, Fax: @customer.Fax, JobTitle: @customer.JobTitle, Mobile: @customer.Mobile, SocialMediaAddress: @customer.SocialMediaAddress, StreetAddress1: @customer.StreetAddress1, StreetAddress2: @customer.StreetAddress2, Website: @customer.Website, WorkPhone: @customer.WorkPhone, Zipcode: @customer.Zipcode, state_id: @customer.state_id } }
+    patch customer_url(@customer), params: { customer: { city: @customer.city, company_name: @customer.company_name, customer_cc_email: @customer.customer_cc_email, customer_email: @customer.customer_email, customer_first_name: @customer.customer_first_name, customer_last_name: @customer.customer_last_name, fax: @customer.fax, job_title: @customer.job_title, mobile: @customer.mobile, social_media_address: @customer.social_media_address, state_id: @customer.state_id, street_address_1: @customer.street_address_1, street_address_2: @customer.street_address_2, website: @customer.website, work_phone: @customer.work_phone, zip_code: @customer.zip_code } }
     assert_redirected_to customer_url(@customer)
   end
 

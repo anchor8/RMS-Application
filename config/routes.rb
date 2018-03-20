@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
-  # Devise
-  devise_for :employees
-
-  # Resources
-  resources :employees
   resources :orders
   resources :customers
   resources :vendors
   resources :employee_statuses
   resources :order_lines
-  resources :ship_via
+  resources :shippers
   resources :payment_types
   resources :countries
   resources :order_statuses
   resources :vendor_statuses
   resources :states
+  # Devise
+  devise_for :employees
+
+  # Resources
+  resources :employees
 
   # Root
   root 'pages#index'

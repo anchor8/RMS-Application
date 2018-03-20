@@ -17,7 +17,7 @@ class VendorStatusesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vendor_status" do
     assert_difference('VendorStatus.count') do
-      post vendor_statuses_url, params: { vendor_status: { VendorStatusType: @vendor_status.VendorStatusType } }
+      post vendor_statuses_url, params: { vendor_status: { vendor_status_type: @vendor_status.vendor_status_type } }
     end
 
     assert_redirected_to vendor_status_url(VendorStatus.last)
@@ -34,7 +34,7 @@ class VendorStatusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vendor_status" do
-    patch vendor_status_url(@vendor_status), params: { vendor_status: { VendorStatusType: @vendor_status.VendorStatusType } }
+    patch vendor_status_url(@vendor_status), params: { vendor_status: { vendor_status_type: @vendor_status.vendor_status_type } }
     assert_redirected_to vendor_status_url(@vendor_status)
   end
 

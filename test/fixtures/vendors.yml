@@ -3,33 +3,33 @@
 one:
   state: one
   vendor_status: one
-  VendorName: MyString
-  ContactName: MyString
-  JobTitle: MyString
-  WorkPhone: MyString
-  Mobile: MyString
-  Fax: MyString
-  VendorEmail: MyString
-  VendorCCEmail: MyString
-  Website: MyString
-  StreetAddress1: MyString
-  StreetAddress2: MyString
-  City: MyString
-  Zipcode: MyString
+  vendor_name: MyString
+  contact_name: MyString
+  job_title: MyString
+  work_phone: MyString
+  mobile: MyString
+  fax: MyString
+  vendor_email: MyString
+  vendor_cc_email: MyString
+  website: MyString
+  street_address_1: MyString
+  street_address_2: MyString
+  city: MyString
+  zip_code: MyString
 
 two:
   state: two
   vendor_status: two
-  VendorName: MyString
-  ContactName: MyString
-  JobTitle: MyString
-  WorkPhone: MyString
-  Mobile: MyString
-  Fax: MyString
-  VendorEmail: MyString
-  VendorCCEmail: MyString
-  Website: MyString
-  StreetAddress1: MyString
-  StreetAddress2: MyString
-  City: MyString
-  Zipcode: MyString
+  vendor_name: MyString
+  contact_name: MyString
+  job_title: MyString
+  work_phone: MyString
+  mobile: MyString
+  fax: MyString
+  vendor_email: MyString
+  vendor_cc_email: MyString
+  website: MyString
+  street_address_1: MyString
+  street_address_2: MyString
+  city: MyString
+  zip_code: MyString

@@ -17,7 +17,7 @@ class VendorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vendor" do
     assert_difference('Vendor.count') do
-      post vendors_url, params: { vendor: { City: @vendor.City, ContactName: @vendor.ContactName, Fax: @vendor.Fax, JobTitle: @vendor.JobTitle, Mobile: @vendor.Mobile, StreetAddress1: @vendor.StreetAddress1, StreetAddress2: @vendor.StreetAddress2, VendorCCEmail: @vendor.VendorCCEmail, VendorEmail: @vendor.VendorEmail, VendorName: @vendor.VendorName, Website: @vendor.Website, WorkPhone: @vendor.WorkPhone, Zipcode: @vendor.Zipcode, state_id: @vendor.state_id, vendor_status_id: @vendor.vendor_status_id } }
+      post vendors_url, params: { vendor: { city: @vendor.city, contact_name: @vendor.contact_name, fax: @vendor.fax, job_title: @vendor.job_title, mobile: @vendor.mobile, state_id: @vendor.state_id, street_address_1: @vendor.street_address_1, street_address_2: @vendor.street_address_2, vendor_cc_email: @vendor.vendor_cc_email, vendor_email: @vendor.vendor_email, vendor_name: @vendor.vendor_name, vendor_status_id: @vendor.vendor_status_id, website: @vendor.website, work_phone: @vendor.work_phone, zip_code: @vendor.zip_code } }
     end
 
     assert_redirected_to vendor_url(Vendor.last)
@@ -34,7 +34,7 @@ class VendorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vendor" do
-    patch vendor_url(@vendor), params: { vendor: { City: @vendor.City, ContactName: @vendor.ContactName, Fax: @vendor.Fax, JobTitle: @vendor.JobTitle, Mobile: @vendor.Mobile, StreetAddress1: @vendor.StreetAddress1, StreetAddress2: @vendor.StreetAddress2, VendorCCEmail: @vendor.VendorCCEmail, VendorEmail: @vendor.VendorEmail, VendorName: @vendor.VendorName, Website: @vendor.Website, WorkPhone: @vendor.WorkPhone, Zipcode: @vendor.Zipcode, state_id: @vendor.state_id, vendor_status_id: @vendor.vendor_status_id } }
+    patch vendor_url(@vendor), params: { vendor: { city: @vendor.city, contact_name: @vendor.contact_name, fax: @vendor.fax, job_title: @vendor.job_title, mobile: @vendor.mobile, state_id: @vendor.state_id, street_address_1: @vendor.street_address_1, street_address_2: @vendor.street_address_2, vendor_cc_email: @vendor.vendor_cc_email, vendor_email: @vendor.vendor_email, vendor_name: @vendor.vendor_name, vendor_status_id: @vendor.vendor_status_id, website: @vendor.website, work_phone: @vendor.work_phone, zip_code: @vendor.zip_code } }
     assert_redirected_to vendor_url(@vendor)
   end
 
