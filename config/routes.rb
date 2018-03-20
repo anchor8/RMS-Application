@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :customers
+  resources :vendors
+  resources :employee_statuses
+  resources :order_lines
+  resources :shippers
+  resources :payment_types
+  resources :countries
+  resources :order_statuses
+  resources :vendor_statuses
+  resources :states
   # Devise
   devise_for :employees
 

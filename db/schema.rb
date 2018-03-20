@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320032451) do
+ActiveRecord::Schema.define(version: 20180320034856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "countries", force: :cascade do |t|
+    t.string "country_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.bigint "state_id"
+    t.string "company_name"
+    t.string "customer_first_name"
+    t.string "customer_last_name"
+    t.string "job_title"
+    t.string "work_phone"
+    t.string "mobile"
+    t.string "fax"
+    t.string "customer_email"
+    t.string "customer_cc_email"
+    t.string "website"
+    t.string "social_media_address"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_customers_on_state_id"
+  end
+
+  create_table "employee_statuses", force: :cascade do |t|
+    t.string "employee_status_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,8 +67,120 @@ ActiveRecord::Schema.define(version: 20180320032451) do
     t.string "fname"
     t.string "lname"
     t.string "phone"
+    t.bigint "employee_status_id"
     t.index ["email"], name: "index_employees_on_email", unique: true
+    t.index ["employee_status_id"], name: "index_employees_on_employee_status_id"
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
+  create_table "order_lines", force: :cascade do |t|
+    t.integer "item_number"
+    t.string "item_description"
+    t.integer "item_quantity"
+    t.decimal "item_price"
+    t.decimal "item_total_cost"
+    t.decimal "tax_rate"
+    t.decimal "tax_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string "order_status_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "vendor_id"
+    t.bigint "order_status_id"
+    t.bigint "customer_id"
+    t.bigint "country_id"
+    t.bigint "employee_id"
+    t.bigint "payment_type_id"
+    t.bigint "shipper_id"
+    t.bigint "order_line_id"
+    t.bigint "state_id"
+    t.integer "shipping_number"
+    t.string "customer_name"
+    t.integer "purchase_order_number"
+    t.datetime "order_date"
+    t.datetime "ship_date"
+    t.decimal "order_total"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_orders_on_country_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["employee_id"], name: "index_orders_on_employee_id"
+    t.index ["order_line_id"], name: "index_orders_on_order_line_id"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+    t.index ["payment_type_id"], name: "index_orders_on_payment_type_id"
+    t.index ["shipper_id"], name: "index_orders_on_shipper_id"
+    t.index ["state_id"], name: "index_orders_on_state_id"
+    t.index ["vendor_id"], name: "index_orders_on_vendor_id"
+  end
+
+  create_table "payment_types", force: :cascade do |t|
+    t.string "payment_type_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shippers", force: :cascade do |t|
+    t.string "shipper_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "state_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vendor_statuses", force: :cascade do |t|
+    t.string "vendor_status_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vendors", force: :cascade do |t|
+    t.bigint "state_id"
+    t.bigint "vendor_status_id"
+    t.string "vendor_name"
+    t.string "contact_name"
+    t.string "job_title"
+    t.string "work_phone"
+    t.string "mobile"
+    t.string "fax"
+    t.string "vendor_email"
+    t.string "vendor_cc_email"
+    t.string "website"
+    t.string "street_address_1"
+    t.string "street_address_2"
+    t.string "city"
+    t.string "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_vendors_on_state_id"
+    t.index ["vendor_status_id"], name: "index_vendors_on_vendor_status_id"
+  end
+
+  add_foreign_key "customers", "states"
+  add_foreign_key "employees", "employee_statuses"
+  add_foreign_key "orders", "countries"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "employees"
+  add_foreign_key "orders", "order_lines"
+  add_foreign_key "orders", "order_statuses"
+  add_foreign_key "orders", "payment_types"
+  add_foreign_key "orders", "shippers"
+  add_foreign_key "orders", "states"
+  add_foreign_key "orders", "vendors"
+  add_foreign_key "vendors", "states"
+  add_foreign_key "vendors", "vendor_statuses"
 end

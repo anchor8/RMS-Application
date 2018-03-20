@@ -1,0 +1,112 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vendor_id %>
+    <%= form.text_field :vendor_id, id: :order_vendor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_status_id %>
+    <%= form.text_field :order_status_id, id: :order_order_status_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id, id: :order_customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.text_field :country_id, id: :order_country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :order_employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_type_id %>
+    <%= form.text_field :payment_type_id, id: :order_payment_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipper_id %>
+    <%= form.text_field :shipper_id, id: :order_shipper_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_line_id %>
+    <%= form.text_field :order_line_id, id: :order_order_line_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.text_field :state_id, id: :order_state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_number %>
+    <%= form.number_field :shipping_number, id: :order_shipping_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_name %>
+    <%= form.text_field :customer_name, id: :order_customer_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchase_order_number %>
+    <%= form.number_field :purchase_order_number, id: :order_purchase_order_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_date %>
+    <%= form.datetime_select :order_date, id: :order_order_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ship_date %>
+    <%= form.datetime_select :ship_date, id: :order_ship_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_total %>
+    <%= form.text_field :order_total, id: :order_order_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address_1 %>
+    <%= form.text_field :street_address_1, id: :order_street_address_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address_2 %>
+    <%= form.text_field :street_address_2, id: :order_street_address_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :order_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code, id: :order_zip_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

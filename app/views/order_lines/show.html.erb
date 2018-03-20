@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item number:</strong>
+  <%= @order_line.item_number %>
+</p>
+
+<p>
+  <strong>Item description:</strong>
+  <%= @order_line.item_description %>
+</p>
+
+<p>
+  <strong>Item quantity:</strong>
+  <%= @order_line.item_quantity %>
+</p>
+
+<p>
+  <strong>Item price:</strong>
+  <%= @order_line.item_price %>
+</p>
+
+<p>
+  <strong>Item total cost:</strong>
+  <%= @order_line.item_total_cost %>
+</p>
+
+<p>
+  <strong>Tax rate:</strong>
+  <%= @order_line.tax_rate %>
+</p>
+
+<p>
+  <strong>Tax amount:</strong>
+  <%= @order_line.tax_amount %>
+</p>
+
+<%= link_to 'Edit', edit_order_line_path(@order_line) %> |
+<%= link_to 'Back', order_lines_path %>

@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @order.vendor %>
+</p>
+
+<p>
+  <strong>Order status:</strong>
+  <%= @order.order_status %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @order.country %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @order.employee %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @order.payment_type %>
+</p>
+
+<p>
+  <strong>Shipper:</strong>
+  <%= @order.shipper %>
+</p>
+
+<p>
+  <strong>Order line:</strong>
+  <%= @order.order_line %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @order.state %>
+</p>
+
+<p>
+  <strong>Shipping number:</strong>
+  <%= @order.shipping_number %>
+</p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <strong>Purchase order number:</strong>
+  <%= @order.purchase_order_number %>
+</p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+</p>
+
+<p>
+  <strong>Ship date:</strong>
+  <%= @order.ship_date %>
+</p>
+
+<p>
+  <strong>Order total:</strong>
+  <%= @order.order_total %>
+</p>
+
+<p>
+  <strong>Street address 1:</strong>
+  <%= @order.street_address_1 %>
+</p>
+
+<p>
+  <strong>Street address 2:</strong>
+  <%= @order.street_address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @order.zip_code %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
