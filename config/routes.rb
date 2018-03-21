@@ -5,17 +5,17 @@ Rails.application.routes.draw do
 
   # Resources
   resources :employees
-  resources :orders
-  resources :customers
-  resources :vendors
+  resources :orders do collection { post :import } end
+  resources :customers do collection { post :import } end
+  resources :vendors do collection { post :import } end
   resources :employee_statuses
   resources :order_lines
   resources :shippers
   resources :payment_types
-  resources :countries
+  resources :countries do collection { post :import } end
   resources :order_statuses
   resources :vendor_statuses
-  resources :states
+  resources :states do collection { post :import } end
 
   # Root
   root 'pages#index'

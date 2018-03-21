@@ -62,4 +62,5 @@ class PagesController < ApplicationController
     # Breadcrumb for Data Tables
     add_breadcrumb 'Data Tables', datatables_path
   end
+
 end

@@ -61,6 +61,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def import
+    Order.import(params[:file])
+    redirect_to root_url, notice: 'Order data imported!'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

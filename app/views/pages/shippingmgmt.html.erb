@@ -5,6 +5,24 @@
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Import Country Data -->
+    <div>
+      <h5> Import Country Data: </h5>
+      <%= form_tag import_countries_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import Country" %>
+      <% end %>
+    </div>
+
+    <!-- Import State Data -->
+    <div>
+      <h5> Import State Data: </h5>
+      <%= form_tag import_states_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import State" %>
+      <% end %>
+    </div>
+
     <!-- Shipping Table-->
     <%= render partial: 'partials/tables/shipping-table' %>
   </div>
