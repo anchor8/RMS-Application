@@ -33,18 +33,21 @@ class PagesController < ApplicationController
     # Breadcrumb for Customer Management
     add_breadcrumb 'Customer Management', customermgmt_path
     @customers = Customer.all
+    @customer = Customer.new
   end
 
   def vendormgmt
     # Breadcrumb for Vendor Management
     add_breadcrumb 'Vendor Management', vendormgmt_path
     @vendors = Vendor.all
+    @vendor = Vendor.new
   end
 
   def ordermgmt
     # Breadcrumb for Order Management
     add_breadcrumb 'Order Management', ordermgmt_path
     @orders = Order.all
+    @order = Order.new
   end
 
   def shippingmgmt
