@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     @customers = Customer.all
     @customer = Customer.new
   end
-
+  
   def vendormgmt
     # Breadcrumb for Vendor Management
     add_breadcrumb 'Vendor Management', vendormgmt_path

@@ -35,21 +35,12 @@
 
         <!-- New Customer Table-->
         <%= form_for(@customer, local: true) do |form| %>
-          <% if @customer.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
 
-              <ul>
-              <% @customer.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
+            <% flash[:error] = @customer.errors.full_messages.to_sentence %>
 
           <div class="field">
             <%= form.label :state_id %>
-            <%= form.text_field :state_id, id: :customer_state_id %>
+            <%= form.collection_select :state_id, State.all, :id, :state_name %>
           </div>
 
           <div class="field">
