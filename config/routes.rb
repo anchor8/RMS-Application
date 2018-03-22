@@ -47,8 +47,8 @@ Rails.application.routes.draw do
   get 'pages/reports', to: 'pages#reports',
                        as: 'reports'
 
-  get 'pages/datatables', to: 'pages#datatables',
-                          as: 'datatables'
+  get 'pages/importmgmt', to: 'pages#importmgmt',
+                          as: 'importmgmt'
 
   # For details on the DSL available within this file,
   # see http://guides.rubyonrails.org/routing.html

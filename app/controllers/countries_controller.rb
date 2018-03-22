@@ -62,8 +62,12 @@ class CountriesController < ApplicationController
   end
 
   def import
-    Country.import(params[:file])
-    redirect_to root_url, notice: 'Country data imported!'
+    if params[:file].nil?
+      redirect_to importmgmt_url, notice: 'Country data file is missing, please choose a csv file.'
+    else
+      Country.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Country data imported!'
+    end
   end
 
   private

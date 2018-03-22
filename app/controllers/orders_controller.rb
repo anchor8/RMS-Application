@@ -62,8 +62,12 @@ class OrdersController < ApplicationController
   end
 
   def import
-    Order.import(params[:file])
-    redirect_to root_url, notice: 'Order data imported!'
+    if params[:file].nil?
+      redirect_to importmgmt_url, notice: 'Order data file is missing, please choose a csv file.'
+    else
+      Order.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Order data imported!'
+    end
   end
 
   private

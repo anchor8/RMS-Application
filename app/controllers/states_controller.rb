@@ -62,8 +62,12 @@ class StatesController < ApplicationController
   end
 
   def import
-    State.import(params[:file])
-    redirect_to root_url, notice: 'State data imported!'
+    if params[:file].nil?
+      redirect_to importmgmt_url, notice: 'State data file is missing, please choose a csv file.'
+    else
+      State.import(params[:file])
+      redirect_to importmgmt_url, notice: 'State data imported!'
+    end
   end
 
   private

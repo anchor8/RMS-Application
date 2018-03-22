@@ -5,15 +5,6 @@
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
-    <!-- Import Order Data -->
-    <div>
-      <h5> Import Order Data: </h5>
-      <%= form_tag import_orders_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import Order" %>
-      <% end %>
-    </div>
-
     <!-- Order Table-->
     <%= render partial: 'partials/tables/order-table' %>
 

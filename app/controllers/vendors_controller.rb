@@ -62,8 +62,12 @@ class VendorsController < ApplicationController
   end
 
   def import
-    Vendor.import(params[:file])
-    redirect_to root_url, notice: 'Vendor data imported!'
+    if params[:file].nil?
+      redirect_to importmgmt_url, notice: 'Vendor data file is missing, please choose a csv file.'
+    else
+      Vendor.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Vendor data imported!'
+    end
   end
 
   private

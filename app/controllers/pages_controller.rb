@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     @customers = Customer.all
     @customer = Customer.new
   end
-  
+
   def vendormgmt
     # Breadcrumb for Vendor Management
     add_breadcrumb 'Vendor Management', vendormgmt_path
@@ -61,9 +61,8 @@ class PagesController < ApplicationController
     add_breadcrumb 'Reports', reports_path
   end
 
-  def datatables
-    # Breadcrumb for Data Tables
-    add_breadcrumb 'Data Tables', datatables_path
+  def importmgmt
+    add_breadcrumb 'Import Management', importmgmt_path
   end
 
 end

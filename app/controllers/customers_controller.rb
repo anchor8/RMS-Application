@@ -62,8 +62,12 @@ class CustomersController < ApplicationController
   end
 
   def import
-    Customer.import(params[:file])
-    redirect_to root_url, notice: 'Customer data imported!'
+    if params[:file].nil?
+      redirect_to importmgmt_url, notice: 'Customer data file is missing, please choose a csv file.'
+    else
+      Customer.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Customer data imported!'
+    end
   end
 
   private

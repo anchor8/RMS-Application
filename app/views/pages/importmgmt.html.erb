@@ -1,0 +1,64 @@
+<div class="content-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <% if notice %>
+      <div class='h5 strong text-center mark'>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <div>
+      <p><b>Click browse and choose a CSV file to import.</b></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Import Customer Data -->
+        <%= form_tag import_customers_path, multipart: true do %>
+          <%= label_tag 'Customers:', nil, class: 'h5' %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+
+        <!-- Import Order Data -->
+        <%= form_tag import_orders_path, multipart: true do %>
+          <%= label_tag 'Orders:', nil, class: 'h5' %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+
+        <!-- Import Country Data -->
+        <%= form_tag import_countries_path, multipart: true do %>
+          <%= label_tag 'Countries:', nil, class: 'h5' %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+      </div>
+
+      <div class="col-md-6">
+        <!-- Import State Data -->
+        <%= form_tag import_states_path, multipart: true do %>
+          <%= label_tag 'States:', nil, class: 'h5' %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+
+        <!-- Import Vendor Data -->
+        <%= form_tag import_vendors_path, multipart: true do %>
+          <%= label_tag 'Vendors:', nil, class: 'h5' %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
