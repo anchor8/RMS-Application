@@ -9,8 +9,6 @@ class Employee < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :timeoutable
 
-  require 'csv'
-
   # instead of deleting, indicate the user requested a delete & timestamp it
   def toggle_employee
     if !deleted_at
@@ -35,12 +33,6 @@ class Employee < ApplicationRecord
       1.year
     else
       1.second
-    end
-  end
-
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Employee.create! row.to_hash
     end
   end
 
