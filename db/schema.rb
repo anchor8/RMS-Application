@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320034856) do
+ActiveRecord::Schema.define(version: 20180322234859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180320034856) do
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["state_id"], name: "index_customers_on_state_id"
   end
 
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180320034856) do
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["country_id"], name: "index_orders_on_country_id"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["employee_id"], name: "index_orders_on_employee_id"
@@ -166,6 +168,7 @@ ActiveRecord::Schema.define(version: 20180320034856) do
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["state_id"], name: "index_vendors_on_state_id"
     t.index ["vendor_status_id"], name: "index_vendors_on_vendor_status_id"
   end
