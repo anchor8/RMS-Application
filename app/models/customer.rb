@@ -10,6 +10,10 @@ class Customer < ApplicationRecord
     end
   end
 
+  def update_customer
+    update_attribute(:customer_first_name, 'test')
+  end
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Customer.create! row.to_hash

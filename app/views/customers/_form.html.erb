@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.text_field :state_id, id: :customer_state_id %>
+    <%= form.collection_select :state_id, State.all, :id, :state_name %>
   </div>
 
   <div class="field">

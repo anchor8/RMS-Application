@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.text_field :state_id, id: :vendor_state_id %>
+    <%= form.collection_select :state_id, State.all, :id, :state_name %>
   </div>
 
   <div class="field">
     <%= form.label :vendor_status_id %>
-    <%= form.text_field :vendor_status_id, id: :vendor_vendor_status_id %>
+    <%= form.collection_select :vendor_status_id, VendorStatus.all, :id, :vendor_status_type %>
   </div>
 
   <div class="field">

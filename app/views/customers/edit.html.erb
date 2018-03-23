@@ -1,6 +1,12 @@
-<h1>Editing Customer</h1>
+<div class="content-wrapper">
 
-<%= render 'form', customer: @customer %>
+  <div class="container-fluid">
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+    <!-- Bread Crumbs -->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <!-- Edit-->
+    <%= render 'form', customer: @customer %>
+  </div>
+
+</div>

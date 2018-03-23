@@ -34,6 +34,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>Vendor</th>
               <th>Company</th>
               <th>Customer</th>
@@ -55,6 +56,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>Vendor</th>
               <th>Company</th>
               <th>Customer</th>
@@ -89,6 +91,11 @@
                           :data => {
                             :confirm => "Are you sure that you want to disable the order #" +
                                          order.purchase_order_number.to_s + "?" } %></td>
+                    <td>
+                      <%= button_to 'Edit',
+                          edit_order_path(order.id),
+                          :method => :get,
+                          :class => 'btn btn-outline-success' %></td>
                     <td><%= order.vendor.vendor_name %></td>
                     <td><%= order.customer.company_name %></td>
                     <td><%= order.customer.customer_last_name %></td>

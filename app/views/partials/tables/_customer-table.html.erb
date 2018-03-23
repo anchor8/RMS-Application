@@ -34,6 +34,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>First</th>
               <th>Last</th>
               <th>State</th>
@@ -61,6 +62,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>First</th>
               <th>Last</th>
               <th>State</th>
@@ -100,6 +102,11 @@
                               :confirm => "Are you sure that you want to disable " +
                                            customer.customer_first_name +
                                            customer.customer_last_name + "?" } %></td>
+                      <td>
+                        <%= button_to 'Edit',
+                            edit_customer_path(customer.id),
+                            :method => :get,
+                            :class => 'btn btn-outline-success' %></td>
                       <td><%= customer.customer_first_name %></td>
                       <td><%= customer.customer_last_name %></td>
                       <td><%= customer.state.state_name %></td>
@@ -137,5 +144,5 @@
 
 </div>
 
-<!-- Add Employee Modal-->
+<!-- Add Customer Modal-->
 <%= render partial: 'partials/modals/add-customer-modal' %>

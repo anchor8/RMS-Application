@@ -34,6 +34,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>Vendor</th>
               <th>Contact</th>
               <th>State</th>
@@ -60,6 +61,7 @@
             <tr>
 
               <th>Disable</th>
+              <th>Edit</th>
               <th>Vendor</th>
               <th>Contact</th>
               <th>State</th>
@@ -99,6 +101,11 @@
                           :data => {
                             :confirm => "Are you sure that you want to disable the vendor " +
                                          vendor.vendor_name + "?" } %></td>
+                    <td>
+                      <%= button_to 'Edit',
+                          edit_vendor_path(vendor.id),
+                          :method => :get,
+                          :class => 'btn btn-outline-success' %></td>
                     <td><%= vendor.vendor_name %></td>
                     <td><%= vendor.contact_name %></td>
                     <td><%= vendor.state.state_name %></td>
@@ -118,7 +125,7 @@
                   </tr>
 
                 <% end %>
-                
+
               <% end %>
 
           </tbody>

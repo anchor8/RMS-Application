@@ -40,6 +40,11 @@ Rails.application.routes.draw do
                             as: 'toggle_order',
                             via: 'put'
 
+  # Update Order
+  match '/pages/customer/update/:id', to: 'pages#update_customer',
+                                      as: 'update_customer',
+                                      via: 'patch'
+
   # Pages
   get 'pages/dashboard', to: 'pages#dashboard',
                          as: 'dashboard'

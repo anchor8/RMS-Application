@@ -19,6 +19,8 @@ class VendorsController < ApplicationController
 
   # GET /vendors/1/edit
   def edit
+    add_breadcrumb 'Vendor Management', vendormgmt_path
+    add_breadcrumb 'Edit Vendor'
   end
 
   # POST /vendors
@@ -28,7 +30,7 @@ class VendorsController < ApplicationController
 
     respond_to do |format|
       if @vendor.save
-        format.html { redirect_to @vendor, notice: 'Vendor was successfully created.' }
+        format.html { redirect_to vendormgmt_url, notice: 'Vendor was successfully created.' }
         format.json { render :show, status: :created, location: @vendor }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class VendorsController < ApplicationController
   def update
     respond_to do |format|
       if @vendor.update(vendor_params)
-        format.html { redirect_to @vendor, notice: 'Vendor was successfully updated.' }
+        format.html { redirect_to vendormgmt_url, notice: 'Vendor was successfully updated.' }
         format.json { render :show, status: :ok, location: @vendor }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class VendorsController < ApplicationController
   def destroy
     @vendor.destroy
     respond_to do |format|
-      format.html { redirect_to vendors_url, notice: 'Vendor was successfully destroyed.' }
+      format.html { redirect_to vendormgmt_url, notice: 'Vendor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

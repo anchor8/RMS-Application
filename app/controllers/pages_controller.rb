@@ -25,7 +25,6 @@ class PagesController < ApplicationController
     # Get employee id and destroy that employee
     @employee = Employee.find(params[:id])
     @employee.toggle_employee if current_employee != @employee
-    flash[:success] = 'Employee destroyed.'
     redirect_to usermgmt_path
   end
 
@@ -40,7 +39,13 @@ class PagesController < ApplicationController
     # Get customer id and destroy that employee
     @customer = Customer.find(params[:id])
     @customer.toggle_customer
-    flash[:success] = 'Customer destroyed.'
+    redirect_to customermgmt_path
+  end
+
+  def update_customer
+    # Get customer id and destroy that employee
+    @customer = Customer.find(params[:id])
+    @customer.update_customer
     redirect_to customermgmt_path
   end
 
@@ -55,7 +60,6 @@ class PagesController < ApplicationController
     # Get customer id and destroy that employee
     @vendor = Vendor.find(params[:id])
     @vendor.toggle_vendor
-    flash[:success] = 'Vendor destroyed.'
     redirect_to vendormgmt_path
   end
 
@@ -70,7 +74,6 @@ class PagesController < ApplicationController
     # Get customer id and destroy that employee
     @order = Order.find(params[:id])
     @order.toggle_order
-    flash[:success] = 'Order destroyed.'
     redirect_to ordermgmt_path
   end
 
