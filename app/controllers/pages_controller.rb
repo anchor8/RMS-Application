@@ -86,6 +86,10 @@ class PagesController < ApplicationController
   def reports
     # Breadcrumb for Reports
     add_breadcrumb 'Reports', reports_path
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
   end
 
   def importmgmt
