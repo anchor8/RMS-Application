@@ -33,6 +33,26 @@
 
       </li>
 
+      <!-- Reports Nav Button -->
+      <li class="nav-item"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Reports">
+
+        <%= link_to(reports_url, class: "nav-link") do %>
+
+          <i class="fa fa-bar-chart"></i>
+
+          <span class="nav-link-text">
+
+                Reports
+
+          </span>
+
+        <% end %>
+
+      </li>
+
       <!-- Customer Management Nav Button -->
       <li class="nav-item"
           data-toggle="tooltip"
@@ -106,26 +126,6 @@
           <span class="nav-link-text">
 
                 Order Management
-
-          </span>
-
-        <% end %>
-
-      </li>
-
-      <!-- Reports Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Reports">
-
-        <%= link_to(reports_url, class: "nav-link") do %>
-
-          <i class="fa fa-bar-chart"></i>
-
-          <span class="nav-link-text">
-
-                Reports
 
           </span>
 
