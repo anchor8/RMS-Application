@@ -21,9 +21,24 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   # Destroy Employee
-  match '/pages/:id', to: 'pages#toggle_employee',
-                      as: 'toggle_employee',
-                      via: 'put'
+  match '/pages/employee/:id', to: 'pages#toggle_employee',
+                               as: 'toggle_employee',
+                               via: 'put'
+
+  # Destroy Customer
+  match '/pages/customer/:id', to: 'pages#toggle_customer',
+                               as: 'toggle_customer',
+                               via: 'put'
+
+  # Destroy Vendor
+  match '/pages/vendor/:id', to: 'pages#toggle_vendor',
+                             as: 'toggle_vendor',
+                             via: 'put'
+
+  # Destroy Order
+  match '/pages/order/:id', to: 'pages#toggle_order',
+                            as: 'toggle_order',
+                            via: 'put'
 
   # Pages
   get 'pages/dashboard', to: 'pages#dashboard',
