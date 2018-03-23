@@ -33,6 +33,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>Vendor</th>
               <th>Company</th>
               <th>Customer</th>
@@ -53,6 +54,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>Vendor</th>
               <th>Company</th>
               <th>Customer</th>
@@ -74,21 +76,33 @@
             <!-- Load order data -->
               <% @orders.each do |order| %>
 
-                <tr>
+                <% if !order.deleted_at %>
 
-                  <!-- Columns to pull from order data -->
-                  <td><%= order.vendor.vendor_name %></td>
-                  <td><%= order.customer.company_name %></td>
-                  <td><%= order.customer.customer_last_name %></td>
-                  <td><%= order.employee.lname %></td>
-                  <td><%= order.order_status.order_status_description %></td>
-                  <td><%= order.order_date %></td>
-                  <td><%= order.order_line.item_number %></td>
-                  <td><%= order.payment_type.payment_type_description %></td>
-                  <td><%= order.purchase_order_number %></td>
-                  <td><%= order.order_total %></td>
+                  <tr>
 
-                </tr>
+                    <!-- Columns to pull from order data -->
+                    <td>
+                      <%= button_to 'Disable',
+                          toggle_order_path(order.id),
+                          :method => :put,
+                          :class => 'btn btn-outline-danger',
+                          :data => {
+                            :confirm => "Are you sure that you want to disable the order #" +
+                                         order.purchase_order_number.to_s + "?" } %></td>
+                    <td><%= order.vendor.vendor_name %></td>
+                    <td><%= order.customer.company_name %></td>
+                    <td><%= order.customer.customer_last_name %></td>
+                    <td><%= order.employee.lname %></td>
+                    <td><%= order.order_status.order_status_description %></td>
+                    <td><%= order.order_date %></td>
+                    <td><%= order.order_line.item_number %></td>
+                    <td><%= order.payment_type.payment_type_description %></td>
+                    <td><%= order.purchase_order_number %></td>
+                    <td><%= order.order_total %></td>
+
+                  </tr>
+
+                <% end %>
 
               <% end %>
 

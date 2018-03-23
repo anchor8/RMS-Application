@@ -33,6 +33,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>First</th>
               <th>Last</th>
               <th>State</th>
@@ -59,6 +60,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>First</th>
               <th>Last</th>
               <th>State</th>
@@ -85,29 +87,39 @@
 
             <!-- Load customer data -->
               <% @customers.each do |customer| %>
+                <% if !customer.deleted_at %>
+                  <tr>
 
-                <tr>
+                    <!-- Columns to pull from customer data -->
+                      <td>
+                        <%= button_to 'Disable',
+                            toggle_customer_path(customer.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-danger',
+                            :data => {
+                              :confirm => "Are you sure that you want to disable " +
+                                           customer.customer_first_name +
+                                           customer.customer_last_name + "?" } %></td>
+                      <td><%= customer.customer_first_name %></td>
+                      <td><%= customer.customer_last_name %></td>
+                      <td><%= customer.state.state_name %></td>
+                      <td><%= customer.company_name %></td>
+                      <td><%= customer.job_title %></td>
+                      <td><%= customer.work_phone %></td>
+                      <td><%= customer.mobile %></td>
+                      <td><%= customer.fax %></td>
+                      <td><%= customer.customer_email %></td>
+                      <td><%= customer.customer_cc_email %></td>
+                      <td><%= customer.website %></td>
+                      <td><%= customer.social_media_address %></td>
+                      <td><%= customer.street_address_1 %></td>
+                      <td><%= customer.street_address_2 %></td>
+                      <td><%= customer.city %></td>
+                      <td><%= customer.zip_code %></td>
 
-                  <!-- Columns to pull from customer data -->
-                  <td><%= customer.customer_first_name %></td>
-                  <td><%= customer.customer_last_name %></td>
-                  <td><%= customer.state.state_name %></td>
-                  <td><%= customer.company_name %></td>
-                  <td><%= customer.job_title %></td>
-                  <td><%= customer.work_phone %></td>
-                  <td><%= customer.mobile %></td>
-                  <td><%= customer.fax %></td>
-                  <td><%= customer.customer_email %></td>
-                  <td><%= customer.customer_cc_email %></td>
-                  <td><%= customer.website %></td>
-                  <td><%= customer.social_media_address %></td>
-                  <td><%= customer.street_address_1 %></td>
-                  <td><%= customer.street_address_2 %></td>
-                  <td><%= customer.city %></td>
-                  <td><%= customer.zip_code %></td>
 
-                </tr>
-
+                  </tr>
+                <% end %>
               <% end %>
 
           </tbody>

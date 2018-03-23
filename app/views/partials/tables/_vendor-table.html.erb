@@ -33,6 +33,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>Vendor</th>
               <th>Contact</th>
               <th>State</th>
@@ -58,6 +59,7 @@
 
             <tr>
 
+              <th>Disable</th>
               <th>Vendor</th>
               <th>Contact</th>
               <th>State</th>
@@ -84,27 +86,39 @@
             <!-- Load vendor data -->
               <% @vendors.each do |vendor| %>
 
-                <tr>
+                <% if !vendor.deleted_at %>
 
-                  <!-- Columns to pull from vendor data -->
-                  <td><%= vendor.vendor_name %></td>
-                  <td><%= vendor.contact_name %></td>
-                  <td><%= vendor.state.state_name %></td>
-                  <td><%= vendor.vendor_status.vendor_status_type %></td>
-                  <td><%= vendor.job_title %></td>
-                  <td><%= vendor.work_phone %></td>
-                  <td><%= vendor.mobile %></td>
-                  <td><%= vendor.fax %></td>
-                  <td><%= vendor.vendor_email %></td>
-                  <td><%= vendor.vendor_cc_email %></td>
-                  <td><%= vendor.website %></td>
-                  <td><%= vendor.street_address_1 %></td>
-                  <td><%= vendor.street_address_2 %></td>
-                  <td><%= vendor.city %></td>
-                  <td><%= vendor.zip_code %></td>
+                  <tr>
 
-                </tr>
+                    <!-- Columns to pull from vendor data -->
+                    <td>
+                      <%= button_to 'Disable',
+                          toggle_vendor_path(vendor.id),
+                          :method => :put,
+                          :class => 'btn btn-outline-danger',
+                          :data => {
+                            :confirm => "Are you sure that you want to disable the vendor " +
+                                         vendor.vendor_name + "?" } %></td>
+                    <td><%= vendor.vendor_name %></td>
+                    <td><%= vendor.contact_name %></td>
+                    <td><%= vendor.state.state_name %></td>
+                    <td><%= vendor.vendor_status.vendor_status_type %></td>
+                    <td><%= vendor.job_title %></td>
+                    <td><%= vendor.work_phone %></td>
+                    <td><%= vendor.mobile %></td>
+                    <td><%= vendor.fax %></td>
+                    <td><%= vendor.vendor_email %></td>
+                    <td><%= vendor.vendor_cc_email %></td>
+                    <td><%= vendor.website %></td>
+                    <td><%= vendor.street_address_1 %></td>
+                    <td><%= vendor.street_address_2 %></td>
+                    <td><%= vendor.city %></td>
+                    <td><%= vendor.zip_code %></td>
 
+                  </tr>
+
+                <% end %>
+                
               <% end %>
 
           </tbody>
