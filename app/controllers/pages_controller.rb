@@ -36,6 +36,14 @@ class PagesController < ApplicationController
     @customer = Customer.new
   end
 
+  def toggle_customer
+    # Get customer id and destroy that employee
+    @customer = Customer.find(params[:id])
+    @customer.toggle_customer
+    flash[:success] = 'Customer destroyed.'
+    redirect_to customermgmt_path
+  end
+
   def vendormgmt
     # Breadcrumb for Vendor Management
     add_breadcrumb 'Vendor Management', vendormgmt_path
@@ -43,11 +51,27 @@ class PagesController < ApplicationController
     @vendor = Vendor.new
   end
 
+  def toggle_vendor
+    # Get customer id and destroy that employee
+    @vendor = Vendor.find(params[:id])
+    @vendor.toggle_vendor
+    flash[:success] = 'Vendor destroyed.'
+    redirect_to vendormgmt_path
+  end
+
   def ordermgmt
     # Breadcrumb for Order Management
     add_breadcrumb 'Order Management', ordermgmt_path
     @orders = Order.all
     @order = Order.new
+  end
+
+  def toggle_order
+    # Get customer id and destroy that employee
+    @order = Order.find(params[:id])
+    @order.toggle_order
+    flash[:success] = 'Order destroyed.'
+    redirect_to ordermgmt_path
   end
 
   def shippingmgmt
