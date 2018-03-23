@@ -13,8 +13,10 @@ class Employee < ApplicationRecord
   def toggle_employee
     if !deleted_at
       update_attribute(:deleted_at, Time.current)
+      update_attribute(:employee_status, 1)
     else
       update_attribute(:deleted_at, nil)
+      update_attribute(:employee_status, 2)
     end
   end
 

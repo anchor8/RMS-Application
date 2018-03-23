@@ -12,9 +12,9 @@
 
 EmployeeStatus.create([
                         { id: 1,
-                          employee_status_type: 'Active' },
+                          employee_status_type: 'Inactive' },
                         { id: 2,
-                          employee_status_type: 'Inactive' }
+                          employee_status_type: 'Active' }
                       ])
 
 #### employee data ####
