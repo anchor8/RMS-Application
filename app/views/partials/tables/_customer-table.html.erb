@@ -37,7 +37,6 @@
               <th>Edit</th>
               <th>First</th>
               <th>Last</th>
-              <th>State</th>
               <th>Company</th>
               <th>Job</th>
               <th>Work</th>
@@ -49,6 +48,7 @@
               <th>Social Media</th>
               <th>Addr. 1</th>
               <th>Addr. 2</th>
+              <th>State</th>
               <th>City</th>
               <th>Zip</th>
 
@@ -65,7 +65,6 @@
               <th>Edit</th>
               <th>First</th>
               <th>Last</th>
-              <th>State</th>
               <th>Company</th>
               <th>Job</th>
               <th>Work</th>
@@ -77,6 +76,7 @@
               <th>Social Media</th>
               <th>Addr. 1</th>
               <th>Addr. 2</th>
+              <th>State</th>
               <th>City</th>
               <th>Zip</th>
 
@@ -109,7 +109,6 @@
                             :class => 'btn btn-outline-success' %></td>
                       <td><%= customer.customer_first_name %></td>
                       <td><%= customer.customer_last_name %></td>
-                      <td><%= customer.state.state_name %></td>
                       <td><%= customer.company_name %></td>
                       <td><%= customer.job_title %></td>
                       <td><%= customer.work_phone %></td>
@@ -121,6 +120,7 @@
                       <td><%= customer.social_media_address %></td>
                       <td><%= customer.street_address_1 %></td>
                       <td><%= customer.street_address_2 %></td>
+                      <td><%= customer.state.state_name %></td>
                       <td><%= customer.city %></td>
                       <td><%= customer.zip_code %></td>
 
