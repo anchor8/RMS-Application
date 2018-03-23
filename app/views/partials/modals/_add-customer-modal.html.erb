@@ -36,7 +36,7 @@
         <!-- New Customer Table-->
         <%= form_for(@customer, local: true) do |form| %>
 
-            <% flash[:error] = @customer.errors.full_messages.to_sentence %>
+          <% flash[:error] = @customer.errors.full_messages.to_sentence %>
 
           <div class="field">
             <%= form.label :state_id %>
