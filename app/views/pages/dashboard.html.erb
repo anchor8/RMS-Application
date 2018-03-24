@@ -4,6 +4,66 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Customers by City -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-pie-chart"></i>
+        Customer's by City</div>
+      <div class="btn-right">
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="Link to reports page">
+          More Info
+        </button>
+      </div>
+      <div class="card-body">
+        <%= pie_chart Customer.group(:city).count,
+                      donut: true, legend: "bottom", download: "customer_pie_chart"%>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <!-- Vendors by State -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        Vendor's by State</div>
+      <div class="btn-right">
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="Link to reports page">
+          More Info
+        </button>
+      </div>
+      <div class="card-body">
+        <%= bar_chart Vendor.joins(:state).group(:state_name).count,
+                      colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart"%>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <!-- Sold Products -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        Sold Products</div>
+      <div class="btn-right">
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="Link to reports page">
+          More Info
+        </button>
+      </div>
+      <div class="card-body">
+        <%= column_chart Order.joins(:order_line).group(:item_description).count,
+                         xtitle: "Product", ytitle: "Quantity", download: "product_bar_chart"%>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
 
   </div>
 </div>
