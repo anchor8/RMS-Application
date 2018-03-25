@@ -43,44 +43,260 @@
   <div class="tab-content">
     <div class="tab-pane active container-fluid" id="report1">
       <h3>Report1</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
+      <div class="card mb-3">
+
+        <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Shipping Table
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="table-responsive">
+
+              <table class="table table-bordered" id="report1table" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Shipped</th>
+                    <th>Shipper</th>
+                    <th>Shipping No.</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>Addr. 1</th>
+                    <th>Addr. 2</th>
+                    <th>City</th>
+                    <th>Zip</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Shipped</th>
+                    <th>Shipper</th>
+                    <th>Shipping No.</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>Addr. 1</th>
+                    <th>Addr. 2</th>
+                    <th>City</th>
+                    <th>Zip</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                    <% @orders.each do |order| %>
+
+                      <tr>
+
+                        <!-- Columns to pull from order data -->
+                        <td><%= order.vendor.vendor_name %></td>
+                        <td><%= order.customer.company_name %></td>
+                        <td><%= order.order_status.order_status_description %></td>
+                        <td><%= order.ship_date %></td>
+                        <td><%= order.shipper.shipper_description %></td>
+                        <td><%= order.shipping_number %></td>
+                        <td><%= order.country.country_name %></td>
+                        <td><%= order.state.state_name %></td>
+                        <td><%= order.street_address_1 %></td>
+                        <td><%= order.street_address_2 %></td>
+                        <td><%= order.city %></td>
+                        <td><%= order.zip_code %></td>
+
+                      </tr>
+
+                    <% end %>
+
+                </tbody>
+
+              </table>
+
+          </div>
+
+        </div>
+
+        <!-- Footnote: Lastest date a order was created -->
+        <div class="card-footer small text-muted">
+
+
+
+        </div>
+
+
+
+      </div>
+
     </div>
     <div class="tab-pane container-fluid" id="report2">
       <h3>Report2</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
+      <div class="card mb-3">
+
+        <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Shipping Table
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="table-responsive">
+
+              <table class="table table-bordered" id="report2table" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Shipped</th>
+                    <th>Shipper</th>
+                    <th>Shipping No.</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>Addr. 1</th>
+                    <th>Addr. 2</th>
+                    <th>City</th>
+                    <th>Zip</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Shipped</th>
+                    <th>Shipper</th>
+                    <th>Shipping No.</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>Addr. 1</th>
+                    <th>Addr. 2</th>
+                    <th>City</th>
+                    <th>Zip</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                    <% @orders.each do |order| %>
+
+                      <tr>
+
+                        <!-- Columns to pull from order data -->
+                        <td><%= order.vendor.vendor_name %></td>
+                        <td><%= order.customer.company_name %></td>
+                        <td><%= order.order_status.order_status_description %></td>
+                        <td><%= order.ship_date %></td>
+                        <td><%= order.shipper.shipper_description %></td>
+                        <td><%= order.shipping_number %></td>
+                        <td><%= order.country.country_name %></td>
+                        <td><%= order.state.state_name %></td>
+                        <td><%= order.street_address_1 %></td>
+                        <td><%= order.street_address_2 %></td>
+                        <td><%= order.city %></td>
+                        <td><%= order.zip_code %></td>
+
+                      </tr>
+
+                    <% end %>
+
+                </tbody>
+
+              </table>
+
+          </div>
+
+        </div>
+
+        <!-- Footnote: Lastest date a order was created -->
+        <div class="card-footer small text-muted">
+
+
+
+        </div>
+
+
+
+      </div>
+
     </div>
     <div class="tab-pane container-fluid" id="report3">
       <h3>Report3</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report4">
       <h3>Report4</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report5">
       <h3>Report5</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report6">
       <h3>Report6</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report7">
       <h3>Report7</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report8">
       <h3>Report8</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report9">
       <h3>Report9</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
     <div class="tab-pane container-fluid" id="report10">
       <h3>Report10</h3>
-      <%= render partial: 'partials/tables/shipping-table' %>
     </div>
   </div>
 
 </div>
+
+<script>
+  $(document).ready(function() {
+      var report1table = $('#report1table').DataTable( {
+          "paging": true
+      } );
+
+      var report2table = $('#report2table').DataTable( {
+          "paging": true
+      } );
+  } );
+</script>

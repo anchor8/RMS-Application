@@ -1,0 +1,106 @@
+<div class="card mb-3">
+
+  <div class="card-header">
+
+      <!-- Table Icon -->
+      <i class="fa fa-table"></i>
+
+      <!-- Table Name -->
+      Shipping Table
+
+  </div>
+
+  <div class="card-body">
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered" id="report1table" width="100%" cellspacing="0">
+
+          <!-- Top Column Names -->
+          <thead>
+
+            <tr>
+
+              <th>Vendor</th>
+              <th>Company</th>
+              <th>Status</th>
+              <th>Shipped</th>
+              <th>Shipper</th>
+              <th>Shipping No.</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </thead>
+
+          <!-- Bottom Column Names -->
+          <tfoot>
+
+            <tr>
+
+              <th>Vendor</th>
+              <th>Company</th>
+              <th>Status</th>
+              <th>Shipped</th>
+              <th>Shipper</th>
+              <th>Shipping No.</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>Addr. 1</th>
+              <th>Addr. 2</th>
+              <th>City</th>
+              <th>Zip</th>
+
+            </tr>
+
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load order data -->
+              <% @orders.each do |order| %>
+
+                <tr>
+
+                  <!-- Columns to pull from order data -->
+                  <td><%= order.vendor.vendor_name %></td>
+                  <td><%= order.customer.company_name %></td>
+                  <td><%= order.order_status.order_status_description %></td>
+                  <td><%= order.ship_date %></td>
+                  <td><%= order.shipper.shipper_description %></td>
+                  <td><%= order.shipping_number %></td>
+                  <td><%= order.country.country_name %></td>
+                  <td><%= order.state.state_name %></td>
+                  <td><%= order.street_address_1 %></td>
+                  <td><%= order.street_address_2 %></td>
+                  <td><%= order.city %></td>
+                  <td><%= order.zip_code %></td>
+
+                </tr>
+
+              <% end %>
+
+          </tbody>
+
+        </table>
+
+    </div>
+
+  </div>
+
+  <!-- Footnote: Lastest date a order was created -->
+  <div class="card-footer small text-muted">
+
+
+
+  </div>
+
+
+
+</div>
