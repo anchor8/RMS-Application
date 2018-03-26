@@ -183,6 +183,7 @@
 <!-- Vendor Table Card -->
 <div class="card mb-3">
 
+  <!-- Table Card Header -->
   <div class="card-header">
 
       <!-- Table Icon -->
@@ -194,6 +195,7 @@
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-right">
 
+        <!-- Add Vendor Button -->
         <button class="btn btn-outline-primary"
                 type="button"
                 data-toggle="modal"
@@ -205,10 +207,13 @@
 
   </div>
 
+  <!-- Table Card Body -->
   <div class="card-body">
 
+    <!-- Table Type -->
     <div class="table-responsive">
 
+        <!-- Vendor Table -->
         <table class="table table-bordered" id="vendortable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
@@ -277,6 +282,7 @@
 
                     <!-- Columns to pull from vendor data -->
                     <td class="text-center">
+                      <!-- Disable Button -->
                       <%= button_to 'Disable',
                           toggle_vendor_path(vendor.id),
                           :method => :put,
@@ -285,6 +291,7 @@
                             :confirm => "Are you sure that you want to disable the vendor " +
                                          vendor.vendor_name + "?" } %></td>
                     <td class="text-center">
+                      <!-- Edit Button -->
                       <%= button_to 'Edit',
                           edit_vendor_path(vendor.id),
                           :method => :get,
@@ -330,10 +337,13 @@
 <%= render partial: 'partials/modals/add-vendor-modal' %>
 
 <script>
+
   $(document).ready(function() {
+
       // Declare table
       var table = $('#vendortable').DataTable( {
           "paging": true
+
       } );
 
       // Toggle individual column based on value from data-column
@@ -344,6 +354,7 @@
 
         // Toggle the visibility
         column.visible( ! column.visible() );
+
       } );
 
       // Show all columns
@@ -396,4 +407,5 @@
 
       } );
   } );
+
 </script>

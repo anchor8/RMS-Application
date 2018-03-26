@@ -1,5 +1,7 @@
+<!-- Table Card -->
 <div class="card mb-3">
 
+  <!-- Card Header -->
   <div class="card-header">
 
       <!-- Table Icon -->
@@ -11,6 +13,7 @@
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-right">
 
+        <!-- Add Customer Button -->
         <button class="btn btn-outline-primary"
                 type="button"
                 data-toggle="modal"
@@ -22,10 +25,13 @@
 
   </div>
 
+  <!-- Table Card Body -->
   <div class="card-body">
 
+    <!-- Table Type -->
     <div class="table-responsive">
 
+        <!-- Customer Table -->
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
@@ -94,6 +100,7 @@
 
                     <!-- Columns to pull from customer data -->
                       <td class="text-center">
+                        <!-- Disable Button -->
                         <%= button_to 'Disable',
                             toggle_customer_path(customer.id),
                             :method => :put,
@@ -103,6 +110,7 @@
                                            customer.customer_first_name +
                                            customer.customer_last_name + "?" } %></td>
                       <td class="text-center">
+                        <!-- Edit Button -->
                         <%= button_to 'Edit',
                             edit_customer_path(customer.id),
                             :method => :get,
@@ -126,7 +134,9 @@
 
 
                   </tr>
+
                 <% end %>
+
               <% end %>
 
           </tbody>

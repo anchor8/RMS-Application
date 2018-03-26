@@ -1,5 +1,7 @@
+<!-- Table Card -->
 <div class="card mb-3">
 
+  <!-- Card Header -->
   <div class="card-header">
 
       <!-- Table Icon -->
@@ -11,6 +13,7 @@
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-right">
 
+        <!-- Add Employee Button -->
         <button class="btn btn-outline-primary"
                 type="button"
                 data-toggle="modal"
@@ -22,10 +25,13 @@
 
   </div>
 
+  <!-- Card Body -->
   <div class="card-body">
 
+    <!-- Table Type -->
     <div class="table-responsive">
 
+        <!-- Employee Table -->
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
@@ -76,6 +82,7 @@
 
                 <!-- Columns to pull from employee data -->
                 <td class="text-center">
+                  <!-- Disable the disable button for current employee, disable button -->
                   <% if current_employee == employee %>
 
                       <button class="btn btn-outline-dark"

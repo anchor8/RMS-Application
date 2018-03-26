@@ -1,5 +1,7 @@
+<!-- Table Card -->
 <div class="card mb-3">
 
+  <!-- Card Header -->
   <div class="card-header">
 
       <!-- Table Icon -->
@@ -11,6 +13,7 @@
       <!-- Add, Remove, Update Buttons -->
       <div class="btn-right">
 
+        <!-- Add Order Button -->
         <button class="btn btn-outline-primary"
                 type="button"
                 data-toggle="modal"
@@ -22,10 +25,13 @@
 
   </div>
 
+  <!-- Table Card Body -->
   <div class="card-body">
 
+    <!-- Table Type -->
     <div class="table-responsive">
 
+        <!-- Order Table -->
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
@@ -84,6 +90,7 @@
 
                     <!-- Columns to pull from order data -->
                     <td class="text-center">
+                      <!-- Disable Button -->
                       <%= button_to 'Disable',
                           toggle_order_path(order.id),
                           :method => :put,
@@ -92,6 +99,7 @@
                             :confirm => "Are you sure that you want to disable the order #" +
                                          order.purchase_order_number.to_s + "?" } %></td>
                     <td class="text-center">
+                      <!-- Edit Button -->
                       <%= button_to 'Edit',
                           edit_order_path(order.id),
                           :method => :get,
