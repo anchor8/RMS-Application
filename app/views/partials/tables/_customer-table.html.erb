@@ -93,7 +93,7 @@
                   <tr>
 
                     <!-- Columns to pull from customer data -->
-                      <td>
+                      <td class="text-center">
                         <%= button_to 'Disable',
                             toggle_customer_path(customer.id),
                             :method => :put,
@@ -102,27 +102,27 @@
                               :confirm => "Are you sure that you want to disable " +
                                            customer.customer_first_name +
                                            customer.customer_last_name + "?" } %></td>
-                      <td>
+                      <td class="text-center">
                         <%= button_to 'Edit',
                             edit_customer_path(customer.id),
                             :method => :get,
                             :class => 'btn btn-outline-success' %></td>
-                      <td><%= customer.customer_first_name %></td>
-                      <td><%= customer.customer_last_name %></td>
-                      <td><%= customer.company_name %></td>
-                      <td><%= customer.job_title %></td>
-                      <td><%= customer.work_phone %></td>
-                      <td><%= customer.mobile %></td>
-                      <td><%= customer.fax %></td>
-                      <td><%= customer.customer_email %></td>
-                      <td><%= customer.customer_cc_email %></td>
-                      <td><%= customer.website %></td>
-                      <td><%= customer.social_media_address %></td>
-                      <td><%= customer.street_address_1 %></td>
-                      <td><%= customer.street_address_2 %></td>
-                      <td><%= customer.state.state_name %></td>
-                      <td><%= customer.city %></td>
-                      <td><%= customer.zip_code %></td>
+                      <td class="text-center"><%= customer.customer_first_name %></td>
+                      <td class="text-center"><%= customer.customer_last_name %></td>
+                      <td class="text-center"><%= customer.company_name %></td>
+                      <td class="text-center"><%= customer.job_title %></td>
+                      <td class="text-center"><%= customer.work_phone %></td>
+                      <td class="text-center"><%= customer.mobile %></td>
+                      <td class="text-center"><%= customer.fax %></td>
+                      <td class="text-center"><%= customer.customer_email %></td>
+                      <td class="text-center"><%= customer.customer_cc_email %></td>
+                      <td class="text-center"><%= customer.website %></td>
+                      <td class="text-center"><%= customer.social_media_address %></td>
+                      <td class="text-center"><%= customer.street_address_1 %></td>
+                      <td class="text-center"><%= customer.street_address_2 %></td>
+                      <td class="text-center"><%= customer.state.state_name %></td>
+                      <td class="text-center"><%= customer.city %></td>
+                      <td class="text-center"><%= customer.zip_code %></td>
 
 
                   </tr>

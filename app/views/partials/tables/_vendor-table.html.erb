@@ -1,3 +1,153 @@
+<div class="mb-2">
+  <a class="toggle-all-vis btn btn-primary btn-sm btn-block"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     href="">Hide All Columns</a>
+</div>
+
+<div class="mb-2 mx-auto" style="width: 1024px;">
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="0"
+     href="">Disable</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="1"
+     href="">Edit</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="2"
+     href="">Vendor</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="3"
+     href="">Contact</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="4"
+     href="">State</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="5"
+     href="">Status</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="6"
+     href="">Job</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="7"
+     href="">Work</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="8"
+     href="">Mobile</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="9"
+     href="">Fax</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="10"
+     href="">Email</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="11"
+     href="">CC Email</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="12"
+     href="">Website</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="13"
+     href="">Address 1</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="14"
+     href="">Address 2</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="15"
+     href="">City</a>
+
+  <a class="toggle-vis btn btn-primary btn-sm mb-1"
+     type="button"
+     data-toggle="button"
+     aria-pressed="false"
+     autocomplete="off"
+     data-column="16"
+     href="">Zip</a>
+
+
+</div>
+
 <div class="card mb-3">
 
   <div class="card-header">
@@ -26,7 +176,7 @@
 
     <div class="table-responsive">
 
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="vendortable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
           <thead>
@@ -93,7 +243,7 @@
                   <tr>
 
                     <!-- Columns to pull from vendor data -->
-                    <td>
+                    <td class="text-center">
                       <%= button_to 'Disable',
                           toggle_vendor_path(vendor.id),
                           :method => :put,
@@ -101,26 +251,26 @@
                           :data => {
                             :confirm => "Are you sure that you want to disable the vendor " +
                                          vendor.vendor_name + "?" } %></td>
-                    <td>
+                    <td class="text-center">
                       <%= button_to 'Edit',
                           edit_vendor_path(vendor.id),
                           :method => :get,
                           :class => 'btn btn-outline-success' %></td>
-                    <td><%= vendor.vendor_name %></td>
-                    <td><%= vendor.contact_name %></td>
-                    <td><%= vendor.state.state_name %></td>
-                    <td><%= vendor.vendor_status.vendor_status_type %></td>
-                    <td><%= vendor.job_title %></td>
-                    <td><%= vendor.work_phone %></td>
-                    <td><%= vendor.mobile %></td>
-                    <td><%= vendor.fax %></td>
-                    <td><%= vendor.vendor_email %></td>
-                    <td><%= vendor.vendor_cc_email %></td>
-                    <td><%= vendor.website %></td>
-                    <td><%= vendor.street_address_1 %></td>
-                    <td><%= vendor.street_address_2 %></td>
-                    <td><%= vendor.city %></td>
-                    <td><%= vendor.zip_code %></td>
+                    <td class="text-center"><%= vendor.vendor_name %></td>
+                    <td class="text-center"><%= vendor.contact_name %></td>
+                    <td class="text-center"><%= vendor.state.state_name %></td>
+                    <td class="text-center"><%= vendor.vendor_status.vendor_status_type %></td>
+                    <td class="text-center"><%= vendor.job_title %></td>
+                    <td class="text-center"><%= vendor.work_phone %></td>
+                    <td class="text-center"><%= vendor.mobile %></td>
+                    <td class="text-center"><%= vendor.fax %></td>
+                    <td class="text-center"><%= vendor.vendor_email %></td>
+                    <td class="text-center"><%= vendor.vendor_cc_email %></td>
+                    <td class="text-center"><%= vendor.website %></td>
+                    <td class="text-center"><%= vendor.street_address_1 %></td>
+                    <td class="text-center"><%= vendor.street_address_2 %></td>
+                    <td class="text-center"><%= vendor.city %></td>
+                    <td class="text-center"><%= vendor.zip_code %></td>
 
                   </tr>
 
@@ -145,3 +295,27 @@
 
 <!-- Add Customer Modal-->
 <%= render partial: 'partials/modals/add-vendor-modal' %>
+
+<script>
+  $(document).ready(function() {
+      var table = $('#vendortable').DataTable( {
+          "paging": true
+      } );
+
+      $('a.toggle-vis').on( 'click', function (e) {
+
+          // Get the column API object
+          var column = table.column( $(this).attr('data-column') );
+
+          // Toggle the visibility
+          column.visible( ! column.visible() );
+      } );
+
+      $('a.toggle-all-vis').on( 'click', function (e) {
+
+          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( false, false );
+          table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+      } );
+  } );
+</script>

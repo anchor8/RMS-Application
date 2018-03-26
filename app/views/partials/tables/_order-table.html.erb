@@ -83,7 +83,7 @@
                   <tr>
 
                     <!-- Columns to pull from order data -->
-                    <td>
+                    <td class="text-center">
                       <%= button_to 'Disable',
                           toggle_order_path(order.id),
                           :method => :put,
@@ -91,21 +91,21 @@
                           :data => {
                             :confirm => "Are you sure that you want to disable the order #" +
                                          order.purchase_order_number.to_s + "?" } %></td>
-                    <td>
+                    <td class="text-center">
                       <%= button_to 'Edit',
                           edit_order_path(order.id),
                           :method => :get,
                           :class => 'btn btn-outline-success' %></td>
-                    <td><%= order.vendor.vendor_name %></td>
-                    <td><%= order.customer.company_name %></td>
-                    <td><%= order.customer.customer_last_name %></td>
-                    <td><%= order.employee.lname %></td>
-                    <td><%= order.order_status.order_status_description %></td>
-                    <td><%= order.order_date %></td>
-                    <td><%= order.order_line.item_number %></td>
-                    <td><%= order.payment_type.payment_type_description %></td>
-                    <td><%= order.purchase_order_number %></td>
-                    <td><%= order.order_total %></td>
+                    <td class="text-center"><%= order.vendor.vendor_name %></td>
+                    <td class="text-center"><%= order.customer.company_name %></td>
+                    <td class="text-center"><%= order.customer.customer_last_name %></td>
+                    <td class="text-center"><%= order.employee.lname %></td>
+                    <td class="text-center"><%= order.order_status.order_status_description %></td>
+                    <td class="text-center"><%= order.order_date %></td>
+                    <td class="text-center"><%= order.order_line.item_number %></td>
+                    <td class="text-center"><%= order.payment_type.payment_type_description %></td>
+                    <td class="text-center"><%= order.purchase_order_number %></td>
+                    <td class="text-center"><%= order.order_total %></td>
 
                   </tr>
 
