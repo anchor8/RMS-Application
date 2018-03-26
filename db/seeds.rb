@@ -45,8 +45,8 @@ employee2 = Employee.new(
   password: 'password',
   password_confirmation: 'password',
   employee_status_id: 1,
-  fname: 'bob',
-  lname: 'dillo'
+  fname: 'John',
+  lname: 'Dillo'
 )
 employee2.save!
 
@@ -55,10 +55,30 @@ employee3 = Employee.new(
   password: 'password',
   password_confirmation: 'password',
   employee_status_id: 1,
-  fname: 'craig',
-  lname: 'schmit'
+  fname: 'Craig',
+  lname: 'Schmit'
 )
 employee3.save!
+
+employee4 = Employee.new(
+  email: 'employee4@rms.com',
+  password: 'password',
+  password_confirmation: 'password',
+  employee_status_id: 1,
+  fname: 'Bob',
+  lname: 'Ross'
+)
+employee4.save!
+
+employee5 = Employee.new(
+  email: 'employee5@rms.com',
+  password: 'password',
+  password_confirmation: 'password',
+  employee_status_id: 1,
+  fname: 'Bill',
+  lname: 'Zizzy'
+)
+employee5.save!
 
 #### vendor_status data ####
 
