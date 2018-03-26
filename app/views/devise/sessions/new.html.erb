@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="login_logo">
+  <%= image_tag("appLOGO.png", width: '100px') %>
+  </div>
   <div class="card card-login mx-auto mt-5 items-centered">
     <div class="card-header">Login</div>
     <div class="card-body">
@@ -30,5 +33,12 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
+
+    <div class="createdbytag">
+      <p>Created By:
+      <%= image_tag("anchor8.png", width: '60px') %>
+      </p>
+    </div>
+
   </div>
 </div>
