@@ -19,7 +19,8 @@
       </div>
       <div class="card-body">
         <%= pie_chart Customer.group(:city).count,
-                      donut: true, legend: "bottom", download: "customer_pie_chart"%>
+                      donut: true, legend: "bottom", download: "customer_pie_chart",
+                      library: { animation: { easing: 'easeInCirc' }}%>
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
@@ -39,7 +40,8 @@
       </div>
       <div class="card-body">
         <%= bar_chart Vendor.joins(:state).group(:state_name).count,
-                      colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart"%>
+                      colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart",
+                      library: { animation: { easing: 'easeInCirc' }}%>
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
@@ -59,7 +61,8 @@
       </div>
       <div class="card-body">
         <%= column_chart Order.joins(:order_line).group(:item_description).count,
-                         xtitle: "Product", ytitle: "Quantity", download: "product_bar_chart"%>
+                         xtitle: "Product", ytitle: "Quantity", download: "product_bar_chart",
+                         library: { animation: { easing: 'easeInQuad' }}%>
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
