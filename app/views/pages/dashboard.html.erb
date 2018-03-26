@@ -4,6 +4,27 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Order Totals by Company -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        Order Totals by Company</div>
+      <div class="btn-right">
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-toggle="modal"
+                data-target="Link to reports page">
+          More Info
+        </button>
+      </div>
+      <div class="card-body">
+        <%= column_chart Order.joins(:order_line, :customer).group(:company_name).sum(:order_total), prefix: "$",
+                         xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
+                         library: { animation: { easing: 'easeInQuad' }}%>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
     <!-- Customers by City -->
     <div class="card mb-3">
       <div class="card-header">
@@ -45,28 +66,6 @@
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
-
-    <!-- Sold Products -->
-    <div class="card mb-3">
-      <div class="card-header">
-        <i class="fa fa-bar-chart"></i>
-        Sold Products</div>
-      <div class="btn-right">
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="Link to reports page">
-          More Info
-        </button>
-      </div>
-      <div class="card-body">
-        <%= column_chart Order.joins(:order_line).group(:item_description).count,
-                         xtitle: "Product", ytitle: "Quantity", download: "product_bar_chart",
-                         library: { animation: { easing: 'easeInQuad' }}%>
-      </div>
-      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-    </div>
-
 
   </div>
 </div>
