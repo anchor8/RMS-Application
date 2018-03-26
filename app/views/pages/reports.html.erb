@@ -9,13 +9,13 @@
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#report1">Report1</a>
+      <a class="nav-link active" data-toggle="tab" href="#report1">Order Totals by Company</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report2">Report2</a>
+      <a class="nav-link" data-toggle="tab" href="#report2">Customer's by City</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report3">Report3</a>
+      <a class="nav-link" data-toggle="tab" href="#report3">Vendor's by State</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#report4">Report4</a>
@@ -42,7 +42,6 @@
 
   <div class="tab-content">
     <div class="tab-pane active container-fluid" id="report1">
-      <h3>Report1</h3>
       <div class="card mb-3">
 
         <div class="card-header">
@@ -51,7 +50,7 @@
             <i class="fa fa-table"></i>
 
             <!-- Table Name -->
-            Shipping Table
+            Order Totals by Company
 
         </div>
 
@@ -66,18 +65,8 @@
 
                   <tr>
 
-                    <th>Vendor</th>
                     <th>Company</th>
-                    <th>Status</th>
-                    <th>Shipped</th>
-                    <th>Shipper</th>
-                    <th>Shipping No.</th>
-                    <th>Country</th>
-                    <th>State</th>
-                    <th>Addr. 1</th>
-                    <th>Addr. 2</th>
-                    <th>City</th>
-                    <th>Zip</th>
+                    <th>Order Total</th>
 
                   </tr>
 
@@ -88,18 +77,8 @@
 
                   <tr>
 
-                    <th>Vendor</th>
                     <th>Company</th>
-                    <th>Status</th>
-                    <th>Shipped</th>
-                    <th>Shipper</th>
-                    <th>Shipping No.</th>
-                    <th>Country</th>
-                    <th>State</th>
-                    <th>Addr. 1</th>
-                    <th>Addr. 2</th>
-                    <th>City</th>
-                    <th>Zip</th>
+                    <th>Order Total</th>
 
                   </tr>
 
@@ -114,18 +93,8 @@
                       <tr>
 
                         <!-- Columns to pull from order data -->
-                        <td><%= order.vendor.vendor_name %></td>
                         <td><%= order.customer.company_name %></td>
-                        <td><%= order.order_status.order_status_description %></td>
-                        <td><%= order.ship_date %></td>
-                        <td><%= order.shipper.shipper_description %></td>
-                        <td><%= order.shipping_number %></td>
-                        <td><%= order.country.country_name %></td>
-                        <td><%= order.state.state_name %></td>
-                        <td><%= order.street_address_1 %></td>
-                        <td><%= order.street_address_2 %></td>
-                        <td><%= order.city %></td>
-                        <td><%= order.zip_code %></td>
+                        <td><%= order.order_total %></td>
 
                       </tr>
 
@@ -152,7 +121,6 @@
 
     </div>
     <div class="tab-pane container-fluid" id="report2">
-      <h3>Report2</h3>
       <div class="card mb-3">
 
         <div class="card-header">
@@ -161,7 +129,7 @@
             <i class="fa fa-table"></i>
 
             <!-- Table Name -->
-            Shipping Table
+            Customer's by City
 
         </div>
 
@@ -176,16 +144,11 @@
 
                   <tr>
 
-                    <th>Vendor</th>
                     <th>Company</th>
-                    <th>Status</th>
-                    <th>Shipped</th>
-                    <th>Shipper</th>
-                    <th>Shipping No.</th>
-                    <th>Country</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Job</th>
                     <th>State</th>
-                    <th>Addr. 1</th>
-                    <th>Addr. 2</th>
                     <th>City</th>
                     <th>Zip</th>
 
@@ -198,16 +161,11 @@
 
                   <tr>
 
-                    <th>Vendor</th>
                     <th>Company</th>
-                    <th>Status</th>
-                    <th>Shipped</th>
-                    <th>Shipper</th>
-                    <th>Shipping No.</th>
-                    <th>Country</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Job</th>
                     <th>State</th>
-                    <th>Addr. 1</th>
-                    <th>Addr. 2</th>
                     <th>City</th>
                     <th>Zip</th>
 
@@ -218,28 +176,22 @@
                 <!-- Content -->
                 <tbody>
 
-                  <!-- Load order data -->
-                    <% @orders.each do |order| %>
+                  <!-- Load customer data -->
+                    <% @customers.each do |customer| %>
+                        <tr>
 
-                      <tr>
+                          <!-- Columns to pull from customer data -->
+                            <td><%= customer.company_name %></td>
+                            <td><%= customer.customer_first_name %></td>
+                            <td><%= customer.customer_last_name %></td>
+                            <td><%= customer.job_title %></td>
+                            <td><%= customer.state.state_name %></td>
+                            <td><%= customer.city %></td>
+                            <td><%= customer.zip_code %></td>
 
-                        <!-- Columns to pull from order data -->
-                        <td><%= order.vendor.vendor_name %></td>
-                        <td><%= order.customer.company_name %></td>
-                        <td><%= order.order_status.order_status_description %></td>
-                        <td><%= order.ship_date %></td>
-                        <td><%= order.shipper.shipper_description %></td>
-                        <td><%= order.shipping_number %></td>
-                        <td><%= order.country.country_name %></td>
-                        <td><%= order.state.state_name %></td>
-                        <td><%= order.street_address_1 %></td>
-                        <td><%= order.street_address_2 %></td>
-                        <td><%= order.city %></td>
-                        <td><%= order.zip_code %></td>
 
-                      </tr>
-
-                    <% end %>
+                        </tr>
+                      <% end %>
 
                 </tbody>
 
@@ -249,20 +201,91 @@
 
         </div>
 
-        <!-- Footnote: Lastest date a order was created -->
+        <!-- Footnote: Lastest date a customer was updated -->
         <div class="card-footer small text-muted">
 
-
-
         </div>
-
-
 
       </div>
 
     </div>
     <div class="tab-pane container-fluid" id="report3">
-      <h3>Report3</h3>
+      <div class="card mb-3">
+
+        <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Vendor Table
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="table-responsive">
+
+              <table class="table table-bordered" id="report3table" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Contact</th>
+                    <th>State</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th>Vendor</th>
+                    <th>Contact</th>
+                    <th>State</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load vendor data -->
+                    <% @vendors.each do |vendor| %>
+
+                        <tr>
+
+                          <!-- Columns to pull from vendor data -->
+                          <td><%= vendor.vendor_name %></td>
+                          <td><%= vendor.contact_name %></td>
+                          <td><%= vendor.state.state_name %></td>
+
+                        </tr>
+
+                      <% end %>
+
+                </tbody>
+
+              </table>
+
+          </div>
+
+        </div>
+
+        <!-- Footnote: Lastest date a employee was created -->
+        <div class="card-footer small text-muted">
+
+        </div>
+
+      </div>
+
     </div>
     <div class="tab-pane container-fluid" id="report4">
       <h3>Report4</h3>
@@ -296,6 +319,10 @@
       } );
 
       var report2table = $('#report2table').DataTable( {
+          "paging": true
+      } );
+
+      var report3table = $('#report3table').DataTable( {
           "paging": true
       } );
   } );
