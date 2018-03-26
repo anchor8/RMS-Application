@@ -41,6 +41,8 @@
 
               <th class="text-center">Toggle</th>
               <th class="text-center">ID</th>
+              <th class="text-center">First</th>
+              <th class="text-center">Last</th>
               <th class="text-center">Email</th>
               <th class="text-center">Sign-in Count</th>
               <th class="text-center">Last Sign-in</th>
@@ -60,6 +62,8 @@
 
               <th class="text-center">Toggle</th>
               <th class="text-center">ID</th>
+              <th class="text-center">First</th>
+              <th class="text-center">Last</th>
               <th class="text-center">Email</th>
               <th class="text-center">Sign-in Count</th>
               <th class="text-center">Last Sign-in</th>
@@ -117,6 +121,8 @@
                   <% end %>
 
                 <td class="text-center"><%= employee.id %></td>
+                <td class="text-center"><%= employee.fname %></td>
+                <td class="text-center"><%= employee.lname %></td>
                 <td class="text-center"><%= employee.email %></td>
                 <td class="text-center"><%= employee.sign_in_count %></td>
                 <td class="text-center"><%= employee.last_sign_in_at %></td>
