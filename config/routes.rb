@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :customers do collection { post :import } end
   resources :vendors do collection { post :import } end
   resources :employee_statuses
-  resources :order_lines
+  resources :order_lines do collection { post :import } end
   resources :shippers
   resources :payment_types
   resources :countries do collection { post :import } end
