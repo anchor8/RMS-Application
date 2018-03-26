@@ -1,3 +1,4 @@
+<!-- Button Row 1 -->
 <section class="row">
 
   <div class="mb-2 mx-auto btn-group">
@@ -34,6 +35,7 @@
 
 </section>
 
+<!-- Button Row 2 -->
 <section class="row">
 
   <div class="mb-2 mx-auto">
@@ -178,6 +180,7 @@
 
 </section>
 
+<!-- Vendor Table Card -->
 <div class="card mb-3">
 
   <div class="card-header">
@@ -328,44 +331,68 @@
 
 <script>
   $(document).ready(function() {
+      // Declare table
       var table = $('#vendortable').DataTable( {
           "paging": true
       } );
 
+      // Toggle individual column based on value from data-column
       $('a.toggle-vis').on( 'click', function (e) {
 
-          // Get the column API object
-          var column = table.column( $(this).attr('data-column') );
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
 
-          // Toggle the visibility
-          column.visible( ! column.visible() );
+        // Toggle the visibility
+        column.visible( ! column.visible() );
       } );
 
+      // Show all columns
       $('a.show-all-col').on( 'click', function (e) {
 
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
-          table.columns.adjust().draw( false ); // adjust column sizing and redraw
+        // Show all columns
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+
+        // adjust column sizing and redraw
+        table.columns.adjust().draw( false );
 
       } );
 
+      // Hide all columns
       $('a.hide-all-col').on( 'click', function (e) {
 
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( false, false );
-          table.columns.adjust().draw( false ); // adjust column sizing and redraw
+        // Hide all columns
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( false, false );
+
+        // adjust column sizing and redraw
+        table.columns.adjust().draw( false );
 
       } );
 
+      // Show only vendor contact info
       $('a.show-contact').on( 'click', function (e) {
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
-          table.columns( [ 0, 1, 4, 5, 6, 12, 13, 14, 15, 16 ] ).visible( false, false );
-          table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        // Ensure all columns are shown
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+
+        // Hide columns that dont relate to vendor contact info
+        table.columns( [ 0, 1, 4, 5, 6, 12, 13, 14, 15, 16 ] ).visible( false, false );
+
+        // adjust column sizing and redraw
+        table.columns.adjust().draw( false );
 
       } );
 
+      // Show only vendor info
       $('a.show-info').on( 'click', function (e) {
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
-          table.columns( [ 0, 1, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
-          table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        // Ensure all columns are shown
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+
+        // Hide columns that dont relate to vendor info
+        table.columns( [ 0, 1, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+
+        // adjust column sizing and redraw
+        table.columns.adjust().draw( false );
 
       } );
   } );
