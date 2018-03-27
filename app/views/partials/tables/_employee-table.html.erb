@@ -1,3 +1,131 @@
+<!--toggle buttons-->
+
+<section class="row">
+
+  <div class="mb-2 mx-auto btn-group">
+
+    <a class="show-all-col btn btn-primary btn-sm"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Show All Columns</a>
+
+    <a class="hide-all-col btn btn-primary btn-sm"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Hide All Columns</a>
+
+  </div>
+
+</section>
+
+<section class="row">
+
+  <div class="mb-2 px-4 mx-auto">
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="0"
+       href="">Disable</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="1"
+       href="">Status</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="2"
+       href="">ID</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="3"
+       href="">First</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="4"
+       href="">Last</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="5"
+       href="">Email</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="6"
+       href="">Sign-in Count</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="7"
+       href="">Last Sign-in</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="8"
+       href="">Created</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="9"
+       href="">Updated</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="10"
+       href="">Disabled</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="11"
+       href="">Admin</a>
+
+  </div>
+
+</section>
+
 <!-- Table Card -->
 <div class="card mb-3">
 
@@ -32,7 +160,7 @@
     <div class="table-responsive">
 
         <!-- Employee Table -->
-        <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered table-hover table-striped" id="employeetable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
           <thead>
@@ -40,6 +168,7 @@
             <tr>
 
               <th class="text-center">Toggle</th>
+              <th class="text-center">Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
@@ -61,6 +190,7 @@
             <tr>
 
               <th class="text-center">Toggle</th>
+              <th class="text-center">Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
@@ -120,6 +250,7 @@
 
                   <% end %>
 
+                <td class="text-center"><%= employee.employee_status.employee_status_type %></td>
                 <td class="text-center"><%= employee.id %></td>
                 <td class="text-center"><%= employee.fname %></td>
                 <td class="text-center"><%= employee.lname %></td>
@@ -154,3 +285,35 @@
 
 <!-- Add Employee Modal-->
 <%= render partial: 'partials/modals/add-employee-modal' %>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#employeetable').DataTable( {
+            "paging": true
+        } );
+
+        $('a.toggle-vis').on( 'click', function (e) {
+
+            // Get the column API object
+            var column = table.column( $(this).attr('data-column') );
+
+            // Toggle the visibility
+            column.visible( ! column.visible() );
+        } );
+
+        $('a.show-all-col').on( 'click', function (e) {
+
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
+            table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        } );
+
+        $('a.hide-all-col').on( 'click', function (e) {
+
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( false, false );
+            table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        } );
+
+    } );
+</script>
