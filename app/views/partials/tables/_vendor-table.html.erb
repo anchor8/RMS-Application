@@ -276,20 +276,32 @@
             <!-- Load vendor data -->
               <% @vendors.each do |vendor| %>
 
-                <% if !vendor.deleted_at %>
-
                   <tr>
 
                     <!-- Columns to pull from vendor data -->
                     <td class="text-center">
                       <!-- Disable Button -->
-                      <%= button_to 'Disable',
-                          toggle_vendor_path(vendor.id),
-                          :method => :put,
-                          :class => 'btn btn-outline-danger',
-                          :data => {
-                            :confirm => "Are you sure that you want to disable the vendor " +
-                                         vendor.vendor_name + "?" } %></td>
+                      <% if !vendor.deleted_at %>
+
+                        <%= button_to 'Disable',
+                            toggle_vendor_path(vendor.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-danger',
+                            :data => {
+                              :confirm => "Are you sure that you want to disable the vendor " +
+                                           vendor.vendor_name + "?" } %></td>
+
+                      <% else %>
+
+                        <%= button_to 'Enable',
+                            toggle_vendor_path(vendor.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-success',
+                            :data => {
+                              :confirm => "Are you sure that you want to enable the vendor " +
+                                           vendor.vendor_name + "?" } %></td>
+
+                      <% end %>
                     <td class="text-center">
                       <!-- Edit Button -->
                       <%= button_to 'Edit',
@@ -313,8 +325,6 @@
                     <td class="text-center"><%= vendor.zip_code %></td>
 
                   </tr>
-
-                <% end %>
 
               <% end %>
 

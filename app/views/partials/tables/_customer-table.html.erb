@@ -291,20 +291,30 @@
 
             <!-- Load customer data -->
               <% @customers.each do |customer| %>
-                <% if !customer.deleted_at %>
                   <tr>
 
                     <!-- Columns to pull from customer data -->
                       <td class="text-center">
                         <!-- Disable Button -->
-                        <%= button_to 'Disable',
-                            toggle_customer_path(customer.id),
-                            :method => :put,
-                            :class => 'btn btn-outline-danger',
-                            :data => {
-                              :confirm => "Are you sure that you want to disable " +
-                                           customer.customer_first_name +
-                                           customer.customer_last_name + "?" } %></td>
+                        <% if !customer.deleted_at %>
+                          <%= button_to 'Disable',
+                              toggle_customer_path(customer.id),
+                              :method => :put,
+                              :class => 'btn btn-outline-danger',
+                              :data => {
+                                :confirm => "Are you sure that you want to disable " +
+                                             customer.customer_first_name +
+                                             customer.customer_last_name + "?" } %></td>
+                        <% else %>
+                          <%= button_to 'Enable',
+                              toggle_customer_path(customer.id),
+                              :method => :put,
+                              :class => 'btn btn-outline-success',
+                              :data => {
+                                :confirm => "Are you sure that you want to enable " +
+                                             customer.customer_first_name +
+                                             customer.customer_last_name + "?" } %></td>
+                        <% end %>
                       <td class="text-center">
                         <!-- Edit Button -->
                         <%= button_to 'Edit',
@@ -330,8 +340,6 @@
 
 
                   </tr>
-
-                <% end %>
 
               <% end %>
 

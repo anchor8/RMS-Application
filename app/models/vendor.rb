@@ -6,10 +6,10 @@ class Vendor < ApplicationRecord
   def toggle_vendor
     if !deleted_at
       update_attribute(:deleted_at, Time.current)
-      update_attribute(:vendor_status, 1)
+      update_attribute(:vendor_status_id, 1)
     else
       update_attribute(:deleted_at, nil)
-      update_attribute(:vendor_status, 2)
+      update_attribute(:vendor_status_id, 2)
     end
   end
 
