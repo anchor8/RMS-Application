@@ -33,7 +33,7 @@
             <i class="fa fa-pie-chart"></i>
             Customer's by State (West Coast)</div>
           <div class="card-body">
-            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 17).count,
+            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
@@ -48,7 +48,7 @@
             <i class="fa fa-pie-chart"></i>
             Customer's by State (Central)</div>
           <div class="card-body">
-            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id < ?", 18, 34).count,
+            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
@@ -63,7 +63,7 @@
             <i class="fa fa-pie-chart"></i>
             Customer's by State (East Coast)</div>
           <div class="card-body">
-            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id > ?", 34).count,
+            <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
