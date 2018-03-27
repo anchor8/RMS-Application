@@ -1,3 +1,136 @@
+<!--toggle buttons-->
+
+<section class="row">
+
+  <div class="mb-2 mx-auto btn-group">
+
+    <a class="show-all-col btn btn-primary btn-sm"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Show All Columns</a>
+
+    <a class="hide-all-col btn btn-primary btn-sm"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Hide All Columns</a>
+
+
+  </div>
+
+</section>
+
+<section class="row">
+
+  <div class="mb-2 mx-auto">
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="0"
+       href="">Disable</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="1"
+       href="">Edit</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="2"
+       href="">Vendor</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="3"
+       href="">Company</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="4"
+       href="">Customer</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="5"
+       href="">Employee</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="6"
+       href="">Status</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="7"
+       href="">Ordered</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="8"
+       href="">Order Line</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="9"
+       href="">Payment Type</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="10"
+       href="">PO Number</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="11"
+       href="">Total</a>
+
+
+
+  </div>
+
+</section>
+
+
+
 <div class="card mb-3">
 
   <div class="card-header">
@@ -26,7 +159,7 @@
 
     <div class="table-responsive">
 
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="ordertable" width="100%" cellspacing="0">
 
           <!-- Top Column Names -->
           <thead>
@@ -132,3 +265,36 @@
 
 <!-- Add Customer Modal-->
 <%= render partial: 'partials/modals/add-order-modal' %>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#ordertable').DataTable( {
+            "paging": true
+        } );
+
+        $('a.toggle-vis').on( 'click', function (e) {
+
+            // Get the column API object
+            var column = table.column( $(this).attr('data-column') );
+
+            // Toggle the visibility
+            column.visible( ! column.visible() );
+        } );
+
+        $('a.show-all-col').on( 'click', function (e) {
+
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] ).visible( true, false );
+            table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        } );
+
+        $('a.hide-all-col').on( 'click', function (e) {
+
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+            table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+        } );
+
+
+    } );
+</script>

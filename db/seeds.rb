@@ -603,7 +603,7 @@ OrderLine.create([
 
 #### order data ####
 
-Order.create([
+Order.create!([
                  { vendor_id: 1,
                    order_status_id: 2,
                    customer_id: 1,
@@ -611,7 +611,7 @@ Order.create([
                    employee_id: 1,
                    payment_type_id: 2,
                    shipper_id: 1,
-                   order_line_id: 1,
+                   order_line_id: 1001,
                    state_id: 45,
                    shipping_number: '12345',
                    customer_name: 'Home Depot',
@@ -630,7 +630,7 @@ Order.create([
                    employee_id: 1,
                    payment_type_id: 2,
                    shipper_id: 5,
-                   order_line_id: 2,
+                   order_line_id: 1002,
                    state_id: 19,
                    shipping_number: '984376',
                    customer_name: 'Accurate Measurement',
@@ -649,7 +649,7 @@ Order.create([
                    employee_id: 2,
                    payment_type_id: 4,
                    shipper_id: 4,
-                   order_line_id: 3,
+                   order_line_id: 1003,
                    state_id: 37,
                    shipping_number: '984376',
                    customer_name: 'Aether',
@@ -668,7 +668,7 @@ Order.create([
                    employee_id: 3,
                    payment_type_id: 3,
                    shipper_id: 3,
-                   order_line_id: 4,
+                   order_line_id: 1004,
                    state_id: 45,
                    shipping_number: '76583',
                    customer_name: 'Air Products',
