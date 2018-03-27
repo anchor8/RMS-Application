@@ -24,7 +24,7 @@ admin = Employee.new(
   password: 'password',
   password_confirmation: 'password',
   admin: true,
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'john',
   lname: 'doe'
 )
@@ -34,7 +34,7 @@ employee1 = Employee.new(
   email: 'employee1@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'jane',
   lname: 'smith'
 )
@@ -44,7 +44,7 @@ employee2 = Employee.new(
   email: 'employee2@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'John',
   lname: 'Dillo'
 )
@@ -54,7 +54,7 @@ employee3 = Employee.new(
   email: 'employee3@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'Craig',
   lname: 'Schmit'
 )
@@ -64,7 +64,7 @@ employee4 = Employee.new(
   email: 'employee4@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'Bob',
   lname: 'Ross'
 )
@@ -74,7 +74,7 @@ employee5 = Employee.new(
   email: 'employee5@rms.com',
   password: 'password',
   password_confirmation: 'password',
-  employee_status_id: 1,
+  employee_status_id: 2,
   fname: 'Bill',
   lname: 'Zizzy'
 )
