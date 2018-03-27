@@ -8,18 +8,36 @@
     <%= render partial: 'partials/breadcrumbs' %>
 
     <!-- Section Above Employee Table -->
-    <div>
+    <div class="ml-4 mb-4">
 
       <!-- Display Information -->
-      <p>
 
-        Logged in as:
-        <%= current_employee.email %>
+        <div class="row">
+          <p><b> Logged in as: <%= current_employee.email %> </b></p>
+        </div>
 
-      </p>
+        <div class="row">
+          <p> Name: <%= current_employee.fname %> <%= current_employee.lname %></p>
+        </div>
+
+        <div class="row">
+          <p> Phone: <% if current_employee.phone %>
+                        <%= current_employee.phone %>
+                     <% else %>
+                       No Phone Number on Record
+                     <% end %>
+          </p>
+        </div>
+
+        <div class="row">
+          <p> Status: <%= current_employee.employee_status.employee_status_type %></p>
+        </div>
+
+        <div class="row">
+          <p> Last sign in at: <%= current_employee.last_sign_in_at %> </p>
+        </div>
 
       <!-- Edit Employee Button -->
-      <p>
 
         <button class="btn btn-primary"
                 type="button"
@@ -28,8 +46,6 @@
                 Edit Current Employee
 
         </button>
-
-      </p>
 
     </div>
 
@@ -42,7 +58,7 @@
     <% end %>
 
   </div>
-  
+
 </div>
 
 <!-- Edit Employee Modal-->
