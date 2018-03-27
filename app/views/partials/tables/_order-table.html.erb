@@ -240,16 +240,16 @@
                           edit_order_path(order.id),
                           :method => :get,
                           :class => 'btn btn-outline-success' %></td>
-                    <td class="text-center"><%= order.vendor.vendor_name %></td>
-                    <td class="text-center"><%= order.customer.company_name %></td>
-                    <td class="text-center"><%= order.customer.customer_last_name %></td>
-                    <td class="text-center"><%= order.employee.lname %></td>
-                    <td class="text-center"><%= order.order_status.order_status_description %></td>
-                    <td class="text-center"><%= order.order_date %></td>
-                    <td class="text-center"><%= order.order_line.item_number %></td>
-                    <td class="text-center"><%= order.payment_type.payment_type_description %></td>
-                    <td class="text-center"><%= order.purchase_order_number %></td>
-                    <td class="text-center"><%= order.order_total %></td>
+                    <td class="text-left-align"><%= order.vendor.vendor_name %></td>
+                    <td class="text-left-align"><%= order.customer.company_name %></td>
+                    <td class="text-left-align"><%= order.customer.customer_last_name %></td>
+                    <td class="text-left-align"><%= order.employee.lname %></td>
+                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= order.order_date %></td>
+                    <td class="text-left-align"><%= order.order_line.item_number %></td>
+                    <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
+                    <td class="text-left-align"><%= order.purchase_order_number %></td>
+                    <td class="text-left-align"><%= order.order_total %></td>
 
                   </tr>
 

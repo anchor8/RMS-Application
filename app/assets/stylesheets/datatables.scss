@@ -210,6 +210,7 @@ div.dataTables_scrollHead table.table-bordered {
 
 div.table-responsive > div.dataTables_wrapper > div.row {
    overflow-x: auto;
+   overflow-y: hidden;
 min-height: 0.01%;
 
 }
