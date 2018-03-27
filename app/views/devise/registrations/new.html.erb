@@ -6,22 +6,22 @@
 
           <div class="field">
             <b><%= f.label :email %></b><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, size: "36", autofocus: true, autocomplete: "email" %>
           </div>
 
           <div class="field">
             <b><%= f.label :fname %></b><br />
-            <%= f.email_field :fname, autofocus: true, autocomplete: "first name" %>
+            <%= f.email_field :fname, size: "20",autofocus: true, autocomplete: "first name" %>
           </div>
 
           <div class="field">
             <b><%= f.label :lname %></b><br />
-            <%= f.email_field :lname, autofocus: true, autocomplete: "last name" %>
+            <%= f.email_field :lname, size: "20",autofocus: true, autocomplete: "last name" %>
           </div>
 
           <div class="field">
             <b><%= f.label :phone %></b><br />
-            <%= f.email_field :phone, autofocus: true, autocomplete: "phone number" %>
+            <%= f.email_field :phone, size: "10",autofocus: true, autocomplete: "phone number" %>
           </div>
 
           <div class="field">
@@ -29,12 +29,12 @@
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, size: "36",autocomplete: "off" %>
           </div>
 
           <div class="field">
             <b><%= f.label :password_confirmation %></b><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            <%= f.password_field :password_confirmation, size: "36",autocomplete: "off" %>
           </div>
 
           <div class="actions row">
