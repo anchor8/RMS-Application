@@ -6,18 +6,22 @@
      aria-labelledby="exampleModalLabel"
      aria-hidden="true">
 
+  <!-- Modal Dialog Window -->
   <div class="modal-dialog"
        role="document">
 
+    <!-- Modal Content -->
     <div class="modal-content">
 
       <!-- Modal Title Bar -->
       <div class="modal-header">
 
+        <!-- Title Text -->
         <h5 class="modal-title"
             id="exampleModalLabel">
             Add New Employee</h5>
 
+        <!-- Close X Button -->
         <button class="close"
                 type="button"
                 data-dismiss="modal"
@@ -31,7 +35,7 @@
       </div>
 
       <!-- Modal Body -->
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
 
         <%= render :template => "devise/registrations/new" %>
 

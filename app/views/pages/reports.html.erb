@@ -1,5 +1,7 @@
+<!-- Content Wrapper -->
 <div class="content-wrapper">
 
+  <!-- Container (Fluid) -->
   <div class="container-fluid">
 
     <!-- Breadcrumbs-->
@@ -7,6 +9,7 @@
 
   </div>
 
+  <!-- Report Tabs -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#report1">Order Totals by Company</a>
@@ -40,10 +43,16 @@
     </li>
   </ul>
 
+  <!-- Content in Tab -->
   <div class="tab-content">
+
+    <!-- Tab 1 - Report 1 -->
     <div class="tab-pane active container-fluid" id="report1">
+
+      <!-- Table Card -->
       <div class="card mb-3">
 
+        <!-- Table Header -->
         <div class="card-header">
 
             <!-- Table Icon -->
@@ -54,10 +63,13 @@
 
         </div>
 
+        <!-- Table Card Body -->
         <div class="card-body">
 
+          <!-- Table Type -->
           <div class="table-responsive">
 
+              <!-- Report 1 Table -->
               <table class="table table-bordered" id="report1table" width="100%" cellspacing="0">
 
                 <!-- Top Column Names -->
@@ -120,9 +132,14 @@
       </div>
 
     </div>
+
+    <!-- Tab 2 - Report 2 -->
     <div class="tab-pane container-fluid" id="report2">
+
+      <!-- Table Card -->
       <div class="card mb-3">
 
+        <!-- Table Header -->
         <div class="card-header">
 
             <!-- Table Icon -->
@@ -133,10 +150,13 @@
 
         </div>
 
+        <!-- Table Card Body -->
         <div class="card-body">
 
+          <!-- Table Type -->
           <div class="table-responsive">
 
+              <!-- Report 1 Table -->
               <table class="table table-bordered" id="report2table" width="100%" cellspacing="0">
 
                 <!-- Top Column Names -->
@@ -209,9 +229,14 @@
       </div>
 
     </div>
+
+    <!-- Tab 3 - Report 3 -->
     <div class="tab-pane container-fluid" id="report3">
+
+      <!-- Table Card -->
       <div class="card mb-3">
 
+        <!-- Table Header -->
         <div class="card-header">
 
             <!-- Table Icon -->
@@ -222,10 +247,13 @@
 
         </div>
 
+        <!-- Table Card Body -->
         <div class="card-body">
 
+          <!-- Table Type -->
           <div class="table-responsive">
 
+              <!-- Report 2 Table -->
               <table class="table table-bordered" id="report3table" width="100%" cellspacing="0">
 
                 <!-- Top Column Names -->
@@ -287,24 +315,38 @@
       </div>
 
     </div>
+
+    <!-- Tab 4 - Report 4 -->
     <div class="tab-pane container-fluid" id="report4">
       <h3>Report4</h3>
     </div>
+
+    <!-- Tab 5 - Report 5 -->
     <div class="tab-pane container-fluid" id="report5">
       <h3>Report5</h3>
     </div>
+
+    <!-- Tab 6 - Report 6 -->
     <div class="tab-pane container-fluid" id="report6">
       <h3>Report6</h3>
     </div>
+
+    <!-- Tab 7 - Report 7 -->
     <div class="tab-pane container-fluid" id="report7">
       <h3>Report7</h3>
     </div>
+
+    <!-- Tab 8 - Report 8 -->
     <div class="tab-pane container-fluid" id="report8">
       <h3>Report8</h3>
     </div>
+
+    <!-- Tab 9 - Report 9 -->
     <div class="tab-pane container-fluid" id="report9">
       <h3>Report9</h3>
     </div>
+
+    <!-- Tab 10 - Report 10 -->
     <div class="tab-pane container-fluid" id="report10">
       <h3>Report10</h3>
     </div>
@@ -314,16 +356,29 @@
 
 <script>
   $(document).ready(function() {
+
+      // Declare report1table
       var report1table = $('#report1table').DataTable( {
-          "paging": true
+
+        // Enable paging, search, show # features
+        "paging": true
+
       } );
 
+      // Declare report2table
       var report2table = $('#report2table').DataTable( {
-          "paging": true
+
+        // Enable paging, search, show # features
+        "paging": true
+
       } );
 
+      // Declare report3table
       var report3table = $('#report3table').DataTable( {
-          "paging": true
+
+        // Enable paging, search, show # features
+        "paging": true
+        
       } );
   } );
 </script>

@@ -5,7 +5,7 @@
           <%= devise_error_messages! %>
 
           <div class="field">
-            <%= f.label :email %><br />
+            <b><%= f.label :email %></b><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 
@@ -13,8 +13,8 @@
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
-          <div class="field">
-            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <div class="field mt-3">
+            <b><%= f.label :password %></b> <br /><i>(leave blank if you don't want to change it)</i><br />
             <%= f.password_field :password, autocomplete: "off" %>
             <% if @minimum_password_length %>
               <br />
@@ -22,18 +22,18 @@
             <% end %>
           </div>
 
-          <div class="field">
-            <%= f.label :password_confirmation %><br />
+          <div class="field mt-3">
+            <b><%= f.label :password_confirmation %></b><br />
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
 
-          <div class="field">
-            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <div class="field mt-3">
+            <b><%= f.label :current_password %></b> <br /><i>(we need your current password to confirm your changes)</i><br />
             <%= f.password_field :current_password, autocomplete: "off" %>
           </div>
 
           <div class="actions btn">
-            <%= f.submit "Update" %>
+            <%= f.submit "Update", :class => 'btn btn-primary btn-sm ml-5 pl-4 pr-4' %>
           </div>
         <% end %>
     </div>

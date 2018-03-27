@@ -1,22 +1,28 @@
+<!-- Content Wrapper -->
 <div class="content-wrapper">
 
+  <!-- Container (Fluid) -->
   <div class="container-fluid">
 
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Notice Banner -->
     <% if notice %>
       <div class='h5 strong text-center mark'>
         <%= flash[:notice] %>
       </div>
     <% end %>
 
+    <!-- Guide info -->
     <div>
       <p><b>Click browse and choose a CSV file to import.</b></p>
     </div>
 
+    <!-- Row 1 -->
     <div class="row">
 
+      <!-- Left Column -->
       <div class="col-md-6">
 
         <!-- Import Customer Data -->
@@ -38,7 +44,7 @@
           <%= label_tag 'Order Line:', nil, class: 'h5' %>
           <%= file_field_tag :file %>
           <%= submit_tag "Import" %>
-        <% end %>        
+        <% end %>
 
         <!-- Import Order Data -->
         <%= form_tag import_orders_path, multipart: true do %>
@@ -49,7 +55,9 @@
 
       </div>
 
+      <!-- Right Column -->
       <div class="col-md-6">
+
         <!-- Import State Data -->
         <%= form_tag import_states_path, multipart: true do %>
           <%= label_tag 'States:', nil, class: 'h5' %>
@@ -65,7 +73,9 @@
         <% end %>
 
       </div>
+
     </div>
 
   </div>
+  
 </div>
