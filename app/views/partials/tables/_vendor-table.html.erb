@@ -286,7 +286,7 @@
                         <%= button_to 'Disable',
                             toggle_vendor_path(vendor.id),
                             :method => :put,
-                            :class => 'btn btn-outline-danger',
+                            :class => 'btn btn-outline-danger btn-sm',
                             :data => {
                               :confirm => "Are you sure that you want to disable the vendor " +
                                            vendor.vendor_name + "?" } %></td>
@@ -296,7 +296,7 @@
                         <%= button_to 'Enable',
                             toggle_vendor_path(vendor.id),
                             :method => :put,
-                            :class => 'btn btn-outline-success',
+                            :class => 'btn btn-outline-success btn-sm',
                             :data => {
                               :confirm => "Are you sure that you want to enable the vendor " +
                                            vendor.vendor_name + "?" } %></td>
@@ -307,7 +307,7 @@
                       <%= button_to 'Edit',
                           edit_vendor_path(vendor.id),
                           :method => :get,
-                          :class => 'btn btn-outline-success' %></td>
+                          :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-center"><%= vendor.vendor_name %></td>
                     <td class="text-center"><%= vendor.contact_name %></td>
                     <td class="text-center"><%= vendor.state.state_name %></td>

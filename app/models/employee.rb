@@ -20,6 +20,14 @@ class Employee < ApplicationRecord
     end
   end
 
+  def toggle_admin
+    if !admin
+      update_attribute(:admin, true)
+    else
+      update_attribute(:admin, false)
+    end
+  end
+
   # ensure user account is active
   def active_for_authentication?
     super && !deleted_at

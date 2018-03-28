@@ -22,9 +22,16 @@ class PagesController < ApplicationController
   end
 
   def toggle_employee
-    # Get employee id and destroy that employee
+    #
     @employee = Employee.find(params[:id])
     @employee.toggle_employee if current_employee != @employee
+    redirect_to usermgmt_path
+  end
+
+  def toggle_admin
+    # 
+    @employee = Employee.find(params[:id])
+    @employee.toggle_admin if current_employee != @employee
     redirect_to usermgmt_path
   end
 

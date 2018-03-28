@@ -31,6 +31,11 @@ Rails.application.routes.draw do
                                as: 'toggle_employee',
                                via: 'put'
 
+  # Toggle Admin
+  match '/pages/employee/admin/:id', to: 'pages#toggle_admin',
+                               as: 'toggle_admin',
+                               via: 'put'
+
   # Destroy Customer
   match '/pages/customer/:id', to: 'pages#toggle_customer',
                                as: 'toggle_customer',

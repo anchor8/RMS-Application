@@ -230,7 +230,7 @@
                       <%= button_to 'Disable',
                           toggle_order_path(order.id),
                           :method => :put,
-                          :class => 'btn btn-outline-danger',
+                          :class => 'btn btn-outline-danger btn-sm',
                           :data => {
                             :confirm => "Are you sure that you want to disable the order #" +
                                          order.purchase_order_number.to_s + "?" } %></td>
@@ -239,7 +239,7 @@
                       <%= button_to 'Edit',
                           edit_order_path(order.id),
                           :method => :get,
-                          :class => 'btn btn-outline-success' %></td>
+                          :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-center"><%= order.vendor.vendor_name %></td>
                     <td class="text-center"><%= order.customer.company_name %></td>
                     <td class="text-center"><%= order.customer.customer_last_name %></td>

@@ -32,7 +32,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="0"
-       href="">Disable</a>
+       href="">Toggle</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -40,7 +40,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="1"
-       href="">Status</a>
+       href="">Admin</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -48,7 +48,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="2"
-       href="">ID</a>
+       href="">Employee Status</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -56,7 +56,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="3"
-       href="">First</a>
+       href="">Admin Status</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -64,7 +64,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="4"
-       href="">Last</a>
+       href="">ID</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -72,7 +72,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="5"
-       href="">Email</a>
+       href="">First</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -80,7 +80,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="6"
-       href="">Sign-in Count</a>
+       href="">Last</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -88,7 +88,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="7"
-       href="">Last Sign-in</a>
+       href="">Email</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -96,7 +96,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="8"
-       href="">Created</a>
+       href="">Sign-in Count</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -104,7 +104,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="9"
-       href="">Updated</a>
+       href="">Last Sign-in</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -112,7 +112,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="10"
-       href="">Disabled</a>
+       href="">Created</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -120,7 +120,15 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="11"
-       href="">Admin</a>
+       href="">Updated</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="12"
+       href="">Disabled</a>
 
   </div>
 
@@ -168,7 +176,9 @@
             <tr>
 
               <th class="text-center">Toggle</th>
-              <th class="text-center">Status</th>
+              <th class="text-center">Admin</th>
+              <th class="text-center">Employee Status</th>
+              <th class="text-center">Admin Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
@@ -178,7 +188,6 @@
               <th class="text-center">Created</th>
               <th class="text-center">Updated</th>
               <th class="text-center">Disabled</th>
-              <th class="text-center">Admin</th>
 
             </tr>
 
@@ -190,7 +199,9 @@
             <tr>
 
               <th class="text-center">Toggle</th>
-              <th class="text-center">Status</th>
+              <th class="text-center">Admin</th>
+              <th class="text-center">Employee Status</th>
+              <th class="text-center">Admin Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
@@ -200,7 +211,6 @@
               <th class="text-center">Created</th>
               <th class="text-center">Updated</th>
               <th class="text-center">Disabled</th>
-              <th class="text-center">Admin</th>
 
             </tr>
 
@@ -219,7 +229,7 @@
                   <!-- Disable the disable button for current employee, disable button -->
                   <% if current_employee == employee %>
 
-                      <button class="btn btn-outline-dark"
+                      <button class="btn btn-outline-dark btn-sm"
                               disabled>
                               Current
                       </button>
@@ -231,7 +241,7 @@
                       <%= button_to 'Disable',
                           toggle_employee_path(employee.id),
                           :method => :put,
-                          :class => 'btn btn-outline-danger',
+                          :class => 'btn btn-outline-danger btn-sm',
                           :data => {
                             :confirm => "Are you sure that you want to disable " +
                                          employee.email + "?" } %></td>
@@ -241,7 +251,7 @@
                       <%= button_to 'Enable',
                           toggle_employee_path(employee.id),
                           :method => :put,
-                          :class => 'btn btn-outline-success',
+                          :class => 'btn btn-outline-success btn-sm',
                           :data => {
                             :confirm => "Are you sure that you want to enable " +
                                          employee.email + "?" } %></td>
@@ -249,8 +259,42 @@
                     <% end %>
 
                   <% end %>
+                <td class="text-center">
+                  <% if current_employee == employee %>
 
+                      <button class="btn btn-outline-dark btn-sm"
+                              disabled>
+                              Admin
+                      </button>
+
+                  <% else %>
+
+                    <% if !employee.admin%>
+
+                      <%= button_to 'Assign',
+                          toggle_admin_path(employee.id),
+                          :method => :put,
+                          :class => 'btn btn-outline-success btn-sm',
+                          :data => {
+                            :confirm => "Are you sure that you want to disable admin for " +
+                                         employee.email + "?" } %></td>
+
+                    <% else %>
+
+                      <%= button_to 'Unassign',
+                          toggle_admin_path(employee.id),
+                          :method => :put,
+                          :class => 'btn btn-outline-primary btn-sm',
+                          :data => {
+                            :confirm => "Are you sure that you want to enable admin for " +
+                                         employee.email + "?" } %></td>
+
+                    <% end %>
+
+                  <% end %>
+                </td>
                 <td class="text-center"><%= employee.employee_status.employee_status_type %></td>
+                <td class="text-center"><%= employee.admin %></td>
                 <td class="text-center"><%= employee.id %></td>
                 <td class="text-center"><%= employee.fname %></td>
                 <td class="text-center"><%= employee.lname %></td>
@@ -260,7 +304,7 @@
                 <td class="text-center"><%= employee.created_at %></td>
                 <td class="text-center"><%= employee.updated_at %></td>
                 <td class="text-center"><%= employee.deleted_at %></td>
-                <td class="text-center"><%= employee.admin %></td>
+
 
               </tr>
 
