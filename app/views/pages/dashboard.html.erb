@@ -9,20 +9,12 @@
       <div class="card-header">
         <i class="fa fa-bar-chart"></i>
         Order Totals by Company</div>
-      <div class="btn-right">
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="Link to reports page">
-          More Info
-        </button>
-      </div>
       <div class="card-body">
         <%= column_chart Order.joins(:order_line, :customer).group(:company_name).sum(:order_total), prefix: "$",
                                  xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
                                  library: { animation: { easing: 'easeInQuad' }}%>
       </div>
-      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      <div class="card-footer small text-muted"></div>
     </div>
 
     <div class="row">
@@ -37,7 +29,7 @@
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted"></div>
         </div>
       </div>
 
@@ -52,7 +44,7 @@
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted"></div>
         </div>
       </div>
 
@@ -67,7 +59,7 @@
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted"></div>
         </div>
       </div>
 
@@ -79,20 +71,12 @@
       <div class="card-header">
         <i class="fa fa-bar-chart"></i>
         Vendor's by State</div>
-      <div class="btn-right">
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="Link to reports page">
-          More Info
-        </button>
-      </div>
       <div class="card-body">
         <%= bar_chart Vendor.joins(:state).group(:state_name).count,
                       colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart",
                       library: { animation: { easing: 'easeInCirc' }}%>
       </div>
-      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      <div class="card-footer small text-muted"></div>
     </div>
 
   </div>
