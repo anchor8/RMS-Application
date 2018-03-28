@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="row ml-5">
 
     <div class="col-md-6">
 
@@ -47,7 +47,7 @@
 
       <div class="field">
         <%= form.label :order_total %>
-        <%= form.text_field :order_total, id: :order_order_total %>
+        <%= form.text_field :order_total, size: "8", id: :order_order_total %>
       </div>
 
       <div class="field">
@@ -86,12 +86,12 @@
 
       <div class="field">
         <%= form.label :city %>
-        <%= form.text_field :city, :size => '5', id: :order_city %>
+        <%= form.text_field :city, :size => '15', id: :order_city %>
       </div>
 
       <div class="field">
         <%= form.label :zip_code %>
-        <%= form.text_field :zip_code, :size => '2', id: :order_zip_code %>
+        <%= form.text_field :zip_code, :size => '8', id: :order_zip_code %>
       </div>
 
       <div class="field">
@@ -101,7 +101,7 @@
 
       <div class="field">
         <%= form.label :shipping_number %>
-        <%= form.number_field :shipping_number, :size => '2', id: :order_shipping_number %>
+        <%= form.number_field :shipping_number, :size => '8', id: :order_shipping_number %>
       </div>
 
       <div class="field">
@@ -117,7 +117,10 @@
 
     </div>
 
-  <div class="actions row">
-    <%= form.submit "Update Order", :class => 'btn btn-primary btn-sm mx-auto mt-2 mb-4 pl-4 pr-4' %>
   </div>
+
+  <div class="actions">
+    <%= form.submit "Update Order", :class => 'btn btn-primary btn-sm btn-block mt-4' %>
+  </div>
+
 <% end %>
