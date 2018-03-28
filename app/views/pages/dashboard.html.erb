@@ -4,6 +4,54 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <div class="row">
+      <div class="col-md-4">
+        <!-- Order Status-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-pie-chart"></i>
+            Order Status</div>
+          <div class="card-body">
+            <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
+                          colors: ["red", "green"],
+                          donut: true, legend: "bottom", download: "customer_pie_chart",
+                          library: { animation: { easing: 'easeInCirc' }}%>
+          </div>
+          <div class="card-footer small text-muted"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <!-- Vendor Status-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-pie-chart"></i>
+            Vendor Status</div>
+          <div class="card-body">
+            <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
+                          donut: true, legend: "bottom", download: "customer_pie_chart",
+                          library: { animation: { easing: 'easeInCirc' }}%>
+          </div>
+          <div class="card-footer small text-muted"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <!-- Carrier use-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-pie-chart"></i>
+            Carrier Use</div>
+          <div class="card-body">
+            <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
+                          donut: true, legend: "bottom", download: "customer_pie_chart",
+                          library: { animation: { easing: 'easeInCirc' }}%>
+          </div>
+          <div class="card-footer small text-muted"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Order Totals by Company -->
     <div class="card mb-3">
       <div class="card-header">
