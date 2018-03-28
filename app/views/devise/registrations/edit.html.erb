@@ -11,7 +11,7 @@
 
           <div class="field">
             <b><%= f.label :phone %></b><br />
-            <%= f.email_field :phone, size: "10", autofocus: true, autocomplete: "phone number" %>
+            <%= f.text_field :phone, size: "10", autofocus: true, autocomplete: "phone number" %>
           </div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

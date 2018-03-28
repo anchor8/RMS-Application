@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   resources :vendor_statuses
   resources :states do collection { post :import } end
 
+  namespace :admin do
+    resources :employees, only: :show do
+      post :generate_new_password_email
+    end
+  end
+
   # Root
   root 'pages#index'
 
