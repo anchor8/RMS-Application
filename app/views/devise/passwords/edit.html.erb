@@ -6,21 +6,21 @@
         <%= devise_error_messages! %>
         <%= f.hidden_field :reset_password_token %>
 
-        <div class="field">
+        <div class="field ml-5 pl-4">
           <%= f.label :password, "New password" %><br />
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em><br />
           <% end %>
-          <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+          <%= f.password_field :password, size: "21", autofocus: true, autocomplete: "off" %>
         </div>
 
-        <div class="field">
+        <div class="field ml-5 pl-4">
           <%= f.label :password_confirmation, "Confirm new password" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, size: "21", autocomplete: "off" %>
         </div>
 
         <div class="actions row">
-          <%= f.submit "Change my password", :class => 'btn btn-primary btn-sm mx-auto pl-4 pr-4' %>
+          <%= f.submit "Change my password", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-2 pl-4 pr-4' %>
         </div>
       <% end %>
       <div class="text-center">
