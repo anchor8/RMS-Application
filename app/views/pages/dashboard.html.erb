@@ -58,7 +58,7 @@
         <i class="fa fa-bar-chart"></i>
         Order Totals by Company</div>
       <div class="card-body">
-        <%= column_chart Order.joins(:order_line, :customer).group(:company_name).limit("10").sum(:order_total), prefix: "$",
+        <%= column_chart Order.joins(:order_line, :customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$",
                                  xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
                                  library: { animation: { easing: 'easeInQuad' }}%>
       </div>
