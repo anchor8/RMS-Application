@@ -25,8 +25,8 @@ admin = Employee.new(
   password_confirmation: 'password',
   admin: true,
   employee_status_id: 2,
-  fname: 'john',
-  lname: 'doe'
+  fname: 'John',
+  lname: 'Doe'
 )
 admin.save!
 
@@ -35,8 +35,8 @@ employee1 = Employee.new(
   password: 'password',
   password_confirmation: 'password',
   employee_status_id: 2,
-  fname: 'jane',
-  lname: 'smith'
+  fname: 'Jane',
+  lname: 'Smith'
 )
 employee1.save!
 
