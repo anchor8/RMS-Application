@@ -146,7 +146,7 @@
             <i class="fa fa-table"></i>
 
             <!-- Table Name -->
-            Customer's by City
+            Customer's by State
 
         </div>
 
@@ -169,8 +169,6 @@
                     <th class="text-center">Last</th>
                     <th class="text-center">Job</th>
                     <th class="text-center">State</th>
-                    <th class="text-center">City</th>
-                    <th class="text-center">Zip</th>
 
                   </tr>
 
@@ -186,8 +184,6 @@
                     <th class="text-center">Last</th>
                     <th class="text-center">Job</th>
                     <th class="text-center">State</th>
-                    <th class="text-center">City</th>
-                    <th class="text-center">Zip</th>
 
                   </tr>
 
@@ -206,9 +202,6 @@
                             <td class="text-center"><%= customer.customer_last_name %></td>
                             <td class="text-center"><%= customer.job_title %></td>
                             <td class="text-center"><%= customer.state.state_name %></td>
-                            <td class="text-center"><%= customer.city %></td>
-                            <td class="text-center"><%= customer.zip_code %></td>
-
 
                         </tr>
                       <% end %>
@@ -262,7 +255,6 @@
                   <tr>
 
                     <th class="text-center">Vendor</th>
-                    <th class="text-center">Contact</th>
                     <th class="text-center">State</th>
 
                   </tr>
@@ -275,7 +267,6 @@
                   <tr>
 
                     <th class="text-center">Vendor</th>
-                    <th class="text-center">Contact</th>
                     <th class="text-center">State</th>
 
                   </tr>
@@ -292,7 +283,6 @@
 
                           <!-- Columns to pull from vendor data -->
                           <td class="text-center"><%= vendor.vendor_name %></td>
-                          <td class="text-center"><%= vendor.contact_name %></td>
                           <td class="text-center"><%= vendor.state.state_name %></td>
 
                         </tr>
