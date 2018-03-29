@@ -1,5 +1,12 @@
-<h1>New Order</h1>
+<div class="content-wrapper">
 
-<%= render 'form', order: @order %>
+  <div class="container-fluid">
 
-<%= link_to 'Back', orders_path %>
+    <!-- Bread Crumbs -->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <!-- Edit-->
+    <%= render 'form', order: @order %>
+  </div>
+
+</div>

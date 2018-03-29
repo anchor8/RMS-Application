@@ -209,12 +209,10 @@
       <div class="btn-right">
 
         <!-- Add Customer Button -->
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="#add-customer-modal">
-                Add New Customer
-        </button>
+        <%= button_to 'Create New Customer',
+            new_customer_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %></td>
 
       </div>
 

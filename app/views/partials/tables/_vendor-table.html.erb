@@ -196,12 +196,10 @@
       <div class="btn-right">
 
         <!-- Add Vendor Button -->
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="#add-vendor-modal">
-                Add New Vendor
-        </button>
+        <%= button_to 'Create New Vendor',
+            new_vendor_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %>
 
       </div>
 

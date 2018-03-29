@@ -14,6 +14,9 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
+    add_breadcrumb 'Customer Management', customermgmt_path
+    add_breadcrumb 'Create New Customer'
+
     @customer = Customer.new
   end
 

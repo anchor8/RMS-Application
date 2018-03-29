@@ -150,12 +150,10 @@
       <div class="btn-right">
 
         <!-- Add Order Button -->
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="#add-order-modal">
-                Add New Order
-        </button>
+        <%= button_to 'Create New Order',
+            new_order_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %>
 
       </div>
 
