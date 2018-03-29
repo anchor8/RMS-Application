@@ -305,10 +305,16 @@
 
                       <!-- Edit Button -->
                       <td class="text-center">
-                        <%= button_to 'New Order',
-                            new_order_path(customer.id),
-                            :method => :get,
-                            :class => 'btn btn-outline-primary btn-sm' %></td>
+                        <%= link_to 'New Order', {:controller => "orders",
+                                                  :action => "new",
+                                                  :customer_id => customer.id,
+                                                  :country_id => 1,
+                                                  :state_id => customer.state_id,
+                                                  :street_address_1 => customer.street_address_1,
+                                                  :street_address_2 => customer.street_address_2,
+                                                  :city => customer.city,
+                                                  :zip_code => customer.zip_code} %>
+                      </td>
 
                       <!-- Disable Button -->
                       <td class="text-center">
@@ -386,6 +392,9 @@
           paging: true
         } );
 
+        $("tr[data-link]").click(function() {
+          window.location = $(this).data("link")
+        })
 
         $('a.toggle-vis').on( 'click', function (e) {
 

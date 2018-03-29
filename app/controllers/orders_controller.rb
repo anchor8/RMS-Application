@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Create New Order'
     @order = Order.new
+    @order.order_date = Date.current
   end
 
   # GET /orders/1/edit
