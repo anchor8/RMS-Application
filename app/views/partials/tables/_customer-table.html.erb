@@ -47,7 +47,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="0"
-       href="">Disable</a>
+       href="">New Order</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -55,7 +55,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="1"
-       href="">Edit</a>
+       href="">Disable</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -63,7 +63,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="2"
-       href="">First</a>
+       href="">Edit</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -71,7 +71,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="3"
-       href="">Last</a>
+       href="">First</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -79,7 +79,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="4"
-       href="">Company</a>
+       href="">Last</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -87,7 +87,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="5"
-       href="">Job</a>
+       href="">Company</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -95,7 +95,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="6"
-       href="">Work</a>
+       href="">Job</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -103,7 +103,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="7"
-       href="">Mobile</a>
+       href="">Work</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -111,7 +111,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="8"
-       href="">Fax</a>
+       href="">Mobile</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -119,7 +119,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="9"
-       href="">Email</a>
+       href="">Fax</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -127,7 +127,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="10"
-       href="">CC Email</a>
+       href="">Email</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -135,7 +135,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="11"
-       href="">Website</a>
+       href="">CC Email</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -143,7 +143,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="12"
-       href="">Social Media</a>
+       href="">Website</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -151,7 +151,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="13"
-       href="">Address 1</a>
+       href="">Social Media</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -159,7 +159,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="14"
-       href="">Address 2</a>
+       href="">Address 1</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -167,7 +167,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="15"
-       href="">State</a>
+       href="">Address 2</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -175,7 +175,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="16"
-       href="">City</a>
+       href="">State</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -183,6 +183,14 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="17"
+       href="">City</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="18"
        href="">Zip</a>
 
   </div>
@@ -233,6 +241,7 @@
 
             <tr>
 
+              <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">First</th>
@@ -261,6 +270,7 @@
 
             <tr>
 
+              <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">First</th>
@@ -292,8 +302,16 @@
                   <tr>
 
                     <!-- Columns to pull from customer data -->
+
+                      <!-- Edit Button -->
                       <td class="text-center">
-                        <!-- Disable Button -->
+                        <%= button_to 'New Order',
+                            new_order_path(customer.id),
+                            :method => :get,
+                            :class => 'btn btn-outline-primary btn-sm' %></td>
+
+                      <!-- Disable Button -->
+                      <td class="text-center">
                         <% if !customer.deleted_at %>
                           <%= button_to 'Disable',
                               toggle_customer_path(customer.id),
@@ -313,12 +331,14 @@
                                              customer.customer_first_name +
                                              customer.customer_last_name + "?" } %></td>
                         <% end %>
+
+                      <!-- Edit Button -->
                       <td class="text-center">
-                        <!-- Edit Button -->
                         <%= button_to 'Edit',
                             edit_customer_path(customer.id),
                             :method => :get,
                             :class => 'btn btn-outline-success btn-sm' %></td>
+
                       <td class="text-left-align"><%= customer.customer_first_name %></td>
                       <td class="text-left-align"><%= customer.customer_last_name %></td>
                       <td class="text-left-align"><%= customer.company_name %></td>
