@@ -71,7 +71,7 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fa fa-pie-chart"></i>
-            Customer's by State (West Coast)</div>
+            Customers by State (West Coast)</div>
           <div class="card-body">
             <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
@@ -86,7 +86,7 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fa fa-pie-chart"></i>
-            Customer's by State (Central)</div>
+            Customers by State (Central)</div>
           <div class="card-body">
             <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
@@ -101,7 +101,7 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fa fa-pie-chart"></i>
-            Customer's by State (East Coast)</div>
+            Customers by State (East Coast)</div>
           <div class="card-body">
             <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
@@ -118,7 +118,7 @@
     <div class="card mb-3">
       <div class="card-header">
         <i class="fa fa-bar-chart"></i>
-        Vendor's by State</div>
+        Vendors by State</div>
       <div class="card-body">
         <%= bar_chart Vendor.joins(:state).group(:state_name).count,
                       colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart",
