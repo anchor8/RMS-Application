@@ -333,7 +333,8 @@
 <script>
     $(document).ready(function() {
         var table = $('#employeetable').DataTable( {
-            "paging": true
+           stateSave: true,
+           "paging": true
         } );
 
         $('a.toggle-vis').on( 'click', function (e) {
