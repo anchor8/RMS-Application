@@ -27,7 +27,7 @@
 
       <div class="field">
         <%= form.label :vendor_status_id %>
-        <%= form.collection_select :vendor_status_id, VendorStatus.all, :id, :vendor_status_type %>
+        <%= form.collection_select :vendor_status_id, VendorStatus.all, :id, :vendor_status_type, prompt: true %>
       </div>
 
       <div class="field">
@@ -71,7 +71,7 @@
 
       <div class="field">
         <%= form.label :state_id %>
-        <%= form.collection_select :state_id, State.all, :id, :state_name %>
+        <%= form.collection_select :state_id, State.all, :id, :state_name, prompt: true %>
       </div>
 
       <div class="field">
