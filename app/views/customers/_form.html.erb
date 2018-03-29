@@ -18,32 +18,32 @@
 
       <div class="field">
         <%= form.label :customer_first_name %>
-        <%= form.text_field :customer_first_name, :size => '15', id: :customer_customer_first_name %>
+        <%= form.text_field :customer_first_name, :size => '15', required: true, placeholder: 'Required', id: :customer_customer_first_name %>
       </div>
 
       <div class="field">
         <%= form.label :customer_last_name %>
-        <%= form.text_field :customer_last_name, :size => '15', id: :customer_customer_last_name %>
+        <%= form.text_field :customer_last_name, :size => '15', required: true, placeholder: 'Required', id: :customer_customer_last_name %>
       </div>
 
       <div class="field">
         <%= form.label :customer_email %>
-        <%= form.text_field :customer_email, :size => '20', id: :customer_customer_email %>
+        <%= form.text_field :customer_email, :size => '20', type: 'email', required: true, placeholder: 'Required', id: :customer_customer_email %>
       </div>
 
       <div class="field">
         <%= form.label :customer_cc_email %>
-        <%= form.text_field :customer_cc_email, :size => '20', id: :customer_customer_cc_email %>
+        <%= form.text_field :customer_cc_email, :size => '20', type: 'email', id: :customer_customer_cc_email %>
       </div>
 
       <div class="field">
         <%= form.label :mobile %>
-        <%= form.text_field :mobile, :size => '8', id: :customer_mobile %>
+        <%= form.text_field :mobile, :size => '11', id: :customer_mobile %>
       </div>
 
       <div class="field">
         <%= form.label :street_address_1 %>
-        <%= form.text_field :street_address_1, :size => '30', id: :customer_street_address_1 %>
+        <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: 'Required', id: :customer_street_address_1 %>
       </div>
 
       <div class="field">
@@ -77,17 +77,17 @@
 
       <div class="field">
         <%= form.label :city %>
-        <%= form.text_field :city, :size => '20', id: :customer_city %>
+        <%= form.text_field :city, :size => '20', Required: true, placeholder: 'Required', id: :customer_city %>
       </div>
 
       <div class="field">
         <%= form.label :zip_code %>
-        <%= form.text_field :zip_code, :size => '8', id: :customer_zip_code %>
+        <%= form.text_field :zip_code, :size => '8', required: true, placeholder: 'Required', id: :customer_zip_code %>
       </div>
 
       <div class="field">
         <%= form.label :work_phone %>
-        <%= form.text_field :work_phone, :size => '8', id: :customer_work_phone %>
+        <%= form.text_field :work_phone, :size => '8', Required: true, placeholder: 'Required', id: :customer_work_phone %>
       </div>
 
       <div class="field">
