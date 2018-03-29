@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   before_action only: [:new, :create]
   skip_before_action :require_no_authentication
 
-  private
+  protected
 
   def sign_up(resource_name, resource)
     true
