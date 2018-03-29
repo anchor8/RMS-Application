@@ -362,8 +362,10 @@
 <script>
     $(document).ready(function() {
         var table = $('#customertable').DataTable( {
+            stateSave: true,
             "paging": true
         } );
+
 
         $('a.toggle-vis').on( 'click', function (e) {
 
