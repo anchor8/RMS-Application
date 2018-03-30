@@ -31,11 +31,7 @@
         <%= form.collection_select(:vendor_id, Vendor.all, :id, :vendor_name, {prompt: true}, {required: true}) %>
       </div>
 
-    </div>
-
-    <div class="col-md-4">
-
-      <div class="field">
+      <div class="field mt-5">
         <%= form.label :payment_type_id %>
         <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
       </div>
@@ -74,7 +70,11 @@
         <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, start_year: 2018, selected: Date.today %>
       </div>
 
-      <div class="field mt-4">
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="field">
         <%= form.label :street_address_1 %>
         <%= form.text_field :street_address_1, value: params['street_address_1'], size: "25", id: :order_street_address_1, required: true %>
       </div>
