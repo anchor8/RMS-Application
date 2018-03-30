@@ -166,7 +166,6 @@
               <th class="text-center">Edit</th>
               <th class="text-center">PO No.</th>
               <th class="text-center">Date</th>
-              <th class="text-center">Order Line</th>
               <th class="text-center">Status</th>
               <th class="text-center">Company</th>
               <th class="text-center">Customer</th>
@@ -188,7 +187,6 @@
               <th class="text-center">Edit</th>
               <th class="text-center">PO No.</th>
               <th class="text-center">Date</th>
-              <th class="text-center">Order Line</th>
               <th class="text-center">Status</th>
               <th class="text-center">Company</th>
               <th class="text-center">Customer</th>
@@ -232,7 +230,6 @@
 
                     <td class="text-center"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.order_date %></td>
-                    <td class="text-center"><%= order.order_line.item_number %></td>
                     <td class="text-left-align"><%= order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.customer.customer_last_name %></td>
@@ -270,20 +267,7 @@
 
 </div>
 
-<!-- Add Customer Modal-->
-<%= render partial: 'partials/modals/add-order-modal' %>
-
 <script>
-
-
-
-
-
-
-
-
-
-
     $(document).ready(function() {
         var table = $('#ordertable').DataTable( {
             "paging": true
