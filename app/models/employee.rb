@@ -9,6 +9,16 @@ class Employee < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :timeoutable
 
+  validate :password_complexity
+
+  def password_complexity
+    if password.present?
+       if !password.match(/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/)
+         errors.add :password, "Password requires at least 1 number and 1 letter."
+       end
+    end
+  end
+
   # instead of deleting, indicate the user requested a delete & timestamp it
   def toggle_employee
     if !deleted_at

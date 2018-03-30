@@ -22,7 +22,8 @@ class RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      redirect_to usermgmt_url, notice: 'Failed to create new employee, incorrect password. Try again.'
+      flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages
+      redirect_to usermgmt_url
     end
   end
 
@@ -46,7 +47,8 @@ class RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      redirect_to usermgmt_url, notice: 'Failed to update current employee, incorrect password. Try again.'
+      flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages
+      redirect_to usermgmt_url
     end
   end
 

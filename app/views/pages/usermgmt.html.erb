@@ -9,9 +9,20 @@
 
     <!-- Notice Banner -->
     <% if notice %>
-      <div class='h5 strong text-center mark'>
-        <%= flash[:notice] %>
-      </div>
+      <% flash.each do |key, value| %>
+        <% if value.class == Array %>
+          <div class="h5 strong text-center mark">
+            <% value.each do |message| %>
+                * <%= message %> *
+                </br>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="h5 strong text-center mark">
+            * <%= value %> *
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
 
     <!-- Section Above Employee Table -->
