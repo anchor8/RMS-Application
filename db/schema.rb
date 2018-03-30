@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323061015) do
+ActiveRecord::Schema.define(version: 20180330013901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 20180323061015) do
     t.decimal "tax_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_order_lines_on_order_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -100,7 +102,6 @@ ActiveRecord::Schema.define(version: 20180323061015) do
     t.bigint "employee_id"
     t.bigint "payment_type_id"
     t.bigint "shipper_id"
-    t.bigint "order_line_id"
     t.bigint "state_id"
     t.integer "shipping_number"
     t.string "customer_name"
@@ -118,7 +119,6 @@ ActiveRecord::Schema.define(version: 20180323061015) do
     t.index ["country_id"], name: "index_orders_on_country_id"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["employee_id"], name: "index_orders_on_employee_id"
-    t.index ["order_line_id"], name: "index_orders_on_order_line_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["payment_type_id"], name: "index_orders_on_payment_type_id"
     t.index ["shipper_id"], name: "index_orders_on_shipper_id"
@@ -178,7 +178,6 @@ ActiveRecord::Schema.define(version: 20180323061015) do
   add_foreign_key "orders", "countries"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "employees"
-  add_foreign_key "orders", "order_lines"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "orders", "payment_types"
   add_foreign_key "orders", "shippers"

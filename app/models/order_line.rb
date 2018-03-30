@@ -1,5 +1,5 @@
 class OrderLine < ApplicationRecord
-  has_many :orders
+  belongs_to :order
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
