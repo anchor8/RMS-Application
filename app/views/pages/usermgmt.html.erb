@@ -7,6 +7,13 @@
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Notice Banner -->
+    <% if notice %>
+      <div class='h5 strong text-center mark'>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <!-- Section Above Employee Table -->
     <div class="ml-4 mb-4">
 
