@@ -7,77 +7,87 @@
     <!-- Breadcrumbs-->
     <%= render partial: 'partials/breadcrumbs' %>
 
-    <!-- Notice Banner -->
-    <% if notice %>
+    <% if current_employee.admin? %>
+
+      <!-- Notice Banner -->
+      <% if notice %>
+        <div class='h5 strong text-center mark'>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <!-- Guide info -->
+      <div>
+        <p><b>Click browse and choose a CSV file to import.</b></p>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="row">
+
+        <!-- Left Column -->
+        <div class="col-md-6">
+
+          <!-- Import Customer Data -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_customers_path, multipart: true do %>
+              <%= label_tag 'Customers:', nil, class: 'h5 pr-15' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+            <% end %>
+          </div>
+
+          <!-- Import Vendor Data -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_vendors_path, multipart: true do %>
+              <%= label_tag 'Vendors:', nil, class: 'h5 pr-4' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+            <% end %>
+          </div>
+
+          <!-- Import Order Data -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_orders_path, multipart: true do %>
+              <%= label_tag 'Orders:', nil, class: 'h5 pr-23' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+            <% end %>
+          </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+
+          <!-- Import State Data -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_states_path, multipart: true do %>
+              <%= label_tag 'States:', nil, class: 'h5 pr-22' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+            <% end %>
+          </div>
+
+          <!-- Import Country Data -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_countries_path, multipart: true do %>
+              <%= label_tag 'Countries:', nil, class: 'h5 pr-1' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+
+    <% else %>
+
       <div class='h5 strong text-center mark'>
-        <%= flash[:notice] %>
+        ADMIN ONLY!
       </div>
+
     <% end %>
-
-    <!-- Guide info -->
-    <div>
-      <p><b>Click browse and choose a CSV file to import.</b></p>
-    </div>
-
-    <!-- Row 1 -->
-    <div class="row">
-
-      <!-- Left Column -->
-      <div class="col-md-6">
-
-        <!-- Import Customer Data -->
-        <div class="mt-2 mb-2">
-          <%= form_tag import_customers_path, multipart: true do %>
-            <%= label_tag 'Customers:', nil, class: 'h5 pr-15' %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-          <% end %>
-        </div>
-
-        <!-- Import Vendor Data -->
-        <div class="mt-2 mb-2">
-          <%= form_tag import_vendors_path, multipart: true do %>
-            <%= label_tag 'Vendors:', nil, class: 'h5 pr-4' %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-          <% end %>
-        </div>
-
-        <!-- Import Order Data -->
-        <div class="mt-2 mb-2">
-          <%= form_tag import_orders_path, multipart: true do %>
-            <%= label_tag 'Orders:', nil, class: 'h5 pr-23' %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-          <% end %>
-        </div> 
-
-      </div>
-
-      <!-- Right Column -->
-      <div class="col-md-6">
-
-        <!-- Import State Data -->
-        <div class="mt-2 mb-2">
-          <%= form_tag import_states_path, multipart: true do %>
-            <%= label_tag 'States:', nil, class: 'h5 pr-22' %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-          <% end %>
-        </div>
-
-        <!-- Import Country Data -->
-        <div class="mt-2 mb-2">
-          <%= form_tag import_countries_path, multipart: true do %>
-            <%= label_tag 'Countries:', nil, class: 'h5 pr-1' %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-          <% end %>
-        </div>
-
-      </div>
-
-    </div>
 
   </div>
 

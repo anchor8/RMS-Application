@@ -137,17 +137,19 @@
       </li>
 
       <!-- Import Management Nav Button -->
-      <li class="nav-item" data-toggle="tooltip"
-      data-placement="right" title="Import Management">
+      <% if current_employee.admin? %>
+        <li class="nav-item" data-toggle="tooltip"
+        data-placement="right" title="Import Management">
 
-        <%= link_to(importmgmt_url, class: "nav-link") do %>
-          <i class="fa fa-fw fa-upload"></i>
-          <span class="nav-link-text">Import Management</span>
-        <% end %>
+          <%= link_to(importmgmt_url, class: "nav-link") do %>
+            <i class="fa fa-fw fa-upload"></i>
+            <span class="nav-link-text">Import Management</span>
+          <% end %>
 
-      </li>
+        </li>
+      <% end %>
 
-    </ul>
+    </ul>    
 
     <!-- Collapse Nav Bar Button (At bottom) -->
     <ul class="navbar-nav sidenav-toggler">
