@@ -34,7 +34,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="0"
-       href="">Vendor</a>
+       href="">Company</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -42,7 +42,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="1"
-       href="">Company</a>
+       href="">Vendor</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -163,8 +163,8 @@
 
             <tr>
 
+              <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Company</th>
               <th class="text-center">Status</th>
               <th class="text-center">Shipped</th>
               <th class="text-center">Shipper</th>
@@ -185,8 +185,8 @@
 
             <tr>
 
+              <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Company</th>
               <th class="text-center">Status</th>
               <th class="text-center">Shipped</th>
               <th class="text-center">Shipper</th>
@@ -208,23 +208,27 @@
             <!-- Load order data -->
               <% @orders.each do |order| %>
 
-                <tr>
+                <% if !order.deleted_at %>
 
-                  <!-- Columns to pull from order data -->
-                  <td class="text-left-align"><%= order.vendor.vendor_name %></td>
-                  <td class="text-left-align"><%= order.customer.company_name %></td>
-                  <td class="text-left-align"><%= order.order_status.order_status_description %></td>
-                  <td class="text-left-align"><%= order.ship_date %></td>
-                  <td class="text-left-align"><%= order.shipper.shipper_description %></td>
-                  <td class="text-left-align"><%= order.shipping_number %></td>
-                  <td class="text-left-align"><%= order.country.country_name %></td>
-                  <td class="text-left-align"><%= order.state.state_name %></td>
-                  <td class="text-left-align"><%= order.street_address_1 %></td>
-                  <td class="text-left-align"><%= order.street_address_2 %></td>
-                  <td class="text-left-align"><%= order.city %></td>
-                  <td class="text-left-align"><%= order.zip_code %></td>
+                  <tr>
 
-                </tr>
+                    <!-- Columns to pull from order data -->
+                    <td class="text-left-align"><%= order.customer.company_name %></td>
+                    <td class="text-left-align"><%= order.vendor.vendor_name %></td>
+                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= order.ship_date %></td>
+                    <td class="text-left-align"><%= order.shipper.shipper_description %></td>
+                    <td class="text-left-align"><%= order.shipping_number %></td>
+                    <td class="text-left-align"><%= order.country.country_name %></td>
+                    <td class="text-left-align"><%= order.state.state_name %></td>
+                    <td class="text-left-align"><%= order.street_address_1 %></td>
+                    <td class="text-left-align"><%= order.street_address_2 %></td>
+                    <td class="text-left-align"><%= order.city %></td>
+                    <td class="text-left-align"><%= order.zip_code %></td>
+
+                  </tr>
+
+                <% end %>
 
               <% end %>
 
