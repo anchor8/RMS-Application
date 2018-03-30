@@ -146,17 +146,6 @@
       <!-- Table Name -->
       Order Table
 
-      <!-- Add, Remove, Update Buttons -->
-      <div class="btn-right">
-
-        <!-- Add Order Button -->
-        <%= button_to 'Create New Order',
-            new_order_path,
-            :method => :get,
-            :class => 'btn btn-outline-primary' %>
-
-      </div>
-
   </div>
 
   <!-- Table Card Body -->
@@ -207,8 +196,8 @@
               <th class="text-center">Vendor</th>
               <th class="text-center">Total</th>
               <th class="text-center">Payment Type</th>
-             
-              
+
+
 
             </tr>
 
@@ -251,8 +240,8 @@
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
                     <td class="text-left-align"><%= order.order_total %></td>
                     <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
-                    
-                    
+
+
 
                   </tr>
 
