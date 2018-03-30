@@ -46,4 +46,8 @@ class Employee < ApplicationRecord
     end
   end
 
+  def formatted_name
+    "#{fname} #{lname}"
+  end
+
 end

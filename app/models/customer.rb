@@ -16,4 +16,7 @@ class Customer < ApplicationRecord
     end
   end
 
+  def formatted_name
+    "#{customer_first_name} #{customer_last_name}"
+  end
 end
