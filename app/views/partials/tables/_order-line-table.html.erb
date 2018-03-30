@@ -1,0 +1,75 @@
+<!-- Table Card -->
+
+<div class="card mb-3">
+
+  <!-- Card Header -->
+  <div class="card-header">
+
+      <!-- Table Icon -->
+      <i class="fa fa-table"></i>
+
+      <!-- Table Name -->
+      Customer Table
+
+  </div>
+
+  <!-- Table Card Body -->
+  <div class="card-body">
+
+    <!-- Table Type -->
+    <div class="table-responsive">
+
+
+        <table class="table table-bordered table-hover table-striped" id="customertable" width="100%" cellspacing="0">
+
+
+          <!-- Top Column Names -->
+          <thead>
+
+            <tr>
+
+              <th class="text-center">Item Number</th>
+
+            </tr>
+
+          </thead>
+
+          <!-- Bottom Column Names -->
+          <tfoot>
+
+            <tr>
+
+              <th class="text-center">Item Number</th>
+
+            </tr>
+
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load customer data -->
+              <% @order_lines.each do |order_line| %>
+                  <tr>
+
+                    <!-- Columns to pull from order-line data -->
+                    <td class="text-left-align"><%= order_line.item_number%></td>
+
+                  </tr>
+
+              <% end %>
+
+          </tbody>
+
+        </table>
+
+    </div>
+
+  </div>
+
+  <!-- Footnote: Lastest date a customer was updated -->
+  <div class="card-footer small text-muted">
+
+  </div>
+
+</div>
