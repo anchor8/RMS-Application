@@ -58,23 +58,25 @@
 
       <div class="field">
         <%= form.label "Shipping Status" %>
-        <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true}) %>
+        <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {}) %>
       </div>
 
       <div class="field">
         <%= form.label :shipping_number %>
-        <%= form.number_field :shipping_number, :size => '8', id: :order_shipping_number, required: true %>
+        <%= form.number_field :shipping_number, :size => '8', id: :order_shipping_number %>
       </div>
 
       <div class="field">
         <%= form.label :shipper_id %>
-        <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {required: true}) %>
+        <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {}) %>
       </div>
 
       <div class="field">
         <%= form.label :ship_date %>
-        <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, required: true %>
+        <%= form.date_select :ship_date, id: :order_ship_date, prompt: true %>
       </div>
+
+      <%= form.hidden_field :order_date, value: @order.order_date %>
 
       <%= form.hidden_field :country_id, value: params['country_id'] %>
 
