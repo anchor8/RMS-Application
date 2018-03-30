@@ -78,11 +78,6 @@
           </div>
 
           <div class="field">
-            <%= form.label :order_line_id %>
-            <%= form.collection_select :order_line_id, OrderLine.all, :id, :item_number %>
-          </div>
-
-          <div class="field">
             <%= form.label :state_id %>
             <%= form.collection_select :state_id, State.all, :id, :state_name %>
           </div>

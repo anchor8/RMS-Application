@@ -8,7 +8,6 @@ one:
   employee: one
   payment_type: one
   shipper: one
-  order_line: one
   state: one
   shipping_number: 1
   customer_name: MyString
@@ -29,7 +28,6 @@ two:
   employee: two
   payment_type: two
   shipper: two
-  order_line: two
   state: two
   shipping_number: 1
   customer_name: MyString
