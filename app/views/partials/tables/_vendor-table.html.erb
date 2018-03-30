@@ -70,14 +70,6 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="3"
-       href="">Contact</a>
-
-    <a class="toggle-vis btn btn-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="4"
        href="">State</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
@@ -85,8 +77,16 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="5"
+       data-column="4"
        href="">Status</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="5"
+       href="">Contact</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -222,9 +222,9 @@
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Contact</th>
               <th class="text-center">State</th>
               <th class="text-center">Status</th>
+              <th class="text-center">Contact</th>
               <th class="text-center">Job</th>
               <th class="text-center">Work</th>
               <th class="text-center">Mobile</th>
@@ -249,9 +249,9 @@
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Contact</th>
               <th class="text-center">State</th>
               <th class="text-center">Status</th>
+              <th class="text-center">Contact</th>
               <th class="text-center">Job</th>
               <th class="text-center">Work</th>
               <th class="text-center">Mobile</th>
@@ -307,9 +307,9 @@
                           :method => :get,
                           :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-left-align"><%= vendor.vendor_name %></td>
-                    <td class="text-left-align"><%= vendor.contact_name %></td>
                     <td class="text-left-align"><%= vendor.state.state_name %></td>
                     <td class="text-left-align"><%= vendor.vendor_status.vendor_status_type %></td>
+                    <td class="text-left-align"><%= vendor.contact_name %></td>
                     <td class="text-left-align"><%= vendor.job_title %></td>
                     <td class="text-left-align"><%= vendor.work_phone %></td>
                     <td class="text-left-align"><%= vendor.mobile %></td>
@@ -392,7 +392,7 @@
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
 
         // Hide columns that dont relate to vendor contact info
-        table.columns( [ 0, 1, 4, 5, 6, 12, 13, 14, 15, 16 ] ).visible( false, false );
+        table.columns( [ 0, 1, 4, 12, 13, 14, 15, 16 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
@@ -406,7 +406,7 @@
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
 
         // Hide columns that dont relate to vendor info
-        table.columns( [ 0, 1, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+        table.columns( [ 0, 1, 5, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
