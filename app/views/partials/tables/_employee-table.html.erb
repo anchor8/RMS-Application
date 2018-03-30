@@ -96,7 +96,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="8"
-       href="">Sign-in Count</a>
+       href="">Phone</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -104,7 +104,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="9"
-       href="">Last Sign-in</a>
+       href="">Sign-in Count</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -112,7 +112,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="10"
-       href="">Created</a>
+       href="">Last Sign-in</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -120,7 +120,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="11"
-       href="">Updated</a>
+       href="">Created</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -128,6 +128,14 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="12"
+       href="">Updated</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="13"
        href="">Disabled</a>
 
   </div>
@@ -183,6 +191,7 @@
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Email</th>
+              <th class="text-center">Phone</th>
               <th class="text-center">Sign-in Count</th>
               <th class="text-center">Last Sign-in</th>
               <th class="text-center">Created</th>
@@ -206,6 +215,7 @@
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Email</th>
+              <th class="text-center">Phone</th>
               <th class="text-center">Sign-in Count</th>
               <th class="text-center">Last Sign-in</th>
               <th class="text-center">Created</th>
@@ -299,6 +309,7 @@
                 <td class="text-center"><%= employee.fname %></td>
                 <td class="text-center"><%= employee.lname %></td>
                 <td class="text-center"><%= employee.email %></td>
+                <td class="text-center"><%= employee.phone %></td>
                 <td class="text-center"><%= employee.sign_in_count %></td>
                 <td class="text-center"><%= employee.last_sign_in_at %></td>
                 <td class="text-center"><%= employee.created_at %></td>
@@ -348,14 +359,14 @@
 
         $('a.show-all-col').on( 'click', function (e) {
 
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ] ).visible( true, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
         } );
 
         $('a.hide-all-col').on( 'click', function (e) {
 
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( false, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ] ).visible( false, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
         } );
