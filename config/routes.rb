@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :customers do collection { post :import } end
   resources :vendors do collection { post :import } end
   resources :employee_statuses
-  resources :order_lines do collection { post :import } end
   resources :shippers
   resources :payment_types
   resources :countries do collection { post :import } end
@@ -33,8 +32,8 @@ Rails.application.routes.draw do
 
   # Toggle Admin
   match '/pages/employee/admin/:id', to: 'pages#toggle_admin',
-                               as: 'toggle_admin',
-                               via: 'put'
+                                     as: 'toggle_admin',
+                                     via: 'put'
 
   # Destroy Customer
   match '/pages/customer/:id', to: 'pages#toggle_customer',

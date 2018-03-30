@@ -6,7 +6,6 @@ class Order < ApplicationRecord
   belongs_to :employee
   belongs_to :payment_type
   belongs_to :shipper
-  has_many :order_lines
   belongs_to :state
 
   def toggle_order
