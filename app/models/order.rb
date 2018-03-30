@@ -16,6 +16,16 @@ class Order < ApplicationRecord
     end
   end
 
+  def toggle_order_status
+    if order_status_id == 1
+      update_attribute(:order_status_id, '2')
+      update_attribute(:ship_date, Time.current)
+    else
+      update_attribute(:order_status_id, '1')
+      update_attribute(:ship_date, nil)
+    end
+  end
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Order.create! row.to_hash

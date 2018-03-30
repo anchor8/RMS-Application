@@ -50,6 +50,11 @@ Rails.application.routes.draw do
                             as: 'toggle_order',
                             via: 'put'
 
+  # Toggle Order Status
+  match '/pages/order/status/:id', to: 'pages#toggle_order_status',
+                                   as: 'toggle_order_status',
+                                   via: 'put'
+
   # Update Order
   match '/pages/customer/update/:id', to: 'pages#update_customer',
                                       as: 'update_customer',

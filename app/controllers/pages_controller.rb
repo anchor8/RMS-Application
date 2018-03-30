@@ -29,7 +29,7 @@ class PagesController < ApplicationController
   end
 
   def toggle_admin
-    # 
+    #
     @employee = Employee.find(params[:id])
     @employee.toggle_admin if current_employee != @employee
     redirect_to usermgmt_path
@@ -82,6 +82,13 @@ class PagesController < ApplicationController
     @order = Order.find(params[:id])
     @order.toggle_order
     redirect_to ordermgmt_path
+  end
+
+  def toggle_order_status
+    # Get customer id and destroy that employee
+    @order = Order.find(params[:id])
+    @order.toggle_order_status
+    redirect_to shippingmgmt_path
   end
 
   def shippingmgmt

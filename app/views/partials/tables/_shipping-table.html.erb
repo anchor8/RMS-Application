@@ -34,7 +34,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="0"
-       href="">Company</a>
+       href="">Toggle</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -42,7 +42,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="1"
-       href="">Vendor</a>
+       href="">Company</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -50,7 +50,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="2"
-       href="">Status</a>
+       href="">Vendor</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -58,7 +58,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="3"
-       href="">Shipped</a>
+       href="">Status</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -66,7 +66,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="4"
-       href="">Shipper</a>
+       href="">Shipped</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -74,7 +74,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="5"
-       href="">Shipping No.</a>
+       href="">Shipper</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -82,7 +82,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="6"
-       href="">Country</a>
+       href="">Shipping No.</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -90,7 +90,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="7"
-       href="">State</a>
+       href="">Country</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -98,7 +98,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="8"
-       href="">Addr. 1</a>
+       href="">State</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -106,7 +106,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="9"
-       href="">Addr. 2</a>
+       href="">Addr. 1</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -114,7 +114,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="10"
-       href="">City</a>
+       href="">Addr. 2</a>
 
     <a class="toggle-vis btn btn-primary btn-sm mb-1"
        type="button"
@@ -122,6 +122,14 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="11"
+       href="">City</a>
+
+    <a class="toggle-vis btn btn-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="12"
        href="">Zip</a>
 
 
@@ -163,6 +171,7 @@
 
             <tr>
 
+              <th class="text-center">Toggle</th>
               <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">Status</th>
@@ -185,6 +194,7 @@
 
             <tr>
 
+              <th class="text-center">Toggle</th>
               <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">Status</th>
@@ -213,9 +223,22 @@
                   <tr>
 
                     <!-- Columns to pull from order data -->
+                    <td class="text-center">
+                      <!-- Change Status Button -->
+                      <% if order.order_status_id == 2 %>
+                        <%= button_to 'Unmark for Shipment',
+                            toggle_order_status_path(order.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-danger btn-sm' %></td>
+                      <% else %>
+                        <%= button_to 'Mark for Shipment',
+                            toggle_order_status_path(order.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-primary btn-sm' %></td>
+                      <% end %>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
-                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
+                    <td class="text-center"><%= order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.ship_date %></td>
                     <td class="text-left-align"><%= order.shipper.shipper_description %></td>
                     <td class="text-left-align"><%= order.shipping_number %></td>
@@ -265,14 +288,14 @@
 
         $('a.show-all-col').on( 'click', function (e) {
 
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] ).visible( true, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ).visible( true, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
         } );
 
         $('a.hide-all-col').on( 'click', function (e) {
 
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ).visible( false, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
         } );
