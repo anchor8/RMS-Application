@@ -37,6 +37,8 @@
             <%= f.password_field :password_confirmation, size: "36",autocomplete: "off", required: true %>
           </div>
 
+          <%= f.hidden_field :employee_status_id, value: 2 %>
+
           <div class="actions row">
             <%= f.submit " Sign up", :class => 'btn btn-primary btn-sm mx-auto mt-2 pl-4 pr-4' %>
           </div>
