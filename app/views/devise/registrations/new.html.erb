@@ -6,7 +6,7 @@
 
           <div class="field">
             <b><%= f.label :email %></b><br />
-            <%= f.email_field :email, size: "36", autofocus: true, autocomplete: "email", required: true %>
+            <%= f.email_field :email, type: 'email', size: "36", autofocus: true, autocomplete: "email", required: true %>
           </div>
 
           <div class="field">
@@ -21,7 +21,7 @@
 
           <div class="field">
             <b><%= f.label :phone %></b><br />
-            <%= f.text_field :phone, size: "10",autofocus: true, autocomplete: "phone number", required: true %>
+            <%= f.text_field :phone, type: 'tel', size: "10",autofocus: true, autocomplete: "phone number", required: true %>
           </div>
 
           <div class="field">

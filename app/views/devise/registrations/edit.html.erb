@@ -6,7 +6,7 @@
 
         <div class="field">
           <b><%= f.label :email %></b><br />
-          <%= f.email_field :email, value: current_employee.email, size: "37", placeholder: current_employee.email, autocomplete: "Email", required: true %>
+          <%= f.email_field :email, type: 'email', value: current_employee.email, size: "37", placeholder: current_employee.email, autocomplete: "Email", required: true %>
         </div>
 
         <div class="field">
@@ -21,7 +21,7 @@
 
         <div class="field">
           <b><%= f.label :phone %></b><br />
-          <%= f.text_field :phone, size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
+          <%= f.text_field :phone, type: 'tel', size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
         </div>
 
     </div>
