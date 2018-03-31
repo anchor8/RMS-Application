@@ -8,10 +8,10 @@ class Order < ApplicationRecord
   belongs_to :shipper
   belongs_to :state
 
+  validates :order_date, allow_nil: false, presence: true
   validates :shipping_number, allow_nil: false, presence: true
   validates :purchase_order_number, allow_nil: false, presence: true
-  validates :order_date, allow_nil: false, presence: true
-  validates :ship_date, allow_nil: false, presence: true
+  validates :ship_date, allow_nil: true, presence: false
   validates :order_total, allow_nil: false, presence: true
   validates :street_address_1, allow_nil: false, presence: true
   validates :street_address_2, allow_nil: true, presence: false

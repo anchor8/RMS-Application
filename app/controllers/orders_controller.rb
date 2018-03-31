@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     add_breadcrumb 'Create New Order'
     @order = Order.new
     @order.order_date = Date.current
+    @order.shipper_id = 7
     @order.customer_id = params['customer_id']
     @order.country_id = params['country_id']
     @order.state_id = params['state_id']
