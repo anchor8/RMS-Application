@@ -10,6 +10,9 @@ class Employee < ApplicationRecord
          :timeoutable
 
   validate :password_complexity
+  validates :fname, allow_null: false, presence: true
+  validates :lname, allow_null: false, presence: true
+  validates :phone, allow_null: false, presence: true
 
   def password_complexity
     if password.present?
