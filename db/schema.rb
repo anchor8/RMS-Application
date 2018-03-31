@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331051120) do
+ActiveRecord::Schema.define(version: 20180331055012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180331051120) do
     t.string "street_address_1", limit: 100, null: false
     t.string "street_address_2", limit: 100
     t.string "city", limit: 60, null: false
-    t.string "zip_code", limit: 9, null: false
+    t.string "zip_code", limit: 10, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
