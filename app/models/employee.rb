@@ -11,8 +11,8 @@ class Employee < ApplicationRecord
 
   validate :password_complexity
   validates :deleted_at, allow_nil: true, presence: false
-  validates :fname, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for first name."}
-  validates :lname, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for last name."}
+  validates :fname, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for first name."}
+  validates :lname, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for last name."}
   validates :phone, allow_nil: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )."}
 
   def password_complexity

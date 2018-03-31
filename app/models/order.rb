@@ -15,7 +15,7 @@ class Order < ApplicationRecord
   validates :order_total, allow_nil: false, presence: true
   validates :street_address_1, allow_nil: false, presence: true
   validates :street_address_2, allow_nil: true, presence: false
-  validates :city, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for city."}
+  validates :city, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city."}
   validates :zip_code, allow_nil: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
   validates :deleted_at, allow_nil: true, presence: false
 
