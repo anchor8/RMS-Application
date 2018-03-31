@@ -3,10 +3,10 @@ class Customer < ApplicationRecord
   has_many :orders
 
   validates :state_id, allow_blank: false, presence: true
-  validates :customer_first_name, allow_blank: false, presence: true
-  validates :customer_last_name, allow_blank: false,presence: true
-  validates :company_name, allow_blank: false, presence: true
-  validates :job_title, allow_blank: false, presence: true
+  validates :customer_first_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for first name."}
+  validates :customer_last_name, allow_blank: false,presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for last name."}
+  validates :company_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for company name."}
+  validates :job_title, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for job name."}
   validates :work_phone, allow_blank: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )."}
   validates :mobile, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )." }
   validates :fax, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )." }
@@ -16,8 +16,9 @@ class Customer < ApplicationRecord
   validates :social_media_address, allow_blank: true, presence: false, format: { with: /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Invalid URL" }
   validates :street_address_1, allow_blank: false, presence: true
   validates :street_address_2, allow_blank: true, presence: false
-  validates :city, allow_blank: false, presence: true
+  validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commands, or spaces for city name."}
   validates :zip_code, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
+  validates :deleted_at, allow_nil: true, presence: false
 
   def toggle_customer
     if !deleted_at
