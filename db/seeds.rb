@@ -9,16 +9,18 @@
 #  Character.create(name: 'Luke', movie: movies.first)
 
 #### employee status data ####
-
-EmployeeStatus.create([
-                        { id: 1,
-                          employee_status_type: 'Inactive' },
-                        { id: 2,
-                          employee_status_type: 'Active' }
-                      ])
+puts ''
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'employee_statuses.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = EmployeeStatus.new
+  t.employee_status_type = row['employee_status_type']
+  t.save
+  puts "Employee status, #{t.employee_status_type} saved"
+end
+puts ''
 
 #### employee data ####
-
 admin = Employee.new(
   email: 'admin@rms.com',
   password: 'password1',
@@ -93,534 +95,152 @@ employee5.save!
 
 #### vendor_status data ####
 
-VendorStatus.create([
-                      { vendor_status_type: 'Inactive' },
-                      { vendor_status_type: 'Active' }
-                    ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'vendor_statuses.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = VendorStatus.new
+  t.vendor_status_type = row['vendor_status_type']
+  t.save
+  puts "Vendor status, #{t.vendor_status_type} saved"
+end
+puts ''
 
 #### order_status data ####
 
-OrderStatus.create([
-
-                     { order_status_description: 'Not Shipped' },
-                     { order_status_description: 'Shipped' }
-
-                   ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'order_statuses.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = OrderStatus.new
+  t.order_status_description = row['order_status_description']
+  t.save
+  puts "Order status, #{t.order_status_description} saved"
+end
+puts ''
 
 #### country data ####
 
-Country.create([
-                 { id: '1',
-                   country_name: 'USA' },
-                 { id: '2',
-                   country_name: 'Canada' },
-                 { id: '3',
-                   country_name: 'Mexico' },
-                 { id: '4',
-                   country_name: 'Brazil' },
-                 { id: '5',
-                   country_name: 'India' },
-                 { id: '6',
-                   country_name: 'Indonesia' },
-                 { id: '7',
-                   country_name: 'China' },
-                 { id: '8',
-                   country_name: 'Japan' },
-                 { id: '9',
-                   country_name: 'Russia' },
-                 { id: '10',
-                   country_name: 'United Kingdom' }
-               ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'countries.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Country.new
+  t.country_name = row['country_name']
+  t.save
+  puts "Country, #{t.country_name} saved"
+end
+puts ''
 
 #### payment type data ####
 
-PaymentType.create([
-                     { id: '1',
-                       payment_type_description: 'Cash' },
-                     { id: '2',
-                       payment_type_description: 'Credit' },
-                     { id: '3',
-                       payment_type_description: 'Debit' },
-                     { id: '4',
-                       payment_type_description: 'Check' },
-                     { id: '5',
-                       payment_type_description: 'Paypal' }
-                   ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'payment_types.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = PaymentType.new
+  t.payment_type_description = row['payment_type_description']
+  t.save
+  puts "Payment Type, #{t.payment_type_description} saved"
+end
+puts ''
 
 #### shipper data ####
 
-Shipper.create([
-                  { id: '1',
-                    shipper_description: 'USPS Express Mail' },
-                  { id: '2',
-                    shipper_description: 'USPS Priority Mail' },
-                  { id: '3',
-                    shipper_description: 'USPS First Class Mail' },
-                  { id: '4',
-                    shipper_description: 'FedEx' },
-                  { id: '5',
-                    shipper_description: 'FedEx Freight' },
-                  { id: '6',
-                    shipper_description: 'DHL' }
-                ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'shippers.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Shipper.new
+  t.shipper_description = row['shipper_description']
+  t.save
+  puts "Shipper, #{t.shipper_description} saved"
+end
+puts ''
 
 #### state data ####
 
-State.create([
-               { id: '1',
-                 state_name: 'California' },
-               { id: '2',
-                 state_name: 'Alaska' },
-               { id: '3',
-                 state_name: 'Hawaii' },
-               { id: '4',
-                 state_name: 'Washington' },
-               { id: '5',
-                 state_name: 'Oregon' },
-               { id: '6',
-                 state_name: 'Colorado' },
-               { id: '7',
-                 state_name: 'Idaho' },
-               { id: '8',
-                 state_name: 'Montana' },
-               { id: '9',
-                 state_name: 'Nevada' },
-               { id: '10',
-                 state_name: 'Utah' },
-               { id: '11',
-                 state_name: 'New Mexico' },
-               { id: '12',
-                 state_name: 'Arizona' },
-               { id: '13',
-                 state_name: 'Wyoming' },
-               { id: '14',
-                 state_name: 'South Dakota' },
-               { id: '15',
-                 state_name: 'Nebraska' },
-               { id: '16',
-                 state_name: 'Kansas' },
-               { id: '17',
-                 state_name: 'Oklahoma' },
-               { id: '18',
-                 state_name: 'Texas' },
-               { id: '19',
-                 state_name: 'Louisiana' },
-               { id: '20',
-                 state_name: 'Arkansas' },
-               { id: '21',
-                 state_name: 'Missouri' },
-               { id: '22',
-                 state_name: 'Iowa' },
-               { id: '23',
-                 state_name: 'Minnesota' },
-               { id: '24',
-                 state_name: 'Michigan' },
-               { id: '25',
-                 state_name: 'Wisconsin' },
-               { id: '26',
-                 state_name: 'Indiana' },
-               { id: '27',
-                 state_name: 'Illinois' },
-               { id: '28',
-                 state_name: 'Ohio' },
-               { id: '29',
-                 state_name: 'Kentucky' },
-               { id: '30',
-                 state_name: 'Tennessee' },
-               { id: '31',
-                 state_name: 'Mississippi' },
-               { id: '32',
-                 state_name: 'Alabama' },
-               { id: '33',
-                 state_name: 'North Dakota' },
-               { id: '34',
-                 state_name: 'North Carolina' },
-               { id: '35',
-                 state_name: 'Connecticut' },
-               { id: '36',
-                 state_name: 'Maryland' },
-               { id: '37',
-                 state_name: 'Massachusetts' },
-               { id: '38',
-                 state_name: 'Georgia' },
-               { id: '39',
-                 state_name: 'Pennsylvania' },
-               { id: '40',
-                 state_name: 'Puerto Rico' },
-               { id: '41',
-                 state_name: 'Rhode Island' },
-               { id: '42',
-                 state_name: 'South Carolina' },
-               { id: '43',
-                 state_name: 'Delaware' },
-               { id: '44',
-                 state_name: 'New Hampshire' },
-               { id: '45',
-                 state_name: 'District of Columbia' },
-               { id: '46',
-                 state_name: 'Florida' },
-               { id: '47',
-                 state_name: 'Vermont' },
-               { id: '48',
-                 state_name: 'Virginia' },
-               { id: '49',
-                 state_name: 'Maine' },
-               { id: '50',
-                 state_name: 'West Virginia' },
-               { id: '51',
-                 state_name: 'New Jersey' },
-               { id: '52',
-                 state_name: 'New York' }
-             ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'states.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = State.new
+  t.state_name = row['state_name']
+  t.save
+  puts "State, #{t.state_name} saved"
+end
+puts ''
 
 #### customer data ####
 
-Customer.create([
-                  { state_id: 18,
-                    company_name: 'Home Depot',
-                    customer_first_name: 'Julius',
-                    customer_last_name: 'Agno',
-                    job_title: 'Assistant Manager',
-                    work_phone: '281-590-2932',
-                    mobile: '281-590-2932',
-                    fax: '222-540-2932',
-                    customer_email: 'JuliusA@gmail.com',
-                    customer_cc_email: 'supply@homedepot.com',
-                    website: 'www.homedepot.com',
-                    social_media_address: 'www.facebook.com/julius',
-                    street_address_1: '12832 W Tomball Highway',
-                    street_address_2: '',
-                    city: 'Tomball',
-                    zip_code: '77377' },
-                  { state_id: 18,
-                    company_name: 'Lowes',
-                    customer_first_name: 'John',
-                    customer_last_name: 'Doe',
-                    job_title: 'Manager',
-                    work_phone: '713-584-3884',
-                    mobile: '713-584-3884',
-                    fax: '713-786-0994',
-                    customer_email: 'JD@gmail.com',
-                    customer_cc_email: 'boss.jd@gmail.com',
-                    website: 'www.lowes.com',
-                    social_media_address: '',
-                    street_address_1: '2345 Antoine rd',
-                    street_address_2: '',
-                    city: 'Houston',
-                    zip_code: '77066' },
-                  { state_id: 18,
-                    company_name: '448 Supply, Inc',
-                    customer_first_name: 'Carey',
-                    customer_last_name: 'Segler',
-                    job_title: 'Employee',
-                    work_phone: '979-542-0448',
-                    mobile: '',
-                    fax: '979-542-0449',
-                    customer_email: 'Carey.Segler@448supply.com',
-                    customer_cc_email: 'info@448supply.com',
-                    website: 'www.448supply.com',
-                    social_media_address: 'www.twitter.com/448supply',
-                    street_address_1: '1481 FM 448',
-                    street_address_2: 'Suite 2900',
-                    city: 'Giddings',
-                    zip_code: '78942' },
-                  { state_id: 18,
-                    company_name: 'Accurate Measurement',
-                    customer_first_name: 'Justin',
-                    customer_last_name: 'Broussard',
-                    job_title: 'Assistant Manager',
-                    work_phone: '337-369-9222',
-                    mobile: '337-980-0780',
-                    fax: '',
-                    customer_email: 'j.brousard@am.com',
-                    customer_cc_email: 'info@am.com',
-                    website: 'www.am.com',
-                    social_media_address: 'www.facebook.com/am',
-                    street_address_1: 'PO Box 268',
-                    street_address_2: '',
-                    city: 'Broussard',
-                    zip_code: '70518' },
-                  { state_id: 17,
-                    company_name: 'Aether',
-                    customer_first_name: 'Johnny',
-                    customer_last_name: 'Schmitty',
-                    job_title: 'Employee',
-                    work_phone: '918-658-0937',
-                    mobile: '918-254-0954',
-                    fax: '918-658-0938',
-                    customer_email: 'j.schmitty@aether.com',
-                    customer_cc_email: 'supply@aether.com',
-                    website: 'www.aether.com',
-                    social_media_address: 'www.facebook.com/aether',
-                    street_address_1: '10810 E. 45th Street',
-                    street_address_2: 'Suite 202',
-                    city: 'Tulsa',
-                    zip_code: '74146' },
-                  { state_id: 18,
-                    company_name: 'Air Products',
-                    customer_first_name: 'Alan',
-                    customer_last_name: 'Robertson',
-                    job_title: 'Employee',
-                    work_phone: '281-546-1557',
-                    mobile: '281-451-8964',
-                    fax: '281-478-3165',
-                    customer_email: 'AlanR@airp.com',
-                    customer_cc_email: 'bill@airp.com',
-                    website: 'www.airp.com',
-                    social_media_address: 'www.facebook.com/airproducts',
-                    street_address_1: '12600 Northborough Drive',
-                    street_address_2: 'Suite 196',
-                    city: 'Houston',
-                    zip_code: '77067' },
-                  { state_id: 18,
-                    company_name: 'Aramco Services',
-                    customer_first_name: 'Stephanie',
-                    customer_last_name: 'Silvas',
-                    job_title: 'Employee',
-                    work_phone: '713-432-4424',
-                    mobile: '832-764-0546',
-                    fax: '',
-                    customer_email: 'Seph.Silvas@aramco.com',
-                    customer_cc_email: 'info@aramco.com',
-                    website: 'www.aramco.com',
-                    social_media_address: 'www.twitter.com/aramco',
-                    street_address_1: 'PO Box 4534',
-                    street_address_2: '',
-                    city: 'Houston',
-                    zip_code: '77210' },
-                  { state_id: 39,
-                    company_name: 'Bayer Material Science',
-                    customer_first_name: 'Stephen',
-                    customer_last_name: 'Turner',
-                    job_title: 'Employee',
-                    work_phone: '281-383-7657',
-                    mobile: '',
-                    fax: '281-383-7658',
-                    customer_email: 'turner.stephen@bms.com',
-                    customer_cc_email: 'evans.david@bms.com',
-                    website: 'www.bms.com',
-                    social_media_address: 'www.facebook.com/bayermaterial',
-                    street_address_1: 'PO Box 418',
-                    street_address_2: '',
-                    city: 'Pittsburgh',
-                    zip_code: '15230' },
-                  { state_id: 39,
-                    company_name: 'Becker Precision Equipment',
-                    customer_first_name: 'Tom',
-                    customer_last_name: 'Grant',
-                    job_title: 'Employee',
-                    work_phone: '800-323-8844',
-                    mobile: '814-748-0028',
-                    fax: '',
-                    customer_email: 'tomgrant@BPE.com',
-                    customer_cc_email: '',
-                    website: 'www.bpe.com',
-                    social_media_address: '',
-                    street_address_1: '41 Fisher Ave.',
-                    street_address_2: 'Suite 108',
-                    city: 'Bradford',
-                    zip_code: '16701' }
-                ])
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'customers.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Customer.new
+  t.state_id = row['state_id']
+  t.company_name = row['company_name']
+  t.customer_first_name = row['customer_first_name']
+  t.customer_last_name = row['customer_last_name']
+  t.job_title = row['job_title']
+  t.work_phone = row['work_phone']
+  t.mobile = row['mobile']
+  t.fax = row['fax']
+  t.customer_email = row['customer_email']
+  t.customer_cc_email = row['customer_cc_email']
+  t.website = row['website']
+  t.social_media_address = row['social_media_address']
+  t.street_address_1 = row['street_address_1']
+  t.street_address_2 = row['street_address_2']
+  t.city = row['city']
+  t.zip_code = row['zip_code']
+  t.save
+  puts "Customer, #{t.customer_first_name} #{t.customer_last_name} saved"
+end
+puts ''
 
 #### vendor data ####
 
-Vendor.create([
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: '3-C Valve and Equipment',
-                  contact_name: 'Bill Peters',
-                  job_title: 'Employee',
-                  work_phone: '379-774-3283',
-                  mobile: '379-096-7635',
-                  fax: '379-774-3284',
-                  vendor_email: 'b.peters@3c.com',
-                  vendor_cc_email: 'info@3c.com',
-                  website: 'www.3cve.com',
-                  street_address_1: 'PO Box 5345',
-                  street_address_2: '',
-                  city: 'Kingwood',
-                  zip_code: '77325' },
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: 'AIV',
-                  contact_name: 'Jim Williams',
-                  job_title: 'Employee',
-                  work_phone: '713-462-4181',
-                  mobile: '832-541-9856',
-                  fax: '713-462-4187',
-                  vendor_email: 'supply@AIV.com',
-                  vendor_cc_email: 'jimbo@AIV.com',
-                  website: 'www.aiv.com',
-                  street_address_1: '7140 W Sam Houston Pkwy N',
-                  street_address_2: 'Suite 100',
-                  city: 'Houston',
-                  zip_code: '77040' },
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: 'Allied Electronics',
-                  contact_name: 'Robert Martinez',
-                  job_title: 'Employee',
-                  work_phone: '1-800-433-5700',
-                  mobile: '512-675-9365',
-                  fax: '',
-                  vendor_email: 'robert.m@allied.com',
-                  vendor_cc_email: '',
-                  website: 'www.allied.com',
-                  street_address_1: 'P.O. Box 2325',
-                  street_address_2: '',
-                  city: 'Fort Worth',
-                  zip_code: '76113' },
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: 'Andrews Kurth',
-                  contact_name: 'David Zdunkewicz',
-                  job_title: 'Employee',
-                  work_phone: '713-220-4128',
-                  mobile: '',
-                  fax: '713-220-4128',
-                  vendor_email: 'David.Z@Ak.com',
-                  vendor_cc_email: 'info@AK.com',
-                  website: 'www.andrewskurth.com',
-                  street_address_1: 'P.O. Box 201785',
-                  street_address_2: '',
-                  city: 'Houston',
-                  zip_code: '77216' },
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: 'Automated Valve & Controls',
-                  contact_name: 'Richard Hutto',
-                  job_title: 'Manager',
-                  work_phone: '713-747-1500',
-                  mobile: '832-758-9090',
-                  fax: '713-747-9928',
-                  vendor_email: 'richard@avandc.com',
-                  vendor_cc_email: '',
-                  website: 'www.avandc.com',
-                  street_address_1: 'PO Box 14554',
-                  street_address_2: '',
-                  city: 'Houston',
-                  zip_code: ' 77021' },
-                { state_id: 18,
-                  vendor_status_id: 2,
-                  vendor_name: 'Automation Americas',
-                  contact_name: 'Dave Evans',
-                  job_title: 'Manager',
-                  work_phone: '281-740-2873',
-                  mobile: '832-683-8951',
-                  fax: '281-740-2874',
-                  vendor_email: 'd.evans@autoa.com',
-                  vendor_cc_email: '',
-                  website: 'www.autoa.com',
-                  street_address_1: '3326 Pecan Point Drive',
-                  street_address_2: '',
-                  city: 'Sugar Land',
-                  zip_code: ' 77478' },
-                { state_id: 19,
-                  vendor_status_id: 2,
-                  vendor_name: 'AWC',
-                  contact_name: 'Mary Gibson',
-                  job_title: 'Employee',
-                  work_phone: '713-944-2100',
-                  mobile: '',
-                  fax: '713-946-7890',
-                  vendor_email: 'mary.g@awc.com',
-                  vendor_cc_email: '',
-                  website: 'www.awc.com',
-                  street_address_1: '6665 Exchequer Drive',
-                  street_address_2: 'Suite 2001',
-                  city: 'Baton Rouge',
-                  zip_code: ' 70809' },
-                { state_id: 17,
-                  vendor_status_id: 2,
-                  vendor_name: 'Badger Meter',
-                  contact_name: 'Nichols',
-                  job_title: 'Employee',
-                  work_phone: '800-364-8794',
-                  mobile: '912-785-0382',
-                  fax: '918-832-9962',
-                  vendor_email: 'nichols@bm.com',
-                  vendor_cc_email: 'info@bm.com',
-                  website: 'www.bm.com',
-                  street_address_1: 'PO Box 581390',
-                  street_address_2: '',
-                  city: 'Tulsa',
-                  zip_code: '74158' }
-              ])
-
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'vendors.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Vendor.new
+  t.state_id = row['state_id']
+  t.vendor_status_id = row['vendor_status_id']
+  t.vendor_name = row['vendor_name']
+  t.contact_name = row['contact_name']
+  t.job_title = row['job_title']
+  t.work_phone = row['work_phone']
+  t.mobile = row['mobile']
+  t.fax = row['fax']
+  t.vendor_email = row['vendor_email']
+  t.vendor_cc_email = row['vendor_cc_email']
+  t.website = row['website']
+  t.street_address_1 = row['street_address_1']
+  t.street_address_2 = row['street_address_2']
+  t.city = row['city']
+  t.zip_code = row['zip_code']
+  t.save
+  puts "Vendor, #{t.vendor_name} saved"
+end
+puts ''
 
 #### order data ####
-
-Order.create!([
-                 { vendor_id: 1,
-                   order_status_id: 2,
-                   customer_id: 1,
-                   country_id: 1,
-                   employee_id: 1,
-                   payment_type_id: 2,
-                   shipper_id: 1,
-                   state_id: 45,
-                   shipping_number: '12345',
-                   customer_name: 'Home Depot',
-                   purchase_order_number: '1',
-                   order_date: '2017-01-16 14:12:01',
-                   ship_date: '2017-02-16 12:00:00',
-                   order_total: '5412.5',
-                   street_address_1: '12832 W Tomball Highway',
-                   street_address_2: 'numbers',
-                   city: 'Tomball',
-                   zip_code: '77377' },
-                 { vendor_id: 1,
-                   order_status_id: 2,
-                   customer_id: 4,
-                   country_id: 1,
-                   employee_id: 1,
-                   payment_type_id: 2,
-                   shipper_id: 5,
-                   state_id: 19,
-                   shipping_number: '984376',
-                   customer_name: 'Accurate Measurement',
-                   purchase_order_number: '2',
-                   order_date: '2014-01-16 14:12:01',
-                   ship_date: '2014-02-16 12:00:00',
-                   order_total: '8118.75',
-                   street_address_1: 'PO Box 268',
-                   street_address_2: '',
-                   city: 'Broussard',
-                   zip_code: '70518' },
-                 { vendor_id: 3,
-                   order_status_id: 2,
-                   customer_id: 5,
-                   country_id: 1,
-                   employee_id: 2,
-                   payment_type_id: 4,
-                   shipper_id: 4,
-                   state_id: 37,
-                   shipping_number: '984376',
-                   customer_name: 'Aether',
-                   purchase_order_number: '45',
-                   order_date: '2014-06-19 14:12:01',
-                   ship_date: '2014-08-08 12:00:00',
-                   order_total: '10825.00',
-                   street_address_1: '10810 E. 45th Street Suite 202',
-                   street_address_2: '',
-                   city: 'Tulsa',
-                   zip_code: '74146' },
-                 { vendor_id: 3,
-                   order_status_id: 2,
-                   customer_id: 6,
-                   country_id: 1,
-                   employee_id: 3,
-                   payment_type_id: 3,
-                   shipper_id: 3,
-                   state_id: 45,
-                   shipping_number: '76583',
-                   customer_name: 'Air Products',
-                   purchase_order_number: '49',
-                   order_date: '2015-12-29 10:12:01',
-                   ship_date: '2016-01-08 14:45:00',
-                   order_total: '2706.25',
-                   street_address_1: '12600 Northborough Drive Suite 196',
-                   street_address_2: '',
-                   city: 'Houston',
-                   zip_code: '77067' }
-                ])
+puts ''
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'orders.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Order.new
+  t.vendor_id = row['vendor_id']
+  t.order_status_id = row['order_status_id']
+  t.customer_id = row['customer_id']
+  t.country_id = row['country_id']
+  t.employee_id = row['employee_id']
+  t.payment_type_id = row['payment_type_id']
+  t.shipper_id = row['shipper_id']
+  t.state_id = row['state_id']
+  t.shipping_number = row['shipping_number']
+  t.purchase_order_number = row['purchase_order_number']
+  t.order_date = row['order_date']
+  t.ship_date = row['ship_date']
+  t.order_total = row['order_total']
+  t.street_address_1 = row['street_address_1']
+  t.street_address_2 = row['street_address_2']
+  t.city = row['city']
+  t.zip_code = row['zip_code']
+  t.save
+  puts "Order, #{t.purchase_order_number} saved"
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331055012) do
+ActiveRecord::Schema.define(version: 20180331215157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20180331055012) do
     t.bigint "shipper_id"
     t.bigint "state_id"
     t.bigint "shipping_number"
-    t.string "customer_name"
     t.integer "purchase_order_number"
     t.datetime "order_date"
     t.datetime "ship_date"

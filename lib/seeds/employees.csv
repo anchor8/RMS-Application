@@ -1,0 +1,12 @@
+employee_status_id,f_name,l_name,email,phone
+1,Jeff,Schott,JeffSchott@gmail.com,567-345-9964
+1,Alek,Schott,AlekSchott@gmail.com,559-822-3456
+1,Eric,Ahola,EricAhola@gmail.com,234-567-2367
+1,Karen,DeLaVaas,KarenDeLaVaas@gmail.com,234-567-2341
+1,Jeff,Mann,JeffMann@gmail.com,567-345-9977
+1,Jeff,Kash,JeffKash@gmail.com,567-345-9966
+1,Travis,Veron,TravisVeron@gmail.com,999-993-2323
+1,Libby,Charles,LibbyCharles@gmail.com,234-567-2345
+2,Carl,Weezy,CarlWeezy@gmail.com,
+2,Sheen,Troy,SheenTroy@gmail.com,
+2,James,Neutron,JamesNeutron@gmail.com,
