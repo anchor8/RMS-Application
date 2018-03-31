@@ -1,26 +1,31 @@
 <div class="container">
   <div class="row">
+    
+    <div>
+      * = Required  
+    </div>
+    
     <div class="col-md-6">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field">
-          <b><%= f.label :email %></b><br />
+          <b><%= f.label :email %> * </b><br />
           <%= f.email_field :email, type: 'email', value: current_employee.email, size: "37", placeholder: current_employee.email, autocomplete: "Email", required: true %>
         </div>
 
         <div class="field">
-          <b><%= f.label "First Name" %></b><br />
+          <b><%= f.label "First Name" %>  * </b><br />
           <%= f.text_field :fname, value: current_employee.fname, size: "30", placeholder: current_employee.fname, autocomplete: "First Name", required: true %>
         </div>
 
         <div class="field">
-          <b><%= f.label "Last Name" %></b><br />
+          <b><%= f.label "Last Name" %>  * </b><br />
           <%= f.text_field :lname, value: current_employee.lname, size: "30", placeholder: current_employee.lname, autocomplete: "Last Name", required: true %>
         </div>
 
         <div class="field">
-          <b><%= f.label :phone %></b><br />
+          <b><%= f.label :phone %>  * </b><br />
           <%= f.text_field :phone, type: 'tel', size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
         </div>
 
@@ -53,7 +58,7 @@
         <div class="row">
 
           <div class="field mx-auto">
-            <b><%= f.label :current_password %></b> <br /><i>(we need your current password to confirm your changes)</i><br />
+            <b><%= f.label :current_password %>  * </b> <br /><i>(we need your current password to confirm your changes)</i><br />
             <%= f.password_field :current_password, size: "37",autocomplete: "off", required: true %>
           </div>
 
