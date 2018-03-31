@@ -23,8 +23,8 @@ puts ''
 #### employee data ####
 admin = Employee.new(
   email: 'admin@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: true,
   employee_status_id: 2,
   fname: 'John',
@@ -35,8 +35,8 @@ admin.save!
 
 employee1 = Employee.new(
   email: 'employee1@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Jane',
@@ -47,8 +47,8 @@ employee1.save!
 
 employee2 = Employee.new(
   email: 'employee2@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'John',
@@ -59,8 +59,8 @@ employee2.save!
 
 employee3 = Employee.new(
   email: 'employee3@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Craig',
@@ -71,8 +71,8 @@ employee3.save!
 
 employee4 = Employee.new(
   email: 'employee4@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Bob',
@@ -83,8 +83,8 @@ employee4.save!
 
 employee5 = Employee.new(
   email: 'employee5@rms.com',
-  password: 'password1',
-  password_confirmation: 'password1',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Bill',

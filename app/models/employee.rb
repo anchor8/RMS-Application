@@ -15,14 +15,6 @@ class Employee < ApplicationRecord
   validates :lname, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for last name."}
   validates :phone, allow_nil: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )."}
 
-  def password_complexity
-    if password.present?
-       if !password.match(/^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$/)
-         errors.add :password, "Password requires at least 1 number and 1 letter."
-       end
-    end
-  end
-
   # instead of deleting, indicate the user requested a delete & timestamp it
   def toggle_employee
     if !deleted_at
@@ -62,6 +54,16 @@ class Employee < ApplicationRecord
 
   def formatted_name
     "#{fname} #{lname}"
+  end
+
+  private
+
+  def password_complexity
+    if password.present?
+       if !password.match(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W])/)
+         errors.add :password, "Password requires at least 1 lowercase letter, 1 uppercase letter, 1 digit, 1 symbol."
+       end
+    end
   end
 
 end
