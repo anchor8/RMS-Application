@@ -1,6 +1,10 @@
 <%= form_with(model: vendor, local: true) do |form| %>
 
   <div class="row ml-5">
+    
+    <div>
+      * = Required
+    </div>
 
     <% if vendor.errors.any? %>
       <div id="error_explanation">
@@ -17,17 +21,17 @@
     <div class="col-md-6">
 
       <div class="field">
-        <%= form.label :vendor_name %>
+        <%= form.label :vendor_name %> *
         <%= form.text_field :vendor_name, :size => '20', placeholder: 'Format ( Vendor Name )', id: :vendor_vendor_name %>
       </div>
 
       <div class="field">
-        <%= form.label :contact_name %>
+        <%= form.label :contact_name %> *
         <%= form.text_field :contact_name, :size => '20', placeholder: 'Format ( John Smith )', id: :vendor_contact_name %>
       </div>
 
       <div class="field">
-        <%= form.label :job_title %>
+        <%= form.label :job_title %> *
         <%= form.text_field :job_title, :size => '15', placeholder: 'Format ( Products Manager )', id: :vendor_job_title %>
       </div>
 
@@ -37,12 +41,12 @@
       </div>
 
       <div class="field">
-        <%= form.label :vendor_status_id %>
+        <%= form.label :vendor_status_id %> *
         <%= form.collection_select :vendor_status_id, VendorStatus.all, :id, :vendor_status_type, prompt: true %>
       </div>
 
       <div class="field mt-4">
-        <%= form.label :vendor_email %>
+        <%= form.label :vendor_email %> *
         <%= form.text_field :vendor_email, type: 'email', :size => '25', placeholder: 'Format ( email@provider.com )', id: :vendor_vendor_email %>
       </div>
 
@@ -50,16 +54,16 @@
         <%= form.label :vendor_cc_email %>
         <%= form.text_field :vendor_cc_email, type: 'email', :size => '25', placeholder: 'Format ( email@provider.com )', id: :vendor_vendor_cc_email %>
       </div>
+      
+      <div class="field">
+        <%= form.label :work_phone %> *
+        <%= form.text_field :work_phone, type: 'tel', :size => '8', placeholder: 'Format ( +1-123-123-1234 )', id: :vendor_work_phone %>
+      </div>
 
       <div class="field">
         <%= form.label :mobile %>
         <%= form.text_field :mobile, type: 'tel', :size => '12', placeholder: 'Format ( +1-123-123-1234 )', id: :vendor_mobile %>
-      </div>
-
-      <div class="field">
-        <%= form.label :work_phone %>
-        <%= form.text_field :work_phone, type: 'tel', :size => '8', placeholder: 'Format ( +1-123-123-1234 )', id: :vendor_work_phone %>
-      </div>
+      </div>      
 
       <div class="field">
         <%= form.label :fax %>
@@ -71,7 +75,7 @@
     <div class="col-md-6">
 
       <div class="field">
-        <%= form.label :street_address_1 %>
+        <%= form.label :street_address_1 %> *
         <%= form.text_field :street_address_1, :size => '30', placeholder: 'Format ( 123 Street Address Rd. Bldg. 123 )', id: :vendor_street_address_1 %>
       </div>
 
@@ -81,17 +85,17 @@
       </div>
 
       <div class="field">
-        <%= form.label :state_id %>
+        <%= form.label :state_id %> *
         <%= form.collection_select :state_id, State.all, :id, :state_name, prompt: true %>
       </div>
 
       <div class="field">
-        <%= form.label :city %>
+        <%= form.label :city %> *
         <%= form.text_field :city, :size => '20', placeholder: 'Format ( Houston )', id: :vendor_city %>
       </div>
 
       <div class="field">
-        <%= form.label :zip_code %>
+        <%= form.label :zip_code %> *
         <%= form.text_field :zip_code, :size => '8', placeholder: 'Format ( 77777 or 77777-8888 )', id: :vendor_zip_code %>
       </div>
 
