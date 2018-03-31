@@ -7,6 +7,18 @@ class Order < ApplicationRecord
   belongs_to :payment_type
   belongs_to :shipper
   belongs_to :state
+  
+  validates :shipping_number, allow_null: false, presence: true
+  validates :company_name, allow_null: false, presence: true
+  validates :purchase_order_number, allow_null: false, presence: true
+  validates :order_date, allow_null: false, presence: true
+  validates :ship_date, allow_null: false, presence: true
+  validates :order_total, allow_null: false, presence: true
+  validates :street_address_1, allow_null: false, presence: true
+  validates :street_address_2, allow_null: true, presence: false
+  validates :city, allow_null: false, presence: true
+  validates :zip_code, allow_null: false, presence: true
+  validates :deleted_at, allow_null: true, presence: false
 
   def toggle_order
     if !deleted_at
