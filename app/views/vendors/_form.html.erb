@@ -2,10 +2,6 @@
 
   <div class="row ml-5">
     
-    <div>
-      * = Required
-    </div>
-
     <% if vendor.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
@@ -17,6 +13,10 @@
         </ul>
       </div>
     <% end %>
+    
+    <div>
+      * = Required
+    </div>
 
     <div class="col-md-6">
 
