@@ -37,13 +37,13 @@
       </div>
 
       <div class="field">
-        <%= form.label :order_total %>
-        <%= form.text_field :order_total, size: "8", id: :order_order_total, required: true %>
+        <%= form.label :order_total %> $
+        <%= form.text_field :order_total, size: "8", placeholder: 'Format ( 123123.99 )', id: :order_order_total, required: true %>
       </div>
 
       <div class="field">
         <%= form.label :purchase_order_number %>
-        <%= form.number_field :purchase_order_number, value: rand(100000..1000000), id: :order_purchase_order_number, required: true %>
+        <%= form.number_field :purchase_order_number, value: rand(100000..1000000), placeholder: 'Format ( 123456 )', id: :order_purchase_order_number, required: true %>
       </div>
 
     </div>
@@ -57,7 +57,7 @@
 
       <div class="field">
         <%= form.label :shipping_number %>
-        <%= form.number_field :shipping_number, value: rand(100000000000..1000000000000), :size => '8', id: :order_shipping_number %>
+        <%= form.number_field :shipping_number, value: rand(100000000000..1000000000000), :size => '8', placeholder: 'Format ( 1234567890)', id: :order_shipping_number %>
       </div>
 
       <div class="field">
@@ -76,12 +76,12 @@
 
       <div class="field">
         <%= form.label :street_address_1 %>
-        <%= form.text_field :street_address_1, value: params['street_address_1'], size: "25", id: :order_street_address_1, required: true %>
+        <%= form.text_field :street_address_1, value: params['street_address_1'], size: "25", placeholder: 'Format ( 123 Street Address Rd Apt 12 )', id: :order_street_address_1, required: true %>
       </div>
 
       <div class="field mt-1">
         <%= form.label :street_address_2 %>
-        <%= form.text_field :street_address_2, value: params['street_address_2'], size: "25", id: :order_street_address_2 %>
+        <%= form.text_field :street_address_2, value: params['street_address_2'], placeholder: 'Format ( 123 Street Address Rd Apt 12 )', size: "25", id: :order_street_address_2 %>
       </div>
 
       <div class="field mt-2">
@@ -96,12 +96,12 @@
 
       <div class="field mt-1">
         <%= form.label :city %>
-        <%= form.text_field :city, value: params['city'], size: "15", id: :order_city, required: true %>
+        <%= form.text_field :city, value: params['city'], size: "15", placeholder: 'Format ( Houston )', id: :order_city, required: true %>
       </div>
 
       <div class="field mt-1">
         <%= form.label :zip_code %>
-        <%= form.text_field :zip_code, value: params['zip_code'], size: "12", id: :order_zip_code, required: true %>
+        <%= form.text_field :zip_code, value: params['zip_code'], size: "12", placeholder: 'Format ( 77777 or 77777-8888 )', id: :order_zip_code, required: true %>
       </div>
 
       <%= form.hidden_field :order_date, value: @order.order_date %>
