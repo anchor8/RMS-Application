@@ -2654,6 +2654,12 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   top: 5px;
 }
 
+.btn-right-2 {
+  position: absolute;
+  right: 180px;
+  top: 5px;
+}
+
 /* line 19, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/stylesheets/bootstrap/mixins/_hover.scss */
 .btn:hover, .btn:focus {
   text-decoration: none;

@@ -18,6 +18,12 @@ class OrdersController < ApplicationController
     add_breadcrumb 'Create New Order'
     @order = Order.new
     @order.order_date = Date.current
+    @order.customer_id = params['customer_id']
+    @order.country_id = params['country_id']
+    @order.state_id = params['state_id']
+    @order.street_address_1 = params['street_address_1']
+    @order.street_address_2 = params['street_address_2']
+    @order.zip_code = params['zip_code']
   end
 
   # GET /orders/1/edit
