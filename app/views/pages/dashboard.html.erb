@@ -4,6 +4,20 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Amount of Orders (Last 5 Months) -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        Amount of Orders (Last 5 Months)</div>
+      <div class="card-body">
+        <%= line_chart Order.group_by_month(:order_date, last: 5).count,
+                       label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
+      </div>
+      <div class="card-footer small text-muted"></div>
+    </div>
+
+
+
     <div class="row">
       <div class="col-md-4">
         <!-- Order Status-->
@@ -62,7 +76,6 @@
                                  xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
                                  library: { animation: { easing: 'easeInQuad' }}%>
       </div>
-
       <div class="card-footer small text-muted"></div>
     </div>
 
