@@ -13,21 +13,25 @@
         </ul>
       </div>
     <% end %>
+    
+    <div>
+      * = Required
+    </div>
 
     <div class="col-md-6">
 
       <div class="field">
-        <%= form.label :First_Name  %>
+        <%= form.label :First_Name  %> *
         <%= form.text_field :customer_first_name, :size => '15', required: true, placeholder: 'Format ( John )', id: :customer_customer_first_name %>
       </div>
 
       <div class="field">
-        <%= form.label :Last_Name  %>
+        <%= form.label :Last_Name  %> *
         <%= form.text_field :customer_last_name, :size => '15', required: true, placeholder: 'Format ( Smith )', id: :customer_customer_last_name %>
       </div>
 
       <div class="field">
-        <%= form.label :Email  %>
+        <%= form.label :Email  %> *
         <%= form.text_field :customer_email, :size => '20', type: 'email', required: true, placeholder: 'Format ( email@provider.com )', id: :customer_customer_email %>
       </div>
 
@@ -37,7 +41,7 @@
       </div>
       
       <div class="field">
-        <%= form.label :work_phone %>
+        <%= form.label :work_phone %> *
         <%= form.text_field :work_phone, :size => '11', type: 'tel', Required: true, placeholder: 'Format ( +1-123-123-1234 )', id: :customer_work_phone %>
       </div>
 
@@ -52,7 +56,7 @@
       </div>
       
       <div class="field">
-        <%= form.label :company_name %>
+        <%= form.label :company_name %> *
         <%= form.text_field :company_name, :size => '25', placeholder: 'Format ( Company Name )', id: :customer_company_name %>
       </div>
       
@@ -62,7 +66,7 @@
       </div>
 
       <div class="field">
-        <%= form.label :job_title %>
+        <%= form.label :job_title %> *
         <%= form.text_field :job_title, :size => '15', placeholder: 'Format ( Products Manager )', id: :customer_job_title %>
       </div>
 
@@ -76,7 +80,7 @@
     <div class="col-md-6">
      
       <div class="field">
-        <%= form.label :street_address_1 %>
+        <%= form.label :street_address_1 %> *
         <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: 'Format ( 1234 Street Address Apt. 12 )', id: :customer_street_address_1 %>
       </div>
 
@@ -86,17 +90,17 @@
       </div>
 
       <div class="field">
-        <%= form.label :state_id %>
+        <%= form.label :state_id %> *
         <%= form.collection_select :state_id, State.all, :id, :state_name, prompt: true %>
       </div>
 
       <div class="field">
-        <%= form.label :city %>
+        <%= form.label :city %> *
         <%= form.text_field :city, :size => '20', Required: true, placeholder: 'Format ( Houston )', id: :customer_city %>
       </div>
 
       <div class="field">
-        <%= form.label :zip_code %>
+        <%= form.label :zip_code %> *
         <%= form.text_field :zip_code, :size => '8', required: true, placeholder: 'Format ( 77777 or 77777-8888 )', id: :customer_zip_code %>
       </div>
 
