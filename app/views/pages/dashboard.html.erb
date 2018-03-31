@@ -13,7 +13,7 @@
             Order Status</div>
           <div class="card-body">
             <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                          colors: ["red", "green"],
+                          colors: ["red", "green"], defer: true,
                           donut: true, legend: "bottom", download: "customer_pie_chart",
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
@@ -29,7 +29,7 @@
             Vendor Status</div>
           <div class="card-body">
             <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
-                          donut: true, legend: "bottom", download: "customer_pie_chart",
+                          donut: true, legend: "bottom", download: "customer_pie_chart", defer: true,
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
           <div class="card-footer small text-muted"></div>
@@ -44,7 +44,7 @@
             Carrier Use</div>
           <div class="card-body">
             <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
-                          donut: true, legend: "bottom", download: "customer_pie_chart",
+                          donut: true, legend: "bottom", download: "customer_pie_chart", defer: true,
                           library: { animation: { easing: 'easeInCirc' }}%>
           </div>
           <div class="card-footer small text-muted"></div>
@@ -53,17 +53,18 @@
     </div>
 
     <!-- Order Totals by Company -->
-    <!-- <div class="card mb-3">
+    <div class="card mb-3">
       <div class="card-header">
         <i class="fa fa-bar-chart"></i>
         Order Totals by Company</div>
       <div class="card-body">
-        column_chart Order.joins(:order_line, :customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$",
+        <%= column_chart Order.joins(:customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false,
                                  xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
-                                 library: { animation: { easing: 'easeInQuad' }}
+                                 library: { animation: { easing: 'easeInQuad' }}%>
       </div>
+
       <div class="card-footer small text-muted"></div>
-    </div> -->
+    </div>
 
     <div class="row">
       <div class="col-md-4">
