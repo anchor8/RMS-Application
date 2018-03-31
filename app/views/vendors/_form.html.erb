@@ -1,7 +1,11 @@
 <%= form_with(model: vendor, local: true) do |form| %>
 
+  <div class="mt-3 mb-3">
+    * = Required
+  </div>
+
   <div class="row ml-5">
-    
+
     <% if vendor.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
@@ -14,10 +18,6 @@
       </div>
     <% end %>
     
-    <div>
-      * = Required
-    </div>
-
     <div class="col-md-6">
 
       <div class="field">
@@ -54,7 +54,7 @@
         <%= form.label :vendor_cc_email %>
         <%= form.text_field :vendor_cc_email, type: 'email', :size => '25', placeholder: 'Format ( email@provider.com )', id: :vendor_vendor_cc_email %>
       </div>
-      
+
       <div class="field">
         <%= form.label :work_phone %> *
         <%= form.text_field :work_phone, type: 'tel', :size => '8', placeholder: 'Format ( +1-123-123-1234 )', id: :vendor_work_phone %>
@@ -63,7 +63,7 @@
       <div class="field">
         <%= form.label :mobile %>
         <%= form.text_field :mobile, type: 'tel', :size => '12', placeholder: 'Format ( +1-123-123-1234 )', id: :vendor_mobile %>
-      </div>      
+      </div>
 
       <div class="field">
         <%= form.label :fax %>

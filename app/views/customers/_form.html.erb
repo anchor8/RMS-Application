@@ -1,5 +1,9 @@
 <%= form_with(model: customer, local: true) do |form| %>
 
+  <div class="mt-3 mb-3">
+    * = Required
+  </div>
+
   <div class="row ml-5">
 
     <% if customer.errors.any? %>
@@ -13,10 +17,6 @@
         </ul>
       </div>
     <% end %>
-    
-    <div>
-      * = Required
-    </div>
 
     <div class="col-md-6">
 
@@ -39,7 +39,7 @@
         <%= form.label :CC_email %>
         <%= form.text_field :customer_cc_email, :size => '20', type: 'email', placeholder: 'Format ( email@provider.com )', id: :customer_customer_cc_email %>
       </div>
-      
+
       <div class="field">
         <%= form.label :work_phone %> *
         <%= form.text_field :work_phone, :size => '11', type: 'tel', Required: true, placeholder: 'Format ( +1-123-123-1234 )', id: :customer_work_phone %>
@@ -49,17 +49,17 @@
         <%= form.label :mobile %>
         <%= form.text_field :mobile, :size => '11', type: 'tel', placeholder: 'Format ( +1-123-123-1234 )', id: :customer_mobile %>
       </div>
-     
+
       <div class="field">
         <%= form.label :fax %>
         <%= form.text_field :fax, :size => '11', placeholder: 'Format ( +1-123-123-1234 )', id: :customer_fax %>
       </div>
-      
+
       <div class="field">
         <%= form.label :company_name %> *
         <%= form.text_field :company_name, :size => '25', placeholder: 'Format ( Company Name )', id: :customer_company_name %>
       </div>
-      
+
       <div class="field">
         <%= form.label :website %>
         <%= form.text_field :website, :size => '30', placeholder: 'Format ( www.website.com )', id: :customer_website %>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="col-md-6">
-     
+
       <div class="field">
         <%= form.label :street_address_1 %> *
         <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: 'Format ( 1234 Street Address Apt. 12 )', id: :customer_street_address_1 %>
