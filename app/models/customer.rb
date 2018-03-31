@@ -2,6 +2,23 @@ class Customer < ApplicationRecord
   belongs_to :state
   has_many :orders
 
+  validates :state_id, allow_blank: false, presence: true
+  validates :customer_first_name, allow_blank: false, presence: true
+  validates :customer_last_name, allow_blank: false,presence: true
+  validates :company_name, allow_blank: false, presence: true
+  validates :job_title, allow_blank: false, presence: true
+  validates :work_phone, allow_blank: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )."}
+  validates :mobile, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )." }
+  validates :fax, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )." }
+  validates :customer_email, allow_blank: false, presence: true, format: Devise.email_regexp
+  validates :customer_cc_email, allow_blank: true, presence: false, format: Devise.email_regexp
+  validates :website, presence: false, format: { with: /\A([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Format ( www.website.com ) or ( website.com )" }
+  validates :social_media_address, allow_blank: true, presence: false, format: { with: /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Invalid URL" }
+  validates :street_address_1, allow_blank: false, presence: true
+  validates :street_address_2, allow_blank: true, presence: false
+  validates :city, allow_blank: false, presence: true
+  validates :zip_code, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
+
   def toggle_customer
     if !deleted_at
       update_attribute(:deleted_at, Time.current)

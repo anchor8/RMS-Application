@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330034959) do
+ActiveRecord::Schema.define(version: 20180331051120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,21 +23,21 @@ ActiveRecord::Schema.define(version: 20180330034959) do
 
   create_table "customers", force: :cascade do |t|
     t.bigint "state_id"
-    t.string "company_name"
-    t.string "customer_first_name"
-    t.string "customer_last_name"
-    t.string "job_title"
-    t.string "work_phone"
-    t.string "mobile"
-    t.string "fax"
-    t.string "customer_email"
-    t.string "customer_cc_email"
-    t.string "website"
-    t.string "social_media_address"
-    t.string "street_address_1"
-    t.string "street_address_2"
-    t.string "city"
-    t.string "zip_code"
+    t.string "company_name", limit: 100, null: false
+    t.string "customer_first_name", limit: 50, null: false
+    t.string "customer_last_name", limit: 35, null: false
+    t.string "job_title", limit: 50, null: false
+    t.string "work_phone", limit: 26, null: false
+    t.string "mobile", limit: 26
+    t.string "fax", limit: 26
+    t.string "customer_email", limit: 254, null: false
+    t.string "customer_cc_email", limit: 254
+    t.string "website", limit: 50
+    t.string "social_media_address", limit: 50
+    t.string "street_address_1", limit: 100, null: false
+    t.string "street_address_2", limit: 100
+    t.string "city", limit: 60, null: false
+    t.string "zip_code", limit: 9, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
