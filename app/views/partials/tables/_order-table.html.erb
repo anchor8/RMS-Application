@@ -270,8 +270,10 @@
 <script>
     $(document).ready(function() {
         var table = $('#ordertable').DataTable( {
-            "paging": true
+            paging: true
         } );
+
+        $('a.toggle-vis').addClass('active')
 
         $('a.toggle-vis').on( 'click', function (e) {
 
@@ -287,12 +289,18 @@
             table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ).visible( true, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
+            $('a.toggle-vis').removeClass('inactive')
+            $('a.toggle-vis').addClass('active')
+
         } );
 
         $('a.hide-all-col').on( 'click', function (e) {
 
             table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ).visible( false, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
+
+            $('a.toggle-vis').removeClass('active')
+            $('a.toggle-vis').addClass('inactive')
 
         } );
 
