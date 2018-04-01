@@ -11,35 +11,84 @@
 
   <!-- Report Tabs -->
   <ul class="nav nav-tabs">
+
+    <!-- Report 1 -->
     <li class="nav-item">
-      <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+
+      <!-- If active_tab is report1, activate -->
+      <% if params[:active_tab] == 'report1' %>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+
+      <!-- If active_tab is empty, activate-->
+      <% elsif !params[:active_tab] %>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+
+      <!-- If active_tab is not report1 or empty, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+
+      <% end %>
+
     </li>
+
+    <!-- Report 2 -->
     <li class="nav-item">
-      <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
+
+      <!-- If active_tab is report2, activate -->
+      <% if params[:active_tab] == 'report2' %>
+        <a class="nav-link active" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
+
+      <!-- If active_tab is not report2, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
+
+      <% end %>
+
     </li>
+
+    <!-- Report 3 -->
     <li class="nav-item">
-      <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
+
+      <!-- If active_tab is report3, activate -->
+      <% if params[:active_tab] == 'report3' %>
+        <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
+
+      <!-- If active_tab is not report3, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
+
+      <% end %>
+
     </li>
+
+    <!-- Report 4 -->
     <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report4">Report4</a>
+
+      <!-- If active_tab is report4, activate -->
+      <% if params[:active_tab] == 'report4' %>
+        <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
+
+      <!-- If active_tab is not report4, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
+
+      <% end %>
+
     </li>
+
+    <!-- Report 3 -->
     <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report5">Report5</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report6">Report6</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report7">Report7</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report8">Report8</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report9">Report9</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" role="tab" data-toggle="tab" href="#report10">Report10</a>
+
+      <!-- If active_tab is report5, activate -->
+      <% if params[:active_tab] == 'report5' %>
+        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
+
+      <!-- If active_tab is not report5, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
+
+      <% end %>
+
     </li>
   </ul>
 
@@ -316,30 +365,6 @@
       <h3>Report5</h3>
     </div>
 
-    <!-- Tab 6 - Report 6 -->
-    <div class="tab-pane container-fluid" id="report6">
-      <h3>Report6</h3>
-    </div>
-
-    <!-- Tab 7 - Report 7 -->
-    <div class="tab-pane container-fluid" id="report7">
-      <h3>Report7</h3>
-    </div>
-
-    <!-- Tab 8 - Report 8 -->
-    <div class="tab-pane container-fluid" id="report8">
-      <h3>Report8</h3>
-    </div>
-
-    <!-- Tab 9 - Report 9 -->
-    <div class="tab-pane container-fluid" id="report9">
-      <h3>Report9</h3>
-    </div>
-
-    <!-- Tab 10 - Report 10 -->
-    <div class="tab-pane container-fluid" id="report10">
-      <h3>Report10</h3>
-    </div>
   </div>
 
 </div>
@@ -376,19 +401,6 @@
         "paging": true
 
       } );
-
-      //for bootstrap 3 use 'shown.bs.tab' instead of 'shown' in the next line
-      $('a[data-toggle="tab"]').on('click', function (e) {
-        //save the latest tab; use cookies if you like 'em better:
-        localStorage.setItem('lastTab', $(e.target).attr('href'));
-      });
-
-      //go to the latest tab, if it exists:
-      var lastTab = localStorage.getItem('lastTab');
-
-      if (lastTab) {
-        $('a[href="'+lastTab+'"]').click();
-      }
 
   } );
 </script>
