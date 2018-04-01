@@ -15,7 +15,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = EmployeeStatus.new
   t.employee_status_type = row['employee_status_type']
-  t.save
+  t.save!
   puts "Employee status, #{t.employee_status_type} saved"
 end
 puts ''
@@ -100,7 +100,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = VendorStatus.new
   t.vendor_status_type = row['vendor_status_type']
-  t.save
+  t.save!
   puts "Vendor status, #{t.vendor_status_type} saved"
 end
 puts ''
@@ -112,7 +112,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = OrderStatus.new
   t.order_status_description = row['order_status_description']
-  t.save
+  t.save!
   puts "Order status, #{t.order_status_description} saved"
 end
 puts ''
@@ -124,7 +124,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = Country.new
   t.country_name = row['country_name']
-  t.save
+  t.save!
   puts "Country, #{t.country_name} saved"
 end
 puts ''
@@ -136,7 +136,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = PaymentType.new
   t.payment_type_description = row['payment_type_description']
-  t.save
+  t.save!
   puts "Payment Type, #{t.payment_type_description} saved"
 end
 puts ''
@@ -148,7 +148,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = Shipper.new
   t.shipper_description = row['shipper_description']
-  t.save
+  t.save!
   puts "Shipper, #{t.shipper_description} saved"
 end
 puts ''
@@ -160,7 +160,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = State.new
   t.state_name = row['state_name']
-  t.save
+  t.save!
   puts "State, #{t.state_name} saved"
 end
 puts ''
@@ -187,7 +187,7 @@ csv.each do |row|
   t.street_address_2 = row['street_address_2']
   t.city = row['city']
   t.zip_code = row['zip_code']
-  t.save
+  t.save!
   puts "Customer, #{t.customer_first_name} #{t.customer_last_name} saved"
 end
 puts ''
@@ -213,7 +213,7 @@ csv.each do |row|
   t.street_address_2 = row['street_address_2']
   t.city = row['city']
   t.zip_code = row['zip_code']
-  t.save
+  t.save!
   puts "Vendor, #{t.vendor_name} saved"
 end
 puts ''
@@ -241,6 +241,6 @@ csv.each do |row|
   t.street_address_2 = row['street_address_2']
   t.city = row['city']
   t.zip_code = row['zip_code']
-  t.save
+  t.save!
   puts "Order, #{t.purchase_order_number} saved"
 end
