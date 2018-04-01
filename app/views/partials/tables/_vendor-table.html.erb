@@ -1,6 +1,10 @@
 <!--toggle buttons-->
 <div id="accordian">
+
+  <!-- Card -->
   <div class="card mb-4">
+
+    <!-- Card Header -->
     <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -8,12 +12,16 @@
         </button>
       </div>
 
+      <!-- Content -->
       <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+
+        <!-- Content Body -->
         <div class="card-body">
 
-          <!-- Button Row 1 -->
+          <!-- Row 1 -->
           <section class="row">
 
+            <!-- Group column controls -->
             <div class="mb-2 mx-auto btn-group">
 
               <a class="show-all-col btn btn-primary btn-sm"
@@ -48,9 +56,10 @@
 
           </section>
 
-          <!-- Button Row 2 -->
+          <!-- Row 2 -->
           <section class="row">
 
+            <!-- Individual column controls -->
             <div class="mb-2 px-4 mx-auto">
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
@@ -369,7 +378,7 @@
 
   </div>
 
-  <!-- Footnote: Lastest date a employee was created -->
+  <!-- Footnote -->
   <div class="card-footer small text-muted">
 
   </div>
@@ -386,9 +395,10 @@
 
       } );
 
+      // Set all buttons as active on page load
       $('a.toggle-vis').addClass('active')
 
-      // Toggle individual column based on value from data-column
+      // On click hide column
       $('a.toggle-vis').on( 'click', function (e) {
 
         // Get the column API object
@@ -402,13 +412,16 @@
       // Show all columns
       $('a.show-all-col').on( 'click', function (e) {
 
-        // Show all columns
+        // Set all columns to visible
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
 
+        // Remove inactive class from individual column buttons
         $('a.toggle-vis').removeClass('inactive')
+
+        // Add active class to individual column buttons
         $('a.toggle-vis').addClass('active')
 
       } );
@@ -416,13 +429,16 @@
       // Hide all columns
       $('a.hide-all-col').on( 'click', function (e) {
 
-        // Hide all columns
+        // Set all columns to not visible
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
 
+        // Remove active class from individual column buttons
         $('a.toggle-vis').removeClass('active')
+
+        // Add inactive class to individual column buttons
         $('a.toggle-vis').addClass('inactive')
 
       } );
@@ -430,16 +446,19 @@
       // Show only vendor contact info
       $('a.show-contact').on( 'click', function (e) {
 
-        // Ensure all columns are shown
+        // Set all columns to visible
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
-        // Hide columns that dont relate to vendor contact info
+        // Set columns that are not vendor contact info to not visible
         table.columns( [ 0, 1, 2, 5, 13, 14, 15, 16, 17 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
 
+        // Remove active class from individual column buttons
         $('a.toggle-vis').removeClass('active')
+
+        // Add active class to vendor contact buttons
         $('a.vendor-contact').addClass('active')
 
       } );
@@ -447,16 +466,19 @@
       // Show only vendor info
       $('a.show-info').on( 'click', function (e) {
 
-        // Ensure all columns are shown
+        // Set all columns to visible
         table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
-        // Hide columns that dont relate to vendor info
+        // Set columns that are not vendor info to not visible
         table.columns( [ 0, 1, 2, 6, 7, 8, 9, 10, 11, 12 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
 
+        // Remove active class from individual column buttons
         $('a.toggle-vis').removeClass('active')
+
+        // Add active class to vendor info buttons
         $('a.vendor-info').addClass('active')
 
       } );
