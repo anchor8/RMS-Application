@@ -171,7 +171,7 @@
               <th class="text-center">Customer</th>
               <th class="text-center">Employee</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Total</th>
+              <th class="text-center">Total (USD)</th>
               <th class="text-center">Payment Type</th>
 
             </tr>
@@ -192,7 +192,7 @@
               <th class="text-center">Customer</th>
               <th class="text-center">Employee</th>
               <th class="text-center">Vendor</th>
-              <th class="text-center">Total</th>
+              <th class="text-center">Total (USD)</th>
               <th class="text-center">Payment Type</th>
 
 
@@ -235,7 +235,7 @@
                     <td class="text-left-align"><%= order.customer.customer_last_name %></td>
                     <td class="text-left-align"><%= order.employee.lname %></td>
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
-                    <td class="text-left-align"><%= order.order_total %></td>
+                    <td class="text-left-align"><%= number_to_currency(order.order_total, precision: 2) %></td>
                     <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
 
 

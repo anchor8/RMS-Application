@@ -9,10 +9,10 @@ class Order < ApplicationRecord
   belongs_to :state
 
   validates :order_date, allow_nil: false, presence: true
-  validates :shipping_number, allow_nil: false, presence: true
-  validates :purchase_order_number, allow_nil: false, presence: true
+  validates :shipping_number, allow_nil: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for shipping number"}
+  validates :purchase_order_number, allow_nil: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number"}
   validates :ship_date, allow_nil: true, presence: false
-  validates :order_total, allow_nil: false, presence: true
+  validates :order_total, allow_nil: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision. ( 11111.11 ) "}
   validates :street_address_1, allow_nil: false, presence: true
   validates :street_address_2, allow_nil: true, presence: false
   validates :city, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city."}
