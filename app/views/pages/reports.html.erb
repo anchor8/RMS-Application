@@ -12,34 +12,34 @@
   <!-- Report Tabs -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#report1">Order Totals by Company</a>
+      <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report2">Customer's by City</a>
+      <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report3">Vendor's by State</a>
+      <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report4">Report4</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report4">Report4</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report5">Report5</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report5">Report5</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report6">Report6</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report6">Report6</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report7">Report7</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report7">Report7</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report8">Report8</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report8">Report8</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report9">Report9</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report9">Report9</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#report10">Report10</a>
+      <a class="nav-link" role="tab" data-toggle="tab" href="#report10">Report10</a>
     </li>
   </ul>
 
@@ -376,5 +376,19 @@
         "paging": true
 
       } );
+
+      //for bootstrap 3 use 'shown.bs.tab' instead of 'shown' in the next line
+      $('a[data-toggle="tab"]').on('click', function (e) {
+        //save the latest tab; use cookies if you like 'em better:
+        localStorage.setItem('lastTab', $(e.target).attr('href'));
+      });
+
+      //go to the latest tab, if it exists:
+      var lastTab = localStorage.getItem('lastTab');
+
+      if (lastTab) {
+        $('a[href="'+lastTab+'"]').click();
+      }
+
   } );
 </script>
