@@ -1,4 +1,5 @@
 class VendorStatusesController < ApplicationController
+  # Set vendor status before performing show, edit, update, destroy actions
   before_action :set_vendor_status, only: [:show, :edit, :update, :destroy]
 
   # GET /vendor_statuses
@@ -55,6 +56,7 @@ class VendorStatusesController < ApplicationController
   # DELETE /vendor_statuses/1.json
   def destroy
     @vendor_status.destroy
+
     respond_to do |format|
       format.html { redirect_to vendor_statuses_url, notice: 'Vendor status was successfully destroyed.' }
       format.json { head :no_content }

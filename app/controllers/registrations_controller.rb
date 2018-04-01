@@ -1,6 +1,9 @@
 # app/controllers/registrations_controller.rb
 class RegistrationsController < Devise::RegistrationsController
+  # Only new and create actions
   before_action only: [:new, :create]
+
+  # No authentication needed
   skip_before_action :require_no_authentication
 
   # POST /resource
@@ -28,8 +31,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # We need to use a copy of the resource because we don't want to change
-  # the current user in place.
   def update
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
@@ -54,22 +55,27 @@ class RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  # Enable sign up from in app
   def sign_up(resource_name, resource)
     true
   end
 
+  # Redirect after update
   def after_update_path_for(resource)
     usermgmt_path
   end
 
+  # Redirect after sign up
   def after_sign_up_path_for(resource)
     usermgmt_path
   end
 
+  # Acceptable sign up parameters
   def sign_up_params
     params.require(:employee).permit(:email, :fname, :lname, :employee_status_id, :phone, :password, :password_confirmation)
   end
 
+  # Acceptable update parameters
   def account_update_params
     params.require(:employee).permit(:email, :fname, :lname, :employee_status_id, :phone, :password, :password_confirmation, :current_password)
   end

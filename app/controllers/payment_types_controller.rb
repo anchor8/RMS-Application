@@ -1,4 +1,5 @@
 class PaymentTypesController < ApplicationController
+  # Set order status before performing show, edit, update, destroy actions
   before_action :set_payment_type, only: [:show, :edit, :update, :destroy]
 
   # GET /payment_types

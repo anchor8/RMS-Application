@@ -1,4 +1,5 @@
 class OrderStatusesController < ApplicationController
+  # Set order status before performing show, edit, update, destroy actions
   before_action :set_order_status, only: [:show, :edit, :update, :destroy]
 
   # GET /order_statuses
@@ -55,6 +56,7 @@ class OrderStatusesController < ApplicationController
   # DELETE /order_statuses/1.json
   def destroy
     @order_status.destroy
+
     respond_to do |format|
       format.html { redirect_to order_statuses_url, notice: 'Order status was successfully destroyed.' }
       format.json { head :no_content }

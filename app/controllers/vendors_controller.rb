@@ -1,4 +1,5 @@
 class VendorsController < ApplicationController
+  # Set vendor before performing show, edit, update, destroy actions
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
 
   # GET /vendors
@@ -14,13 +15,16 @@ class VendorsController < ApplicationController
 
   # GET /vendors/new
   def new
+    # Breadcrumb for new vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Create New Vendor'
+
     @vendor = Vendor.new
   end
 
   # GET /vendors/1/edit
   def edit
+    # Breadcrumb for edit vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Edit Vendor'
   end
@@ -59,16 +63,20 @@ class VendorsController < ApplicationController
   # DELETE /vendors/1.json
   def destroy
     @vendor.destroy
+
     respond_to do |format|
       format.html { redirect_to vendormgmt_url, notice: 'Vendor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # Import vendor data
   def import
     if params[:file].nil?
+      # File doesn't exist
       redirect_to importmgmt_url, notice: 'Vendor data file is missing, please choose a csv file.'
     else
+      # File exists
       Vendor.import(params[:file])
       redirect_to importmgmt_url, notice: 'Vendor data imported!'
     end

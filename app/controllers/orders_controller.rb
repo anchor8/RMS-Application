@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  # Set order status before performing show, edit, update, destroy actions
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -14,11 +15,15 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    # Breadcrumbs for new order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Create New Order'
+
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 7
+
+    # Parameters from customer
     @order.city = params['city']
     @order.country_id = params['country_id']
     @order.customer_id = params['customer_id']
@@ -26,11 +31,14 @@ class OrdersController < ApplicationController
     @order.street_address_1 = params['street_address_1']
     @order.street_address_2 = params['street_address_2']
     @order.zip_code = params['zip_code']
+
+    # Parameters from vendor
     @order.vendor_id = params['vendor_id']
   end
 
   # GET /orders/1/edit
   def edit
+    # Breadcrumbs for edit order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Edit Order'
   end
@@ -69,16 +77,20 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.json
   def destroy
     @order.destroy
+
     respond_to do |format|
       format.html { redirect_to ordermgmt_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # Import order data
   def import
     if params[:file].nil?
+      # File doesn't exist
       redirect_to importmgmt_url, notice: 'Order data file is missing, please choose a csv file.'
     else
+      # File exists
       Order.import(params[:file])
       redirect_to importmgmt_url, notice: 'Order data imported!'
     end

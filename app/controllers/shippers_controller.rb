@@ -1,4 +1,5 @@
 class ShippersController < ApplicationController
+  # Set shipper before performing show, edit, update, destroy actions
   before_action :set_shipper, only: [:show, :edit, :update, :destroy]
 
   # GET /shippers
@@ -55,6 +56,7 @@ class ShippersController < ApplicationController
   # DELETE /shippers/1.json
   def destroy
     @shipper.destroy
+    
     respond_to do |format|
       format.html { redirect_to shippers_url, notice: 'Shipper was successfully destroyed.' }
       format.json { head :no_content }

@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+  # Set country before performing show, edit, update, destroy actions
   before_action :set_country, only: [:show, :edit, :update, :destroy]
 
   # GET /countries
@@ -55,16 +56,20 @@ class CountriesController < ApplicationController
   # DELETE /countries/1.json
   def destroy
     @country.destroy
+
     respond_to do |format|
       format.html { redirect_to countries_url, notice: 'Country was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # Import country data
   def import
     if params[:file].nil?
+      # File doesn't exist
       redirect_to importmgmt_url, notice: 'Country data file is missing, please choose a csv file.'
     else
+      # File exists
       Country.import(params[:file])
       redirect_to importmgmt_url, notice: 'Country data imported!'
     end
@@ -76,7 +81,8 @@ class CountriesController < ApplicationController
       @country = Country.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet,
+    # only allow the white list through.
     def country_params
       params.require(:country).permit(:country_name)
     end

@@ -1,4 +1,5 @@
 class StatesController < ApplicationController
+  # Set state before performing show, edit, update, destroy actions
   before_action :set_state, only: [:show, :edit, :update, :destroy]
 
   # GET /states
@@ -55,16 +56,20 @@ class StatesController < ApplicationController
   # DELETE /states/1.json
   def destroy
     @state.destroy
+
     respond_to do |format|
       format.html { redirect_to states_url, notice: 'State was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # Import states
   def import
     if params[:file].nil?
+      # File doesn't exist
       redirect_to importmgmt_url, notice: 'State data file is missing, please choose a csv file.'
     else
+      # File exists
       State.import(params[:file])
       redirect_to importmgmt_url, notice: 'State data imported!'
     end

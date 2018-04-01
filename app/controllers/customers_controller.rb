@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  # Set customer before performing show, edit, update, destroy actions
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -14,6 +15,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
+    # Set breadcrumbs for new customer
     add_breadcrumb 'Customer Management', customermgmt_path
     add_breadcrumb 'Create New Customer'
 
@@ -22,6 +24,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    # Set breadcrumbs for edit customer
     add_breadcrumb 'Customer Management', customermgmt_path
     add_breadcrumb 'Edit Customer'
   end
@@ -60,16 +63,20 @@ class CustomersController < ApplicationController
   # DELETE /customers/1.json
   def destroy
     @customer.destroy
+
     respond_to do |format|
       format.html { redirect_to customermgmt_url, notice: 'Customer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # Import customer data
   def import
     if params[:file].nil?
+      # File doesn't exist
       redirect_to importmgmt_url, notice: 'Customer data file is missing, please choose a csv file.'
     else
+      # File exists
       Customer.import(params[:file])
       redirect_to importmgmt_url, notice: 'Customer data imported!'
     end
