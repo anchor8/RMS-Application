@@ -1,7 +1,9 @@
 class Customer < ApplicationRecord
+  # Relationships
   belongs_to :state
   has_many :orders
 
+  # Validations
   validates :state_id, allow_blank: false, presence: true
   validates :customer_first_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for first name allowed"}
   validates :customer_last_name, allow_blank: false,presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for last name allowed"}
@@ -20,20 +22,25 @@ class Customer < ApplicationRecord
   validates :zip_code, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
   validates :deleted_at, allow_nil: true, presence: false
 
+  # Toggle customer
   def toggle_customer
     if !deleted_at
+      # Deleted at doesn't exist
       update_attribute(:deleted_at, Time.current)
     else
+      # Deleted at exists
       update_attribute(:deleted_at, nil)
     end
   end
 
+  # Import customers
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Customer.create! row.to_hash
     end
   end
 
+  # Format customer first and last name
   def formatted_name
     "#{customer_first_name} #{customer_last_name}"
   end
