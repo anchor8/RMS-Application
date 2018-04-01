@@ -19,8 +19,9 @@ class OrdersController < ApplicationController
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 7
-    @order.customer_id = params['customer_id']
+    @order.city = params['city']
     @order.country_id = params['country_id']
+    @order.customer_id = params['customer_id']
     @order.state_id = params['state_id']
     @order.street_address_1 = params['street_address_1']
     @order.street_address_2 = params['street_address_2']
