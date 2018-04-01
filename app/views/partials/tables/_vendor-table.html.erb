@@ -1,192 +1,210 @@
-<!-- Button Row 1 -->
-<section class="row">
+<!--toggle buttons-->
+<div id="accordian">
+  <div class="card mb-4">
+    <div class="card-header text-center" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Column Controls
+        </button>
+      </div>
 
-  <div class="mb-2 mx-auto btn-group">
+      <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
 
-    <a class="show-all-col btn btn-primary btn-sm"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       href="">Show All Columns</a>
+          <!-- Button Row 1 -->
+          <section class="row">
 
-    <a class="hide-all-col btn btn-primary btn-sm"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       href="">Hide All Columns</a>
+            <div class="mb-2 mx-auto btn-group">
 
-    <a class="show-contact btn btn-primary btn-sm"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       href="">Only Show Vendor Contact Info</a>
+              <a class="show-all-col btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Show All Columns</a>
 
-    <a class="show-info btn btn-primary btn-sm"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       href="">Only Show Vendor Info</a>
+              <a class="hide-all-col btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Hide All Columns</a>
 
+              <a class="show-contact btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Only Show Vendor Contact Info</a>
+
+              <a class="show-info btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Only Show Vendor Info</a>
+
+            </div>
+
+          </section>
+
+          <!-- Button Row 2 -->
+          <section class="row">
+
+            <div class="mb-2 px-4 mx-auto">
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="0"
+                 href="">New Order</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="1"
+                 href="">Disable</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="2"
+                 href="">Edit</a>
+
+              <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="3"
+                 href="">Vendor</a>
+
+              <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="4"
+                 href="">State</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="5"
+                 href="">Status</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="6"
+                 href="">Contact</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="7"
+                 href="">Job</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="8"
+                 href="">Work</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="9"
+                 href="">Mobile</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="10"
+                 href="">Fax</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="11"
+                 href="">Email</a>
+
+              <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="12"
+                 href="">CC Email</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="13"
+                 href="">Website</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="14"
+                 href="">Address 1</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="15"
+                 href="">Address 2</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="16"
+                 href="">City</a>
+
+              <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="17"
+                 href="">Zip</a>
+
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+    </div>
   </div>
-
-</section>
-
-<!-- Button Row 2 -->
-<section class="row">
-
-  <div class="mb-2 px-4 mx-auto">
-
-    <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="0"
-       href="">New Order</a>
-
-    <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="1"
-       href="">Disable</a>
-
-    <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="2"
-       href="">Edit</a>
-
-    <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="3"
-       href="">Vendor</a>
-
-    <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="4"
-       href="">State</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="5"
-       href="">Status</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="6"
-       href="">Contact</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="7"
-       href="">Job</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="8"
-       href="">Work</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="9"
-       href="">Mobile</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="10"
-       href="">Fax</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="11"
-       href="">Email</a>
-
-    <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="12"
-       href="">CC Email</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="13"
-       href="">Website</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="14"
-       href="">Address 1</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="15"
-       href="">Address 2</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="16"
-       href="">City</a>
-
-    <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
-       type="button"
-       data-toggle="button"
-       aria-pressed="false"
-       autocomplete="off"
-       data-column="17"
-       href="">Zip</a>
-
-  </div>
-
-</section>
 
 <!-- Vendor Table Card -->
 <div class="card mb-3">
