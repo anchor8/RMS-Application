@@ -1,12 +1,12 @@
 state_id,vendor_status_id,vendor_name,contact_name,job_title,work_phone,mobile,fax,vendor_email,vendor_cc_email,website,street_address_1,street_address_2,city,zip_code
-5,5,Quotes Suppliers,Cleotilde Gauna,Sales Consultant,958-656-0896,745-944-2401,,CleotildeGauna@hotmail.com,,www.QuotesSuppliers.com,7358 Merry Butterfly Meadow,,Palo Alto,86346
+5,3,Quotes Suppliers,Cleotilde Gauna,Sales Consultant,958-656-0896,745-944-2401,,CleotildeGauna@hotmail.com,,www.QuotesSuppliers.com,7358 Merry Butterfly Meadow,,Palo Alto,86346
 5,3,Savers Suppliers,Jerri Convery,Sales Consultant,443-624-1711,742-563-8359,,JerriConvery@hotmail.com,,www.SaversSuppliers.com,3341 Iron Cider Isle,,San Francisco,79799
 5,4,Forrest Suppliers,Lou Mcelhannon,Sales Consultant,192-904-3012,386-525-1506,,LouMcelhannon@hotmail.com,,www.ForrestSuppliers.com,492 Emerald Leaf Hollow,,Palo Alto,72608
 5,3,Drop Suppliers,Vesta Kaelin,Sales Consultant,140-788-1376,331-145-7036,,VestaKaelin@hotmail.com,,www.DropSuppliers.com,7114 Burning Shadow Lookout,,San Jose,98190
-5,5,Lasso Irons,Ellamae Farrand,Sales Consultant,532-920-6267,311-890-5515,,EllamaeFarrand@hotmail.com,,www.LassoIrons.com,6035 Middle Treasure Moor,,Palo Alto,92675
-6,5,Aggie Metalics,Alysa Nevins,Sales Consultant,404-553-9360,937-642-6384,,AlysaNevins@hotmail.com,,www.AggieMetalics.com,8318 Foggy Dell,,Colorado Springs,31682
+5,3,Lasso Irons,Ellamae Farrand,Sales Consultant,532-920-6267,311-890-5515,,EllamaeFarrand@hotmail.com,,www.LassoIrons.com,6035 Middle Treasure Moor,,Palo Alto,92675
+6,3,Aggie Metalics,Alysa Nevins,Sales Consultant,404-553-9360,937-642-6384,,AlysaNevins@hotmail.com,,www.AggieMetalics.com,8318 Foggy Dell,,Colorado Springs,31682
 9,1,Registry Irons,Mohammed Pesce,Sales Consultant,687-740-4019,452-198-0810,,MohammedPesce@hotmail.com,,www.RegistryIrons.com,2349 Sleepy Elk Pike,,Seminole,64612
-10,5,Widget Manufactures,Jeanett Makuch,Sales Consultant,562-675-8597,671-453-5385,,JeanettMakuch@hotmail.com,,www.WidgetManufactures.com,5947 Shady Orchard,,Athens,65811
+10,3,Widget Manufactures,Jeanett Makuch,Sales Consultant,562-675-8597,671-453-5385,,JeanettMakuch@hotmail.com,,www.WidgetManufactures.com,5947 Shady Orchard,,Athens,65811
 11,3,Galileo Irons,Guadalupe Broaddus,Sales Consultant,870-603-6828,419-267-1544,,GuadalupeBroaddus@hotmail.com,,www.GalileoIrons.com,9881 Lost Sky Parkway,,Honolulu,30608
 13,3,Reporter Suppliers,Vennie Kuykendall,Sales Consultant,636-807-2635,244-680-9797,,VennieKuykendall@hotmail.com,,www.ReporterSuppliers.com,5558 Hidden Downs,,Chicago,79689
 13,3,NorthField Manufactures,Jacquelyn Willaims,Sales Consultant,150-520-7033,407-156-5020,,JacquelynWillaims@hotmail.com,,www.NorthFieldManufactures.com,1068 Heather Private,,Chicago,54855
@@ -25,27 +25,27 @@ state_id,vendor_status_id,vendor_name,contact_name,job_title,work_phone,mobile,f
 22,4,Longhorn Metalics,Fleta Prins,Sales Consultant,239-626-6807,343-334-0954,,FletaPrins@hotmail.com,,www.LonghornMetalics.com,5605 Green Grove,,Southfield,61141
 23,4,Links Suppliers,Teddy Betters,Sales Consultant,788-404-4184,526-436-2944,,TeddyBetters@hotmail.com,,www.LinksSuppliers.com,6608 Broad Pathway,,Saint Cloud,68749
 23,2,Sharp Irons,Jana Layton,Sales Consultant,991-126-9664,336-455-1519,,JanaLayton@hotmail.com,,www.SharpIrons.com,9168 Gentle Autoroute,,Saint Cloud,55326
-28,5,Marvel Manufactures,Amber Gouveia,Sales Consultant,312-541-6837,755-972-6770,,AmberGouveia@hotmail.com,,www.MarvelManufactures.com,3996 Grand Lane,,Carson City,17592
-35,5,Quorum Suppliers,Antoinette Hamby,Sales Consultant,779-555-2189,657-979-4917,,AntoinetteHamby@hotmail.com,,www.QuorumSuppliers.com,2304 Tawny Edge,,Dayton,49336
-36,5,Sprint Suppliers,Rey Aumann,Sales Consultant,835-392-3887,460-122-4410,,ReyAumann@hotmail.com,,www.SprintSuppliers.com,2397 Indian Lagoon Range,,Oklahoma City,55326
-36,5,Velvet Manufactures,Rosana Mellinger,Sales Consultant,958-605-5002,823-773-1675,,RosanaMellinger@hotmail.com,,www.VelvetManufactures.com,1310 Quaking Swale,,Oklahoma City,12483
-37,5,Expo Manufactures,Salena Sain,Sales Consultant,400-193-6018,786-684-5300,,SalenaSain@hotmail.com,,www.ExpoManufactures.com,8781 Round Wagon Dale,,Portland,88270
-38,5,Mitra Suppliers,Eloisa Dudek,Sales Consultant,158-552-5724,576-321-8307,,EloisaDudek@hotmail.com,,www.MitraSuppliers.com,8760 Misty Cloud Thicket,,Philadelphia,39186
+28,3,Marvel Manufactures,Amber Gouveia,Sales Consultant,312-541-6837,755-972-6770,,AmberGouveia@hotmail.com,,www.MarvelManufactures.com,3996 Grand Lane,,Carson City,17592
+35,3,Quorum Suppliers,Antoinette Hamby,Sales Consultant,779-555-2189,657-979-4917,,AntoinetteHamby@hotmail.com,,www.QuorumSuppliers.com,2304 Tawny Edge,,Dayton,49336
+36,3,Sprint Suppliers,Rey Aumann,Sales Consultant,835-392-3887,460-122-4410,,ReyAumann@hotmail.com,,www.SprintSuppliers.com,2397 Indian Lagoon Range,,Oklahoma City,55326
+36,3,Velvet Manufactures,Rosana Mellinger,Sales Consultant,958-605-5002,823-773-1675,,RosanaMellinger@hotmail.com,,www.VelvetManufactures.com,1310 Quaking Swale,,Oklahoma City,12483
+37,3,Expo Manufactures,Salena Sain,Sales Consultant,400-193-6018,786-684-5300,,SalenaSain@hotmail.com,,www.ExpoManufactures.com,8781 Round Wagon Dale,,Portland,88270
+38,3,Mitra Suppliers,Eloisa Dudek,Sales Consultant,158-552-5724,576-321-8307,,EloisaDudek@hotmail.com,,www.MitraSuppliers.com,8760 Misty Cloud Thicket,,Philadelphia,39186
 38,1,Intuitive Irons,Mendy Mcinturff,Sales Consultant,552-174-7650,388-640-7711,,MendyMcinturff@hotmail.com,,www.IntuitiveIrons.com,3023 Quiet Parade,,Reading,51116
-42,5,Mag Manufactures,Elaine Cawthon,Sales Consultant,751-777-3014,325-761-4856,,ElaineCawthon@hotmail.com,,www.MagManufactures.com,3066 Colonial Townline,,Memphis,23463
+42,3,Mag Manufactures,Elaine Cawthon,Sales Consultant,751-777-3014,325-761-4856,,ElaineCawthon@hotmail.com,,www.MagManufactures.com,3066 Colonial Townline,,Memphis,23463
 43,2,Vapor Suppliers,Kayce Sine,Sales Consultant,985-461-1627,693-416-9441,,KayceSine@hotmail.com,,www.VaporSuppliers.com,9209 Dusty Bend,,Houston,50430
-43,5,Renewal Suppliers,Clemente Castor,Sales Consultant,393-864-1764,855-264-5827,,ClementeCastor@hotmail.com,,www.RenewalSuppliers.com,7296 Honey Vista,,Houston,52920
-43,5,Hip Suppliers,Todd Hempstead,Sales Consultant,502-184-3322,428-869-9328,,ToddHempstead@hotmail.com,,www.HipSuppliers.com,8828 Amber Fawn Ramp,,Arlington,61141
-43,2,Docs Suppliers,Madie Mangan,Sales Consultant,908-748-7956,798-280-7437,,MadieMangan@hotmail.com,,www.DocsSuppliers.com,1899 Stony Abbey,,Fort Worth,48508
-43,5,Absolute Suppliers,Nellie Cottingham,Sales Consultant,208-400-1472,294-634-7214,,NellieCottingham@hotmail.com,,www.AbsoluteSuppliers.com,1566 Cozy Acres,,Houston,83336
-43,5,Spike Suppliers,Lilli Cichon,Sales Consultant,726-353-7243,204-620-8242,,LilliCichon@hotmail.com,,www.SpikeSuppliers.com,7041 Little View Byway,,Houston,42751
-43,5,Sight Manufactures,Chaya Berwick,Sales Consultant,235-190-3314,389-633-4787,,ChayaBerwick@hotmail.com,,www.SightManufactures.com,6050 Wishing Creek Cape,,Houston,88517
+43,3,Renewal Suppliers,Clemente Castor,Sales Consultant,393-864-1764,855-264-5827,,ClementeCastor@hotmail.com,,www.RenewalSuppliers.com,7296 Honey Vista,,Houston,52920
+43,3,Hip Suppliers,Todd Hempstead,Sales Consultant,502-184-3322,428-869-9328,,ToddHempstead@hotmail.com,,www.HipSuppliers.com,8828 Amber Fawn Ramp,,Arlington,61141
+43,3,Docs Suppliers,Madie Mangan,Sales Consultant,908-748-7956,798-280-7437,,MadieMangan@hotmail.com,,www.DocsSuppliers.com,1899 Stony Abbey,,Fort Worth,48508
+43,3,Absolute Suppliers,Nellie Cottingham,Sales Consultant,208-400-1472,294-634-7214,,NellieCottingham@hotmail.com,,www.AbsoluteSuppliers.com,1566 Cozy Acres,,Houston,83336
+43,3,Spike Suppliers,Lilli Cichon,Sales Consultant,726-353-7243,204-620-8242,,LilliCichon@hotmail.com,,www.SpikeSuppliers.com,7041 Little View Byway,,Houston,42751
+43,3,Sight Manufactures,Chaya Berwick,Sales Consultant,235-190-3314,389-633-4787,,ChayaBerwick@hotmail.com,,www.SightManufactures.com,6050 Wishing Creek Cape,,Houston,88517
 43,2,Skills Manufactures,Rosa Brandon,Sales Consultant,627-770-9486,501-284-3899,,RosaBrandon@hotmail.com,,www.SkillsManufactures.com,4207 High Village,,Houston,37042
-43,5,Centennial Manufactures,Gianna Wymore,Sales Consultant,444-126-9273,174-823-3922,,GiannaWymore@hotmail.com,,www.CentennialManufactures.com,6578 Lazy Highlands,,Houston,61579
-43,5,Canvas Irons,Lavonda Bruhn,Sales Consultant,265-228-4664,220-167-6876,,LavondaBruhn@hotmail.com,,www.CanvasIrons.com,9869 Thunder River Park,,Houston,86346
-43,5,Nature Irons,Priscila Toft,Sales Consultant,824-692-5730,535-395-0208,,PriscilaToft@hotmail.com,,www.NatureIrons.com,3626 Blue Spring Round,,Arlington,68922
+43,3,Centennial Manufactures,Gianna Wymore,Sales Consultant,444-126-9273,174-823-3922,,GiannaWymore@hotmail.com,,www.CentennialManufactures.com,6578 Lazy Highlands,,Houston,61579
+43,3,Canvas Irons,Lavonda Bruhn,Sales Consultant,265-228-4664,220-167-6876,,LavondaBruhn@hotmail.com,,www.CanvasIrons.com,9869 Thunder River Park,,Houston,86346
+43,3,Nature Irons,Priscila Toft,Sales Consultant,824-692-5730,535-395-0208,,PriscilaToft@hotmail.com,,www.NatureIrons.com,3626 Blue Spring Round,,Arlington,68922
 43,2,Promotions Irons,Fonda Padro,Sales Consultant,714-380-9279,569-791-8252,,FondaPadro@hotmail.com,,www.PromotionsIrons.com,4336 Rocky Hills Key,,Corpus Christi,50430
-43,5,Ascent Irons,Dinorah Connelly,Sales Consultant,280-629-1520,211-191-2406,,DinorahConnelly@hotmail.com,,www.AscentIrons.com,9680 Red Common,,Amarillo,68749
+43,3,Ascent Irons,Dinorah Connelly,Sales Consultant,280-629-1520,211-191-2406,,DinorahConnelly@hotmail.com,,www.AscentIrons.com,9680 Red Common,,Amarillo,68749
 46,1,Care Suppliers,Victor Zellmer,Sales Consultant,943-467-8287,785-717-3228,,VictorZellmer@hotmail.com,,www.CareSuppliers.com,2446 Bright Inlet,,Roanoke,68922
-46,5,Passion Suppliers,Scot Ivory,Sales Consultant,885-240-9210,763-436-8258,,ScotIvory@hotmail.com,,www.PassionSuppliers.com,7622 Golden Island,,Norfolk,30608
-46,5,Sapient Suppliers,Eloise Haydon,Sales Consultant,468-399-6508,427-136-4257,,EloiseHaydon@hotmail.com,,www.SapientSuppliers.com,2417 Clear Grove Quay,,Arlington,44695
+46,3,Passion Suppliers,Scot Ivory,Sales Consultant,885-240-9210,763-436-8258,,ScotIvory@hotmail.com,,www.PassionSuppliers.com,7622 Golden Island,,Norfolk,30608
+46,3,Sapient Suppliers,Eloise Haydon,Sales Consultant,468-399-6508,427-136-4257,,EloiseHaydon@hotmail.com,,www.SapientSuppliers.com,2417 Clear Grove Quay,,Arlington,44695

@@ -28,7 +28,7 @@ class Vendor < ApplicationRecord
     else
       # Deleted at exists
       update_attribute(:deleted_at, nil)
-      update_attribute(:vendor_status_id, 5)
+      update_attribute(:vendor_status_id, 3)
     end
   end
 
