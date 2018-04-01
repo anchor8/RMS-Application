@@ -8,6 +8,7 @@
     <%= render partial: 'partials/breadcrumbs' %>
 
     <% if current_employee.admin? %>
+      <!-- Admin true -->
 
       <!-- Notice Banner -->
       <% if notice %>
@@ -82,7 +83,7 @@
       </div>
 
     <% else %>
-
+      <!-- Admin false -->
       <div class='h5 strong text-center mark'>
         ADMIN ONLY!
       </div>

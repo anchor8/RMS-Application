@@ -34,8 +34,8 @@
 
     </div>
 
-    <!-- Show If Admin -->
     <% if current_employee.admin? %>
+      <!-- Admin true -->
 
       <!-- Employee Table-->
       <%= render partial: 'partials/tables/employee-table' %>
