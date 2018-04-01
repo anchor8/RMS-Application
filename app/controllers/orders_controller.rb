@@ -46,6 +46,10 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    # Breadcrumbs for new order
+    add_breadcrumb 'Order Management', ordermgmt_path
+    add_breadcrumb 'Create New Order'
+    
     @order = Order.new(order_params)
 
     respond_to do |format|

@@ -32,6 +32,10 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
+    # Set breadcrumbs for new customer
+    add_breadcrumb 'Customer Management', customermgmt_path
+    add_breadcrumb 'Create New Customer'
+    
     @customer = Customer.new(customer_params)
 
     respond_to do |format|
