@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State:</strong>
+  <%= @vendor.state %>
+</p>
+
+<p>
+  <strong>Vendor status:</strong>
+  <%= @vendor.vendor_status %>
+</p>
+
+<p>
+  <strong>Vendor name:</strong>
+  <%= @vendor.vendor_name %>
+</p>
+
+<p>
+  <strong>Contact name:</strong>
+  <%= @vendor.contact_name %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @vendor.job_title %>
+</p>
+
+<p>
+  <strong>Work phone:</strong>
+  <%= @vendor.work_phone %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @vendor.mobile %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @vendor.fax %>
+</p>
+
+<p>
+  <strong>Vendor email:</strong>
+  <%= @vendor.vendor_email %>
+</p>
+
+<p>
+  <strong>Vendor cc email:</strong>
+  <%= @vendor.vendor_cc_email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @vendor.website %>
+</p>
+
+<p>
+  <strong>Street address 1:</strong>
+  <%= @vendor.street_address_1 %>
+</p>
+
+<p>
+  <strong>Street address 2:</strong>
+  <%= @vendor.street_address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @vendor.city %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @vendor.zip_code %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>
