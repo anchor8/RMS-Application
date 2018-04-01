@@ -15,7 +15,7 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 30,Southwest Airlines,Anjanette,Rod,Chairman,224-774-0422,204-734-6101,,AnjanetteRod@gmail.com,,www.SouthwestAirlines.com,www.twitter.com/SouthwestAirlines,8830 Bright Mews,,Newark,15449
 35,Limited Evolving,Amal,Dionne,CTO,270-481-6995,968-930-4178,,AmalDionne@gmail.com,,www.LimitedEvolving.com,www.twitter.com/LimitedEvolving,6929 Foggy Embers Field,,Youngstown,27214
 25,Bug Inc,Crystal,Bev,Manager,261-571-0516,993-865-5825,,CrystalBev@gmail.com,,www.BugInc.com,www.twitter.com/BugInc,9015 Red Anchor Round,,Saint Louis,18004
-42,Invictus Inc,Janeen,Taina,Co-Founder,256-471-8739,491-532-2117,,JaneenTaina@gmail.com,,www.InvictusInc.com,www.twitter.com/InvictusInc,6752 Burning Downs,,Memphis,74372
+42,Invictus Inc,Janeen,Taina,Co Founder,256-471-8739,491-532-2117,,JaneenTaina@gmail.com,,www.InvictusInc.com,www.twitter.com/InvictusInc,6752 Burning Downs,,Memphis,74372
 48,BlackHills Metals,Donald,Lucille,Manager,449-333-1745,960-153-4988,,DonaldLucille@gmail.com,,www.BlackHillsMetals.com,www.twitter.com/BlackHillsMetals,3571 Amber Elk Acres,,Huntington,37656
 9,Circa Pipelines,Cristina,Beata,Owner,690-910-3693,103-820-1134,,CristinaBeata@gmail.com,,www.CircaPipelines.com,www.twitter.com/CircaPipelines,8864 Bright Dale Subdivision,,Pompano Beach,65336
 32,Artists Pipelines,Yuki,Karoline,Owner,392-946-0596,867-354-4302,,YukiKaroline@gmail.com,,www.ArtistsPipelines.com,www.twitter.com/ArtistsPipelines,5174 Shady Hickory Stead,,New York City,46850
@@ -31,7 +31,7 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 23,Maze Limited,Bonny,Margie,Salesman,913-856-5767,624-487-3226,,BonnyMargie@gmail.com,,www.MazeLimited.com,www.twitter.com/MazeLimited,5466 Quiet Creek Vista,,Saint Paul,75371
 44,Evolving Limited,Floretta,Dorcas,CFO,220-901-2605,528-457-6404,,FlorettaDorcas@gmail.com,,www.EvolvingLimited.com,www.twitter.com/EvolvingLimited,7682 Heather Robin Point,,Salt Lake City,85099
 32,Consult Pipelines,Florentino,Sena,Founder,246-170-9104,910-838-1726,,FlorentinoSena@gmail.com,,www.ConsultPipelines.com,www.twitter.com/ConsultPipelines,7856 Sleepy Vale,,New York City,45400
-5,Triple Limited,Marni,Delinda,Co-Founder,290-143-5647,951-675-5323,,MarniDelinda@gmail.com,,www.TripleLimited.com,www.twitter.com/TripleLimited,6637 Jagged Lane,,San Bernardino,75224
+5,Triple Limited,Marni,Delinda,Co Founder,290-143-5647,951-675-5323,,MarniDelinda@gmail.com,,www.TripleLimited.com,www.twitter.com/TripleLimited,6637 Jagged Lane,,San Bernardino,75224
 29,Champion Metals,Abdul,Katharyn,Owner,386-783-9318,887-755-1613,,AbdulKatharyn@gmail.com,,www.ChampionMetals.com,www.twitter.com/ChampionMetals,9715 Velvet Lagoon Field,,Sparks,75371
 30,Abundant Pipelines,Dudley,Migdalia,CFO,432-563-0075,547-724-9300,,DudleyMigdalia@gmail.com,,www.AbundantPipelines.com,www.twitter.com/AbundantPipelines,6498 Emerald Rise Crest,,Washington,61119
 33,Original Limited,Shelton,Lelah,Manager,653-835-5523,160-551-2582,,SheltonLelah@gmail.com,,www.OriginalLimited.com,www.twitter.com/OriginalLimited,5863 Pleasant Centre,,Charlotte,14624
@@ -47,12 +47,12 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 9,Pickup Pipelines,Kristan,Corey,Founder,331-738-6887,261-122-3501,,KristanCorey@gmail.com,,www.PickupPipelines.com,www.twitter.com/PickupPipelines,7239 Cinder Trail,,Jacksonville,66258
 5,Gratitude Limited,Latrisha,Sabine,CFO,483-433-6470,556-872-6669,,LatrishaSabine@gmail.com,,www.GratitudeLimited.com,www.twitter.com/GratitudeLimited,4239 Wishing Road,,Pasadena,74372
 9,Encore Metals,Millard,Jennell,Owner,847-459-0432,375-286-2103,,MillardJennell@gmail.com,,www.EncoreMetals.com,www.twitter.com/EncoreMetals,143 Burning Orchard,,Spring Hill,27453
-43,Dependable Metals,Christine,Loreen,Co-Founder,742-744-2138,366-588-8746,,ChristineLoreen@gmail.com,,www.DependableMetals.com,www.twitter.com/DependableMetals,538 High Blossom Autoroute,,El Paso,41209
-18,Mr Pipelines,Ervin,Junior,Co-Founder,711-399-6171,909-992-1473,,ErvinJunior@gmail.com,,www.MrPipelines.com,www.twitter.com/MrPipelines,9533 Quaking Farms,,Washington,75050
+43,Dependable Metals,Christine,Loreen,Co Founder,742-744-2138,366-588-8746,,ChristineLoreen@gmail.com,,www.DependableMetals.com,www.twitter.com/DependableMetals,538 High Blossom Autoroute,,El Paso,41209
+18,Mr Pipelines,Ervin,Junior,Co Founder,711-399-6171,909-992-1473,,ErvinJunior@gmail.com,,www.MrPipelines.com,www.twitter.com/MrPipelines,9533 Quaking Farms,,Washington,75050
 1,Mall Pipelines,Flor,Marge,CTO,160-551-2582,714-965-9315,,FlorMarge@gmail.com,,www.MallPipelines.com,www.twitter.com/MallPipelines,1924 Lazy Woods,,Birmingham,86023
 10,Article Metals,Delorse,Karmen,Chairman,904-872-7250,992-355-2730,,DelorseKarmen@gmail.com,,www.ArticleMetals.com,www.twitter.com/ArticleMetals,1725 Tawny Walk,,Atlanta,75050
 32,Peter Piper Inc,Peter,Piper,President,712-593-8090,887-755-1613,,PeterPiper@gmail.com,,www.peterpiperco.com,www.twitter.com/PeterPiperInc,6002 Grand Fawn Ridge,,White Plains,25800
-9,Carnival Limited,Jaquelyn,Ruthie,Co-Founder,954-311-5638,964-836-2041,,JaquelynRuthie@gmail.com,,www.CarnivalLimited.com,www.twitter.com/CarnivalLimited,4239 Crystal Court,,Tampa,64420
+9,Carnival Limited,Jaquelyn,Ruthie,Co Founder,954-311-5638,964-836-2041,,JaquelynRuthie@gmail.com,,www.CarnivalLimited.com,www.twitter.com/CarnivalLimited,4239 Crystal Court,,Tampa,64420
 16,NorthPoint Inc,Aurea,Krystina,Executive,919-970-0213,536-605-8189,,AureaKrystina@gmail.com,,www.NorthPointInc.com,www.twitter.com/NorthPointInc,9524 Little Hill,,Topeka,85723
 13,Individual Metals,Madeline,Milagro,Manager,381-590-2875,604-268-3673,,MadelineMilagro@gmail.com,,www.IndividualMetals.com,www.twitter.com/IndividualMetals,2295 Fallen Bluff Path,,Springfield,85512
 10,Orchestra Metals,Vince,Vinnie,CTO,491-620-5014,846-667-4292,,VinceVinnie@gmail.com,,www.OrchestraMetals.com,www.twitter.com/OrchestraMetals,841 Dusty Isle,,Atlanta,43641
@@ -73,7 +73,7 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 1,orama Inc,Darcy,Nakesha,CEO,975-543-1688,141-187-7827,,DarcyNakesha@gmail.com,,www.oramaInc.com,www.twitter.com/oramaInc,405 Iron Pond Glade,,Montgomery,37656
 11,SouthCoast Limited,Porter,Georgeann,Founder,788-678-7126,381-590-2875,,PorterGeorgeann@gmail.com,,www.SouthCoastLimited.com,www.twitter.com/SouthCoastLimited,7354 Harvest Mall ,,Honolulu,15449
 43,Condor Inc,Aldo,Floria,CFO,162-378-3572,816-760-8600,,AldoFloria@gmail.com,,www.CondorInc.com,www.twitter.com/CondorInc,8155 Gentle Campus,,Dallas,61138
-9,Famous Metals,Stephine,Cory,Co-Founder,352-609-8843,384-158-0390,,StephineCory@gmail.com,,www.FamousMetals.com,www.twitter.com/FamousMetals,5324 Heather Branch Run,,Fort Myers,61119
+9,Famous Metals,Stephine,Cory,Co Founder,352-609-8843,384-158-0390,,StephineCory@gmail.com,,www.FamousMetals.com,www.twitter.com/FamousMetals,5324 Heather Branch Run,,Fort Myers,61119
 43,Reserve Limited,Young,Clifford,Manager,934-915-0781,491-620-5014,,YoungClifford@gmail.com,,www.ReserveLimited.com,www.twitter.com/ReserveLimited,6260 Round Rabbit Square,,Houston,74351
 27,Trainer Inc,Aurore,Sherlyn,Executive,121-273-5868,897-647-1810,,AuroreSherlyn@gmail.com,,www.TrainerInc.com,www.twitter.com/TrainerInc,8768 Cozy Lookout,,Washington,60941
 10,Reality Metals,Joleen,Glendora,Founder,283-494-7952,306-255-6024,,JoleenGlendora@gmail.com,,www.RealityMetals.com,www.twitter.com/RealityMetals,18 Indian Berry Point,,Washington,58907
@@ -81,7 +81,7 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 8,Points Inc,Kandace,Margarito,CTO,769-499-5667,500-960-2175,,KandaceMargarito@gmail.com,,www.PointsInc.com,www.twitter.com/PointsInc,3670 Lost Dale Pike,,Wilmington,43441
 37,Blogger Limited,In,Mason,CTO,466-867-3041,162-683-4446,,InMason@gmail.com,,www.BloggerLimited.com,www.twitter.com/BloggerLimited,3271 Tawny Arbor,,Portland,46849
 35,Plumb Limited,Lonnie,Harlan,Executive,253-200-5693,179-145-3240,,LonnieHarlan@gmail.com,,www.PlumbLimited.com,www.twitter.com/PlumbLimited,2228 Noble Blossom Passage,,Youngstown,66258
-44,Workforce Metals,Sherwood,Genevive,Co-Founder,793-343-3033,737-177-3552,,SherwoodGenevive@gmail.com,,www.WorkforceMetals.com,www.twitter.com/WorkforceMetals,413 Lost Terrace,,Provo,82750
+44,Workforce Metals,Sherwood,Genevive,Co Founder,793-343-3033,737-177-3552,,SherwoodGenevive@gmail.com,,www.WorkforceMetals.com,www.twitter.com/WorkforceMetals,413 Lost Terrace,,Provo,82750
 5,Wildcat Limited,Natalie,Isis,Vice President,424-224-2207,494-916-9798,,NatalieIsis@gmail.com,,www.WildcatLimited.com,www.twitter.com/WildcatLimited,3197 Hidden Hickory Nook,,Los Angeles,28186
 3,GreenEarth Inc,Cordell,Brittaney,Manager,794-175-1346,856-900-2562,,CordellBrittaney@gmail.com,,www.GreenEarthInc.com,www.twitter.com/GreenEarthInc,4667 Honey Sky Ridge,,Mesa,66258
 49,Pro Inc,Agustin,Elva,CTO,196-334-8561,889-204-4798,,AgustinElva@gmail.com,,www.ProInc.com,www.twitter.com/ProInc,5866 Umber Island Port,,Milwaukee,64311
@@ -92,9 +92,9 @@ state_id,company_name,customer_first_name,customer_last_name,job_title,work_phon
 15,Citywide Limited,Joella,Lanell,CEO,259-630-9637,386-783-9318,,JoellaLanell@gmail.com,,www.CitywideLimited.com,www.twitter.com/CitywideLimited,1567 Dusty By-pass,,Waterloo,60941
 43,OnTarget Limited,Annita,Mei,Chairman,345-611-6870,246-170-9104,,AnnitaMei@gmail.com,,www.OnTargetLimited.com,www.twitter.com/OnTargetLimited,8561 Easy Trace,,El Paso,79867
 5,Navajo Inc,Susie,Kristina,Executive,595-352-7826,772-508-3627,,SusieKristina@gmail.com,,www.NavajoInc.com,www.twitter.com/NavajoInc,5275 Old Hills Range,,San Bernardino,58907
-43,Tours Pipelines,Emerson,Caprice,Co-Founder,150-361-8608,764-839-3373,,EmersonCaprice@gmail.com,,www.ToursPipelines.com,www.twitter.com/ToursPipelines,6407 Misty Pathway,,El Paso,79867
+43,Tours Pipelines,Emerson,Caprice,Co Founder,150-361-8608,764-839-3373,,EmersonCaprice@gmail.com,,www.ToursPipelines.com,www.twitter.com/ToursPipelines,6407 Misty Pathway,,El Paso,79867
 15,NorthShore Metals,Vida,Brianne,CEO,354-978-5857,753-871-6188,,VidaBrianne@gmail.com,,www.NorthShoreMetals.com,www.twitter.com/NorthShoreMetals,421 Dewy Cove,,Washington,43441
 38,Canal Limited,Kenisha,Vallie,Executive,484-728-0296,354-978-5857,,KenishaVallie@gmail.com,,www.CanalLimited.com,www.twitter.com/CanalLimited,3259 Broad Dale,,Pittsburgh,45400
 5,Rex Metals,Willard,Isaiah,Owner,148-937-3182,843-462-3867,,WillardIsaiah@gmail.com,,www.RexMetals.com,www.twitter.com/RexMetals,8888 Golden Robin Gate,,Lancaster,98824
 15,Marvel Pipelines,Rachel,Tu,Manager,460-913-1674,468-810-0218,,RachelTu@gmail.com,,www.MarvelPipelines.com,www.twitter.com/MarvelPipelines,345 Hazy Lookout,,Des Moines,64311
-17,Provident Inc,Crissy,Dottie,Co-Founder,999-271-4665,701-453-7368,,CrissyDottie@gmail.com,,www.ProvidentInc.com,www.twitter.com/ProvidentInc,1052 Dewy Wynd,,Louisville,25800
+17,Provident Inc,Crissy,Dottie,Co Founder,999-271-4665,701-453-7368,,CrissyDottie@gmail.com,,www.ProvidentInc.com,www.twitter.com/ProvidentInc,1052 Dewy Wynd,,Louisville,25800
