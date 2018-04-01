@@ -24,11 +24,11 @@ class Vendor < ApplicationRecord
     if !deleted_at
       # Deleted at doesn't exist
       update_attribute(:deleted_at, Time.current)
-      update_attribute(:vendor_status_id, 1)
+      update_attribute(:vendor_status_id, 4)
     else
       # Deleted at exists
       update_attribute(:deleted_at, nil)
-      update_attribute(:vendor_status_id, 2)
+      update_attribute(:vendor_status_id, 5)
     end
   end
 
