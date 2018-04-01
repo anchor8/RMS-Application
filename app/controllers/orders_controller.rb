@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
     @order.street_address_1 = params['street_address_1']
     @order.street_address_2 = params['street_address_2']
     @order.zip_code = params['zip_code']
+    @order.vendor_id = params['vendor_id']
   end
 
   # GET /orders/1/edit

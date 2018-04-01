@@ -203,18 +203,6 @@
 
       </div>
 
-      <div class="btn-right-2">
-
-        <!-- Add New Order -->
-        <%= button_to 'Create New Order',
-            new_order_path,
-            :method => :get,
-            :class => 'btn btn-outline-primary' %>
-
-      </div>
-
-
-
   </div>
 
   <!-- Table Card Body -->
@@ -231,6 +219,7 @@
 
             <tr>
 
+              <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
@@ -258,6 +247,7 @@
 
             <tr>
 
+              <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
@@ -288,7 +278,14 @@
 
                   <tr>
 
-                    <!-- Columns to pull from vendor data -->
+                    <!-- New Order Button -->
+                    <td class="text-center">
+                      <%= link_to 'New Order', {:controller => "orders",
+                                                :action => "new",
+                                                :vendor_id => vendor.id,
+                                                } %>
+                    </td>
+
                     <td class="text-center">
                       <!-- Disable Button -->
                       <% if !vendor.deleted_at %>
