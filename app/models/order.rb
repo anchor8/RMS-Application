@@ -11,7 +11,7 @@ class Order < ApplicationRecord
 
   # Validations
   validates :order_date, allow_nil: false, presence: true
-  validates :shipping_number, allow_nil: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for shipping number allowed"}
+  validates :shipping_number, allow_nil: true, presence: false, format: { with: /\A^[0-9]*\z/, message: "Only numbers for shipping number allowed"}
   validates :purchase_order_number, allow_nil: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number allowed"}
   validates :ship_date, allow_nil: true, presence: false
   validates :order_total, allow_nil: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
