@@ -5,7 +5,7 @@
   </div>
 
   <div class="row">
-        
+
     <div class="col-md-6">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
@@ -40,7 +40,7 @@
 
         <div class="field mt-3">
           <b><%= f.label :password %></b> <br /><i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, size: "37", autocomplete: "off" %>
+          <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "40", autocomplete: "off" %>
           <% if @minimum_password_length %>
             <br />
             <em><%= @minimum_password_length %> characters minimum</em>
@@ -49,7 +49,7 @@
 
         <div class="field mt-3">
           <b><%= f.label :password_confirmation %></b><br />
-          <%= f.password_field :password_confirmation, size: "37",autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off" %>
         </div>
 
     </div>
@@ -60,7 +60,7 @@
 
           <div class="field mx-auto">
             <b><%= f.label :current_password %>  * </b> <br /><i>(we need your current password to confirm your changes)</i><br />
-            <%= f.password_field :current_password, size: "37",autocomplete: "off", required: true %>
+            <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
           </div>
 
         </div>
