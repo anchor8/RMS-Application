@@ -57,7 +57,7 @@
        data-column="1"
        href="">Disable</a>
 
-    <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
+    <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
        type="button"
        data-toggle="button"
        aria-pressed="false"
@@ -425,7 +425,7 @@
 
         $('a.show-contact').on( 'click', function (e) {
             table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
-            table.columns( [ 0, 1, 5, 13, 14, 15, 16, 17 ] ).visible( false, false );
+            table.columns( [ 0, 1, 2, 5, 13, 14, 15, 16, 17 ] ).visible( false, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
             $('a.toggle-vis').removeClass('active')
@@ -435,7 +435,7 @@
 
         $('a.show-info').on( 'click', function (e) {
             table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
-            table.columns( [ 0, 1, 7, 8, 9, 10, 11, 12 ] ).visible( false, false );
+            table.columns( [ 0, 1, 2, 7, 8, 9, 10, 11, 12 ] ).visible( false, false );
             table.columns.adjust().draw( false ); // adjust column sizing and redraw
 
             $('a.toggle-vis').removeClass('active')
