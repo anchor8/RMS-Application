@@ -359,10 +359,11 @@
 
       // Declare table
       var table = $('#vendortable').DataTable( {
-          stateSave: true,
           "paging": true
 
       } );
+
+      $('a.toggle-vis').addClass('active')
 
       // Toggle individual column based on value from data-column
       $('a.toggle-vis').on( 'click', function (e) {
@@ -374,8 +375,6 @@
         column.visible( ! column.visible() );
 
       } );
-
-      $('a.toggle-vis').addClass('active')
 
       // Show all columns
       $('a.show-all-col').on( 'click', function (e) {
