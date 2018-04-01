@@ -10,16 +10,16 @@ class Order < ApplicationRecord
   belongs_to :state
 
   # Validations
-  validates :order_date, allow_nil: false, presence: true
-  validates :shipping_number, allow_nil: true, presence: false, format: { with: /\A^[0-9]*\z/, message: "Only numbers for shipping number allowed"}
-  validates :purchase_order_number, allow_nil: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number allowed"}
-  validates :ship_date, allow_nil: true, presence: false
-  validates :order_total, allow_nil: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
-  validates :street_address_1, allow_nil: false, presence: true
-  validates :street_address_2, allow_nil: true, presence: false
-  validates :city, allow_nil: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city allowed"}
-  validates :zip_code, allow_nil: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
-  validates :deleted_at, allow_nil: true, presence: false
+  validates :order_date, allow_blank: false, presence: true
+  validates :shipping_number, allow_blank: true, presence: false, format: { with: /\A^[0-9]*\z/, message: "Only numbers for shipping number allowed"}
+  validates :purchase_order_number, allow_blank: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number allowed"}
+  validates :ship_date, allow_blank: true, presence: false
+  validates :order_total, allow_blank: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
+  validates :street_address_1, allow_blank: false, presence: true
+  validates :street_address_2, allow_blank: true, presence: false
+  validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city allowed"}
+  validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
+  validates :deleted_at, allow_blank: true, presence: false
 
   # Toggle order
   def toggle_order

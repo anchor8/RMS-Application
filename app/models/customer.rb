@@ -19,8 +19,8 @@ class Customer < ApplicationRecord
   validates :street_address_1, allow_blank: false, presence: true
   validates :street_address_2, allow_blank: true, presence: false
   validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city name allowed"}
-  validates :zip_code, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
-  validates :deleted_at, allow_nil: true, presence: false
+  validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
+  validates :deleted_at, allow_blank: true, presence: false
 
   # Toggle customer
   def toggle_customer
