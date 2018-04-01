@@ -305,15 +305,16 @@
 
                       <!-- New Order Button -->
                       <td class="text-center">
-                        <%= link_to 'New Order', {:controller => "orders",
-                                                  :action => "new",
-                                                  :customer_id => customer.id,
-                                                  :country_id => 1,
-                                                  :state_id => customer.state_id,
-                                                  :street_address_1 => customer.street_address_1,
-                                                  :street_address_2 => customer.street_address_2,
-                                                  :city => customer.city,
-                                                  :zip_code => customer.zip_code} %>
+                        <%= link_to "<button class='btn btn-outline-primary btn-sm'>New Order</button>".html_safe,
+                        { :controller => "orders",
+                          :action => "new",
+                          :customer_id => customer.id,
+                          :country_id => 1,
+                          :state_id => customer.state_id,
+                          :street_address_1 => customer.street_address_1,
+                          :street_address_2 => customer.street_address_2,
+                          :city => customer.city,
+                          :zip_code => customer.zip_code} %>
                       </td>
 
                       <!-- Disable Button -->

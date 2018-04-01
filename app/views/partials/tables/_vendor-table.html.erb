@@ -280,10 +280,10 @@
 
                     <!-- New Order Button -->
                     <td class="text-center">
-                      <%= link_to 'New Order', {:controller => "orders",
-                                                :action => "new",
-                                                :vendor_id => vendor.id,
-                                                } %>
+                      <%= link_to "<button class='btn btn-outline-primary btn-sm'>New Order</button>".html_safe,
+                      { :controller => "orders",
+                        :action => "new",
+                        :vendor_id => vendor.id} %>
                     </td>
 
                     <td class="text-center">
