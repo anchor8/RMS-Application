@@ -46,7 +46,7 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="0"
-       href="">Disable</a>
+       href="">New Order</a>
 
     <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
        type="button"
@@ -54,6 +54,14 @@
        aria-pressed="false"
        autocomplete="off"
        data-column="1"
+       href="">Disable</a>
+
+    <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+       type="button"
+       data-toggle="button"
+       aria-pressed="false"
+       autocomplete="off"
+       data-column="2"
        href="">Edit</a>
 
     <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -61,7 +69,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="2"
+       data-column="3"
        href="">Vendor</a>
 
     <a class="toggle-vis vendor-contact vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -69,7 +77,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="3"
+       data-column="4"
        href="">State</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -77,7 +85,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="4"
+       data-column="5"
        href="">Status</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -85,7 +93,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="5"
+       data-column="6"
        href="">Contact</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -93,7 +101,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="6"
+       data-column="7"
        href="">Job</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -101,7 +109,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="7"
+       data-column="8"
        href="">Work</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -109,7 +117,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="8"
+       data-column="9"
        href="">Mobile</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -117,7 +125,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="9"
+       data-column="10"
        href="">Fax</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -125,7 +133,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="10"
+       data-column="11"
        href="">Email</a>
 
     <a class="toggle-vis vendor-contact btn btn-outline-primary btn-sm mb-1"
@@ -133,7 +141,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="11"
+       data-column="12"
        href="">CC Email</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -141,7 +149,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="12"
+       data-column="13"
        href="">Website</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -149,7 +157,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="13"
+       data-column="14"
        href="">Address 1</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -157,7 +165,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="14"
+       data-column="15"
        href="">Address 2</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -165,7 +173,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="15"
+       data-column="16"
        href="">City</a>
 
     <a class="toggle-vis vendor-info btn btn-outline-primary btn-sm mb-1"
@@ -173,7 +181,7 @@
        data-toggle="button"
        aria-pressed="false"
        autocomplete="off"
-       data-column="16"
+       data-column="17"
        href="">Zip</a>
 
   </div>
@@ -377,7 +385,7 @@
       $('a.show-all-col').on( 'click', function (e) {
 
         // Show all columns
-        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
@@ -391,7 +399,7 @@
       $('a.hide-all-col').on( 'click', function (e) {
 
         // Hide all columns
-        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( false, false );
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
@@ -405,10 +413,10 @@
       $('a.show-contact').on( 'click', function (e) {
 
         // Ensure all columns are shown
-        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
         // Hide columns that dont relate to vendor contact info
-        table.columns( [ 0, 1, 4, 12, 13, 14, 15, 16 ] ).visible( false, false );
+        table.columns( [ 0, 1, 2, 5, 13, 14, 15, 16, 17 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
@@ -422,10 +430,10 @@
       $('a.show-info').on( 'click', function (e) {
 
         // Ensure all columns are shown
-        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ] ).visible( true, false );
+        table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ] ).visible( true, false );
 
         // Hide columns that dont relate to vendor info
-        table.columns( [ 0, 1, 5, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+        table.columns( [ 0, 1, 2, 6, 7, 8, 9, 10, 11, 12 ] ).visible( false, false );
 
         // adjust column sizing and redraw
         table.columns.adjust().draw( false );
