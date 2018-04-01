@@ -43,8 +43,8 @@
       </div>
 
       <div class="field">
-        <%= form.label :order_total %> * $
-        <%= form.text_field :order_total, size: "10", placeholder: '123456.99', id: :order_order_total, required: true %>
+        <%= form.label :order_total %> *
+        <%= form.text_field :order_total, :value => number_to_currency(order.order_total), size: "10", placeholder: '123456.99', id: :order_order_total, required: true %>
       </div>
 
       <div class="field">
