@@ -7,9 +7,27 @@
     <!-- Bread Crumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Error Banner -->
+    <% if notice %>
+      <% flash.each do |key, value| %>
+        <% if value.class == Array %>
+          <div class="h5 strong text-center mark">
+            <% value.each do |message| %>
+                * <%= message %> *
+                </br>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="h5 strong text-center mark">
+            * <%= value %> *
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
     <!-- Customer Table-->
     <%= render partial: 'partials/tables/customer-table' %>
-    
+
   </div>
 
 </div>
