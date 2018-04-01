@@ -1,145 +1,96 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-     id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 
   <!-- Title Button (Top) -->
   <%= link_to image_tag("appLOGO.png", width: '60px'), dashboard_url, class: "nav-link" %>
+
+  <!-- Logged in -->
   <div class="offset-md-2 navbar-nav">
     <%= link_to("Currently logged in as: " + current_employee.email, usermgmt_url, class: "nav-link  nav-item ") %>
   </div>
 
   <!-- Nav -->
-  <div class="collapse navbar-collapse"
-       id="navbarResponsive">
+  <div class="collapse navbar-collapse" id="navbarResponsive">
 
     <!-- Side Nav -->
-    <ul class="navbar-nav navbar-sidenav"
-        id="exampleAccordion">
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
       <!-- Dashbaord Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Dashboard">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
 
         <%= link_to(dashboard_url, class: "nav-link") do %>
-
           <i class="fa fa-fw fa-dashboard"></i>
-
           <span class="nav-link-text">
-
                 Dashboard
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Reports Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Reports">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
 
         <%= link_to(reports_url, class: "nav-link") do %>
-
           <i class="fa fa-bar-chart"></i>
-
           <span class="nav-link-text">
-
                 Reports
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Customer Management Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Customer Management">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customer Management">
 
         <%= link_to(customermgmt_url, class: "nav-link") do %>
-
           <i class="fa fa-group"></i>
-
           <span class="nav-link-text">
-
                 Customer Management
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Vendor Management Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Vendor Management">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vendor Management">
 
         <%= link_to(vendormgmt_url, class: "nav-link") do %>
-
           <i class="fa fa-handshake-o"></i>
-
           <span class="nav-link-text">
-
                 Vendor Management
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Order Management Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Order Management">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order Management">
 
         <%= link_to(ordermgmt_url, class: "nav-link") do %>
-
           <i class="fa fa-file-text-o"></i>
-
           <span class="nav-link-text">
-
                 Order Management
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Shipping Management Nav Button -->
-      <li class="nav-item"
-          data-toggle="tooltip"
-          data-placement="right"
-          title="Shipping Management">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Shipping Management">
 
         <%= link_to(shippingmgmt_url, class: "nav-link") do %>
-
           <i class="fa fa-plane"></i>
-
           <span class="nav-link-text">
-
                 Shipping Management
-
           </span>
-
         <% end %>
 
       </li>
 
       <!-- Import Management Nav Button -->
       <% if current_employee.admin? %>
-        <li class="nav-item" data-toggle="tooltip"
-        data-placement="right" title="Import Management">
+        <!-- Admin true -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Import Management">
 
           <%= link_to(importmgmt_url, class: "nav-link") do %>
             <i class="fa fa-fw fa-upload"></i>
@@ -149,18 +100,15 @@
         </li>
       <% end %>
 
-    </ul>    
+    </ul>
 
     <!-- Collapse Nav Bar Button (At bottom) -->
     <ul class="navbar-nav sidenav-toggler">
 
       <li class="nav-item">
 
-        <a class="nav-link text-center"
-           id="sidenavToggler">
-
+        <a class="nav-link text-center" id="sidenavToggler">
           <i class="fa fa-fw fa-angle-left"></i>
-
         </a>
 
       </li>
@@ -170,8 +118,7 @@
     <ul class="navbar-nav ml-auto">
 
       <!-- User Management -->
-      <li class="nav-item"
-          title="User Management">
+      <li class="nav-item" title="User Management">
 
         <%= link_to("User Management", usermgmt_url, class: "nav-link") %>
 
@@ -180,14 +127,9 @@
       <!-- Logout -->
       <li class="nav-item">
 
-        <a class="nav-link"
-           data-toggle="modal"
-           data-target="#exampleModal">
-
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-fw fa-sign-out"></i>
-
           Logout
-
         </a>
 
       </li>
