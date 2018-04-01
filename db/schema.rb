@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331215157) do
+ActiveRecord::Schema.define(version: 20180401163654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string "country_name"
+    t.string "country_name", limit: 100
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180331215157) do
   end
 
   create_table "employee_statuses", force: :cascade do |t|
-    t.string "employee_status_type"
+    t.string "employee_status_type", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 20180331215157) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
     t.datetime "deleted_at"
-    t.string "fname"
-    t.string "lname"
-    t.string "phone"
+    t.string "fname", limit: 50
+    t.string "lname", limit: 50
+    t.string "phone", limit: 26
     t.integer "employee_status_id", default: 1
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["employee_status_id"], name: "index_employees_on_employee_status_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20180331215157) do
   end
 
   create_table "order_statuses", force: :cascade do |t|
-    t.string "order_status_description"
+    t.string "order_status_description", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,14 +89,14 @@ ActiveRecord::Schema.define(version: 20180331215157) do
     t.bigint "payment_type_id"
     t.bigint "shipper_id"
     t.bigint "state_id"
-    t.bigint "shipping_number"
+    t.string "shipping_number", limit: 20
     t.integer "purchase_order_number"
-    t.datetime "order_date"
+    t.datetime "order_date", default: "2018-03-14 00:00:00"
     t.datetime "ship_date"
     t.decimal "order_total"
-    t.string "street_address_1"
-    t.string "street_address_2"
-    t.string "city"
+    t.string "street_address_1", limit: 100
+    t.string "street_address_2", limit: 100
+    t.string "city", limit: 60
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -112,25 +112,25 @@ ActiveRecord::Schema.define(version: 20180331215157) do
   end
 
   create_table "payment_types", force: :cascade do |t|
-    t.string "payment_type_description"
+    t.string "payment_type_description", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "shippers", force: :cascade do |t|
-    t.string "shipper_description"
+    t.string "shipper_description", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "states", force: :cascade do |t|
-    t.string "state_name"
+    t.string "state_name", limit: 35
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "vendor_statuses", force: :cascade do |t|
-    t.string "vendor_status_type"
+    t.string "vendor_status_type", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -139,18 +139,18 @@ ActiveRecord::Schema.define(version: 20180331215157) do
     t.bigint "state_id"
     t.bigint "vendor_status_id"
     t.string "vendor_name"
-    t.string "contact_name"
-    t.string "job_title"
-    t.string "work_phone"
-    t.string "mobile"
-    t.string "fax"
-    t.string "vendor_email"
-    t.string "vendor_cc_email"
-    t.string "website"
-    t.string "street_address_1"
-    t.string "street_address_2"
-    t.string "city"
-    t.string "zip_code"
+    t.string "contact_name", limit: 100
+    t.string "job_title", limit: 50
+    t.string "work_phone", limit: 26
+    t.string "mobile", limit: 26
+    t.string "fax", limit: 26
+    t.string "vendor_email", limit: 254
+    t.string "vendor_cc_email", limit: 254
+    t.string "website", limit: 50
+    t.string "street_address_1", limit: 100
+    t.string "street_address_2", limit: 100
+    t.string "city", limit: 60
+    t.string "zip_code", limit: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
