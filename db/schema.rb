@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401203023) do
+ActiveRecord::Schema.define(version: 20180402220323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 20180401203023) do
     t.bigint "state_id"
     t.string "shipping_number", limit: 15
     t.integer "purchase_order_number"
-    t.datetime "order_date", default: "2018-03-14 00:00:00"
-    t.datetime "ship_date"
+    t.date "order_date", default: "2018-03-14"
+    t.date "ship_date"
     t.decimal "order_total"
     t.string "street_address_1", limit: 100
     t.string "street_address_2", limit: 100
