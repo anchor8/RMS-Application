@@ -21,6 +21,20 @@
       </div>
     <% end %>
 
+    <!-- Employee Total Orders -->
+    <%= link_to reports_path(active_tab: "report8") do %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-bar-chart"></i>
+          Total Orders by Employee (Last 12 Months) </div>
+        <div class="card-body">
+          <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 1.year).count,
+                                    colors: ["blue", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
+                        library: { animation: { easing: 'easeInCirc' }}%>
+        <div class="card-footer small text-muted"></div>
+      </div>
+    <% end %>
+
     <div class="row">
 
       <div class="col-md-4">
@@ -82,21 +96,6 @@
       </div>
 
     </div>
-
-
-    <!-- Employee Total Orders -->
-    <%= link_to reports_path(active_tab: "report5") do %>
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Total Orders by Employee </div>
-        <div class="card-body">
-          <%= bar_chart Order.joins(:employee).group(:lname).count,
-                                    colors: ["pink", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
-                        library: { animation: { easing: 'easeInCirc' }}%>
-        <div class="card-footer small text-muted"></div>
-      </div>
-    <% end %>
 
     <!-- Order Totals by Company -->
     <%= link_to reports_path(active_tab: "report5") do %>
