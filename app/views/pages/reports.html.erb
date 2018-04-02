@@ -160,6 +160,7 @@
   <!-- Content in Tab -->
   <div class="tab-content">
 
+    <!-- Orders by Date -->
     <% if params[:active_tab] == 'report1' || !params[:active_tab] %>
       <!-- Tab 1 - Report 1 (Active if active_tab is report 1 or null) -->
       <div class="tab-pane container-fluid active" id="report1">
@@ -328,6 +329,7 @@
       </div>
     <% end %>
 
+    <!-- Vendor Orders -->
     <% if params[:active_tab] == 'report9' %>
       <!-- Tab 9 - Report 9 (Active if active_tab is report 9) -->
       <div class="tab-pane container-fluid active" id="report9">
@@ -490,6 +492,7 @@
       </div>
     <% end %>
 
+    <!-- Customer Orders -->
     <% if params[:active_tab] == 'report10' %>
       <!-- Tab 10 - Report 10 (Active if active_tab is report 10) -->
       <div class="tab-pane container-fluid active" id="report10">
@@ -652,6 +655,7 @@
       </div>
     <% end %>
 
+    <!-- Employee Orders -->
     <% if params[:active_tab] == 'report8' %>
       <!-- Tab 8 - Report 8 (Active if active_tab is report 8) -->
       <div class="tab-pane container-fluid active" id="report8">
@@ -814,6 +818,7 @@
       </div>
     <% end %>
 
+    <!-- Customer Order Statuses -->
     <% if params[:active_tab] == 'report2' %>
       <!-- Tab 2 - Report 2 (Active if active_tab is report 2) -->
       <div class="tab-pane container-fluid active" id="report2">
@@ -982,6 +987,7 @@
       </div>
     <% end %>
 
+    <!-- Vendor Statuses -->
     <% if params[:active_tab] == 'report3' %>
       <!-- Tab 3 - Report 3 (Active if active_tab is report 3) -->
       <div class="tab-pane container-fluid active" id="report3">
@@ -1146,6 +1152,7 @@
       </div>
     <% end %>
 
+    <!-- Carrier Usage -->
     <% if params[:active_tab] == 'report4' %>
       <!-- Tab 4 - Report 4 (Active if active_tab is report 4) -->
       <div class="tab-pane container-fluid active" id="report4">
@@ -1310,6 +1317,7 @@
       </div>
     <% end %>
 
+    <!-- Customer Order Totals -->
     <% if params[:active_tab] == 'report5' %>
       <!-- Tab 5 - Report 5 (Active if active_tab is report 5) -->
       <div class="tab-pane container-fluid active" id="report5">
@@ -1365,12 +1373,12 @@
                   <tbody>
 
                     <!-- Load order data -->
-                    <% @orders.each do |order| %>
+                    <% @orders.group_by(&:customer).each do |order, customer| %>
 
                       <tr>
                         <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.customer.company_name %></td>
-                          <td class="text-center"><%= order.order_total %></td>
+                          <td class="text-center"><%= order.company_name %></td>
+                          <td class="text-center"><%= Order.joins(:customer).where("company_name = ?", order.company_name).sum(:order_total)  %></td>
 
                       </tr>
 
@@ -1446,12 +1454,12 @@
                   <tbody>
 
                     <!-- Load order data -->
-                    <% @orders.each do |order| %>
+                    <% @orders.group_by(&:customer).each do |order, customer| %>
 
                       <tr>
                         <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.customer.company_name %></td>
-                          <td class="text-center"><%= order.order_total %></td>
+                          <td class="text-center"><%= order.company_name %></td>
+                          <td class="text-center"><%= Order.joins(:customer).where("company_name = ?", order.company_name).sum(:order_total)  %></td>
 
                       </tr>
 
@@ -1474,6 +1482,7 @@
       </div>
     <% end %>
 
+    <!-- Customers by State -->
     <% if params[:active_tab] == 'report6' %>
       <!-- Tab 6 - Report 6 (Active if active_tab is report 6) -->
       <div class="tab-pane container-fluid active" id="report6">
@@ -1638,6 +1647,7 @@
       </div>
     <% end %>
 
+    <!-- Vendors by State -->
     <% if params[:active_tab] == 'report7' %>
       <!-- Tab 7 - Report 7 (Active if active_tab is report 7) -->
       <div class="tab-pane container-fluid active" id="report7">
