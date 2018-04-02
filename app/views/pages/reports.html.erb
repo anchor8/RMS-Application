@@ -17,15 +17,15 @@
 
       <!-- If active_tab is report1, activate -->
       <% if params[:active_tab] == 'report1' %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders</a>
 
       <!-- If active_tab is empty, activate-->
       <% elsif !params[:active_tab] %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders</a>
 
       <!-- If active_tab is not report1 or empty, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
+        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders</a>
 
       <% end %>
     </li>
@@ -35,11 +35,11 @@
 
       <!-- If active_tab is report9, activate -->
       <% if params[:active_tab] == 'report9' %>
-        <a class="nav-link active" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders (Last 6 Months)</a>
+        <a class="nav-link active" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders</a>
 
       <!-- If active_tab is not report9, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders (Last 6 Months)</a>
+        <a class="nav-link" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders</a>
 
       <% end %>
     </li>
@@ -49,11 +49,11 @@
 
       <!-- If active_tab is report10, activate -->
       <% if params[:active_tab] == 'report10' %>
-        <a class="nav-link active" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders (Last 6 Months)</a>
+        <a class="nav-link active" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders</a>
 
       <!-- If active_tab is not report10, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders (Last 6 Months)</a>
+        <a class="nav-link" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders</a>
 
       <% end %>
     </li>
@@ -63,11 +63,11 @@
 
       <!-- If active_tab is report1, activate -->
       <% if params[:active_tab] == 'report8' %>
-        <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 6 Months)</a>
+        <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders</a>
 
       <!-- If active_tab is not report1 or empty, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 6 Months)</a>
+        <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders</a>
 
       <% end %>
     </li>
@@ -165,166 +165,870 @@
       <!-- Tab 1 - Report 1 (Active if active_tab is report 1 or null) -->
       <div class="tab-pane container-fluid active" id="report1">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Vendor - Company - Order Date
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Vendor - Company - Order Date
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report1table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Order Date</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Order Date</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).each do |order| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.vendor.vendor_name %></td>
-                          <td class="text-center"><%= order.customer.company_name %></td>
-                          <td class="text-center"><%= order.order_date %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).each do |order| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% else %>
       <!-- Tab 1 - Report 1 (Inactive) -->
       <div class="tab-pane container-fluid" id="report1">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Vendor - Company - Order Date
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Vendor - Company - Order Date
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report1table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Order Date</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Order Date</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).each do |order| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.vendor.vendor_name %></td>
-                          <td class="text-center"><%= order.customer.company_name %></td>
-                          <td class="text-center"><%= order.order_date %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).each do |order| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Company - Order Date
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report1table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Order Date</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).each do |order| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor.vendor_name %></td>
+                              <td class="text-center"><%= order.customer.company_name %></td>
+                              <td class="text-center"><%= order.order_date %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% end %>
@@ -334,160 +1038,840 @@
       <!-- Tab 9 - Report 9 (Active if active_tab is report 9) -->
       <div class="tab-pane container-fluid active" id="report9">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Vendor - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Vendor - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report9table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.vendor_name %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:vendor).each do |order, vendor| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% else %>
-      <!-- Tab 9 - Report 9 (Inactive) -->
+      <!-- Tab 9 - Report 9 (Active if active_tab is report 9) -->
       <div class="tab-pane container-fluid" id="report9">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Vendor - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Vendor - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report9table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Vendor</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.vendor_name %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:vendor).each do |order, vendor| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Vendor - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report9table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Vendor</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:vendor).each do |order, vendor| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.vendor_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% end %>
@@ -497,160 +1881,840 @@
       <!-- Tab 10 - Report 10 (Active if active_tab is report 10) -->
       <div class="tab-pane container-fluid active" id="report10">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Company - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Company - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report10table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.company_name %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:customer).each do |order, customer| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date < ?', Date.today - 1.year).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% else %>
       <!-- Tab 10 - Report 10 (Inactive) -->
       <div class="tab-pane container-fluid" id="report10">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Company - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Company - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report10table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.company_name %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:customer).each do |order, customer| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Company - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report10table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Company</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date < ?', Date.today - 1.year).group_by(&:customer).each do |order, customer| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.company_name %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% end %>
@@ -660,160 +2724,840 @@
       <!-- Tab 8 - Report 8 (Active if active_tab is report 8) -->
       <div class="tab-pane container-fluid active" id="report8">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Employee - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Employee - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report8table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Employee</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Employee</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 12.months).group_by(&:employee).each do |order, employee| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:employee).each do |order, employee| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% else %>
       <!-- Tab 8 - Report 8 (Inactive) -->
       <div class="tab-pane container-fluid" id="report8">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+        <!-- Time Tabs -->
+        <ul class="nav nav-tabs mb-3 mt-4">
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="7day" role="tab" data-toggle="tab" href="#7day">7 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="30day" role="tab" data-toggle="tab" href="#30day">30 Days</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="3month" role="tab" data-toggle="tab" href="#3month">3 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-controls="6month" role="tab" data-toggle="tab" href="#6month">6 Months</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-controls="1year" role="tab" data-toggle="tab" href="#1year">1 Year</a>
+          </li>
+        </ul>
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <div class="tab-content">
 
-            <!-- Table Icon -->
-            <i class="fa fa-table"></i>
+          <!-- 7 Days -->
+          <div class="tab-pane container-fluid" id="7day">
+            <!-- Table Card -->
+            <div class="card mb-3">
 
-            <!-- Table Name -->
-            Employee - Orders
+              <!-- Table Header -->
+              <div class="card-header">
 
-          </div>
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+                <!-- Table Name -->
+                Employee - Orders
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+              </div>
 
-                <!-- Report 1 Table -->
-                <table class="table table-bordered table-hover table-striped" id="report8table" width="100%" cellspacing="0">
+              <!-- Table Card Body -->
+              <div class="card-body">
 
-                  <!-- Top Column Names -->
-                  <thead>
+                <!-- Table Type -->
+                <div class="table-responsive">
 
-                    <tr>
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table7d" width="100%" cellspacing="0">
 
-                      <th class="text-center">Employee</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Top Column Names -->
+                      <thead>
 
-                    </tr>
+                        <tr>
 
-                  </thead>
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Bottom Column Names -->
-                  <tfoot>
+                        </tr>
 
-                    <tr>
+                      </thead>
 
-                      <th class="text-center">Employee</th>
-                      <th class="text-center">Orders</th>
+                      <!-- Bottom Column Names -->
+                      <tfoot>
 
-                    </tr>
+                        <tr>
 
-                  </tfoot>
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
 
-                  <!-- Content -->
-                  <tbody>
+                        </tr>
 
-                    <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 12.months).group_by(&:employee).each do |order, employee| %>
+                      </tfoot>
 
-                      <tr>
-                        <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
-                      </tr>
+                      <!-- Content -->
+                      <tbody>
 
-                    <% end %>
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:employee).each do |order, employee| %>
 
-                  </tbody>
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
 
-                </table>
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
 
             </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted">
+          <!-- 30 Days -->
+          <div class="tab-pane container-fluid" id="30day">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table30d" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3 Month -->
+          <div class="tab-pane container-fluid" id="3month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table3m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 6 Month -->
+          <div class="tab-pane container-fluid active" id="6month">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table6m" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1 Year -->
+          <div class="tab-pane container-fluid" id="1year">
+            <!-- Table Card -->
+            <div class="card mb-3">
+
+              <!-- Table Header -->
+              <div class="card-header">
+
+                <!-- Table Icon -->
+                <i class="fa fa-table"></i>
+
+                <!-- Table Name -->
+                Employee - Orders
+
+              </div>
+
+              <!-- Table Card Body -->
+              <div class="card-body">
+
+                <!-- Table Type -->
+                <div class="table-responsive">
+
+                    <!-- Report 1 Table -->
+                    <table class="table table-bordered table-hover table-striped" id="report8table1y" width="100%" cellspacing="0">
+
+                      <!-- Top Column Names -->
+                      <thead>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <!-- Bottom Column Names -->
+                      <tfoot>
+
+                        <tr>
+
+                          <th class="text-center">Employee</th>
+                          <th class="text-center">Orders</th>
+
+                        </tr>
+
+                      </tfoot>
+
+                      <!-- Content -->
+                      <tbody>
+
+                        <!-- Load order data -->
+                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:employee).each do |order, employee| %>
+
+                          <tr>
+                            <!-- Columns to pull from order data -->
+                              <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                              <td class="text-center"><%= order.order_ids.count %></td>
+                          </tr>
+
+                        <% end %>
+
+                      </tbody>
+
+                    </table>
+
+                </div>
+
+              </div>
+
+              <!-- Footnote: Lastest date a order was created -->
+              <div class="card-footer small text-muted">
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+
 
       </div>
     <% end %>
@@ -1820,104 +4564,128 @@
 <script>
   $(document).ready(function() {
 
-      // Declare report1table
-      var report1table = $('#report1table').DataTable( {
-
+      // Declare report1-tables
+      var report1table7d = $('#report1table7d').DataTable( {
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
+      } );
+      var report1table30d = $('#report1table30d').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report1table3m = $('#report1table3m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report1table6m = $('#report1table6m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report1table1y = $('#report1table1y').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
       } );
 
       // Declare report2table
       var report2table = $('#report2table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
       // Declare report3table
       var report3table = $('#report3table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
       // Declare report4table
       var report4table = $('#report4table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
-      // Declare report3table
+      // Declare report5table
       var report5table = $('#report5table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
-      // Declare report3table
+      // Declare report6table
       var report6table = $('#report6table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
-      // Declare report3table
+      // Declare report7table
       var report7table = $('#report7table').DataTable( {
-
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
       } );
 
-      // Declare report3table
-      var report8table = $('#report8table').DataTable( {
-
+      // Declare report8tables
+      var report8table7d = $('#report8table7d').DataTable( {
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
+      } );
+      var report8table30d = $('#report8table30d').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report8table3m = $('#report8table3m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report8table6m = $('#report8table6m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report8table1y = $('#report8table1y').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
       } );
 
-      // Declare report3table
-      var report9table = $('#report9table').DataTable( {
-
+      // Declare report9tables
+      var report9table7d = $('#report9table7d').DataTable( {
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
+      } );
+      var report9table30d = $('#report9table30d').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report9table3m = $('#report9table3m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report9table6m = $('#report9table6m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report9table1y = $('#report9table1y').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
       } );
 
-      // Declare report3table
-      var report9table = $('#report10table').DataTable( {
-
+      // Declare report10tables
+      var report10table7d = $('#report10table7d').DataTable( {
         dom: 'Bflrtip',
-
-        // Enable paging, search, show # features
         "paging": true
-
+      } );
+      var report10table30d = $('#report10table30d').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report10table3m = $('#report10table3m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report10table6m = $('#report10table6m').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
+      } );
+      var report10table1y = $('#report10table1y').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true
       } );
 
   } );
