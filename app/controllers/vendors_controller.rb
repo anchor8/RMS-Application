@@ -35,7 +35,7 @@ class VendorsController < ApplicationController
     # Breadcrumb for new vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Create New Vendor'
-    
+
     @vendor = Vendor.new(vendor_params)
 
     respond_to do |format|
