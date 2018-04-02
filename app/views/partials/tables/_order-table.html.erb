@@ -24,9 +24,20 @@
             <!-- Group column controls -->
             <div class="mb-2 mx-auto btn-group">
 
-              <a class="show-all-col btn btn-primary btn-sm" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" href="">Show All Columns</a>
+              <a class="show-all-col btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Show All Columns</a>
 
-              <a class="hide-all-col btn btn-primary btn-sm" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" href="">Hide All Columns</a>
+              <a class="hide-all-col btn btn-primary btn-sm"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 href="">Hide All Columns</a>
+
 
             </div>
 
@@ -38,27 +49,93 @@
             <!-- Individual column controls -->
             <div class="mb-2 px-4 mx-auto">
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="0" href="">Disable</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="0"
+                 href="">Disable</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="1" href="">Edit</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="1"
+                 href="">Edit</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="2" href="">PO No.</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="2"
+                 href="">PO No.</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="3" href="">Date</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="3"
+                 href="">Date</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="4" href="">Status</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="4"
+                 href="">Status</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="5" href="">Company</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="5"
+                 href="">Company</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="6" href="">Customer</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="6"
+                 href="">Customer</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="7" href="">Employee</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="7"
+                 href="">Employee</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="8" href="">Vendor</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="8"
+                 href="">Vendor</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="9" href="">Total</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="9"
+                 href="">Total</a>
 
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1" type="button" data-toggle="button" aria-pressed="false" autocomplete="off" data-column="10" href="">Payment Type</a>
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="10"
+                 href="">Payment Type</a>
 
             </div>
 
@@ -69,12 +146,12 @@
     </div>
   </div>
 
-  <!-- Table Card -->
+<!-- Table Card -->
 
-  <div class="card mb-3">
+<div class="card mb-3">
 
-    <!-- Card Header -->
-    <div class="card-header">
+  <!-- Card Header -->
+  <div class="card-header">
 
       <!-- Table Icon -->
       <i class="fa fa-table"></i>
@@ -85,19 +162,23 @@
       <div class="btn-right">
 
         <!-- Add New Order -->
-        <%= button_to 'Create New Order', new_order_path, :method => :get, :class => 'btn btn-outline-primary' %>
+        <%= button_to 'Create New Order',
+            new_order_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %>
 
       </div>
 
-    </div>
+  </div>
 
-    <!-- Table Card Body -->
-    <div class="card-body">
+  <!-- Table Card Body -->
+  <div class="card-body">
 
-      <!-- Table Type -->
-      <div class="table-responsive">
+    <!-- Table Type -->
+    <div class="table-responsive">
 
         <table class="table table-bordered table-hover table-striped" id="ordertable" width="100%" cellspacing="0">
+
 
           <!-- Top Column Names -->
           <thead>
@@ -137,6 +218,8 @@
               <th class="text-center">Total (USD)</th>
               <th class="text-center">Payment Type</th>
 
+
+
             </tr>
 
           </tfoot>
@@ -145,123 +228,120 @@
           <tbody>
 
             <!-- Load order data -->
-            <% @orders.each do |order| %>
+              <% @orders.each do |order| %>
 
-              <% if !order.deleted_at %>
+                <% if !order.deleted_at %>
 
-                <tr>
+                  <tr>
 
-                  <!-- Columns to pull from order data -->
-                  <td class="text-center">
-                    <!-- Disable Button -->
-                    <%= button_to 'Disable', toggle_order_path(order.id), :method => :put, :class => 'btn btn-outline-danger btn-sm', :data => { :confirm => "Are you sure that you want to disable the order #" + order.purchase_order_number.to_s + "?" } %></td>
-                  <td class="text-center">
-                    <!-- Edit Button -->
-                    <%= button_to 'Edit', edit_order_path(order.id), :method => :get, :class => 'btn btn-outline-success btn-sm' %></td>
+                    <!-- Columns to pull from order data -->
+                    <td class="text-center">
+                      <!-- Disable Button -->
+                      <%= button_to 'Disable',
+                          toggle_order_path(order.id),
+                          :method => :put,
+                          :class => 'btn btn-outline-danger btn-sm',
+                          :data => {
+                            :confirm => "Are you sure that you want to disable the order #" +
+                                         order.purchase_order_number.to_s + "?" } %></td>
+                    <td class="text-center">
+                      <!-- Edit Button -->
+                      <%= button_to 'Edit',
+                          edit_order_path(order.id),
+                          :method => :get,
+                          :class => 'btn btn-outline-success btn-sm' %></td>
 
-                  <td class="text-center"><%= order.purchase_order_number %></td>
-                  <td class="text-left-align"><%= order.order_date %></td>
-                  <td class="text-left-align"><%= order.order_status.order_status_description %></td>
-                  <td class="text-left-align"><%= order.customer.company_name %></td>
-                  <td class="text-left-align"><%= order.customer.customer_first_name + " " + order.customer.customer_last_name %></td>
-                  <td class="text-left-align"><%= order.employee.fname + " " + order.employee.lname %></td>
-                  <td class="text-left-align"><%= order.vendor.vendor_name %></td>
-                  <td class="text-left-align"><%= number_to_currency(order.order_total, precision: 2) %></td>
-                  <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
+                    <td class="text-center"><%= order.purchase_order_number %></td>
+                    <td class="text-left-align"><%= order.order_date %></td>
+                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= order.customer.company_name %></td>
+                    <td class="text-left-align"><%= order.customer.customer_first_name + " " + order.customer.customer_last_name %></td>
+                    <td class="text-left-align"><%= order.employee.fname + " " + order.employee.lname %></td>
+                    <td class="text-left-align"><%= order.vendor.vendor_name %></td>
+                    <td class="text-left-align"><%= number_to_currency(order.order_total, precision: 2) %></td>
+                    <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
 
-                </tr>
+
+
+                  </tr>
+
+
+
+
+
+                <% end %>
 
               <% end %>
-
-            <% end %>
 
           </tbody>
 
         </table>
 
-      </div>
-
     </div>
-
-    <!-- Footnote: Lastest date a order was created -->
-    <div class="card-footer small text-muted"></div>
 
   </div>
 
-  <script>
-    $(document).ready(function () {
-      var table = $('#ordertable').DataTable({paging: true});
+  <!-- Footnote: Lastest date a order was created -->
+  <div class="card-footer small text-muted">
 
-      // Set all buttons as active on page load
-      $('a.toggle-vis').addClass('active')
 
-      // On click hide column
-      $('a.toggle-vis').on('click', function (e) {
 
-        // Get the column API object
-        var column = table.column($(this).attr('data-column'));
+  </div>
 
-        // Toggle the visibility
-        column.visible(!column.visible());
-      });
+</div>
 
-      // Show all columns
-      $('a.show-all-col').on('click', function (e) {
+<script>
+    $(document).ready(function() {
+        var table = $('#ordertable').DataTable( {
+            paging: true
+        } );
 
-        // Set all columns to visible
-        table.columns([
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10
-        ]).visible(true, false);
-
-        // adjust column sizing and redraw
-        table.columns.adjust().draw(false);
-
-        // Remove inactive class from individual column buttons
-        $('a.toggle-vis').removeClass('inactive')
-
-        // Add active class to individual column buttons
+        // Set all buttons as active on page load
         $('a.toggle-vis').addClass('active')
 
-      });
+        // On click hide column
+        $('a.toggle-vis').on( 'click', function (e) {
 
-      // Hide all columns
-      $('a.hide-all-col').on('click', function (e) {
+            // Get the column API object
+            var column = table.column( $(this).attr('data-column') );
 
-        // Set all columns to not visible
-        table.columns([
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10
-        ]).visible(false, false);
+            // Toggle the visibility
+            column.visible( ! column.visible() );
+        } );
 
-        // adjust column sizing and redraw
-        table.columns.adjust().draw(false);
+        // Show all columns
+        $('a.show-all-col').on( 'click', function (e) {
 
-        // Remove active class from individual column buttons
-        $('a.toggle-vis').removeClass('active')
+            // Set all columns to visible
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ).visible( true, false );
 
-        // Add inactive class to individual column buttons
-        $('a.toggle-vis').addClass('inactive')
+            // adjust column sizing and redraw
+            table.columns.adjust().draw( false );
 
-      });
+            // Remove inactive class from individual column buttons
+            $('a.toggle-vis').removeClass('inactive')
 
-    });
-  </script>
+            // Add active class to individual column buttons
+            $('a.toggle-vis').addClass('active')
+
+        } );
+
+        // Hide all columns
+        $('a.hide-all-col').on( 'click', function (e) {
+
+            // Set all columns to not visible
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ).visible( false, false );
+
+            // adjust column sizing and redraw
+            table.columns.adjust().draw( false );
+
+            // Remove active class from individual column buttons
+            $('a.toggle-vis').removeClass('active')
+
+            // Add inactive class to individual column buttons
+            $('a.toggle-vis').addClass('inactive')
+
+        } );
+
+    } );
+</script>
