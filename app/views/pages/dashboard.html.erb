@@ -17,7 +17,8 @@
             </div>
             <div class="card-body">
               <%= line_chart Order.group_by_month(:order_date, last: 6).count,
-                             label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
+                             label: "Orders", xtitle: "Months", ytitle: "Order Count", height: "300px",
+                             library: {animation: {easing: 'linear'}} %>
             </div>
             <div class="card-footer small text-muted"></div>
           </div>
@@ -34,7 +35,7 @@
             </div>
             <div class="card-body">
               <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
-                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
+                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart", height: "300px",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
             <div class="card-footer small text-muted"></div>
@@ -51,7 +52,7 @@
             </div>
             <div class="card-body">
               <%= bar_chart Order.left_joins(:customer).group(:company_name).where("order_date > ?", Date.today-6.months).order("COUNT(customers.id) DESC").limit("10").count,
-                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
+                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart", height: "300px",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
             <div class="card-footer small text-muted"></div>
@@ -59,9 +60,6 @@
         <% end %>
       </div>
     </div>
-
-
-
 
     <!-- Employee Total Orders -->
     <%= link_to reports_path(active_tab: "report8") do %>
@@ -72,7 +70,7 @@
         </div>
         <div class="card-body">
           <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 6.months).count,
-                                    colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
+                                    colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart", height: "300px",
                         library: { animation: { easing: 'easeInCirc' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
@@ -152,7 +150,7 @@
           Order Totals by Company ( Top 10 )
         </div>
         <div class="card-body">
-          <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false, colors: ["#0038ff", "#999"], xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
+          <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", height: "300px", colors: ["#0038ff", "#999"], xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
       </div>
@@ -172,7 +170,7 @@
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
+                            donut: true, legend: "bottom", download: "customer_pie_chart", height: "300px",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
             <div class="card-footer small text-muted"></div>
@@ -192,7 +190,7 @@
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
+                            donut: true, legend: "bottom", download: "customer_pie_chart", height: "300px",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
             <div class="card-footer small text-muted"></div>
@@ -212,7 +210,7 @@
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
+                            donut: true, legend: "bottom", download: "customer_pie_chart", height: "300px",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
             <div class="card-footer small text-muted"></div>
@@ -232,7 +230,7 @@
         </div>
         <div class="card-body">
           <%= bar_chart Vendor.joins(:state).group(:state_name).count,
-                        colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart",
+                        colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart", height: "600px",
                         library: { animation: { easing: 'easeInCirc' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
