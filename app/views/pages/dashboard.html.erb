@@ -33,7 +33,7 @@
               Top 10 Vendors (Last 6 Months)
             </div>
             <div class="card-body">
-              <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).order("COUNT(vendors.id) DESC").limit("10").count,
+              <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
                                         colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
@@ -50,7 +50,7 @@
               Top 10 Customers (Last 6 Months)
             </div>
             <div class="card-body">
-              <%= bar_chart Order.left_joins(:customer).group(:company_name).order("COUNT(customers.id) DESC").limit("10").count,
+              <%= bar_chart Order.left_joins(:customer).group(:company_name).where("order_date > ?", Date.today-6.months).order("COUNT(customers.id) DESC").limit("10").count,
                                         colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
                             library: { animation: { easing: 'easeInCirc' }}%>
             </div>
