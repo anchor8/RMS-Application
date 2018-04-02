@@ -1,4 +1,4 @@
-# Application Record
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
-end
+# Application Record
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end

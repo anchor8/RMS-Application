@@ -19,90 +19,90 @@
       <% if params[:active_tab] == 'report1' %>
         <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
 
-        <!-- If active_tab is empty, activate-->
-        <% elsif !params[:active_tab] %>
-          <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+      <!-- If active_tab is empty, activate-->
+      <% elsif !params[:active_tab] %>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
 
-          <!-- If active_tab is not report1 or empty, dont activate -->
-        <% else %>
-          <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
+      <!-- If active_tab is not report1 or empty, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Order Totals by Company</a>
 
-        <% end %>
+      <% end %>
 
-      </li>
+    </li>
 
-      <!-- Report 2 -->
-      <li class="nav-item">
+    <!-- Report 2 -->
+    <li class="nav-item">
 
-        <!-- If active_tab is report2, activate -->
-        <% if params[:active_tab] == 'report2' %>
-          <a class="nav-link active" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
+      <!-- If active_tab is report2, activate -->
+      <% if params[:active_tab] == 'report2' %>
+        <a class="nav-link active" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
 
-          <!-- If active_tab is not report2, dont activate -->
-        <% else %>
-          <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
+      <!-- If active_tab is not report2, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer's by City</a>
 
-        <% end %>
+      <% end %>
 
-      </li>
+    </li>
 
-      <!-- Report 3 -->
-      <li class="nav-item">
+    <!-- Report 3 -->
+    <li class="nav-item">
 
-        <!-- If active_tab is report3, activate -->
-        <% if params[:active_tab] == 'report3' %>
-          <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
+      <!-- If active_tab is report3, activate -->
+      <% if params[:active_tab] == 'report3' %>
+        <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
 
-          <!-- If active_tab is not report3, dont activate -->
-        <% else %>
-          <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
+      <!-- If active_tab is not report3, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor's by State</a>
 
-        <% end %>
+      <% end %>
 
-      </li>
+    </li>
 
-      <!-- Report 4 -->
-      <li class="nav-item">
+    <!-- Report 4 -->
+    <li class="nav-item">
 
-        <!-- If active_tab is report4, activate -->
-        <% if params[:active_tab] == 'report4' %>
-          <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
+      <!-- If active_tab is report4, activate -->
+      <% if params[:active_tab] == 'report4' %>
+        <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
 
-          <!-- If active_tab is not report4, dont activate -->
-        <% else %>
-          <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
+      <!-- If active_tab is not report4, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">report4</a>
 
-        <% end %>
+      <% end %>
 
-      </li>
+    </li>
 
-      <!-- Report 3 -->
-      <li class="nav-item">
+    <!-- Report 3 -->
+    <li class="nav-item">
 
-        <!-- If active_tab is report5, activate -->
-        <% if params[:active_tab] == 'report5' %>
-          <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
+      <!-- If active_tab is report5, activate -->
+      <% if params[:active_tab] == 'report5' %>
+        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
 
-          <!-- If active_tab is not report5, dont activate -->
-        <% else %>
-          <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
+      <!-- If active_tab is not report5, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">report5</a>
 
-        <% end %>
+      <% end %>
 
-      </li>
-    </ul>
+    </li>
+  </ul>
 
-    <!-- Content in Tab -->
-    <div class="tab-content">
+  <!-- Content in Tab -->
+  <div class="tab-content">
 
-      <!-- Tab 1 - Report 1 -->
-      <div class="tab-pane active container-fluid" id="report1">
+    <!-- Tab 1 - Report 1 -->
+    <div class="tab-pane active container-fluid" id="report1">
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+      <!-- Table Card -->
+      <div class="card mb-3">
 
-          <!-- Table Header -->
-          <div class="card-header">
+        <!-- Table Header -->
+        <div class="card-header">
 
             <!-- Table Icon -->
             <i class="fa fa-table"></i>
@@ -110,13 +110,13 @@
             <!-- Table Name -->
             Order Totals by Company
 
-          </div>
+        </div>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+        <!-- Table Card Body -->
+        <div class="card-body">
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+          <!-- Table Type -->
+          <div class="table-responsive">
 
               <!-- Report 1 Table -->
               <table class="table table-bordered table-hover table-striped" id="report1table" width="100%" cellspacing="0">
@@ -149,41 +149,47 @@
                 <tbody>
 
                   <!-- Load order data -->
-                  <% @orders.each do |order| %>
+                    <% @orders.each do |order| %>
 
-                    <tr>
+                      <tr>
 
-                      <!-- Columns to pull from order data -->
-                      <td class="text-center"><%= order.customer.company_name %></td>
-                      <td class="text-center"><%= order.order_total %></td>
+                        <!-- Columns to pull from order data -->
+                        <td class="text-center"><%= order.customer.company_name %></td>
+                        <td class="text-center"><%= order.order_total %></td>
 
-                    </tr>
+                      </tr>
 
-                  <% end %>
+                    <% end %>
 
                 </tbody>
 
               </table>
 
-            </div>
-
           </div>
-
-          <!-- Footnote: Lastest date a order was created -->
-          <div class="card-footer small text-muted"></div>
 
         </div>
 
+        <!-- Footnote: Lastest date a order was created -->
+        <div class="card-footer small text-muted">
+
+
+
+        </div>
+
+
+
       </div>
 
-      <!-- Tab 2 - Report 2 -->
-      <div class="tab-pane container-fluid" id="report2">
+    </div>
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+    <!-- Tab 2 - Report 2 -->
+    <div class="tab-pane container-fluid" id="report2">
 
-          <!-- Table Header -->
-          <div class="card-header">
+      <!-- Table Card -->
+      <div class="card mb-3">
+
+        <!-- Table Header -->
+        <div class="card-header">
 
             <!-- Table Icon -->
             <i class="fa fa-table"></i>
@@ -191,13 +197,13 @@
             <!-- Table Name -->
             Customer's by State
 
-          </div>
+        </div>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+        <!-- Table Card Body -->
+        <div class="card-body">
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+          <!-- Table Type -->
+          <div class="table-responsive">
 
               <!-- Report 1 Table -->
               <table class="table table-bordered table-hover table-striped" id="report2table" width="100%" cellspacing="0">
@@ -236,42 +242,44 @@
                 <tbody>
 
                   <!-- Load customer data -->
-                  <% @customers.each do |customer| %>
-                    <tr>
+                    <% @customers.each do |customer| %>
+                        <tr>
 
-                      <!-- Columns to pull from customer data -->
-                      <td class="text-center"><%= customer.company_name %></td>
-                      <td class="text-center"><%= customer.customer_first_name %></td>
-                      <td class="text-center"><%= customer.customer_last_name %></td>
-                      <td class="text-center"><%= customer.job_title %></td>
-                      <td class="text-center"><%= customer.state.state_name %></td>
+                          <!-- Columns to pull from customer data -->
+                            <td class="text-center"><%= customer.company_name %></td>
+                            <td class="text-center"><%= customer.customer_first_name %></td>
+                            <td class="text-center"><%= customer.customer_last_name %></td>
+                            <td class="text-center"><%= customer.job_title %></td>
+                            <td class="text-center"><%= customer.state.state_name %></td>
 
-                    </tr>
-                  <% end %>
+                        </tr>
+                      <% end %>
 
                 </tbody>
 
               </table>
 
-            </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a customer was updated -->
-          <div class="card-footer small text-muted"></div>
+        </div>
+
+        <!-- Footnote: Lastest date a customer was updated -->
+        <div class="card-footer small text-muted">
 
         </div>
 
       </div>
 
-      <!-- Tab 3 - Report 3 -->
-      <div class="tab-pane container-fluid" id="report3">
+    </div>
 
-        <!-- Table Card -->
-        <div class="card mb-3">
+    <!-- Tab 3 - Report 3 -->
+    <div class="tab-pane container-fluid" id="report3">
 
-          <!-- Table Header -->
-          <div class="card-header">
+      <!-- Table Card -->
+      <div class="card mb-3">
+
+        <!-- Table Header -->
+        <div class="card-header">
 
             <!-- Table Icon -->
             <i class="fa fa-table"></i>
@@ -279,13 +287,13 @@
             <!-- Table Name -->
             Vendor Table
 
-          </div>
+        </div>
 
-          <!-- Table Card Body -->
-          <div class="card-body">
+        <!-- Table Card Body -->
+        <div class="card-body">
 
-            <!-- Table Type -->
-            <div class="table-responsive">
+          <!-- Table Type -->
+          <div class="table-responsive">
 
               <!-- Report 2 Table -->
               <table class="table table-bordered table-hover table-striped" id="report3table" width="100%" cellspacing="0">
@@ -318,79 +326,81 @@
                 <tbody>
 
                   <!-- Load vendor data -->
-                  <% @vendors.each do |vendor| %>
+                    <% @vendors.each do |vendor| %>
 
-                    <tr>
+                        <tr>
 
-                      <!-- Columns to pull from vendor data -->
-                      <td class="text-center"><%= vendor.vendor_name %></td>
-                      <td class="text-center"><%= vendor.state.state_name %></td>
+                          <!-- Columns to pull from vendor data -->
+                          <td class="text-center"><%= vendor.vendor_name %></td>
+                          <td class="text-center"><%= vendor.state.state_name %></td>
 
-                    </tr>
+                        </tr>
 
-                  <% end %>
+                      <% end %>
 
                 </tbody>
 
               </table>
 
-            </div>
-
           </div>
 
-          <!-- Footnote: Lastest date a employee was created -->
-          <div class="card-footer small text-muted"></div>
+        </div>
+
+        <!-- Footnote: Lastest date a employee was created -->
+        <div class="card-footer small text-muted">
 
         </div>
 
       </div>
 
-      <!-- Tab 4 - Report 4 -->
-      <div class="tab-pane container-fluid" id="report4">
-        <h3>Report4</h3>
-      </div>
+    </div>
 
-      <!-- Tab 5 - Report 5 -->
-      <div class="tab-pane container-fluid" id="report5">
-        <h3>Report5</h3>
-      </div>
+    <!-- Tab 4 - Report 4 -->
+    <div class="tab-pane container-fluid" id="report4">
+      <h3>Report4</h3>
+    </div>
 
+    <!-- Tab 5 - Report 5 -->
+    <div class="tab-pane container-fluid" id="report5">
+      <h3>Report5</h3>
     </div>
 
   </div>
 
-  <script>
-    $(document).ready(function () {
+</div>
+
+<script>
+  $(document).ready(function() {
 
       // Declare report1table
-      var report1table = $('#report1table').DataTable({
+      var report1table = $('#report1table').DataTable( {
 
         dom: 'Bflrtip',
 
         // Enable paging, search, show # features
         "paging": true
 
-      });
+      } );
 
       // Declare report2table
-      var report2table = $('#report2table').DataTable({
+      var report2table = $('#report2table').DataTable( {
 
         dom: 'Bflrtip',
 
         // Enable paging, search, show # features
         "paging": true
 
-      });
+      } );
 
       // Declare report3table
-      var report3table = $('#report3table').DataTable({
+      var report3table = $('#report3table').DataTable( {
 
         dom: 'Bflrtip',
 
         // Enable paging, search, show # features
         "paging": true
 
-      });
+      } );
 
-    });
-  </script>
+  } );
+</script>

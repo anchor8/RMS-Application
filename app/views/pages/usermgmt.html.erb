@@ -13,39 +13,35 @@
         <% if value.class == Array %>
           <div class="h5 strong text-center mark">
             <% value.each do |message| %>
-              *
-              <%= message %>
-              *
-            </br>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="h5 strong text-center mark">
-          *
-          <%= value %>
-          *
-        </div>
+                * <%= message %> *
+                </br>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="h5 strong text-center mark">
+            * <%= value %> *
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
 
-  <!-- Section Above Employee Table -->
-  <div class="ml-4 mb-4">
+    <!-- Section Above Employee Table -->
+    <div class="ml-4 mb-4">
 
-    <!-- Display Information -->
+      <!-- Display Information -->
 
-    <%= render :template => "devise/registrations/edit" %>
+        <%= render :template => "devise/registrations/edit" %>
+
+    </div>
+
+    <% if current_employee.admin? %>
+      <!-- Admin true -->
+
+      <!-- Employee Table-->
+      <%= render partial: 'partials/tables/employee-table' %>
+
+    <% end %>
 
   </div>
-
-  <% if current_employee.admin? %>
-    <!-- Admin true -->
-
-    <!-- Employee Table-->
-    <%= render partial: 'partials/tables/employee-table' %>
-
-  <% end %>
-
-</div>
 
 </div>
