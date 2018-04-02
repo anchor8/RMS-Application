@@ -10,7 +10,6 @@ one:
   shipper: one
   state: one
   shipping_number: 1
-  customer_name: MyString
   purchase_order_number: 1
   order_date: 2018-03-19 22:48:56
   ship_date: 2018-03-19 22:48:56
@@ -30,7 +29,6 @@ two:
   shipper: two
   state: two
   shipping_number: 1
-  customer_name: MyString
   purchase_order_number: 1
   order_date: 2018-03-19 22:48:56
   ship_date: 2018-03-19 22:48:56
