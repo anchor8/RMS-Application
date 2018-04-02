@@ -1112,12 +1112,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 7.days).count %></td>
                           </tr>
 
                         <% end %>
@@ -1190,12 +1190,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 30.days).count%></td>
                           </tr>
 
                         <% end %>
@@ -1268,12 +1268,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 3.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -1346,12 +1346,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 6.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -1424,12 +1424,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 1.year).count %></td>
                           </tr>
 
                         <% end %>
@@ -1532,12 +1532,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 7.days).count %></td>
                           </tr>
 
                         <% end %>
@@ -1610,12 +1610,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 30.days).count%></td>
                           </tr>
 
                         <% end %>
@@ -1688,12 +1688,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 3.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -1766,12 +1766,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 6.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -1844,12 +1844,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:vendor).each do |order, vendor| %>
+                        <% @orders.group_by(&:vendor).each do |order, vendor| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.vendor_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:vendor).order("COUNT(orders.id) DESC").where("vendor_id = ? AND order_date > ?", order.id, Date.today - 1.year).count %></td>
                           </tr>
 
                         <% end %>
@@ -2375,12 +2375,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:customer).each do |order, customer| %>
+                        <% @orders.group_by(&:customer).each do |order, customer| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.company_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:customer).order("COUNT(orders.id) DESC").where("customer_id = ? AND order_date > ?", order.id, Date.today - 7.days).count %></td>
                           </tr>
 
                         <% end %>
@@ -2453,12 +2453,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:customer).each do |order, customer| %>
+                        <% @orders.group_by(&:customer).each do |order, customer| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.company_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:customer).order("COUNT(orders.id) DESC").where("customer_id = ? AND order_date > ?", order.id, Date.today - 30.days).count %></td>
                           </tr>
 
                         <% end %>
@@ -2531,12 +2531,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:customer).each do |order, customer| %>
+                        <% @orders.group_by(&:customer).each do |order, customer| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.company_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:customer).order("COUNT(orders.id) DESC").where("customer_id = ? AND order_date > ?", order.id, Date.today - 3.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -2609,12 +2609,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+                        <% @orders.group_by(&:customer).each do |order, customer| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.company_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:customer).order("COUNT(orders.id) DESC").where("customer_id = ? AND order_date > ?", order.id, Date.today - 6.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -2687,12 +2687,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 1.year).group_by(&:customer).each do |order, customer| %>
+                        <% @orders.group_by(&:customer).each do |order, customer| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.company_name %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:customer).order("COUNT(orders.id) DESC").where("customer_id = ? AND order_date > ?", order.id, Date.today - 1.year).count %></td>
                           </tr>
 
                         <% end %>
@@ -2798,12 +2798,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 7.days).count  %></td>
                           </tr>
 
                         <% end %>
@@ -2876,12 +2876,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 30.days).count  %></td>
                           </tr>
 
                         <% end %>
@@ -2954,12 +2954,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 3.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -3032,12 +3032,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 6.months).count  %></td>
                           </tr>
 
                         <% end %>
@@ -3115,7 +3115,7 @@
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 1.year).count %></td>
                           </tr>
 
                         <% end %>
@@ -3218,12 +3218,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 7.days).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 7.days).count  %></td>
                           </tr>
 
                         <% end %>
@@ -3296,12 +3296,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 30.days).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 30.days).count  %></td>
                           </tr>
 
                         <% end %>
@@ -3374,12 +3374,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 3.months).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 3.months).count %></td>
                           </tr>
 
                         <% end %>
@@ -3452,12 +3452,12 @@
                       <tbody>
 
                         <!-- Load order data -->
-                        <% @orders.where('order_date > ?', Date.today - 6.months).group_by(&:employee).each do |order, employee| %>
+                        <% @orders.group_by(&:employee).each do |order, employee| %>
 
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 6.months).count  %></td>
                           </tr>
 
                         <% end %>
@@ -3535,7 +3535,7 @@
                           <tr>
                             <!-- Columns to pull from order data -->
                               <td class="text-center"><%= order.fname + " " + order.lname %></td>
-                              <td class="text-center"><%= order.order_ids.count %></td>
+                              <td class="text-center"><%= Order.left_joins(:employee).order("COUNT(orders.id) DESC").where("employee_id = ? AND order_date > ?", order.id, Date.today - 1.year).count %></td>
                           </tr>
 
                         <% end %>
