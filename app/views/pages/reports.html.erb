@@ -17,15 +17,15 @@
 
       <!-- If active_tab is report1, activate -->
       <% if params[:active_tab] == 'report1' %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 6 Months)</a>
 
       <!-- If active_tab is empty, activate-->
       <% elsif !params[:active_tab] %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 6 Months)</a>
 
       <!-- If active_tab is not report1 or empty, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 6 Months)</a>
 
       <% end %>
     </li>
