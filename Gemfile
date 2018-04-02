@@ -63,6 +63,9 @@ gem 'font-awesome-rails'
 # Use breadcrumbs on rails for managing Breadcrumbs
 gem 'breadcrumbs_on_rails'
 
+# Use rubocop for formatting and beautify
+gem 'rubocop', require: false
+
 # If Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 

@@ -3,7 +3,7 @@ class Country < ApplicationRecord
   has_many :orders
 
   # Validations
-  validates :country_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s'.&)(\/-]+\s*$\z/, message: "Only letters, commas, dashes, parenthesis, or spaces for country name allowed"}
+  validates :country_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s'.&)(\/-]+\s*$\z/, message: 'Only letters, commas, dashes, parenthesis, or spaces for country name allowed' }
 
   # Import countries
   def self.import(file)

@@ -9,173 +9,158 @@
 
     <!-- Amount of Orders (Last 5 Months) -->
     <%= link_to reports_path(active_tab: "report1") do %>
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Amount of Orders (Last 5 Months)</div>
-        <div class="card-body">
-          <%= line_chart Order.group_by_month(:order_date, last: 5).count,
-                         label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
-        </div>
-        <div class="card-footer small text-muted"></div>
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        Amount of Orders (Last 5 Months)</div>
+      <div class="card-body">
+        <%= line_chart Order.group_by_month(:order_date, last: 5).count, label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
       </div>
-    <% end %>
-
-    <div class="row">
-
-      <div class="col-md-4">
-
-        <!-- Order Status-->
-        <%= link_to reports_path(active_tab: "report2") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Order Status</div>
-            <div class="card-body">
-              <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                            colors: ["red", "green"], defer: true,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Vendor Status-->
-        <%= link_to reports_path(active_tab: "report3") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Vendor Status</div>
-            <div class="card-body">
-              <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart", defer: true,
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Carrier use-->
-        <%= link_to reports_path(active_tab: "report4") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Carrier Use</div>
-            <div class="card-body">
-              <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart", defer: true,
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
+      <div class="card-footer small text-muted"></div>
     </div>
+  <% end %>
 
+  <div class="row">
 
+    <div class="col-md-4">
 
-    <!-- Order Totals by Company -->
-    <%= link_to reports_path(active_tab: "report5") do %>
+      <!-- Order Status-->
+      <%= link_to reports_path(active_tab: "report2") do %>
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Order Totals by Company</div>
+          <i class="fa fa-pie-chart"></i>
+          Order Status</div>
         <div class="card-body">
-          <%= column_chart Order.joins(:customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false,
-                                   xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
-                                   library: { animation: { easing: 'easeInQuad' }}%>
-        </div>
-        <div class="card-footer small text-muted"></div>
-      </div>
-    <% end %>
-
-
-    <div class="row">
-
-      <div class="col-md-4">
-
-        <!-- Customers by City -->
-        <%= link_to reports_path(active_tab: "report6") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (West Coast by US Census)</div>
-            <div class="card-body">
-              <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Customers by City -->
-        <%= link_to reports_path(active_tab: "report7") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (Central by US Census)</div>
-            <div class="card-body">
-              <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Customers by City -->
-        <%= link_to reports_path(active_tab: "report8") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (East Coast by US Census)</div>
-            <div class="card-body">
-              <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count,
-                            donut: true, legend: "bottom", download: "customer_pie_chart",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-    </div>
-
-    <!-- Vendors by State -->
-    <%= link_to reports_path(active_tab: "report9") do %>
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Vendors by State</div>
-        <div class="card-body">
-          <%= bar_chart Vendor.joins(:state).group(:state_name).count,
-                        colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart",
-                        library: { animation: { easing: 'easeInCirc' }}%>
+          <%= pie_chart Order.joins(:order_status).group(:order_status_description).count, colors: ["red", "green"], defer: true, donut: true, legend: "bottom", download: "customer_pie_chart", library: { animation: { easing: 'easeInCirc' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
       </div>
     <% end %>
 
   </div>
+
+  <div class="col-md-4">
+
+    <!-- Vendor Status-->
+    <%= link_to reports_path(active_tab: "report3") do %>
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-pie-chart"></i>
+        Vendor Status</div>
+      <div class="card-body">
+        <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count, donut: true, legend: "bottom", download: "customer_pie_chart", defer: true, library: { animation: { easing: 'easeInCirc' }}%>
+      </div>
+      <div class="card-footer small text-muted"></div>
+    </div>
+  <% end %>
+
 </div>
+
+<div class="col-md-4">
+
+  <!-- Carrier use-->
+  <%= link_to reports_path(active_tab: "report4") do %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fa fa-pie-chart"></i>
+      Carrier Use</div>
+    <div class="card-body">
+      <%= pie_chart Order.joins(:shipper).group(:shipper_description).count, donut: true, legend: "bottom", download: "customer_pie_chart", defer: true, library: { animation: { easing: 'easeInCirc' }}%>
+    </div>
+    <div class="card-footer small text-muted"></div>
+  </div>
+<% end %>
+
+</div>
+
+</div>
+
+<!-- Order Totals by Company -->
+<%= link_to reports_path(active_tab: "report5") do %>
+<div class="card mb-3">
+<div class="card-header">
+<i class="fa fa-bar-chart"></i>
+Order Totals by Company</div>
+<div class="card-body">
+<%= column_chart Order.joins(:customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false, xtitle: "Company Name", ytitle: "Order Totals", download:
+"companytotals_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
+</div>
+<div class="card-footer small text-muted"></div>
+</div>
+<% end %>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<!-- Customers by City -->
+<%= link_to reports_path(active_tab: "report6") do %>
+<div class="card mb-3">
+<div class="card-header">
+  <i class="fa fa-pie-chart"></i>
+  Customers by State
+  <br/>
+  (West Coast by US Census)</div>
+<div class="card-body">
+  <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count, donut: true, legend: "bottom", download: "customer_pie_chart", library: { animation: { easing: 'easeInCirc' }}%>
+</div>
+<div class="card-footer small text-muted"></div>
+</div>
+<% end %>
+
+</div>
+
+<div class="col-md-4">
+
+<!-- Customers by City -->
+<%= link_to reports_path(active_tab: "report7") do %>
+<div class="card mb-3">
+<div class="card-header">
+<i class="fa fa-pie-chart"></i>
+Customers by State
+<br/>
+(Central by US Census)</div>
+<div class="card-body">
+<%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count, donut: true, legend: "bottom", download: "customer_pie_chart", library: { animation: { easing: 'easeInCirc' }}%>
+</div>
+<div class="card-footer small text-muted"></div>
+</div>
+<% end %>
+
+</div>
+
+<div class="col-md-4">
+
+<!-- Customers by City -->
+<%= link_to reports_path(active_tab: "report8") do %>
+<div class="card mb-3">
+<div class="card-header">
+<i class="fa fa-pie-chart"></i>
+Customers by State
+<br/>
+(East Coast by US Census)</div>
+<div class="card-body">
+<%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count, donut: true, legend: "bottom", download: "customer_pie_chart", library: { animation: { easing: 'easeInCirc' }}%>
+</div>
+<div class="card-footer small text-muted"></div>
+</div>
+<% end %>
+
+</div>
+
+</div>
+
+<!-- Vendors by State -->
+<%= link_to reports_path(active_tab: "report9") do %>
+<div class="card mb-3">
+<div class="card-header">
+<i class="fa fa-bar-chart"></i>
+Vendors by State</div>
+<div class="card-body">
+<%= bar_chart Vendor.joins(:state).group(:state_name).count, colors: ["pink", "#999"], xtitle: "Amount", ytitle: "State", download: "vendor_bar_chart", library: { animation: { easing: 'easeInCirc' }}%>
+</div>
+<div class="card-footer small text-muted"></div>
+</div>
+<% end %>
+
+</div></div>

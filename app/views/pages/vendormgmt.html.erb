@@ -13,21 +13,25 @@
         <% if value.class == Array %>
           <div class="h5 strong text-center mark">
             <% value.each do |message| %>
-                * <%= message %> *
-                </br>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="h5 strong text-center mark">
-            * <%= value %> *
-          </div>
-        <% end %>
+              *
+              <%= message %>
+              *
+            </br>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="h5 strong text-center mark">
+          *
+          <%= value %>
+          *
+        </div>
       <% end %>
     <% end %>
+  <% end %>
 
-    <!-- Vendor Table-->
-    <%= render partial: 'partials/tables/vendor-table' %>
+  <!-- Vendor Table-->
+  <%= render partial: 'partials/tables/vendor-table' %>
 
-  </div>
+</div>
 
 </div>

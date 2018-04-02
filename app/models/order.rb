@@ -11,14 +11,14 @@ class Order < ApplicationRecord
 
   # Validations
   validates :order_date, allow_blank: false, presence: true
-  validates :purchase_order_number, allow_blank: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number allowed"}
-  validates :order_total, allow_blank: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
-  validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}
-  validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
+  validates :purchase_order_number, allow_blank: false, presence: true, format: { with: /\A^[0-9]*\z/, message: 'Only numbers for purchase order number allowed' }
+  validates :order_total, allow_blank: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: 'Order total must be only digits and 2 precision, example: ( 11111.11 ) ' }
+  validates :shipping_number, presence: true, unless: ->(order) { order.order_status_id == 1 }
+  validates :ship_date, presence: true, unless: ->(order) { order.order_status_id == 1 }
   validates :street_address_1, allow_blank: false, presence: true
   validates :street_address_2, allow_blank: true, presence: false
-  validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city allowed"}
-  validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
+  validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: 'Only letters, commas, or spaces for city allowed' }
+  validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: 'Format ( 12345 ) or ( 12345-4321 )' }
   validates :deleted_at, allow_blank: true, presence: false
 
   # Toggle order
