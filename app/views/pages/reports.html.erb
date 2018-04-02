@@ -17,15 +17,43 @@
 
       <!-- If active_tab is report1, activate -->
       <% if params[:active_tab] == 'report1' %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
 
       <!-- If active_tab is empty, activate-->
       <% elsif !params[:active_tab] %>
-        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link active" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
 
       <!-- If active_tab is not report1 or empty, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
+        <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Orders (Last 6 Months)</a>
+
+      <% end %>
+    </li>
+
+    <!-- Report 9 -->
+    <li class="nav-item">
+
+      <!-- If active_tab is report9, activate -->
+      <% if params[:active_tab] == 'report9' %>
+        <a class="nav-link active" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders (Last 6 Months)</a>
+
+      <!-- If active_tab is not report9, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders (Last 6 Months)</a>
+
+      <% end %>
+    </li>
+
+    <!-- Report 10 -->
+    <li class="nav-item">
+
+      <!-- If active_tab is report10, activate -->
+      <% if params[:active_tab] == 'report10' %>
+        <a class="nav-link active" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders (Last 6 Months)</a>
+
+      <!-- If active_tab is not report10, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders (Last 6 Months)</a>
 
       <% end %>
     </li>
@@ -35,11 +63,11 @@
 
       <!-- If active_tab is report1, activate -->
       <% if params[:active_tab] == 'report8' %>
-        <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 12 Months)</a>
+        <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 6 Months)</a>
 
       <!-- If active_tab is not report1 or empty, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 12 Months)</a>
+        <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 6 Months)</a>
 
       <% end %>
     </li>
@@ -49,11 +77,11 @@
 
       <!-- If active_tab is report2, activate -->
       <% if params[:active_tab] == 'report2' %>
-        <a class="nav-link active" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Company Order Statuses</a>
+        <a class="nav-link active" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer Order Statuses</a>
 
       <!-- If active_tab is not report2, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Company Order Statuses</a>
+        <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Customer Order Statuses</a>
 
       <% end %>
     </li>
@@ -91,11 +119,11 @@
 
       <!-- If active_tab is report5, activate -->
       <% if params[:active_tab] == 'report5' %>
-        <a class="nav-link active" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Company Order Totals</a>
+        <a class="nav-link active" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Customer Order Totals</a>
 
       <!-- If active_tab is not report5, dont activate -->
       <% else %>
-        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Company Order Totals</a>
+        <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Customer Order Totals</a>
 
       <% end %>
     </li>
@@ -146,7 +174,7 @@
             <i class="fa fa-table"></i>
 
             <!-- Table Name -->
-            Company - Orders
+            Vendor - Company - Order Date
 
           </div>
 
@@ -164,8 +192,9 @@
 
                     <tr>
 
+                      <th class="text-center">Vendor</th>
                       <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <th class="text-center">Order Date</th>
 
                     </tr>
 
@@ -176,8 +205,9 @@
 
                     <tr>
 
+                      <th class="text-center">Vendor</th>
                       <th class="text-center">Company</th>
-                      <th class="text-center">Orders</th>
+                      <th class="text-center">Order Date</th>
 
                     </tr>
 
@@ -187,12 +217,13 @@
                   <tbody>
 
                     <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 5.months).group_by(&:customer).each do |order, customer| %>
+                    <% @orders.where('order_date < ?', Date.today - 6.months).each do |order| %>
 
                       <tr>
                         <!-- Columns to pull from order data -->
-                          <td class="text-center"><%= order.company_name %></td>
-                          <td class="text-center"><%= order.order_ids.count %></td>
+                          <td class="text-center"><%= order.vendor.vendor_name %></td>
+                          <td class="text-center"><%= order.customer.company_name %></td>
+                          <td class="text-center"><%= order.order_date %></td>
                       </tr>
 
                     <% end %>
@@ -226,7 +257,7 @@
             <i class="fa fa-table"></i>
 
             <!-- Table Name -->
-            Company - Orders
+            Vendor - Company - Order Date
 
           </div>
 
@@ -238,6 +269,253 @@
 
                 <!-- Report 1 Table -->
                 <table class="table table-bordered table-hover table-striped" id="report1table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Company</th>
+                      <th class="text-center">Order Date</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Company</th>
+                      <th class="text-center">Order Date</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 6.months).each do |order| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.vendor.vendor_name %></td>
+                          <td class="text-center"><%= order.customer.company_name %></td>
+                          <td class="text-center"><%= order.order_date %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+
+    <% if params[:active_tab] == 'report9' %>
+      <!-- Tab 9 - Report 9 (Active if active_tab is report 9) -->
+      <div class="tab-pane container-fluid active" id="report9">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Vendor - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report9table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.vendor_name %></td>
+                          <td class="text-center"><%= order.order_ids.count %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% else %>
+      <!-- Tab 9 - Report 9 (Inactive) -->
+      <div class="tab-pane container-fluid" id="report9">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Vendor - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report9table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Vendor</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:vendor).each do |order, vendor| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.vendor_name %></td>
+                          <td class="text-center"><%= order.order_ids.count %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+
+    <% if params[:active_tab] == 'report10' %>
+      <!-- Tab 10 - Report 10 (Active if active_tab is report 10) -->
+      <div class="tab-pane container-fluid active" id="report10">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Company - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report10table" width="100%" cellspacing="0">
 
                   <!-- Top Column Names -->
                   <thead>
@@ -267,7 +545,87 @@
                   <tbody>
 
                     <!-- Load order data -->
-                    <% @orders.where('order_date < ?', Date.today - 5.months).group_by(&:customer).each do |order, customer| %>
+                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.company_name %></td>
+                          <td class="text-center"><%= order.order_ids.count %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% else %>
+      <!-- Tab 10 - Report 10 (Inactive) -->
+      <div class="tab-pane container-fluid" id="report10">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Company - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report10table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Company</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Company</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 6.months).group_by(&:customer).each do |order, customer| %>
 
                       <tr>
                         <!-- Columns to pull from order data -->
@@ -295,7 +653,7 @@
     <% end %>
 
     <% if params[:active_tab] == 'report8' %>
-      <!-- Tab 8 - Report 8 (Active if active_tab is report 8 or null) -->
+      <!-- Tab 8 - Report 8 (Active if active_tab is report 8) -->
       <div class="tab-pane container-fluid active" id="report8">
 
         <!-- Table Card -->
@@ -1524,6 +1882,26 @@
 
       // Declare report3table
       var report8table = $('#report8table').DataTable( {
+
+        dom: 'Bflrtip',
+
+        // Enable paging, search, show # features
+        "paging": true
+
+      } );
+
+      // Declare report3table
+      var report9table = $('#report9table').DataTable( {
+
+        dom: 'Bflrtip',
+
+        // Enable paging, search, show # features
+        "paging": true
+
+      } );
+
+      // Declare report3table
+      var report9table = $('#report10table').DataTable( {
 
         dom: 'Bflrtip',
 

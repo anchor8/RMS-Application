@@ -7,31 +7,72 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
-    <!-- Amount of Orders (Last 5 Months) -->
-    <%= link_to reports_path(active_tab: "report1") do %>
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Amount of Orders (Last 5 Months)
-        </div>
-        <div class="card-body">
-          <%= line_chart Order.group_by_month(:order_date, last: 5).count,
-                         label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
-        </div>
-        <div class="card-footer small text-muted"></div>
+
+        <!-- Amount of Orders (Last 6 Months) -->
+        <%= link_to reports_path(active_tab: "report1") do %>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i>
+              Amount of Orders (Last 6 Months)
+            </div>
+            <div class="card-body">
+              <%= line_chart Order.group_by_month(:order_date, last: 6).count,
+                             label: "Orders", xtitle: "Months", ytitle: "Order Count", library: {animation: {easing: 'linear'}} %>
+            </div>
+            <div class="card-footer small text-muted"></div>
+          </div>
+        <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Vendor Total Orders -->
+        <%= link_to reports_path(active_tab: "report9") do %>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i>
+              Top 10 Vendors (Last 6 Months)
+            </div>
+            <div class="card-body">
+              <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).order("COUNT(vendors.id) DESC").limit("10").count,
+                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
+                            library: { animation: { easing: 'easeInCirc' }}%>
+            </div>
+            <div class="card-footer small text-muted"></div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <div class="col-md-6">
+        <!-- Customer Total Orders -->
+        <%= link_to reports_path(active_tab: "report10") do %>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i>
+              Top 10 Customers (Last 6 Months)
+            </div>
+            <div class="card-body">
+              <%= bar_chart Order.left_joins(:customer).group(:company_name).order("COUNT(customers.id) DESC").limit("10").count,
+                                        colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_orders_chart",
+                            library: { animation: { easing: 'easeInCirc' }}%>
+            </div>
+            <div class="card-footer small text-muted"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+
 
     <!-- Employee Total Orders -->
     <%= link_to reports_path(active_tab: "report8") do %>
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-bar-chart"></i>
-          Amount of Orders by Employee (Last 12 Months)
+          Amount of Orders by Employee (Last 6 Months)
         </div>
         <div class="card-body">
-          <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 1.year).count,
-                                    colors: ["blue", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
+          <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 6.months).count,
+                                    colors: ["#0038ff", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
                         library: { animation: { easing: 'easeInCirc' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
@@ -108,12 +149,10 @@
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-bar-chart"></i>
-          Order Totals by Company
+          Order Totals by Company ( Top 10 )
         </div>
         <div class="card-body">
-          <%= column_chart Order.joins(:customer).group(:order_total, :company_name).order("order_total desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false,
-                                   xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart",
-                                   library: { animation: { easing: 'easeInQuad' }}%>
+          <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), prefix: "$", thousands: ",", legend: false, colors: ["#0038ff", "#999"], xtitle: "Company Name", ytitle: "Order Totals", download: "companytotals_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
       </div>
