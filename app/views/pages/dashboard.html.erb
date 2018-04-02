@@ -91,8 +91,8 @@
           <i class="fa fa-bar-chart"></i>
           Total Orders by Employee </div>
         <div class="card-body">
-          <%= line_chart Order.joins(:employee).group(:lname).count,
-                                    colors: ["pink", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "emp_tot_orders_chart",
+          <%= bar_chart Order.joins(:employee).group(:lname).count,
+                                    colors: ["pink", "#999"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart",
                         library: { animation: { easing: 'easeInCirc' }}%>
         <div class="card-footer small text-muted"></div>
       </div>
