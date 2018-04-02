@@ -28,7 +28,20 @@
         <a class="nav-link" aria-controls="report1" role="tab" data-toggle="tab" href="#report1">Company Orders (Last 5 Months)</a>
 
       <% end %>
+    </li>
 
+    <!-- Report 8 -->
+    <li class="nav-item">
+
+      <!-- If active_tab is report1, activate -->
+      <% if params[:active_tab] == 'report8' %>
+        <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 12 Months)</a>
+
+      <!-- If active_tab is not report1 or empty, dont activate -->
+      <% else %>
+        <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders (Last 12 Months)</a>
+
+      <% end %>
     </li>
 
     <!-- Report 2 -->
@@ -43,7 +56,6 @@
         <a class="nav-link" aria-controls="report2" role="tab" data-toggle="tab" href="#report2">Company Order Statuses</a>
 
       <% end %>
-
     </li>
 
     <!-- Report 3 -->
@@ -58,7 +70,6 @@
         <a class="nav-link" aria-controls="report3" role="tab" data-toggle="tab" href="#report3">Vendor Statuses</a>
 
       <% end %>
-
     </li>
 
     <!-- Report 4 -->
@@ -73,7 +84,6 @@
         <a class="nav-link" aria-controls="report4" role="tab" data-toggle="tab" href="#report4">Carrier Usage</a>
 
       <% end %>
-
     </li>
 
     <!-- Report 5 -->
@@ -88,7 +98,6 @@
         <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Company Order Totals</a>
 
       <% end %>
-
     </li>
 
     <!-- Report 6 -->
@@ -103,7 +112,6 @@
         <a class="nav-link" aria-controls="report6" role="tab" data-toggle="tab" href="#report6">Customers by State</a>
 
       <% end %>
-
     </li>
 
     <!-- Report 7 -->
@@ -118,7 +126,6 @@
         <a class="nav-link" aria-controls="report7" role="tab" data-toggle="tab" href="#report7">Vendors by State</a>
 
       <% end %>
-
     </li>
   </ul>
 
@@ -265,6 +272,168 @@
                       <tr>
                         <!-- Columns to pull from order data -->
                           <td class="text-center"><%= order.company_name %></td>
+                          <td class="text-center"><%= order.order_ids.count %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+
+    <% if params[:active_tab] == 'report8' %>
+      <!-- Tab 8 - Report 8 (Active if active_tab is report 8 or null) -->
+      <div class="tab-pane container-fluid active" id="report8">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Employee - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report8table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Employee</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Employee</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 12.months).group_by(&:employee).each do |order, employee| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.fname + " " + order.lname %></td>
+                          <td class="text-center"><%= order.order_ids.count %></td>
+                      </tr>
+
+                    <% end %>
+
+                  </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted">
+          </div>
+
+        </div>
+
+      </div>
+    <% else %>
+      <!-- Tab 8 - Report 8 (Inactive) -->
+      <div class="tab-pane container-fluid" id="report8">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Employee - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+                <!-- Report 1 Table -->
+                <table class="table table-bordered table-hover table-striped" id="report8table" width="100%" cellspacing="0">
+
+                  <!-- Top Column Names -->
+                  <thead>
+
+                    <tr>
+
+                      <th class="text-center">Employee</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <!-- Bottom Column Names -->
+                  <tfoot>
+
+                    <tr>
+
+                      <th class="text-center">Employee</th>
+                      <th class="text-center">Orders</th>
+
+                    </tr>
+
+                  </tfoot>
+
+                  <!-- Content -->
+                  <tbody>
+
+                    <!-- Load order data -->
+                    <% @orders.where('order_date < ?', Date.today - 12.months).group_by(&:employee).each do |order, employee| %>
+
+                      <tr>
+                        <!-- Columns to pull from order data -->
+                          <td class="text-center"><%= order.fname + " " + order.lname %></td>
                           <td class="text-center"><%= order.order_ids.count %></td>
                       </tr>
 
@@ -1345,6 +1514,16 @@
 
       // Declare report3table
       var report7table = $('#report7table').DataTable( {
+
+        dom: 'Bflrtip',
+
+        // Enable paging, search, show # features
+        "paging": true
+
+      } );
+
+      // Declare report3table
+      var report8table = $('#report8table').DataTable( {
 
         dom: 'Bflrtip',
 
