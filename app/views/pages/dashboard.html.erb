@@ -54,7 +54,7 @@
               </div>
               <div class="card-body">
                 <%= column_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
-                              colors: ["#5d9c00"],label: "Total Order", xtitle: "Total Orders", ytitle: "Employee", download: "employee_30days_column_chart", height: "300px",
+                              colors: ["#5d9c00"],label: "Total Order", xtitle: "Employee", ytitle: "Total Order", download: "employee_30days_column_chart", height: "300px",
                               library: { animation: { easing: 'easeInCirc' }}%>
               </div>
               <div class="card-footer small text-muted"></div>
