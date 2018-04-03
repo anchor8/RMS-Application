@@ -35,7 +35,7 @@
                 Amount of Orders by Employee (30 Days - Bar Chart)
               </div>
               <div class="card-body">
-                <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).count,
+                <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
                               colors: ["#5d9c00"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart", height: "300px",
                               library: { animation: { easing: 'easeInCirc' }}%>
               </div>
