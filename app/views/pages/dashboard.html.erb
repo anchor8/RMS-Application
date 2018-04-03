@@ -27,15 +27,15 @@
         <% end %>
       </div>
       <div class="col-md-6">
-        <!-- Amount of Orders by Employee (30 Days - Bar Chart) -->
+        <!-- Amount of Orders by Employee (30 Days - Column Chart) -->
         <%= link_to reports_path(active_tab: "report8") do %>
             <div class="card mb-3">
               <div class="card-header">
                 <i class="fa fa-bar-chart"></i>
-                Amount of Orders by Employee (30 Days - Bar Chart)
+                Amount of Orders by Employee (30 Days - Column Chart)
               </div>
               <div class="card-body">
-                <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
+                <%= column_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
                               colors: ["#5d9c00"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart", height: "300px",
                               library: { animation: { easing: 'easeInCirc' }}%>
               </div>
