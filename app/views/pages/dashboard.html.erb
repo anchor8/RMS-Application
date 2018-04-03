@@ -9,6 +9,24 @@
     <!-- Breadcrumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- Error Banner -->
+    <% if notice %>
+      <% flash.each do |key, value| %>
+        <% if value.class == Array %>
+          <div class="h5 strong text-center mark">
+            <% value.each do |message| %>
+                * <%= message %> *
+                </br>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="h5 strong text-center mark">
+            * <%= value %> *
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
     <div class="row">
       <div class="col-md-6">
         <!-- Amount of Orders by Employee (30 Days - Line Chart) -->
