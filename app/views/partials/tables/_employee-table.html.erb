@@ -371,7 +371,8 @@
 <script>
     $(document).ready(function() {
         var table = $('#employeetable').DataTable( {
-           paging: true
+           paging: true,
+           "order": [[ 4, 'asc' ]]
         } );
 
         // Set all buttons as active on page load

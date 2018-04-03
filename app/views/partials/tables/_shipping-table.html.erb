@@ -294,7 +294,8 @@
 <script>
     $(document).ready(function() {
         var table = $('#shippingtable').DataTable( {
-            paging: true
+            paging: true,
+            "order": [[ 1, 'asc' ]]
         } );
 
         // Set all buttons as active on page load
