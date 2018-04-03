@@ -234,7 +234,7 @@
         </div>
         <div class="card-body">
           <%= bar_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                        colors: ["pink"],label: "Total Amount", xtitle: "Total Amount", ytitle: "State", download: "vendor_bar_chart", height: "600px",
+                        colors: ["pink"],label: "Total Amount of Vendors", xtitle: "Total Amount of Vendors", ytitle: "State", download: "vendor_bar_chart", height: "600px",
                         library: { animation: { easing: 'easeInCirc' }}%>
         </div>
         <div class="card-footer small text-muted"></div>
