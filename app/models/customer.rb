@@ -14,7 +14,7 @@ class Customer < ApplicationRecord
   validates :fax, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )" }
   validates :customer_email, allow_blank: false, presence: true, format: Devise.email_regexp
   validates :customer_cc_email, allow_blank: true, presence: false, format: Devise.email_regexp
-  validates :website, presence: false, format: { with: /\A([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Format ( www.website.com ) or ( website.com )" }
+  validates :website, allow_blank: true, presence: false, format: { with: /\A([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Format ( www.website.com ) or ( website.com )" }
   validates :social_media_address, allow_blank: true, presence: false, format: { with: /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i, message: "Invalid URL" }
   validates :street_address_1, allow_blank: false, presence: true
   validates :street_address_2, allow_blank: true, presence: false
