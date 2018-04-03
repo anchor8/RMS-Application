@@ -28,6 +28,108 @@
     <% end %>
 
     <div class="row">
+
+      <div class="col-md-4">
+
+        <!-- Order Status-->
+        <%= link_to reports_path(active_tab: "report2") do %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-pie-chart"></i>
+                Order Status
+              </div>
+              <div class="card-body">
+                <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
+                              colors: ["red", "green"], defer: true,
+                              donut: true, legend: "bottom", download: "order_status_chart",
+                              library: { animation: { easing: 'easeInCirc' }}%>
+              </div>
+              <div class="card-footer small text-muted"></div>
+            </div>
+        <% end %>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <!-- Vendor Status-->
+        <%= link_to reports_path(active_tab: "report3") do %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-pie-chart"></i>
+                Vendor Status
+              </div>
+              <div class="card-body">
+                <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
+                              donut: true, legend: "bottom", download: "vendor_status_chart", defer: true,
+                              library: { animation: { easing: 'easeInCirc' }}%>
+              </div>
+              <div class="card-footer small text-muted"></div>
+            </div>
+        <% end %>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <!-- Carrier use-->
+        <%= link_to reports_path(active_tab: "report4") do %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-pie-chart"></i>
+                Carrier Use</div>
+              <div class="card-body">
+                <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
+                              donut: true, legend: "bottom", download: "carrier_use_chart", defer: true,
+                              library: { animation: { easing: 'easeInCirc' }}%>
+              </div>
+              <div class="card-footer small text-muted"></div>
+            </div>
+        <% end %>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Vendor Total Orders -->
+        <%= link_to reports_path(active_tab: "report9") do %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-bar-chart"></i>
+                Top 10 Vendors ( 6 Months )
+              </div>
+              <div class="card-body">
+                <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
+                              colors: ["#0038ff"], label: "Total Order", xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_top10_chart", height: "300px",
+                              library: { animation: { easing: 'easeInCirc' }}%>
+              </div>
+              <div class="card-footer small text-muted"></div>
+            </div>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <!-- Customer Total Orders -->
+        <%= link_to reports_path(active_tab: "report10") do %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-bar-chart"></i>
+                Top 10 Customers ( 6 Months )
+              </div>
+              <div class="card-body">
+                <%= bar_chart Order.left_joins(:customer).group(:company_name).where("order_date > ?", Date.today-6.months).order("COUNT(customers.id) DESC").limit("10").count,
+                              colors: ["#00899c"],label: "Total Order", xtitle: "Total Orders", ytitle: "Company", legend: false, download: "customers_top10_chart", height: "300px",
+                              library: { animation: { easing: 'easeInCirc' }}%>
+              </div>
+              <div class="card-footer small text-muted"></div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    
+
+    <div class="row">
       <div class="col-md-6">
         <!-- Amount of Orders by Employee (30 Days - Line Chart) -->
         <%= link_to reports_path(active_tab: "report8") do %>
@@ -54,7 +156,7 @@
               </div>
               <div class="card-body">
                 <%= column_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
-                              colors: ["#5d9c00"],label: "Total Order", xtitle: "Employee", ytitle: "Total Order", download: "employee_30days_column_chart", height: "300px",
+                              colors: ["#5d9c00"],label: "Total Order", xtitle: "Employee", ytitle: "Total Order", defer: true, download: "employee_30days_column_chart", height: "300px",
                               library: { animation: { easing: 'easeInCirc' }}%>
               </div>
               <div class="card-footer small text-muted"></div>
@@ -63,108 +165,7 @@
       </div>
     </div>
 
-      <div class="row">
-      <div class="col-md-6">
-        <!-- Vendor Total Orders -->
-        <%= link_to reports_path(active_tab: "report9") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i>
-              Top 10 Vendors ( 6 Months )
-            </div>
-            <div class="card-body">
-              <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
-                                        colors: ["#0038ff"], label: "Total Order", xtitle: "Total Orders", ytitle: "Company", legend: false, download: "vendor_top10_chart", height: "300px",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-6">
-        <!-- Customer Total Orders -->
-        <%= link_to reports_path(active_tab: "report10") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i>
-              Top 10 Customers ( 6 Months )
-            </div>
-            <div class="card-body">
-              <%= bar_chart Order.left_joins(:customer).group(:company_name).where("order_date > ?", Date.today-6.months).order("COUNT(customers.id) DESC").limit("10").count,
-                                        colors: ["#00899c"],label: "Total Order", xtitle: "Total Orders", ytitle: "Company", legend: false, download: "customers_top10_chart", height: "300px",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-4">
-
-        <!-- Order Status-->
-        <%= link_to reports_path(active_tab: "report2") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Order Status
-            </div>
-            <div class="card-body">
-              <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                            colors: ["red", "green"], defer: true,
-                            donut: true, legend: "bottom", download: "order_status_chart",
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Vendor Status-->
-        <%= link_to reports_path(active_tab: "report3") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Vendor Status
-            </div>
-            <div class="card-body">
-              <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
-                            donut: true, legend: "bottom", download: "vendor_status_chart", defer: true,
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <!-- Carrier use-->
-        <%= link_to reports_path(active_tab: "report4") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i>
-              Carrier Use</div>
-            <div class="card-body">
-              <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
-                            donut: true, legend: "bottom", download: "carrier_use_chart", defer: true,
-                            library: { animation: { easing: 'easeInCirc' }}%>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-      </div>
-
-    </div>
-
-    <!-- Order Totals by Company -->
+       <!-- Order Totals by Company -->
     <%= link_to reports_path(active_tab: "report5") do %>
       <div class="card mb-3">
         <div class="card-header">
