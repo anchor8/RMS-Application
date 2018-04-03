@@ -22,74 +22,74 @@ puts ''
 
 #### employee data ####
 admin = Employee.new(
-  email: 'admin@rms.com',
+  email: 'anchor8solutions@gmail.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: true,
   employee_status_id: 2,
-  fname: 'John',
-  lname: 'Doe',
-  phone: '123-123-1234'
+  fname: 'Anchor',
+  lname: 'Eight',
+  phone: '1-800-888-3015'
 )
 admin.save!
 
 employee1 = Employee.new(
-  email: 'employee1@rms.com',
+  email: 'd.robinson@rms.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
-  fname: 'Jane',
-  lname: 'Smith',
-  phone: '123-123-1234'
+  fname: 'Debra',
+  lname: 'Robinson',
+  phone: '832-523-1344'
 )
 employee1.save!
 
 employee2 = Employee.new(
-  email: 'employee2@rms.com',
+  email: 'j.badger@rms.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
-  fname: 'John',
-  lname: 'Dillo',
-  phone: '123-123-1234'
+  fname: 'Jim',
+  lname: 'Badger',
+  phone: '281-552-6288'
 )
 employee2.save!
 
 employee3 = Employee.new(
-  email: 'employee3@rms.com',
+  email: 'c.schmit@rms.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Craig',
   lname: 'Schmit',
-  phone: '123-123-1234'
+  phone: '832-623-0238'
 )
 employee3.save!
 
 employee4 = Employee.new(
-  email: 'employee4@rms.com',
+  email: 'b.kubro@rms.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Bob',
-  lname: 'Ross',
-  phone: '123-123-1234'
+  lname: 'Kubro',
+  phone: '713-443-5234'
 )
 employee4.save!
 
 employee5 = Employee.new(
-  email: 'employee5@rms.com',
+  email: 'b.zizorai@rms.com',
   password: 'Password1!',
   password_confirmation: 'Password1!',
   admin: false,
   employee_status_id: 2,
   fname: 'Bill',
-  lname: 'Zizzy',
-  phone: '123-123-1234'
+  lname: 'Zizorai',
+  phone: '832-773-7274'
 )
 employee5.save!
 
