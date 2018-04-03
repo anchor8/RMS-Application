@@ -45,38 +45,7 @@
       </div>
     </div>
 
-        <!-- Amount of Orders Per Employee (30 Days) -->
-        <%= link_to reports_path(active_tab: "report1") do %>
-            <div class="card mb-3">
-              <div class="card-header">
-                <i class="fa fa-bar-chart"></i>
-                Amount of Orders Per Employee (30 Days)
-              </div>
-              <div class="card-body">
-                <%= line_chart Order.joins(:employee).group(:lname).group_by_week(:order_date).where("order_date > ?", Date.today-1.week).count,
-                               xtitle: "Weeks", ytitle: "Amount", legend: 'bottom', defer: true, library: {animation: {easing: 'linear'}} %>
-              </div>
-              <div class="card-footer small text-muted"></div>
-            </div>
-        <% end %>
-
-        <!-- Amount of Orders (Last 6 Months) -->
-        <%= link_to reports_path(active_tab: "report1") do %>
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i>
-              Amount of Orders (Last 6 Months)
-            </div>
-            <div class="card-body">
-              <%= line_chart Order.group_by_month(:order_date, last: 6).count,
-                             label: "Orders", xtitle: "Months", ytitle: "Order Count", height: "300px", defer: true,
-                             library: {animation: {easing: 'linear'}} %>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        <% end %>
-
-    <div class="row">
+      <div class="row">
       <div class="col-md-6">
         <!-- Vendor Total Orders -->
         <%= link_to reports_path(active_tab: "report9") do %>
@@ -112,23 +81,6 @@
         <% end %>
       </div>
     </div>
-
-    <!-- Employee Total Orders -->
-    <%= link_to reports_path(active_tab: "report8") do %>
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-bar-chart"></i>
-          Amount of Orders by Employee (Last 6 Months)
-        </div>
-        <div class="card-body">
-          <%= bar_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 6.months).count,
-                                    colors: ["#5d9c00"], xtitle: "Total Orders", ytitle: "Employee", download: "employee_orders_chart", height: "300px",
-                        library: { animation: { easing: 'easeInCirc' }}%>
-        </div>
-        <div class="card-footer small text-muted"></div>
-      </div>
-    <% end %>
-
 
     <div class="row">
 
