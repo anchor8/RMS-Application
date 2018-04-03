@@ -16,7 +16,7 @@
             <div class="card mb-3">
               <div class="card-header">
                 <i class="fa fa-bar-chart"></i>
-                Amount of Orders by Employee (30 Days - Line Chart)
+                Amount of Orders by Employee ( 30 Days - Line Chart )
               </div>
               <div class="card-body">
                 <%= line_chart Order.joins(:employee).group(:lname).group_by_week(:order_date).where("order_date > ?", Date.current - 30.days).count,
@@ -32,7 +32,7 @@
             <div class="card mb-3">
               <div class="card-header">
                 <i class="fa fa-bar-chart"></i>
-                Amount of Orders by Employee (30 Days - Column Chart)
+                Amount of Orders by Employee ( 30 Days - Column Chart )
               </div>
               <div class="card-body">
                 <%= column_chart Order.joins(:employee).group(:lname).where("order_date > ?", Date.current - 30.days).order("COUNT(orders.id) DESC").count,
@@ -52,7 +52,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-bar-chart"></i>
-              Top 10 Vendors (Last 6 Months)
+              Top 10 Vendors ( 6 Months )
             </div>
             <div class="card-body">
               <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
@@ -69,7 +69,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-bar-chart"></i>
-              Top 10 Customers (Last 6 Months)
+              Top 10 Customers ( 6 Months )
             </div>
             <div class="card-body">
               <%= bar_chart Order.left_joins(:customer).group(:company_name).where("order_date > ?", Date.today-6.months).order("COUNT(customers.id) DESC").limit("10").count,
@@ -170,7 +170,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (West Coast by US Census)
+              Customers by State <br /> ( West Coast by US Census )
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id <= ?", 13).count,
@@ -190,7 +190,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (Central by US Census)
+              Customers by State <br /> ( Central by US Census )
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ? and state_id <= ?", 14, 34).count,
@@ -210,7 +210,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i>
-              Customers by State <br /> (East Coast by US Census)
+              Customers by State <br /> ( East Coast by US Census )
             </div>
             <div class="card-body">
               <%= pie_chart Customer.joins(:state).group(:state_name).where("state_id >= ?", 35).count,
