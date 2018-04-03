@@ -4124,7 +4124,7 @@
                       <tr>
                         <!-- Columns to pull from order data -->
                           <td class="text-center"><%= order.company_name %></td>
-                          <td class="text-center"><%= Order.joins(:customer).where("company_name = ?", order.company_name).sum(:order_total)  %></td>
+                          <td class="text-center"><%= number_to_currency(Order.joins(:customer).where("company_name = ?", order.company_name).sum(:order_total), :unit => "$", format: "%u %n")  %></td>
 
                       </tr>
 
