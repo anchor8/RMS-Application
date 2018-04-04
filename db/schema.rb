@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404003005) do
+ActiveRecord::Schema.define(version: 30180404044050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20180404003005) do
     t.bigint "shipper_id"
     t.bigint "state_id"
     t.string "shipping_number", limit: 15
-    t.integer "purchase_order_number"
+    t.serial "purchase_order_number", null: false
     t.date "order_date", default: "2018-03-14"
     t.date "ship_date"
     t.decimal "order_total"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180404003005) do
     t.index ["employee_id"], name: "index_orders_on_employee_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["payment_type_id"], name: "index_orders_on_payment_type_id"
+    t.index ["purchase_order_number"], name: "index_orders_on_purchase_order_number", unique: true
     t.index ["shipper_id"], name: "index_orders_on_shipper_id"
     t.index ["state_id"], name: "index_orders_on_state_id"
     t.index ["vendor_id"], name: "index_orders_on_vendor_id"
