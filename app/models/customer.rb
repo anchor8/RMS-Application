@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
   validates :customer_first_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for first name allowed"}
   validates :customer_last_name, allow_blank: false,presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for last name allowed"}
   validates :company_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z',\s]+\s*$\z/, message: "Only letters, commas, apostrophes, or spaces for company name allowed"}
-  validates :job_title, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for job name allowed"}
+  validates :job_title, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z',\s]+\s*$\z/, message: "Only letters, commas, apostrophes, or spaces for job name allowed"}
   validates :work_phone, allow_blank: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )"}
   validates :mobile, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )" }
   validates :fax, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )" }
