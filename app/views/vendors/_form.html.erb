@@ -27,22 +27,22 @@
         <%= form.text_field :vendor_name, :size => '20', placeholder: 'Vendor Name', id: :vendor_vendor_name %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :contact_name %> *
         <%= form.text_field :contact_name, :size => '20', placeholder: 'John Smith', id: :vendor_contact_name %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :job_title %> *
         <%= form.text_field :job_title, :size => '20', placeholder: 'Products Manager', id: :vendor_job_title %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :website %>
         <%= form.text_field :website, :size => '25', placeholder: 'www.website.com', id: :vendor_website %>
       </div>
 
-      <div class="field">
+      <div class="field mt-4">
         <%= form.label :vendor_status_id %> *
         <%= form.collection_select :vendor_status_id, VendorStatus.all, :id, :vendor_status_type, prompt: true %>
       </div>
@@ -52,22 +52,22 @@
         <%= form.text_field :vendor_email, type: 'email', :size => '25', placeholder: 'email@provider.com', id: :vendor_vendor_email %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :vendor_cc_email %>
         <%= form.text_field :vendor_cc_email, type: 'email', :size => '25', placeholder: 'email@provider.com', id: :vendor_vendor_cc_email %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :work_phone %> *
         <%= form.text_field :work_phone, type: 'tel', :size => '15', placeholder: '+1-123-123-1234', id: :vendor_work_phone %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :mobile %>
         <%= form.text_field :mobile, type: 'tel', :size => '15', placeholder: '+1-123-123-1234', id: :vendor_mobile %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :fax %>
         <%= form.text_field :fax, type: 'tel', :size => '15', placeholder: '+1-123-123-1234', id: :vendor_fax %>
       </div>
@@ -82,22 +82,22 @@
         <%= form.text_field :street_address_1, :size => '30', placeholder: '123 Street Address Rd. Bldg. 123', id: :vendor_street_address_1 %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :street_address_2 %>
         <%= form.text_field :street_address_2, :size => '30', placeholder: '123 Street Address Rd. Bldg. 123', id: :vendor_street_address_2 %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :state_id %> *
         <%= form.collection_select :state_id, State.order(:state_name), :id, :state_name, prompt: true %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :city %> *
         <%= form.text_field :city, :size => '20', placeholder: 'Houston', id: :vendor_city %>
       </div>
 
-      <div class="field">
+      <div class="field mt-1">
         <%= form.label :zip_code %> *
         <%= form.text_field :zip_code, :size => '10', placeholder: '77777-8888', id: :vendor_zip_code %>
       </div>

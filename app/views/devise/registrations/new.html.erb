@@ -15,22 +15,22 @@
           <%= f.email_field :email, type: 'email', size: "30", autofocus: true, placeholder: "email@provider.com", autocomplete: "email", required: true %>
         </div>
 
-        <div class="field">
+        <div class="field mt-1">
           <b><%= f.label :fname %> * </b><br />
           <%= f.text_field :fname, size: "20", placeholder: "John", autocomplete: "first name", required: true %>
         </div>
 
-        <div class="field">
+        <div class="field mt-1">
           <b><%= f.label :lname %> *</b><br />
           <%= f.text_field :lname, size: "20", placeholder: "Smith", autocomplete: "last name", required: true %>
         </div>
 
-        <div class="field">
+        <div class="field mt-1">
           <b><%= f.label :phone %> * </b><br />
           <%= f.text_field :phone, type: 'tel', placeholder: "+1-123-123-1234", size: "15", autocomplete: "phone number", required: true %>
         </div>
 
-        <div class="field">
+        <div class="field mt-1">
           <b><%= f.label :password %> * </b>
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -38,7 +38,7 @@
           <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "30",autocomplete: "off", required: true %>
         </div>
 
-        <div class="field">
+        <div class="field mt-1">
           <b><%= f.label :password_confirmation %> * </b><br />
           <%= f.password_field :password_confirmation, placeholder: "Must match", size: "30",autocomplete: "off", required: true %>
         </div>
