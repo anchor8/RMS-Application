@@ -13,10 +13,10 @@ state_id,vendor_status_id,vendor_name,contact_name,job_title,work_phone,mobile,f
 32,3,Seismic Irons,Sanora Segovia,Sales Consultant,310-678-5754,933-618-4825,,SanoraSegovia@hotmail.com,,www.SeismicIrons.com,8539 Old Run,,Baton Rouge,25566
 33,4,Coyote Irons,Carri Fein,Sales Consultant,301-393-4517,498-715-3249,,CarriFein@hotmail.com,,www.CoyoteIrons.com,65 Cotton Fox Trail,,Tulsa,86749
 34,4,Cougar Metalics,Claretta Sandor,Sales Consultant,257-490-2511,412-719-3035,,ClarettaSandor@hotmail.com,,www.CougarMetalics.com,9661 Silent Wood,,Fort Worth,52920
-32,4,List Suppliers,Carl Viverette,Sales Consultant,262-651-6688,598-834-4612,,CarlViverette@hotmail.com,,www.ListSuppliers.com,9580 Pleasant Ledge,,New Orleans,86749
-32,1,Prince Manufactures,Angel Wadlow,Sales Consultant,138-536-5778,749-126-0022,,AngelWadlow@hotmail.com,,www.PrinceManufactures.com,5550 Velvet Zephyr Limits,,Lafayette,12705
-32,4,Sharp Suppliers,Kym Nutter,Sales Consultant,506-664-0469,192-182-6007,,KymNutter@hotmail.com,,www.SharpSuppliers.com,3970 Hazy Mountain,,Shreveport,64612
-32,3,QuantumLeap Suppliers,Lindsey Cron,Sales Consultant,310-457-1315,398-516-3546,,LindseyCron@hotmail.com,,www.QuantumLeapSuppliers.com,5645 Fallen Pony Expressway,,Baton Rouge,31682
+31,4,List Suppliers,Carl Viverette,Sales Consultant,262-651-6688,598-834-4612,,CarlViverette@hotmail.com,,www.ListSuppliers.com,9580 Pleasant Ledge,,Little Rock,86749
+31,1,Prince Manufactures,Angel Wadlow,Sales Consultant,138-536-5778,749-126-0022,,AngelWadlow@hotmail.com,,www.PrinceManufactures.com,5550 Velvet Zephyr Limits,,Fayetteville,12705
+31,4,Sharp Suppliers,Kym Nutter,Sales Consultant,506-664-0469,192-182-6007,,KymNutter@hotmail.com,,www.SharpSuppliers.com,3970 Hazy Mountain,,Fort Smith,64612
+31,3,QuantumLeap Suppliers,Lindsey Cron,Sales Consultant,310-457-1315,398-516-3546,,LindseyCron@hotmail.com,,www.QuantumLeapSuppliers.com,5645 Fallen Pony Expressway,,Fort Smith,31682
 32,4,PeaceLove Suppliers,Samual Mcgowen,Sales Consultant,461-579-5526,907-934-1781,,SamualMcgowen@hotmail.com,,www.PeaceLoveSuppliers.com,3645 Umber Pointe,,New Orleans,70194
 34,4,Flare Suppliers,Dirk Moorehead,Sales Consultant,915-916-2634,272-407-2262,,DirkMoorehead@hotmail.com,,www.FlareSuppliers.com,8360 Noble Embers Maze,,Dallas,51116
 32,3,Daystar Suppliers,Rafael Belknap,Sales Consultant,560-738-6683,693-147-3680,,RafaelBelknap@hotmail.com,,www.DaystarSuppliers.com,1819 Silver Deer Beach,,Shreveport,18149
@@ -44,8 +44,8 @@ state_id,vendor_status_id,vendor_name,contact_name,job_title,work_phone,mobile,f
 32,3,Centennial Manufactures,Gianna Wymore,Sales Consultant,444-126-9273,174-823-3922,,GiannaWymore@hotmail.com,,www.CentennialManufactures.com,6578 Lazy Highlands,,Shreveport,61579
 32,3,Canvas Irons,Lavonda Bruhn,Sales Consultant,265-228-4664,220-167-6876,,LavondaBruhn@hotmail.com,,www.CanvasIrons.com,9869 Thunder River Park,,Lafayette,86346
 32,3,Nature Irons,Priscila Toft,Sales Consultant,824-692-5730,535-395-0208,,PriscilaToft@hotmail.com,,www.NatureIrons.com,3626 Blue Spring Round,,Lafayette,68922
-32,2,Promotions Irons,Fonda Padro,Sales Consultant,714-380-9279,569-791-8252,,FondaPadro@hotmail.com,,www.PromotionsIrons.com,4336 Rocky Hills Key,,Baton Rouge,50430
-33,3,Ascent Irons,Dinorah Connelly,Sales Consultant,280-629-1520,211-191-2406,,DinorahConnelly@hotmail.com,,www.AscentIrons.com,9680 Red Common,,Oklahoma City,68749
-32,1,Care Suppliers,Victor Zellmer,Sales Consultant,943-467-8287,785-717-3228,,VictorZellmer@hotmail.com,,www.CareSuppliers.com,2446 Bright Inlet,,Baton Rouge,68922
-32,3,Passion Suppliers,Scot Ivory,Sales Consultant,885-240-9210,763-436-8258,,ScotIvory@hotmail.com,,www.PassionSuppliers.com,7622 Golden Island,,New Orleans,30608
+39,2,Promotions Irons,Fonda Padro,Sales Consultant,714-380-9279,569-791-8252,,FondaPadro@hotmail.com,,www.PromotionsIrons.com,4336 Rocky Hills Key,,Jackson,50430
+29,3,Ascent Irons,Dinorah Connelly,Sales Consultant,280-629-1520,211-191-2406,,DinorahConnelly@hotmail.com,,www.AscentIrons.com,9680 Red Common,,Biloxi,68749
+29,1,Care Suppliers,Victor Zellmer,Sales Consultant,943-467-8287,785-717-3228,,VictorZellmer@hotmail.com,,www.CareSuppliers.com,2446 Bright Inlet,,Gulfport,68922
+30,3,Passion Suppliers,Scot Ivory,Sales Consultant,885-240-9210,763-436-8258,,ScotIvory@hotmail.com,,www.PassionSuppliers.com,7622 Golden Island,,New Orleans,30608
 33,3,Sapient Suppliers,Eloise Haydon,Sales Consultant,468-399-6508,427-136-4257,,EloiseHaydon@hotmail.com,,www.SapientSuppliers.com,2417 Clear Grove Quay,,Oklahoma City,44695
