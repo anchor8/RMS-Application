@@ -3,6 +3,8 @@ class RegistrationsController < Devise::RegistrationsController
   # Only new and create actions
   before_action only: [:new, :create]
 
+  layout "application"
+
   # No authentication needed
   skip_before_action :require_no_authentication
 
@@ -64,7 +66,7 @@ end
     end
   end
 
-  protected
+  private
 
   # Enable sign up from in app
   def sign_up(resource_name, resource)
