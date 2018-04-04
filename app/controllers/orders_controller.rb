@@ -23,9 +23,11 @@ class OrdersController < ApplicationController
       add_breadcrumb 'Order Management', ordermgmt_path
       add_breadcrumb 'Create New Order'
     end
+
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 7
+    @order.order_lines.build
 
     # Parameters from customer
     @order.city = params['city']
@@ -45,6 +47,8 @@ class OrdersController < ApplicationController
     # Breadcrumbs for edit order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Edit Order'
+
+    @order.order_lines.build
   end
 
   # POST /orders
@@ -112,6 +116,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code)
+      params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code, order_lines_attributes: [:id, :order_id, :product_id, :price])
     end
 end

@@ -24,6 +24,8 @@
         <!-- Left Column -->
         <div class="col-md-4">
 
+          <%= form.hidden_field :order_date, value: @order.order_date %>
+
           <div class="field">
             <b><%= form.label "Customer Name" %></b> <font color="red">*</font>
             <%= form.collection_select :customer_id, Customer.all, :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
@@ -46,8 +48,22 @@
 
           <div class="field mt-1">
             <b><%= form.label :order_total %></b> <font color="red">*</font>
-            <%= form.text_field :order_total, :value => number_to_currency(order.order_total), size: "10", placeholder: '123456.99', id: :order_order_total, required: true %>
+            <%= form.text_field :order_total, :value => number_to_currency(order.order_total), size: "10", placeholder: '$123456.99', id: :order_order_total, required: true %>
           </div>
+
+          <button class="btn btn-sm btn-primary" id="new-order-line">+</button>
+          <%= form.fields_for :order_lines do |order_line_form| %>
+            <div class="order_lines_fields">
+              <%= order_line_form.hidden_field :order_id, value: @order.id %>
+              <div class="field">
+                <%= order_line_form.label :product_id %>
+                <%= order_line_form.collection_select(:product_id, Product.all, :id, :product_name, {prompt: true}, {required: true}) %>
+
+                <%= order_line_form.label :price %>
+                <%= order_line_form.text_field :price, :value => number_to_currency(order.order_total), size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
+              </div>
+            </div>
+          <% end %>
 
         </div>
 
@@ -109,8 +125,6 @@
             <%= form.text_field :zip_code, size: "10", placeholder: '77777-8888', id: :order_zip_code, required: true %>
           </div>
 
-          <%= form.hidden_field :order_date, value: @order.order_date %>
-
         </div>
 
       </div>
@@ -121,6 +135,8 @@
       </div>
 
     <% end %>
+
+
 
   </div>
 </div>
