@@ -62,16 +62,8 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="1"
-                 href="">Company</a>
-
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-                 type="button"
-                 data-toggle="button"
-                 aria-pressed="false"
-                 autocomplete="off"
                  data-column="2"
-                 href="">Vendor</a>
+                 href="">PO No.</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -79,7 +71,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="3"
-                 href="">Status</a>
+                 href="">Company</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -87,7 +79,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="4"
-                 href="">Shipped</a>
+                 href="">Vendor</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -95,7 +87,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="5"
-                 href="">Shipper</a>
+                 href="">Status</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -103,7 +95,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="6"
-                 href="">Shipping No.</a>
+                 href="">Shipped</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -111,7 +103,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="7"
-                 href="">Country</a>
+                 href="">Shipper</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -119,7 +111,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="8"
-                 href="">State</a>
+                 href="">Shipping No.</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -127,7 +119,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="9"
-                 href="">Addr. 1</a>
+                 href="">Country</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -135,7 +127,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="10"
-                 href="">Addr. 2</a>
+                 href="">State</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -143,7 +135,7 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="11"
-                 href="">City</a>
+                 href="">Addr. 1</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -151,6 +143,22 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="12"
+                 href="">Addr. 2</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="13"
+                 href="">City</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="14"
                  href="">Zip</a>
 
             </div>
@@ -193,6 +201,7 @@
             <tr>
 
               <th class="text-center">Toggle</th>
+              <th class="text-center">PO No.</th>
               <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">Status</th>
@@ -216,6 +225,7 @@
             <tr>
 
               <th class="text-center">Toggle</th>
+              <th class="text-center">PO No.</th>
               <th class="text-center">Company (To)</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">Status</th>
@@ -257,6 +267,7 @@
                             :method => :put,
                             :class => 'btn btn-outline-primary btn-sm' %></td>
                       <% end %>
+                    <td class="text-left-align"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
                     <td class="text-center"><%= order.order_status.order_status_description %></td>
@@ -315,7 +326,7 @@
         $('a.show-all-col').on( 'click', function (e) {
 
             // Set all columns to visible
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ).visible( true, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] ).visible( true, false );
 
             // adjust column sizing and redraw
             table.columns.adjust().draw( false );
@@ -332,7 +343,7 @@
         $('a.hide-all-col').on( 'click', function (e) {
 
             // Set all columns to not visible
-            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ).visible( false, false );
+            table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] ).visible( false, false );
 
             // adjust column sizing and redraw
             table.columns.adjust().draw( false );
