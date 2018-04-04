@@ -16,9 +16,13 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     # Breadcrumbs for new order
-    add_breadcrumb 'Order Management', ordermgmt_path
-    add_breadcrumb 'Create New Order'
-
+    if params['origin'] == "customer"
+      add_breadcrumb 'Customer Management', customermgmt_path
+      add_breadcrumb 'Create New Order'
+    else
+      add_breadcrumb 'Order Management', ordermgmt_path
+      add_breadcrumb 'Create New Order'
+    end
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 7
