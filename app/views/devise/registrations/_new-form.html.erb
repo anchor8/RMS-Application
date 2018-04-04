@@ -1,12 +1,24 @@
 <div class="row">
   <div class="mx-auto">
-    <div class="mt-3 mb-3">
-      * = Required
-    </div>
-
+    <!-- Create New Employee Form -->
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
       <%= devise_error_messages! %>
+
+      <!-- Error Banner -->
+      <% if customer.errors.any? %>
+        <div class="h5 strong text-center mark">
+          <% customer.errors.full_messages.each do |message| %>
+            * <%= message %> *
+            <br />
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="mt-3 mb-3">
+        * = Required
+      </div>
+
       <div class="row">
         <div class="col-md-6">
           <div class="field">
