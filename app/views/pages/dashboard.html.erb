@@ -13,14 +13,14 @@
     <% if notice %>
       <% flash.each do |key, value| %>
         <% if value.class == Array %>
-          <div class="h5 strong text-center mark">
+          <div class="h5 strong text-center mark" id="flash">
             <% value.each do |message| %>
                 * <%= message %> *
                 </br>
             <% end %>
           </div>
         <% else %>
-          <div class="h5 strong text-center mark">
+          <div class="h5 strong text-center mark" id="flash">
             * <%= value %> *
           </div>
         <% end %>
@@ -262,3 +262,11 @@
 
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#flash').remove();
+    }, 2000);
+  })
+</script>
