@@ -3,6 +3,7 @@ class OrderLine < ApplicationRecord
   belongs_to :order, optional: true
 
   after_save :calculate_order_total
+  after_update :calculate_order_total
 
   private
 
