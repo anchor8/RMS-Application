@@ -27,9 +27,11 @@ class Order < ApplicationRecord
     if !deleted_at
       # Deleted at doesn't exist
       update_attribute(:deleted_at, Time.current)
+      update_attribute(:order_status_id, '3')
     else
       # Deleted at exists
       update_attribute(:deleted_at, nil)
+      update_attribute(:order_status_id, '1')
     end
   end
 
