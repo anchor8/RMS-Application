@@ -15,7 +15,7 @@
 
       <!-- Required Mark -->
       <div class="mt-3 mb-3">
-        * = Required
+        <font color="red">*</font> = Required
       </div>
 
       <!-- Row -->
@@ -25,22 +25,22 @@
         <div class="col-md-6">
 
           <div class="field">
-            <b><%= form.label :First_Name  %></b> *
+            <b><%= form.label :First_Name  %></b> <font color="red">*</font>
             <%= form.text_field :customer_first_name, :size => '15', required: true, placeholder: 'John', id: :customer_customer_first_name %>
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :Last_Name  %></b> *
+            <b><%= form.label :Last_Name  %></b> <font color="red">*</font>
             <%= form.text_field :customer_last_name, :size => '15', required: true, placeholder: 'Smith', id: :customer_customer_last_name %>
           </div>
 
           <div class="field mt-4">
-            <b><%= form.label :customer_status_id %></b> *
+            <b><%= form.label :customer_status_id %></b> <font color="red">*</font>
             <%= form.collection_select :customer_status_id, CustomerStatus.all, :id, :customer_status_description, {prompt: true}, {required: true} %>
           </div>
 
           <div class="field mt-4">
-            <b><%= form.label :Email  %></b> *
+            <b><%= form.label :Email  %></b> <font color="red">*</font>
             <%= form.text_field :customer_email, :size => '25', type: 'email', required: true, placeholder: 'email@provider.com', id: :customer_customer_email %>
           </div>
 
@@ -50,7 +50,7 @@
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :work_phone %></b> *
+            <b><%= form.label :work_phone %></b> <font color="red">*</font>
             <%= form.text_field :work_phone, :size => '15', type: 'tel', Required: true, placeholder: '+1-123-123-1234', id: :customer_work_phone %>
           </div>
 
@@ -70,7 +70,7 @@
         <div class="col-md-6">
 
           <div class="field">
-            <b><%= form.label :company_name %></b> *
+            <b><%= form.label :company_name %></b> <font color="red">*</font>
             <%= form.text_field :company_name, :size => '25', placeholder: 'Company Name', id: :customer_company_name, required: true %>
           </div>
 
@@ -80,7 +80,7 @@
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :job_title %></b> *
+            <b><%= form.label :job_title %></b> <font color="red">*</font>
             <%= form.text_field :job_title, :size => '20', placeholder: 'Products Manager', id: :customer_job_title, required: true %>
           </div>
 
@@ -90,7 +90,7 @@
           </div>
 
           <div class="field mt-4">
-            <b><%= form.label :street_address_1 %></b> *
+            <b><%= form.label :street_address_1 %></b> <font color="red">*</font>
             <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: '1234 Street Address Rd. Bldg. 12', id: :customer_street_address_1 %>
           </div>
 
@@ -100,17 +100,17 @@
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :state_id %></b> *
+            <b><%= form.label :state_id %></b> <font color="red">*</font>
             <%= form.collection_select :state_id, State.order(:state_name), :id, :state_name, {prompt: true}, {required: true} %>
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :city %></b> *
+            <b><%= form.label :city %></b> <font color="red">*</font>
             <%= form.text_field :city, :size => '20', Required: true, placeholder: 'Houston', id: :customer_city %>
           </div>
 
           <div class="field mt-1">
-            <b><%= form.label :zip_code %></b> *
+            <b><%= form.label :zip_code %></b> <font color="red">*</font>
             <%= form.text_field :zip_code, :size => '10', required: true, placeholder: '77777-8888', id: :customer_zip_code %>
           </div>
 
