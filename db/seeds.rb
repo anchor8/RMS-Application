@@ -230,8 +230,19 @@ csv.each do |row|
 end
 puts ''
 
-#### order data ####
+#### product data ####
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'products.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = Product.new
+  t.product_name = row['product_name']
+  t.save!
+  puts "Product Name, #{t.product_name} saved"
+end
 puts ''
+
+#### order data ####
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'orders.csv'))
 csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
@@ -254,5 +265,20 @@ csv.each do |row|
   t.city = row['city']
   t.zip_code = row['zip_code']
   t.save!
-  puts "Order, for #{t.vendor_id} #{t.customer_id} and  saved"
+  puts "Order, for #{t.vendor_id} and #{t.customer_id} saved"
 end
+puts ''
+
+#### order line data ####
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'order_lines.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = OrderLine.new
+  t.order_id = row['order_id']
+  t.product_id = row['product_id']
+  t.price = row['price']
+  t.save!
+  puts "Order Line, for #{t.order_id} and #{t.product_id} saved"
+end
+puts ''
