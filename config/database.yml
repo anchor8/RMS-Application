@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: RMS-Application_production
-  username: RMS-Application
+  username: user
   password: <%= ENV['RMS-APPLICATION_DATABASE_PASSWORD'] %>
