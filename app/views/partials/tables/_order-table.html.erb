@@ -268,7 +268,7 @@
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
                     <td class="text-left-align"><%= number_to_currency(order.order_total, precision: 2) %></td>
                     <td class="text-left-align"><%= order.payment_type.payment_type_description %></td>
-                    
+
                   </tr>
 
               <% end %>
@@ -294,7 +294,7 @@
     $(document).ready(function() {
         var table = $('#ordertable').DataTable( {
             paging: true,
-            "order": [[ 5, 'asc' ]]
+            "order": [[ 3, 'desc' ]]
         } );
 
         // Set all buttons as active on page load
