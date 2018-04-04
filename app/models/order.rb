@@ -8,7 +8,8 @@ class Order < ApplicationRecord
   belongs_to :payment_type
   belongs_to :shipper
   belongs_to :state
-  has_many :order_lines
+  has_many :order_lines, dependent: :destroy
+  accepts_nested_attributes_for :order_lines
 
   # Validations
   validates :order_date, allow_blank: false, presence: true, :timeliness => {:type => :date}
