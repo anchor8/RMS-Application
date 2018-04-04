@@ -1,13 +1,13 @@
 customer_status_id,state_id,company_name,customer_first_name,customer_last_name,job_title,work_phone,mobile,fax,customer_email,customer_cc_email,website,social_media_address,street_address_1,street_address_2,city,zip_code
 2,2,Targeted Metals,Florida,Mamie,CEO,150-381-6121,632-233-8774,,FloridaMamie@gmail.com,,www.TargetedMetals.com,www.twitter.com/TargetedMetals,5591 Clear By-pass,,Devine,64311
-2,34,Cricket Metals,Donte,Luella,Chairman,528-457-6404,219-275-7485,,DonteLuella@gmail.com,,www.CricketMetals.com,www.twitter.com/CricketMetals,7666 Little Rabbit Link,,Baytown,38596
+2,33,Cricket Metals,Donte,Luella,Chairman,528-457-6404,219-275-7485,,DonteLuella@gmail.com,,www.CricketMetals.com,www.twitter.com/CricketMetals,7666 Little Rabbit Link,,Oklahoma City,38596
 2,32,Secondhand Pipelines,Ninfa,Monroe,CEO,365-720-6303,660-812-8185,,NinfaMonroe@gmail.com,,www.SecondhandPipelines.com,www.twitter.com/SecondhandPipelines,7918 Crystal Pony Rise,,New Orleans,27214
 2,32,Cluster Inc,Johnette,Virgilio,Salesman,899-252-5792,670-620-3366,,JohnetteVirgilio@gmail.com,,www.ClusterInc.com,www.twitter.com/ClusterInc,620 Thunder Concession,,New Orleans,98824
-2,34,Pre Inc,Julio,Lawanda,Chairman,490-930-9698,270-206-6622,,JulioLawanda@gmail.com,,www.PreInc.com,www.twitter.com/PreInc,640 Pleasant Maze,,San Antonio,61119
+2,33,Pre Inc,Julio,Lawanda,Chairman,490-930-9698,270-206-6622,,JulioLawanda@gmail.com,,www.PreInc.com,www.twitter.com/PreInc,640 Pleasant Maze,,Tulsa,61119
 2,2,Registry Inc,Lovetta,Terrell,Founder,384-748-7493,995-106-2343,,LovettaTerrell@gmail.com,,www.RegistryInc.com,www.twitter.com/RegistryInc,1143 Cotton Apple Jetty,,Devine,93206
 2,21,Avail Pipelines,Lewis,Nilda,Founder,452-265-5930,962-783-6993,,LewisNilda@gmail.com,,www.AvailPipelines.com,www.twitter.com/AvailPipelines,7415 Broad Green,,Independence,18004
-2,34,Argon Inc,Ying,Lemuel,Founder,753-643-4236,191-674-3689,,YingLemuel@gmail.com,,www.ArgonInc.com,www.twitter.com/ArgonInc,3233 Stony Crest,,Baytown,73808
-2,34,Scenic Pipelines,Karon,Melia,President,968-930-4178,876-249-6218,,KaronMelia@gmail.com,,www.ScenicPipelines.com,www.twitter.com/ScenicPipelines,8038 Blue Cider Quay,,Houston,85099
+2,33,Argon Inc,Ying,Lemuel,Founder,753-643-4236,191-674-3689,,YingLemuel@gmail.com,,www.ArgonInc.com,www.twitter.com/ArgonInc,3233 Stony Crest,,Tulsa,73808
+2,33,Scenic Pipelines,Karon,Melia,President,968-930-4178,876-249-6218,,KaronMelia@gmail.com,,www.ScenicPipelines.com,www.twitter.com/ScenicPipelines,8038 Blue Cider Quay,,Tulsa,85099
 2,2,Emirates,Jeana,Laquita,Salesman,852-660-2277,951-826-6177,,JeanaLaquita@gmail.com,,www.Emirates.com,www.twitter.com/Emirates,1395 Cinder Circuit,,Devine,64420
 2,21,Break Metals,Stacee,India,CTO,897-200-8041,175-446-7170,,StaceeIndia@gmail.com,,www.BreakMetals.com,www.twitter.com/BreakMetals,7832 Old River Knoll,,Independence,16474
 2,34,Inspired Metals,Lina,Lula,Vice President,764-986-5988,581-331-9771,,LinaLula@gmail.com,,www.InspiredMetals.com,www.twitter.com/InspiredMetals,7286 Easy Fox Bay,,Victoria,93206
@@ -20,8 +20,8 @@ customer_status_id,state_id,company_name,customer_first_name,customer_last_name,
 2,44,Circa Pipelines,Cristina,Beata,Owner,690-910-3693,103-820-1134,,CristinaBeata@gmail.com,,www.CircaPipelines.com,www.twitter.com/CircaPipelines,8864 Bright Dale Subdivision,,Indiantown,65336
 2,32,Artists Pipelines,Yuki,Karoline,Owner,392-946-0596,867-354-4302,,YukiKaroline@gmail.com,,www.ArtistsPipelines.com,www.twitter.com/ArtistsPipelines,5174 Shady Hickory Stead,,Delhi,46850
 2,44,Heartland Pipelines,Joanie,Janelle,Vice President,261-122-3501,199-531-9035,,JoanieJanelle@gmail.com,,www.HeartlandPipelines.com,www.twitter.com/HeartlandPipelines,2407 Rocky Towers,,Indiantown,15449
-2,34,Zebra Pipelines,Leesa,Gaye,Vice President,713-834-1231,409-192-5551,,LeesaGaye@gmail.com,,www.ZebraPipelines.com,www.twitter.com/ZebraPipelines,3288 Silent Glen,,Victoria,58907
-2,34,Blueberry Inc,Sheena,Seema,Owner,241-436-2934,622-673-9269,,SheenaSeema@gmail.com,,www.BlueberryInc.com,www.twitter.com/BlueberryInc,7494 Silver Private,,Arlington,27214
+2,33,Zebra Pipelines,Leesa,Gaye,Vice President,713-834-1231,409-192-5551,,LeesaGaye@gmail.com,,www.ZebraPipelines.com,www.twitter.com/ZebraPipelines,3288 Silent Glen,,Tulsa,58907
+2,33,Blueberry Inc,Sheena,Seema,Owner,241-436-2934,622-673-9269,,SheenaSeema@gmail.com,,www.BlueberryInc.com,www.twitter.com/BlueberryInc,7494 Silver Private,,Norman,27214
 2,21,Right Metals,Jose,Libby,CFO,411-595-7582,410-779-5456,,JoseLibby@gmail.com,,www.RightMetals.com,www.twitter.com/RightMetals,4375 Green Pioneer Crossing,,Independence,25800
 2,44,Boost Limited,Arlie,Wenona,Owner,350-625-0374,607-202-3475,,ArlieWenona@gmail.com,,www.BoostLimited.com,www.twitter.com/BoostLimited,6283 Sleepy Elk Wood,,Indiantown,86023
 2,34,Evergreen Pipelines,Catarina,Fabiola,Chairman,556-872-6669,503-587-1633,,CatarinaFabiola@gmail.com,,www.EvergreenPipelines.com,www.twitter.com/EvergreenPipelines,4757 Cotton Barn Mountain,,Houston,28186
