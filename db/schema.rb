@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404040225) do
+ActiveRecord::Schema.define(version: 20180404174636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,16 @@ ActiveRecord::Schema.define(version: 20180404040225) do
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
+  create_table "order_lines", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_lines_on_order_id"
+    t.index ["product_id"], name: "index_order_lines_on_product_id"
+  end
+
   create_table "order_statuses", force: :cascade do |t|
     t.string "order_status_description", limit: 50
     t.datetime "created_at", null: false
@@ -122,6 +132,12 @@ ActiveRecord::Schema.define(version: 20180404040225) do
 
   create_table "payment_types", force: :cascade do |t|
     t.string "payment_type_description", limit: 50
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -170,6 +186,8 @@ ActiveRecord::Schema.define(version: 20180404040225) do
   add_foreign_key "customers", "customer_statuses"
   add_foreign_key "customers", "states"
   add_foreign_key "employees", "employee_statuses"
+  add_foreign_key "order_lines", "orders"
+  add_foreign_key "order_lines", "products"
   add_foreign_key "orders", "countries"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "employees"
