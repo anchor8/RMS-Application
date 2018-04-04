@@ -2,7 +2,10 @@
 <html>
   <head>
     <!-- Website Title -->
-    <title>D.A.T.A.</title>
+    <title>D.A.T.A. - <%= yield(:title) %></title>
+
+    <!-- favicon -->
+    <%= favicon_link_tag '/assets/tabLOGO.png' %>
 
     <!-- CSFG Meta Tags -->
     <%= csrf_meta_tags %>
@@ -13,12 +16,26 @@
 
     <!-- Javascript -->
     <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
   </head>
 
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
+    <!-- Navigation -->
+    <%= render partial: 'partials/navbar' %>
+
     <!-- Content -->
     <%= yield %>
+
+    <!-- Footer -->
+    <%= render partial: 'partials/footer' %>
+
+    <!-- Scroll to Top Button-->
+    <%= render partial: 'partials/scroll-to-top' %>
+
+    <!-- Logout Modal for logout button-->
+    <%= render partial: 'partials/modals/logout-modal' %>
 
   </body>
 </html>
