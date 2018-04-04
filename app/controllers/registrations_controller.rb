@@ -14,15 +14,19 @@ class RegistrationsController < Devise::RegistrationsController
     add_breadcrumb 'User Management', usermgmt_path
     add_breadcrumb 'Create New Employee'
 
-    build_resource
-    yield resource if block_given?
-    respond_with resource
+    if current_employee.admin?
+      build_resource
+      yield resource if block_given?
+      respond_with resource
+    else
+      redirect_to dashboard_path
+      flash[:notice] = "Not authorized"
+    end
 end
 
   # POST /resource
   def create
     build_resource(sign_up_params)
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
