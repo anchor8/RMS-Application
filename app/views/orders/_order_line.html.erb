@@ -1,0 +1,17 @@
+
+<tr>
+  <td>
+    <%= form.hidden_field :_destroy, as: :hidden %>
+    <%= link_to 'Remove Product', '#', class: 'remove_record btn btn-sm btn-outline-danger'%>
+  </td>
+  <td>
+    <%= form.collection_select(:product_id, Product.all, :id, :product_name, {prompt: true}, {required: true}) %>
+  </td>
+  <td>
+    <%= form.text_field :price, size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
+  </td>
+  <td>
+    <%= form.hidden_field :order_id, value: @order.id %>
+  </td>
+
+</tr>

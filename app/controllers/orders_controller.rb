@@ -116,6 +116,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code, order_lines_attributes: [:id, :order_id, :product_id, :price])
+      params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code, order_lines_attributes: OrderLine.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end

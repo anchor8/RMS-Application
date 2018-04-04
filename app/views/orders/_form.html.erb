@@ -46,26 +46,24 @@
             <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
           </div>
 
-          <div class="field mt-1">
-            <b><%= form.label :order_total %></b> <font color="red">*</font>
-            <%= form.text_field :order_total, :value => number_to_currency(order.order_total), size: "10", placeholder: '$123456.99', id: :order_order_total, required: true %>
-          </div>
-
-          <button class="btn btn-sm btn-primary" id="new-order-line">+</button>
-          <%= form.fields_for :order_lines do |order_line_form| %>
-            <div class="order_lines_fields">
-              <%= order_line_form.hidden_field :order_id, value: @order.id %>
-              <div class="field">
-                <%= order_line_form.label :product_id %>
-                <%= order_line_form.collection_select(:product_id, Product.all, :id, :product_name, {prompt: true}, {required: true}) %>
-
-                <%= order_line_form.label :price %>
-                <%= order_line_form.text_field :price, :value => number_to_currency(order.order_total), size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
-              </div>
+          <table class='table mt-4'>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody class="fields">
+              <%= form.fields_for :order_lines do |order_line_form| %>
+                <%= render 'order_line', form: order_line_form %>
+              <% end %>
             </div>
-          <% end %>
-
+          </table>
+          <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
         </div>
+
+
 
         <!-- Middle Column -->
         <div class="col-md-4">

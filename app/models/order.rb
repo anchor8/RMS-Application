@@ -9,13 +9,12 @@ class Order < ApplicationRecord
   belongs_to :shipper
   belongs_to :state
   has_many :order_lines, dependent: :destroy
-  accepts_nested_attributes_for :order_lines
+  accepts_nested_attributes_for :order_lines, allow_destroy: true, reject_if: :all_blank
 
   # Validations
   validates :order_date, allow_blank: false, presence: true, :timeliness => {:type => :date}
   validates :ship_date, allow_blank: true, presence: false, :timeliness => {:type => :date}
   validates :purchase_order_number, uniqueness: true
-  validates :order_total, allow_blank: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
   validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :street_address_1, allow_blank: false, presence: true
