@@ -37,7 +37,7 @@ end
       clean_up_passwords resource
       set_minimum_password_length
       flash[:notice] = flash[:notice].to_a.concat resource.errors.full_messages
-      redirect_to usermgmt_url
+      redirect_to new_employee_registration_path
     end
   end
 
