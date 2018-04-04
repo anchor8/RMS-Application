@@ -11,8 +11,8 @@ customer_status_id,state_id,company_name,customer_first_name,customer_last_name,
 2,2,Emirates,Jeana,Laquita,Salesman,852-660-2277,951-826-6177,,JeanaLaquita@gmail.com,,www.Emirates.com,www.twitter.com/Emirates,1395 Cinder Circuit,,Devine,64420
 2,21,Break Metals,Stacee,India,CTO,897-200-8041,175-446-7170,,StaceeIndia@gmail.com,,www.BreakMetals.com,www.twitter.com/BreakMetals,7832 Old River Knoll,,Independence,16474
 2,34,Inspired Metals,Lina,Lula,Vice President,764-986-5988,581-331-9771,,LinaLula@gmail.com,,www.InspiredMetals.com,www.twitter.com/InspiredMetals,7286 Easy Fox Bay,,Victoria,93206
-2,34,Virtuoso Pipelines,Linnea,Brendan,CEO,179-145-3240,627-362-1187,,LinneaBrendan@gmail.com,,www.VirtuosoPipelines.com,www.twitter.com/VirtuosoPipelines,9170 Honey Mountain Jetty,,Houston,46849
-2,34,Southwest Airlines,Anjanette,Rod,Chairman,224-774-0422,204-734-6101,,AnjanetteRod@gmail.com,,www.SouthwestAirlines.com,www.twitter.com/SouthwestAirlines,8830 Bright Mews,,Arlington,15449
+2,42,Virtuoso Pipelines,Linnea,Brendan,CEO,179-145-3240,627-362-1187,,LinneaBrendan@gmail.com,,www.VirtuosoPipelines.com,www.twitter.com/VirtuosoPipelines,9170 Honey Mountain Jetty,,Philadelphia,46849
+2,42,Southwest Airlines,Anjanette,Rod,Chairman,224-774-0422,204-734-6101,,AnjanetteRod@gmail.com,,www.SouthwestAirlines.com,www.twitter.com/SouthwestAirlines,8830 Bright Mews,,Pittsburgh,15449
 2,32,Limited Evolving,Amal,Dionne,CTO,270-481-6995,968-930-4178,,AmalDionne@gmail.com,,www.LimitedEvolving.com,www.twitter.com/LimitedEvolving,6929 Foggy Embers Field,,New Orleans,27214
 2,34,Bug Inc,Crystal,Bev,Manager,261-571-0516,993-865-5825,,CrystalBev@gmail.com,,www.BugInc.com,www.twitter.com/BugInc,9015 Red Anchor Round,,San Antonio,18004
 2,21,Invictus Inc,Janeen,Taina,Co Founder,256-471-8739,491-532-2117,,JaneenTaina@gmail.com,,www.InvictusInc.com,www.twitter.com/InvictusInc,6752 Burning Downs,,Independence,74372
@@ -28,12 +28,12 @@ customer_status_id,state_id,company_name,customer_first_name,customer_last_name,
 2,32,Pipelines Seek,Bruno,Kala,Executive,469-234-1526,107-583-8803,,BrunoKala@gmail.com,,www.PipelinesSeek.com,www.twitter.com/PipelinesSeek,7590 Middle Log Way,,New Orleans,74351
 2,34,Aware Pipelines,Berna,Gema,Manager,660-812-8185,358-276-7191,,BernaGema@gmail.com,,www.AwarePipelines.com,www.twitter.com/AwarePipelines,3983 Noble Byway,,Victoria,60941
 2,21,Mindset Inc,Abdul,Walker,Chairman,438-232-4874,828-129-0177,,AbdulWalker@gmail.com,,www.MindsetInc.com,www.twitter.com/MindsetInc,6875 Silent Glen,,Independence,82750
-2,34,Maze Limited,Bonny,Margie,Salesman,913-856-5767,624-487-3226,,BonnyMargie@gmail.com,,www.MazeLimited.com,www.twitter.com/MazeLimited,5466 Quiet Creek Vista,,Arlington,75371
-2,34,Evolving Limited,Floretta,Dorcas,CFO,220-901-2605,528-457-6404,,FlorettaDorcas@gmail.com,,www.EvolvingLimited.com,www.twitter.com/EvolvingLimited,7682 Heather Robin Point,,Arlington,85099
+2,6,Maze Limited,Bonny,Margie,Salesman,913-856-5767,624-487-3226,,BonnyMargie@gmail.com,,www.MazeLimited.com,www.twitter.com/MazeLimited,5466 Quiet Creek Vista,,Albuquerque,75371
+2,6,Evolving Limited,Floretta,Dorcas,CFO,220-901-2605,528-457-6404,,FlorettaDorcas@gmail.com,,www.EvolvingLimited.com,www.twitter.com/EvolvingLimited,7682 Heather Robin Point,,Santa Fe,85099
 2,44,Consult Pipelines,Florentino,Sena,Founder,246-170-9104,910-838-1726,,FlorentinoSena@gmail.com,,www.ConsultPipelines.com,www.twitter.com/ConsultPipelines,7856 Sleepy Vale,,Orlando,45400
 2,34,Triple Limited,Marni,Delinda,Co Founder,290-143-5647,951-675-5323,,MarniDelinda@gmail.com,,www.TripleLimited.com,www.twitter.com/TripleLimited,6637 Jagged Lane,,San Antonio,75224
-2,34,Champion Metals,Abdul,Katharyn,Owner,386-783-9318,887-755-1613,,AbdulKatharyn@gmail.com,,www.ChampionMetals.com,www.twitter.com/ChampionMetals,9715 Velvet Lagoon Field,,Houston,75371
-2,34,Abundant Pipelines,Dudley,Migdalia,CFO,432-563-0075,547-724-9300,,DudleyMigdalia@gmail.com,,www.AbundantPipelines.com,www.twitter.com/AbundantPipelines,6498 Emerald Rise Crest,,Houston,61119
+2,6,Champion Metals,Abdul,Katharyn,Owner,386-783-9318,887-755-1613,,AbdulKatharyn@gmail.com,,www.ChampionMetals.com,www.twitter.com/ChampionMetals,9715 Velvet Lagoon Field,,Houston,75371
+2,34,Abundant Pipelines,Dudley,Migdalia,CFO,432-563-0075,547-724-9300,,DudleyMigdalia@gmail.com,,www.AbundantPipelines.com,www.twitter.com/AbundantPipelines,6498 Emerald Rise Crest,,Santa Fe,61119
 2,32,Original Limited,Shelton,Lelah,Manager,653-835-5523,160-551-2582,,SheltonLelah@gmail.com,,www.OriginalLimited.com,www.twitter.com/OriginalLimited,5863 Pleasant Centre,,Delhi,14624
 2,34,Project Pipelines,Rufus,Lynetta,CTO,498-312-1684,722-212-7344,,RufusLynetta@gmail.com,,www.ProjectPipelines.com,www.twitter.com/ProjectPipelines,797 Foggy Oak Edge,,Arlington,27453
 2,34,Print Inc,Myrtie,Tonisha,CTO,899-600-3751,681-802-3095,,MyrtieTonisha@gmail.com,,www.PrintInc.com,www.twitter.com/PrintInc,1563 Indian Island,,Houston,46850
@@ -53,8 +53,8 @@ customer_status_id,state_id,company_name,customer_first_name,customer_last_name,
 2,32,Article Metals,Delorse,Karmen,Chairman,904-872-7250,992-355-2730,,DelorseKarmen@gmail.com,,www.ArticleMetals.com,www.twitter.com/ArticleMetals,1725 Tawny Walk,,West Monore,75050
 2,32,Peter Piper Inc,Peter,Piper,President,712-593-8090,887-755-1613,,PeterPiper@gmail.com,,www.peterpiperco.com,www.twitter.com/PeterPiperInc,6002 Grand Fawn Ridge,,West Monore,25800
 2,32,Carnival Limited,Jaquelyn,Ruthie,Co Founder,954-311-5638,964-836-2041,,JaquelynRuthie@gmail.com,,www.CarnivalLimited.com,www.twitter.com/CarnivalLimited,4239 Crystal Court,,Delhi,64420
-2,34,NorthPoint Inc,Aurea,Krystina,Executive,919-970-0213,536-605-8189,,AureaKrystina@gmail.com,,www.NorthPointInc.com,www.twitter.com/NorthPointInc,9524 Little Hill,,Houston,85723
-2,34,Individual Metals,Madeline,Milagro,Manager,381-590-2875,604-268-3673,,MadelineMilagro@gmail.com,,www.IndividualMetals.com,www.twitter.com/IndividualMetals,2295 Fallen Bluff Path,,Gulfdale,85512
+2,42,NorthPoint Inc,Aurea,Krystina,Executive,919-970-0213,536-605-8189,,AureaKrystina@gmail.com,,www.NorthPointInc.com,www.twitter.com/NorthPointInc,9524 Little Hill,,Allentown,85723
+2,42,Individual Metals,Madeline,Milagro,Manager,381-590-2875,604-268-3673,,MadelineMilagro@gmail.com,,www.IndividualMetals.com,www.twitter.com/IndividualMetals,2295 Fallen Bluff Path,,Erie,85512
 2,32,Orchestra Metals,Vince,Vinnie,CTO,491-620-5014,846-667-4292,,VinceVinnie@gmail.com,,www.OrchestraMetals.com,www.twitter.com/OrchestraMetals,841 Dusty Isle,,New Orleans,43641
 2,32,Tec Limited,Nada,Willette,CEO,217-542-3251,930-966-4272,,NadaWillette@gmail.com,,www.TecLimited.com,www.twitter.com/TecLimited,1900 High Stead,,Delhi,85512
 2,34,Stage Inc,Kelvin,George,CEO,958-524-2388,336-963-5132,,KelvinGeorge@gmail.com,,www.StageInc.com,www.twitter.com/StageInc,5250 Misty Rise Place,,Huntsville,14624
@@ -67,8 +67,8 @@ customer_status_id,state_id,company_name,customer_first_name,customer_last_name,
 2,32,Terrain Metals,Deana,Troy,Executive,977-238-5851,525-102-4494,,DeanaTroy@gmail.com,,www.TerrainMetals.com,www.twitter.com/TerrainMetals,4673 Jagged Pointe,,West Monore,18004
 2,32,Messenger Limited,Dot,Alisia,Vice President,295-883-0178,348-513-6388,,DotAlisia@gmail.com,,www.MessengerLimited.com,www.twitter.com/MessengerLimited,2868 Middle Chase,,West Monore,38596
 2,34,Guardian Limited,Ligia,John,Salesman,680-810-0199,742-744-2138,,LigiaJohn@gmail.com,,www.GuardianLimited.com,www.twitter.com/GuardianLimited,3088 Emerald Butterfly Villas,,Gulfdale,46850
-2,34,Ovation Pipelines,Stephani,Josue,CEO,609-748-1196,557-158-8895,,StephaniJosue@gmail.com,,www.OvationPipelines.com,www.twitter.com/OvationPipelines,5759 Hidden Turnabout,,Houston,16474
-2,34,Fund Pipelines,Maureen,Ahmad,President,165-300-3743,392-946-0596,,MaureenAhmad@gmail.com,,www.FundPipelines.com,www.twitter.com/FundPipelines,6311 Gentle Shadow Ledge,,Houston,74372
+2,51,Ovation Pipelines,Stephani,Josue,CEO,609-748-1196,557-158-8895,,StephaniJosue@gmail.com,,www.OvationPipelines.com,www.twitter.com/OvationPipelines,5759 Hidden Turnabout,,Chareleston,16474
+2,51,Fund Pipelines,Maureen,Ahmad,President,165-300-3743,392-946-0596,,MaureenAhmad@gmail.com,,www.FundPipelines.com,www.twitter.com/FundPipelines,6311 Gentle Shadow Ledge,,Huntington,74372
 2,34,Northern Metals,Saul,Renita,Salesman,163-137-8590,731-112-6096,,SaulRenita@gmail.com,,www.NorthernMetals.com,www.twitter.com/NorthernMetals,9660 Rustic Treasure Nook,,Huntsville,65336
 2,32,orama Inc,Darcy,Nakesha,CEO,975-543-1688,141-187-7827,,DarcyNakesha@gmail.com,,www.oramaInc.com,www.twitter.com/oramaInc,405 Iron Pond Glade,,Delhi,37656
 2,32,SouthCoast Limited,Porter,Georgeann,Founder,788-678-7126,381-590-2875,,PorterGeorgeann@gmail.com,,www.SouthCoastLimited.com,www.twitter.com/SouthCoastLimited,7354 Harvest Mall ,,West Monore,15449
