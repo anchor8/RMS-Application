@@ -63,22 +63,22 @@
         <div class="col-md-6">
 
           <!-- Import State Data -->
-          <div class="mt-2 mb-2">
-            <%= form_tag import_states_path, multipart: true do %>
-              <%= label_tag 'States:', nil, class: 'h5 pr-22' %>
-              <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-            <% end %>
-          </div>
+          <!-- <div class="mt-2 mb-2">
+            form_tag import_states_path, multipart: true do %>
+              label_tag 'States:', nil, class: 'h5 pr-22'
+              file_field_tag :file %>
+              submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4'
+            end
+          </div> -->
 
           <!-- Import Country Data -->
-          <div class="mt-2 mb-2">
-            <%= form_tag import_countries_path, multipart: true do %>
-              <%= label_tag 'Countries:', nil, class: 'h5 pr-1' %>
-              <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
-            <% end %>
-          </div>
+          <!-- <div class="mt-2 mb-2">
+            form_tag import_countries_path, multipart: true do
+              label_tag 'Countries:', nil, class: 'h5 pr-1'
+              file_field_tag :file %>
+              submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4'
+            end
+          </div> -->
 
         </div>
 
