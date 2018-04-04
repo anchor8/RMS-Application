@@ -25,27 +25,27 @@
         <div class="col-md-4">
 
           <div class="field">
-            <%= form.label "Customer Name" %> *
+            <b><%= form.label "Customer Name" %></b> *
             <%= form.collection_select :customer_id, Customer.all, :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :employee_id %> *
+            <b><%= form.label :employee_id %></b> *
             <%= form.collection_select(:employee_id, Employee.all, :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :vendor_id %> *
+            <b><%= form.label :vendor_id %></b> *
             <%= form.collection_select(:vendor_id, Vendor.all, :id, :vendor_name, {prompt: true}, {required: true}) %>
           </div>
 
           <div class="field mt-5">
-            <%= form.label :payment_type_id %> *
+            <b><%= form.label :payment_type_id %></b> *
             <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :order_total %> *
+            <b><%= form.label :order_total %></b> *
             <%= form.text_field :order_total, :value => number_to_currency(order.order_total), size: "10", placeholder: '123456.99', id: :order_order_total, required: true %>
           </div>
 
@@ -55,22 +55,22 @@
         <div class="col-md-4">
 
           <div class="field">
-            <%= form.label "Shipping Status" %> *
+            <b><%= form.label "Shipping Status" %></b> *
             <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true}) %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :shipping_number %>
+            <b><%= form.label :shipping_number %></b>
             <%= form.number_field :shipping_number, :size => '10', placeholder: '123456789012345', id: :order_shipping_number %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :shipper_id %>
+            <b><%= form.label :shipper_id %></b>
             <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {:selected => @order.shipper_id}) %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :ship_date %>
+            <b><%= form.label :ship_date %></b>
             <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, start_year: 2000 %>
           </div>
 
@@ -80,32 +80,32 @@
         <div class="col-md-4">
 
           <div class="field">
-            <%= form.label :street_address_1 %> *
+            <b><%= form.label :street_address_1 %></b> *
             <%= form.text_field :street_address_1, size: "25", placeholder: '123 Street Address Rd. Bldg. 12', id: :order_street_address_1, required: true %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :street_address_2 %>
+            <b><%= form.label :street_address_2 %></b>
             <%= form.text_field :street_address_2, placeholder: '123 Street Address Rd. Bldg. 12', size: "25", id: :order_street_address_2 %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label "Country" %> *
+            <b><%= form.label "Country" %></b> *
             <%= form.collection_select :country_id, Country.all, :id, :country_name, { required: true, :selected => @order.country_id } %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label "State" %> *
+            <b><%= form.label "State" %></b> *
             <%= form.collection_select :state_id, State.all, :id, :state_name, {prompt: true}, { required: true, :selected => @order.state_id } %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :city %> *
+            <b><%= form.label :city %></b> *
             <%= form.text_field :city, size: "15", placeholder: 'Houston', id: :order_city, required: true %>
           </div>
 
           <div class="field mt-1">
-            <%= form.label :zip_code %> *
+            <b><%= form.label :zip_code %></b> *
             <%= form.text_field :zip_code, size: "10", placeholder: '77777-8888', id: :order_zip_code, required: true %>
           </div>
 
