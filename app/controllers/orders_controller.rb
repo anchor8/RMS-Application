@@ -47,8 +47,6 @@ class OrdersController < ApplicationController
     # Breadcrumbs for edit order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Edit Order'
-
-    @order.order_lines.build
   end
 
   # POST /orders
