@@ -310,6 +310,7 @@ ALTER SEQUENCE orders_id_seq OWNED BY orders.id;
 --
 
 CREATE SEQUENCE orders_purchase_order_number_seq
+    AS integer
     START WITH 101
     INCREMENT BY 1
     NO MINVALUE
