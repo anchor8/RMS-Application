@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
   # Relationships
   belongs_to :state
+  belongs_to :customer_status
   has_many :orders
 
   # Validations
@@ -27,9 +28,11 @@ class Customer < ApplicationRecord
     if !deleted_at
       # Deleted at doesn't exist
       update_attribute(:deleted_at, Time.current)
+      update_attribute(:customer_status_id, 1)
     else
       # Deleted at exists
       update_attribute(:deleted_at, nil)
+      update_attribute(:customer_status_id, 2)
     end
   end
 

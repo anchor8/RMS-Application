@@ -165,12 +165,24 @@ csv.each do |row|
 end
 puts ''
 
+#### customer status ####
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'customer_statuses.csv'))
+csv = CSV.parse(csv_text, headers: true)
+csv.each do |row|
+  t = CustomerStatus.new
+  t.customer_status_description = row['customer_status_description']
+  t.save!
+  puts "Customer Status, #{t.customer_status_description} saved"
+end
+puts ''
+
 #### customer data ####
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'customers.csv'))
 csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = Customer.new
+  t.customer_status_id = row['customer_status_id']
   t.state_id = row['state_id']
   t.company_name = row['company_name']
   t.customer_first_name = row['customer_first_name']

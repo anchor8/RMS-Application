@@ -32,7 +32,12 @@
         <%= form.text_field :customer_last_name, :size => '15', required: true, placeholder: 'Smith', id: :customer_customer_last_name %>
       </div>
 
-      <div class="field">
+      <div class="field mt-4">
+        <%= form.label :customer_status_id %> *
+        <%= form.collection_select :customer_status_id, CustomerStatus.all, :id, :customer_status_description, {prompt: true}, {required: true} %>
+      </div>
+
+      <div class="field mt-4">
         <%= form.label :Email  %> *
         <%= form.text_field :customer_email, :size => '25', type: 'email', required: true, placeholder: 'email@provider.com', id: :customer_customer_email %>
       </div>
@@ -57,9 +62,14 @@
         <%= form.text_field :fax, :size => '15', placeholder: '+1-123-123-1234', id: :customer_fax %>
       </div>
 
+    </div>
+
+    <!-- Right column -->
+    <div class="col-md-6">
+
       <div class="field">
         <%= form.label :company_name %> *
-        <%= form.text_field :company_name, :size => '25', placeholder: 'Company Name', id: :customer_company_name %>
+        <%= form.text_field :company_name, :size => '25', placeholder: 'Company Name', id: :customer_company_name, required: true %>
       </div>
 
       <div class="field">
@@ -69,7 +79,7 @@
 
       <div class="field">
         <%= form.label :job_title %> *
-        <%= form.text_field :job_title, :size => '20', placeholder: 'Products Manager', id: :customer_job_title %>
+        <%= form.text_field :job_title, :size => '20', placeholder: 'Products Manager', id: :customer_job_title, required: true %>
       </div>
 
       <div class="field">
@@ -77,12 +87,7 @@
         <%= form.text_field :social_media_address, :size => '25', placeholder: 'www.website.com/user', id: :customer_social_media_address %>
       </div>
 
-    </div>
-
-    <!-- Right column -->
-    <div class="col-md-6">
-
-      <div class="field">
+      <div class="field mt-4">
         <%= form.label :street_address_1 %> *
         <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: '1234 Street Address Rd. Bldg. 12', id: :customer_street_address_1 %>
       </div>
@@ -94,7 +99,7 @@
 
       <div class="field">
         <%= form.label :state_id %> *
-        <%= form.collection_select :state_id, State.order(:state_name), :id, :state_name, prompt: true %>
+        <%= form.collection_select :state_id, State.order(:state_name), :id, :state_name, {prompt: true}, {required: true} %>
       </div>
 
       <div class="field">

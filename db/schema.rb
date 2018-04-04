@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402220323) do
+ActiveRecord::Schema.define(version: 20180404003005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
     t.string "country_name", limit: 100
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customer_statuses", force: :cascade do |t|
+    t.string "customer_status_description", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180402220323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.bigint "customer_status_id"
+    t.index ["customer_status_id"], name: "index_customers_on_customer_status_id"
     t.index ["state_id"], name: "index_customers_on_state_id"
   end
 
@@ -158,6 +166,7 @@ ActiveRecord::Schema.define(version: 20180402220323) do
     t.index ["vendor_status_id"], name: "index_vendors_on_vendor_status_id"
   end
 
+  add_foreign_key "customers", "customer_statuses"
   add_foreign_key "customers", "states"
   add_foreign_key "employees", "employee_statuses"
   add_foreign_key "orders", "countries"

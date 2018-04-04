@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer status description:</strong>
+  <%= @customer_status.customer_status_description %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customer_status.customer %>
+</p>
+
+<%= link_to 'Edit', edit_customer_status_path(@customer_status) %> |
+<%= link_to 'Back', customer_statuses_path %>

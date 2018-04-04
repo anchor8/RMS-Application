@@ -87,13 +87,13 @@
                  data-column="2"
                  href="">Edit</a>
 
-              <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
+              <a class="toggle-vis customer-info customer-contact btn btn-outline-primary btn-sm mb-1"
                  type="button"
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="3"
-                 href="">First</a>
+                 href="">Status</a>
 
               <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -101,6 +101,14 @@
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="4"
+                 href="">First</a>
+
+              <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="5"
                  href="">Last</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -108,7 +116,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="5"
+                 data-column="6"
                  href="">Company</a>
 
               <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
@@ -116,7 +124,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="6"
+                 data-column="7"
                  href="">Job</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -124,7 +132,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="7"
+                 data-column="8"
                  href="">Work</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -132,7 +140,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="8"
+                 data-column="9"
                  href="">Mobile</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -140,7 +148,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="9"
+                 data-column="10"
                  href="">Fax</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -148,7 +156,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="10"
+                 data-column="11"
                  href="">Email</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -156,7 +164,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="11"
+                 data-column="12"
                  href="">CC Email</a>
 
               <a class="toggle-vis customer-contact btn btn-outline-primary btn-sm mb-1"
@@ -164,7 +172,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="12"
+                 data-column="13"
                  href="">Website</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -172,7 +180,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="13"
+                 data-column="14"
                  href="">Social Media</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -180,7 +188,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="14"
+                 data-column="15"
                  href="">Address 1</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -188,7 +196,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="15"
+                 data-column="16"
                  href="">Address 2</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -196,7 +204,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="16"
+                 data-column="17"
                  href="">State</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -204,7 +212,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="17"
+                 data-column="18"
                  href="">City</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
@@ -212,7 +220,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="18"
+                 data-column="19"
                  href="">Zip</a>
 
             </div>
@@ -266,6 +274,7 @@
               <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
+              <th class="text-center">Status</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Company</th>
@@ -295,6 +304,7 @@
               <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
+              <th class="text-center">Status</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Company</th>
@@ -368,6 +378,7 @@
                             :method => :get,
                             :class => 'btn btn-outline-success btn-sm' %></td>
 
+                      <td class="text-left-align"><%= customer.customer_status.customer_status_description %></td>
                       <td class="text-left-align"><%= customer.customer_first_name %></td>
                       <td class="text-left-align"><%= customer.customer_last_name %></td>
                       <td class="text-left-align"><%= customer.company_name %></td>
@@ -430,7 +441,7 @@
         $('a.show-all-col').on( 'click', function (e) {
 
           // Set all columns to visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
+          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( true, false );
 
           // adjust column sizing and redraw
           table.columns.adjust().draw( false );
@@ -447,7 +458,7 @@
         $('a.hide-all-col').on( 'click', function (e) {
 
           // Set all columns to not visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( false, false );
+          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( false, false );
 
           // adjust column sizing and redraw
           table.columns.adjust().draw( false );
@@ -464,10 +475,10 @@
         $('a.show-contact').on( 'click', function (e) {
 
           // Set all columns to visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
+          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( true, false );
 
           // Set columns that are not contact info to not visible
-          table.columns( [ 0, 1, 2, 5, 13, 14, 15, 16, 17 ] ).visible( false, false );
+          table.columns( [ 0, 1, 2, 6, 14, 15, 16, 17, 18, 19 ] ).visible( false, false );
 
           // adjust column sizing and redraw
           table.columns.adjust().draw( false );
@@ -487,7 +498,7 @@
           table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
 
           // Set columns that are not customer info to not visible
-          table.columns( [ 0, 1, 2, 7, 8, 9, 10, 11, 12 ] ).visible( false, false );
+          table.columns( [ 0, 1, 2, 8, 9, 10, 11, 12, 13 ] ).visible( false, false );
 
           // adjust column sizing and redraw
           table.columns.adjust().draw( false );

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :employees, controllers: { registrations: 'registrations' }
 
   # Resources
+  resources :customer_statuses
   resources :employees
   resources :orders do collection { post :import } end
   resources :customers do collection { post :import } end
