@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :order_statuses
   resources :vendor_statuses
   resources :states do collection { post :import } end
+  resources :order_lines
+  resources :products
 
   # Namespaces
   namespace :admin do
