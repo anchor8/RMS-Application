@@ -64,6 +64,4 @@ Rails.application.configure do
                                           password: 'Controls1!',
                                           authentication: :plain,
                                           enable_starttls_auto: true }
-
-  config.active_record.schema_format = :sql 
 end
