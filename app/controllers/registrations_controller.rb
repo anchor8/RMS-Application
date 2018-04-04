@@ -6,6 +6,17 @@ class RegistrationsController < Devise::RegistrationsController
   # No authentication needed
   skip_before_action :require_no_authentication
 
+  # GET /resource/sign_up
+  def new
+    # Breadcrumbs
+    add_breadcrumb 'User Management', usermgmt_path
+    add_breadcrumb 'Create New Employee'
+
+    build_resource
+    yield resource if block_given?
+    respond_with resource
+end
+
   # POST /resource
   def create
     build_resource(sign_up_params)
