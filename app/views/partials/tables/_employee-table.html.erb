@@ -185,12 +185,10 @@
       <div class="btn-right">
 
         <!-- Add Employee Button -->
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-toggle="modal"
-                data-target="#add-employee-modal">
-                Add New Employee
-        </button>
+        <%= button_to 'Create New Employee',
+            new_employee_registration_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %>
 
       </div>
 
