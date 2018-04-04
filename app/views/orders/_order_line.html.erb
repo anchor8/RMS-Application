@@ -8,7 +8,7 @@
     <%= form.collection_select(:product_id, Product.all, :id, :product_name, {prompt: true}, {required: true}) %>
   </td>
   <td>
-    <%= form.text_field :price, value: number_to_currency(form.object.price.to_f, delimiter: '', unit: '$'), size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
+    <%= form.text_field :price, size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
   </td>
   <td>
     <%= form.hidden_field :order_id, value: @order.id %>
