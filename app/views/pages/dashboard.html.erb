@@ -92,7 +92,7 @@
             </div>
             <div class="card-body">
               <%= geo_chart Customer.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                            library: { region: "US", resolution: "provinces" }%>
+                            library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
             </div>
             <div class="card-footer small text-muted"></div>
           </div>
@@ -108,7 +108,7 @@
             </div>
             <div class="card-body">
               <%= geo_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                            library: { region: "US", resolution: "provinces" }%>
+                            library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
             </div>
             <div class="card-footer small text-muted"></div>
           </div>
