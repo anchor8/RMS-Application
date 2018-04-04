@@ -254,5 +254,5 @@ csv.each do |row|
   t.city = row['city']
   t.zip_code = row['zip_code']
   t.save!
-  puts "Order, #{t.purchase_order_number} saved"
+  puts "Order, for #{t.vendor_id} #{t.customer_id} and  saved"
 end

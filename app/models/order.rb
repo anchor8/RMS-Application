@@ -12,7 +12,7 @@ class Order < ApplicationRecord
   # Validations
   validates :order_date, allow_blank: false, presence: true, :timeliness => {:type => :date}
   validates :ship_date, allow_blank: true, presence: false, :timeliness => {:type => :date}
-  validates :purchase_order_number, allow_blank: false, presence: true, format: { with: /\A^[0-9]*\z/, message: "Only numbers for purchase order number allowed"}
+  validates :purchase_order_number, uniqueness: true
   validates :order_total, allow_blank: false, presence: true, format: { with: /\A^\d{1,20}(\.\d{0,2})?$\z/, message: "Order total must be only digits and 2 precision, example: ( 11111.11 ) "}
   validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
