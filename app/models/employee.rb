@@ -64,7 +64,7 @@ class Employee < ApplicationRecord
 
   # Format employee first and last name
   def formatted_name
-    "#{fname} #{lname}"
+    "#{lname}, #{fname}"
   end
 
   private

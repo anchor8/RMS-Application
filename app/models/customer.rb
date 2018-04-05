@@ -52,7 +52,7 @@ class Customer < ApplicationRecord
 
   # Format customer first and last name
   def formatted_name
-    "#{customer_first_name} #{customer_last_name}"
+    "#{customer_last_name}, #{customer_first_name}"
   end
 
   private
