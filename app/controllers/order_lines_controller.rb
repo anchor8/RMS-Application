@@ -28,7 +28,7 @@ class OrderLinesController < ApplicationController
 
     respond_to do |format|
       if @order_line.save
-        format.html { redirect_to @order_line, notice: 'Order line was successfully created.' }
+        format.html { redirect_to @order_line, notice: 'Order line was successfully added.' }
         format.json { render :show, status: :created, location: @order_line }
       else
         format.html { render :new }
