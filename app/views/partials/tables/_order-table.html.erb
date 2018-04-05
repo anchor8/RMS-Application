@@ -265,8 +265,8 @@
                           :method => :get,
                           :class => 'btn btn-outline-success btn-sm' %></td>
 
-                    <td class="text-center"><%= best_in_place order, :purchase_order_number %></td>
-                    <td class="text-left-align"><%= best_in_place order, :order_date %></td>
+                    <td class="text-center"><%= order.purchase_order_number %></td>
+                    <td class="text-left-align"><%= order.order_date %></td>
                     <td class="text-left-align"><%= order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.customer.customer_first_name + " " + order.customer.customer_last_name %></td>
