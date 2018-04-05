@@ -201,7 +201,7 @@
             <tr>
 
               <th class="text-center"><font color="gray">Toggle</font></th>
-              <th class="text-center">PO No.</th>
+              <th class="text-center"><font color="gray">PO No.</font></th>
               <th class="text-center"><font color="gray">Company (To)</font></th>
               <th class="text-center"><font color="gray">Vendor</font></th>
               <th class="text-center"><font color="gray">Status</font></th>
@@ -225,7 +225,7 @@
             <tr>
 
               <th class="text-center"><font color="gray">Toggle</font></th>
-              <th class="text-center">PO No.</th>
+              <th class="text-center"><font color="gray">PO No.</font></th>
               <th class="text-center"><font color="gray">Company (To)</font></th>
               <th class="text-center"><font color="gray">Vendor</font></th>
               <th class="text-center"><font color="gray">Status</font></th>
@@ -267,7 +267,7 @@
                             :method => :put,
                             :class => 'btn btn-outline-primary btn-sm' %></td>
                       <% end %>
-                    <td class="text-left-align"><%= best_in_place order, :purchase_order_number %></td>
+                    <td class="text-left-align"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.vendor.vendor_name %></td>
                     <td class="text-center"><%= order.order_status.order_status_description %></td>

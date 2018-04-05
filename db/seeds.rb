@@ -238,7 +238,7 @@ csv.each do |row|
   t = Product.new
   t.product_name = row['product_name']
   t.save!
-  puts "Product Name, #{t.product_name} saved"
+  puts "Product, #{t.product_name} saved"
 end
 puts ''
 
@@ -259,11 +259,6 @@ csv.each do |row|
   t.purchase_order_number = row['purchase_order_number']
   t.order_date = row['order_date']
   t.ship_date = row['ship_date']
-  t.order_total = row['order_total']
-  t.street_address_1 = row['street_address_1']
-  t.street_address_2 = row['street_address_2']
-  t.city = row['city']
-  t.zip_code = row['zip_code']
   t.save!
   puts "Order, for #{t.vendor_id} and #{t.customer_id} saved"
 end
