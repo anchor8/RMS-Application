@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405175142) do
+ActiveRecord::Schema.define(version: 20180405224415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180405175142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
-    t.bigint "customer_status_id"
+    t.integer "customer_status_id", default: 2
     t.index ["customer_status_id"], name: "index_customers_on_customer_status_id"
     t.index ["state_id"], name: "index_customers_on_state_id"
   end
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20180405175142) do
     t.string "fname", limit: 50
     t.string "lname", limit: 50
     t.string "phone", limit: 26
-    t.integer "employee_status_id", default: 1
+    t.integer "employee_status_id", default: 2
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["employee_status_id"], name: "index_employees_on_employee_status_id"
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
@@ -100,12 +100,12 @@ ActiveRecord::Schema.define(version: 20180405175142) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "vendor_id"
-    t.bigint "order_status_id"
+    t.integer "order_status_id", default: 1
     t.bigint "customer_id"
     t.bigint "country_id"
     t.bigint "employee_id"
-    t.bigint "payment_type_id"
-    t.bigint "shipper_id"
+    t.integer "payment_type_id", default: 2
+    t.integer "shipper_id", default: 5
     t.bigint "state_id"
     t.string "shipping_number", limit: 15
     t.serial "purchase_order_number", null: false
@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 20180405175142) do
 
   create_table "vendors", force: :cascade do |t|
     t.bigint "state_id"
-    t.bigint "vendor_status_id"
+    t.integer "vendor_status_id", default: 3
     t.string "vendor_name"
     t.string "contact_name", limit: 100
     t.string "job_title", limit: 50
