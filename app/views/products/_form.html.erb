@@ -6,13 +6,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Product name: " %>
-    <%= form.text_field :product_name, value: @product.product_name, size: 41, id: :product_product_name, required: true %>
+  <div class="row">
+
+      <div class="field ml-3">
+        <%= form.label "Product name: " %>
+        <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Add Product", class: "btn btn-primary btn-sm ml-4"%>
+      </div>
+
   </div>
 
-  <div class="actions row">
-    <%= form.submit "Add Product", class: "btn btn-primary btn-sm btn-block ml-5 mt-3"%>
-  </div>
 
 <% end %>

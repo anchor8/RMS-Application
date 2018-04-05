@@ -12,18 +12,17 @@
 
       </div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-6 mt-4">
-            <div class="mb-5 pb-5">
-              <!-- New Product form -->
-              <%= render 'form', product: @product %>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <!-- Product Table-->
-            <%= render partial: 'partials/tables/product-table' %>
-          </div>
+
+        <div>
+          <!-- New Product form -->
+          <%= render 'form', product: @product %>
         </div>
+
+        <div class="mt-3">
+          <!-- Product Table-->
+          <%= render partial: 'partials/tables/product-table' %>
+        </div>
+
       </div>
       <div class="card-footer">
 
