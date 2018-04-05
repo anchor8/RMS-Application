@@ -1,5 +1,23 @@
-<h1>New Product</h1>
+<% content_for :title, "Create New Product" %>
 
-<%= render 'form', product: @product %>
+<div class="content-wrapper">
 
-<%= link_to 'Back', products_path %>
+  <div class="container-fluid">
+
+    <!-- Bread Crumbs -->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <div class="row">
+      <div class="col-md-6 mt-4">
+        <!-- Product form -->
+        <%= render 'form', product: @product %>
+      </div>
+      <div class="col-md-6">
+        <!-- Product Table-->
+        <%= render partial: 'partials/tables/product-table' %>
+      </div>
+    </div>
+
+  </div>
+
+</div>

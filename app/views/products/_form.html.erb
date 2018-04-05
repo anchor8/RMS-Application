@@ -1,22 +1,18 @@
 <%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <!-- Notice Banner -->
+  <% if notice %>
+    <div class='h5 strong text-center mark'>
+      <%= flash[:notice] %>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :product_name %>
-    <%= form.text_field :product_name, id: :product_product_name %>
+    <%= form.text_field :product_name, size: 40, id: :product_product_name, required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions row">
+    <%= form.submit "Add Product", class: "btn btn-primary btn-sm btn-block ml-5 pl-5 pr-5 mt-3"%>
   </div>
+
 <% end %>

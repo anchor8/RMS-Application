@@ -3,8 +3,8 @@ class OrderLine < ApplicationRecord
   belongs_to :order, optional: true
 
   after_save :calculate_order_total_save
-
   after_update :calculate_order_total_update
+
 
   private
 
