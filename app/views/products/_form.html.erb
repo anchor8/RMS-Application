@@ -7,12 +7,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :product_name %>
-    <%= form.text_field :product_name, size: 40, id: :product_product_name, required: true %>
+    <%= form.label "Product name: " %>
+    <%= form.text_field :product_name, value: @product.product_name, size: 41, id: :product_product_name, required: true %>
   </div>
 
   <div class="actions row">
-    <%= form.submit "Add Product", class: "btn btn-primary btn-sm btn-block ml-5 pl-5 pr-5 mt-3"%>
+    <%= form.submit "Add Product", class: "btn btn-primary btn-sm btn-block ml-5 mt-3"%>
   </div>
 
 <% end %>

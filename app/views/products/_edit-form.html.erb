@@ -1,0 +1,36 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <!-- Notice Banner -->
+  <% if notice %>
+    <div class='h5 strong text-center mark'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.collection_select :product_name, Product.all, :id, :product_name, {prompt: true}, { required: true, id: "products" } %>
+  </div>
+
+  <div class="field">
+    <%= form.label "New Product Name: "%>
+    <%= form.text_field :product_name, size: 36, id: :product_product_name, required: true, id: "product_name"%>
+  </div>
+
+  <div class="actions row">
+    <%= form.submit "Update Product", class: "btn btn-primary btn-sm btn-block ml-5 pl-5 pr-5 mt-3"%>
+  </div>
+
+<% end %>
+
+<script>
+  $("#products").change(function () {
+  $.ajax({
+    url: "edit_products_url",
+    method: "GET",
+    data: {},
+    success: function(data) {
+     $("#product_name").val("test")
+    }
+  });
+});
+</script>

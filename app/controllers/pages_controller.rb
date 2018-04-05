@@ -96,6 +96,13 @@ class PagesController < ApplicationController
     redirect_to shippingmgmt_path
   end
 
+  # PUT /pages/order/product/status/1
+  def toggle_product_status
+    @product = Product.find(params[:id])
+    @product.toggle_product_status
+    redirect_to new_product_path
+  end
+
   # GET /pages/shippingmgmt
   def shippingmgmt
     # Breadcrumb for Shipping Management

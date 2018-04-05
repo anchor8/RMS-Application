@@ -27,6 +27,8 @@
             <tr>
 
               <th class="text-center">Product Name</th>
+              <th class="text-center">Discontinued Date</th>
+              <th class="text-center">Discontinue</th>
 
             </tr>
 
@@ -38,6 +40,8 @@
             <tr>
 
               <th class="text-center">Product Name</th>
+              <th class="text-center">Discontinued Date</th>
+              <th class="text-center">Discontinue</th>
 
             </tr>
 
@@ -53,6 +57,26 @@
 
                     <!-- Columns to pull from order data -->
                     <td class="text-center"><%= product.product_name %></td>
+                    <td class="text-center"><%= product.deleted_at %></td>
+                    <!-- Disable Button -->
+                    <td class="text-center">
+                      <% if !product.deleted_at %>
+                        <%= button_to 'Discontinue',
+                            toggle_product_status_path(product.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-danger btn-sm',
+                            :data => {
+                              :confirm => "Are you sure that you want to disable " +
+                                           product.product_name + "?" } %></td>
+                      <% else %>
+                        <%= button_to 'Activate',
+                            toggle_product_status_path(product.id),
+                            :method => :put,
+                            :class => 'btn btn-outline-success btn-sm',
+                            :data => {
+                              :confirm => "Are you sure that you want to enable " +
+                                           product.product_name + "?" } %></td>
+                      <% end %>
 
                   </tr>
 
@@ -74,7 +98,7 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(e) {
         var table = $('#producttable').DataTable( {
             paging: true,
             "order": [[ 0, 'asc' ]]
