@@ -259,7 +259,7 @@
               <th class="text-center"><font color="gray">Edit</font></th>
               <th class="text-center">Vendor</th>
               <th class="text-center"><font color="gray">State</font></th>
-              <th class="text-center">Status</th>
+              <th class="text-center"><font color="gray">Status</font></th>
               <th class="text-center">Contact</th>
               <th class="text-center">Job</th>
               <th class="text-center">Work</th>
@@ -315,10 +315,14 @@
 
                     <!-- New Order Button -->
                     <td class="text-center">
-                      <%= link_to "<button class='btn btn-outline-primary btn-sm'>New Order</button>".html_safe,
-                      { :controller => "orders",
-                        :action => "new",
-                        :vendor_id => vendor.id} %>
+                      <% if !vendor.deleted_at %>
+                        <%= link_to "<button class='btn btn-outline-primary btn-sm'>New Order</button>".html_safe,
+                        { :controller => "orders",
+                          :action => "new",
+                          :vendor_id => vendor.id} %>
+                      <% else %>
+                        <button class='btn btn-outline-primary btn-sm disabled'>New Order</button>
+                      <% end %>
                     </td>
 
                     <td class="text-center">
