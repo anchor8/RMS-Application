@@ -34,66 +34,15 @@
       <!-- Card -->
       <div class="card mb-4">
 
-        <!-- Card Header 1 - Products -->
-        <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Products
-            </button>
-        </div>
-
-        <!-- Content 1 - Products -->
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-
-          <!-- Content Body -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <!-- Top 10 Most Ordered Products -->
-                <%= link_to reports_path(active_tab: "report6") do %>
-                    <div class="card mb-3">
-                      <div class="card-header">
-                        <i class="fa fa-pie-chart"></i>
-                        Top 10 Most Ordered Products
-                      </div>
-                      <div class="card-body">
-                        <%= column_chart OrderLine.joins(:product).group(:product_name).order("COUNT(product_id) desc").limit("10").count,
-                                         colors: ["#697abc"],label: "Order Count", xtitle: "Product", ytitle: "Order Count", defer: true, download: "product_top10_column_chart", height: "300px",
-                                         library: { animation: { easing: 'easeInQuad' }} %>
-                      </div>
-                      <div class="card-footer small text-muted"></div>
-                    </div>
-                <% end %>
-              </div>
-              <div class="col-md-6">
-                <!-- Products by State -->
-                <%= link_to reports_path(active_tab: "report7") do %>
-                    <div class="card mb-3">
-                      <div class="card-header">
-                        <i class="fa fa-bar-chart"></i>
-                        Products by State
-                      </div>
-                      <div class="card-body">
-                        <%= geo_chart OrderLine.joins(order: :state).group(:state_name).order("COUNT(state_id) asc").count,
-                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#c6d2ff', '#6b6c6d', '#697abc']} }%>
-                      </div>
-                      <div class="card-footer small text-muted"></div>
-                    </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Header 2 - Status -->
+        <!-- Card Header 1 - Status -->
         <div class="card-header text-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              Status
+              Statuses
             </button>
         </div>
 
-        <!-- Content 2 - Status -->
+        <!-- Content 1 - Status -->
         <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 
           <!-- Content Body -->
@@ -155,73 +104,73 @@
           </div>
         </div>
 
-        <!-- Card Header 3 - Customers & Vendors by State -->
-        <div class="card-header text-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <!-- Card Header 2 - Products -->
+        <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-              Customers & Vendors by State
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Products
             </button>
         </div>
 
-        <!-- Content 3 - Customers & Vendors by State -->
+        <!-- Content 2 - Products -->
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+          <!-- Content Body -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- Top 10 Most Ordered Products -->
+                <%= link_to reports_path(active_tab: "report6") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-pie-chart"></i>
+                        Top 10 Most Ordered Products
+                      </div>
+                      <div class="card-body">
+                        <%= column_chart OrderLine.joins(:product).group(:product_name).order("COUNT(product_id) desc").limit("10").count,
+                                         colors: ["#697abc"],label: "Order Count", xtitle: "Product", ytitle: "Order Count", defer: true, download: "product_top10_column_chart", height: "300px",
+                                         library: { animation: { easing: 'easeInQuad' }} %>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <!-- Products by State -->
+                <%= link_to reports_path(active_tab: "report7") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-bar-chart"></i>
+                        Products by State
+                      </div>
+                      <div class="card-body">
+                        <%= geo_chart OrderLine.joins(order: :state).group(:state_name).order("COUNT(state_id) asc").count,
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#c6d2ff', '#6b6c6d', '#697abc']} }%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Header 3 - Customers -->
+        <div class="card-header text-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+              Customers
+            </button>
+        </div>
+
+        <!-- Content 3 - Top 10 Customers / state-->
         <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
 
           <!-- Content Body -->
           <div class="card-body">
 
             <div class="row">
-              <div class="col-md-6">
-                <!-- Customers by State -->
-                <%= link_to reports_path(active_tab: "report6") do %>
-                  <div class="card mb-3">
-                    <div class="card-header">
-                      <i class="fa fa-pie-chart"></i>
-                      Customers by State
-                    </div>
-                    <div class="card-body">
-                      <%= geo_chart Customer.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                                    library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
-                    </div>
-                    <div class="card-footer small text-muted"></div>
-                  </div>
-                <% end %>
-              </div>
-              <div class="col-md-6">
-                <!-- Vendors by State -->
-                <%= link_to reports_path(active_tab: "report7") do %>
-                  <div class="card mb-3">
-                    <div class="card-header">
-                      <i class="fa fa-bar-chart"></i>
-                      Vendors by State
-                    </div>
-                    <div class="card-body">
-                      <%= geo_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                                    library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
-                    </div>
-                    <div class="card-footer small text-muted"></div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
 
-          </div>
-        </div>
-
-        <!-- Card Header 4 - Top 10 Customers & Vendors -->
-        <div class="card-header text-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-              Top 10 Customers & Vendors
-            </button>
-        </div>
-
-        <!-- Content 4 - Top 10 Customers & Vendors -->
-        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
-
-          <!-- Content Body -->
-          <div class="card-body">
-
-            <div class="row">
               <div class="col-md-6">
                 <!-- Customer Orders -->
                 <%= link_to reports_path(active_tab: "report10") do %>
@@ -240,6 +189,57 @@
                 <% end %>
               </div>
               <div class="col-md-6">
+                <!-- Customers by State -->
+                <%= link_to reports_path(active_tab: "report6") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-pie-chart"></i>
+                        Customers by State
+                      </div>
+                      <div class="card-body">
+                        <%= geo_chart Customer.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#b7f6ff', '#00c7e2', '#00899c']} }%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+
+            <!-- Order Totals by Company -->
+            <%= link_to reports_path(active_tab: "report5") do %>
+                <div class="card mb-3">
+                  <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>
+                    Top 10 Order Totals by Customer
+                  </div>
+                  <div class="card-body">
+                    <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), label: "Order Total", prefix: "$", thousands: ",", height: "300px",colors: ["#00639c"], xtitle: "Company Name", ytitle: "Order Total", download: "companytotals_top10_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
+                  </div>
+                  <div class="card-footer small text-muted"></div>
+                </div>
+            <% end %>
+
+          </div>
+        </div>
+
+        <!-- Card Header 4 - Top 10 Vendors / States -->
+        <div class="card-header text-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+              Vendors
+            </button>
+        </div>
+
+        <!-- Content 4 - Top 10 Vendors / States -->
+        <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+
+          <!-- Content Body -->
+          <div class="card-body">
+
+            <div class="row">
+
+              <div class="col-md-6">
                 <!-- Vendor Orders -->
                 <%= link_to reports_path(active_tab: "report9") do %>
                     <div class="card mb-3">
@@ -249,8 +249,24 @@
                       </div>
                       <div class="card-body">
                         <%= bar_chart Order.left_joins(:vendor).group(:vendor_name).where("order_date > ?", Date.today-6.months).order("COUNT(vendors.id) DESC").limit("10").count,
-                                      colors: ["#0038ff"], label: "Orders", xtitle: "Orders", ytitle: "Company", legend: false, download: "vendor_top10_chart", height: "300px",
+                                      colors: ["#8CD384"], label: "Orders", xtitle: "Orders", ytitle: "Company", legend: false, download: "vendor_top10_chart", height: "300px",
                                       library: { animation: { easing: 'easeInCirc' }}%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <!-- Vendors by State -->
+                <%= link_to reports_path(active_tab: "report7") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-bar-chart"></i>
+                        Vendors by State
+                      </div>
+                      <div class="card-body">
+                        <%= geo_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
                       </div>
                       <div class="card-footer small text-muted"></div>
                     </div>
@@ -261,15 +277,15 @@
           </div>
         </div>
 
-        <!-- Card Header 5 - Orders by Employee -->
+        <!-- Card Header 5 - Employees -->
         <div class="card-header text-center" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-              Orders by Employee
+              Employees
             </button>
         </div>
 
-        <!-- Content 5 - Orders by Employee -->
+        <!-- Content 5 - Employees -->
         <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordion">
 
           <!-- Content Body -->
@@ -314,36 +330,6 @@
           </div>
         </div>
 
-        <!-- Card Header 5 - Orders by Employee -->
-        <div class="card-header text-center" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-              Order Totals
-            </button>
-        </div>
-
-        <!-- Content 6 - Order Totals -->
-        <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordion">
-
-          <!-- Content Body -->
-          <div class="card-body">
-
-            <!-- Order Totals by Company -->
-            <%= link_to reports_path(active_tab: "report5") do %>
-              <div class="card mb-3">
-                <div class="card-header">
-                  <i class="fa fa-bar-chart"></i>
-                  Order Totals by Customer ( Top 10 )
-                </div>
-                <div class="card-body">
-                  <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), label: "Order Total", prefix: "$", thousands: ",", height: "300px",colors: ["#00639c"], xtitle: "Company Name", ytitle: "Order Total", download: "companytotals_top10_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
-                </div>
-                <div class="card-footer small text-muted"></div>
-              </div>
-            <% end %>
-
-          </div>
-        </div>
 
         </div>
       </div>
