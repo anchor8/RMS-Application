@@ -353,12 +353,12 @@
     $('a.collapse-dashboard').on( 'click', function (e) {
 
       // Remove show class from dashboard accordians
-      $('#collapseOne').removeClass('show')
-      $('#collapseTwo').removeClass('show')
-      $('#collapseThree').removeClass('show')
-      $('#collapseFour').removeClass('show')
-      $('#collapseFive').removeClass('show')
-      $('#collapseSix').removeClass('show')
+      $('#collapseOne').toggleClass('show')
+      $('#collapseTwo').toggleClass('show')
+      $('#collapseThree').toggleClass('show')
+      $('#collapseFour').toggleClass('show')
+      $('#collapseFive').toggleClass('show')
+      $('#collapseSix').toggleClass('show')
 
     } );
   })
