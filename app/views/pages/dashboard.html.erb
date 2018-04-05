@@ -27,8 +27,14 @@
       <% end %>
     <% end %>
 
+    <a class="collapse-dashboard btn btn-outline-primary btn-block btn-sm mb-3"
+       type="button"
+       data-toggle="buttons"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Collapse Dashboard</a>
 
-    <!--toggle buttons -->
+    <!-- Dashboard Accordian -->
     <div id="accordian">
 
       <!-- Card -->
@@ -356,5 +362,18 @@
     setTimeout(function(){
       $('#flash').remove();
     }, 2000);
+
+    // On click collapse dashboard button
+    $('a.collapse-dashboard').on( 'click', function (e) {
+
+      // Remove show class from dashboard accordians
+      $('#collapseOne').removeClass('show')
+      $('#collapseTwo').removeClass('show')
+      $('#collapseThree').removeClass('show')
+      $('#collapseFour').removeClass('show')
+      $('#collapseFive').removeClass('show')
+      $('#collapseSix').removeClass('show')
+
+    } );
   })
 </script>
