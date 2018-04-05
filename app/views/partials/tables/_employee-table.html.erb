@@ -331,10 +331,10 @@
                 <td class="text-center"><%= employee.employee_status.employee_status_type %></td>
                 <td class="text-center"><%= employee.admin %></td>
                 <td class="text-center"><%= employee.id %></td>
-                <td class="text-center"><%= employee.fname %></td>
-                <td class="text-center"><%= employee.lname %></td>
-                <td class="text-center"><%= employee.email %></td>
-                <td class="text-center"><%= employee.phone %></td>
+                <td class="text-center"><%= best_in_place employee, :fname %></td>
+                <td class="text-center"><%= best_in_place employee, :lname %></td>
+                <td class="text-center"><%= best_in_place employee, :email %></td>
+                <td class="text-center"><%= best_in_place employee, :phone %></td>
                 <td class="text-center"><%= employee.sign_in_count %></td>
                 <td class="text-center"><%= employee.last_sign_in_at %></td>
                 <td class="text-center"><%= employee.created_at %></td>
@@ -369,6 +369,8 @@
            paging: true,
            "order": [[ 4, 'asc' ]]
         } );
+
+        jQuery(".best_in_place").best_in_place();
 
         // Set all buttons as active on page load
         $('a.toggle-vis').addClass('active')
