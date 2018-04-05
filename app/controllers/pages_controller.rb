@@ -107,7 +107,12 @@ class PagesController < ApplicationController
   # GET /pages/reports
   def reports
     # Breadcrumb for Reports
-    add_breadcrumb 'Reports', reports_path
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports'
+    else
+      add_breadcrumb 'Reports'
+    end
 
     @orders = Order.all
     @vendors = Vendor.all
