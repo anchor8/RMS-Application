@@ -210,10 +210,10 @@
               <th class="text-center">Shipping No.</th>
               <th class="text-center"><font color="gray">Country</font></th>
               <th class="text-center"><font color="gray">State</font></th>
-              <th class="text-center">Addr. 1</th>
-              <th class="text-center">Addr. 2</th>
-              <th class="text-center">City</th>
-              <th class="text-center">Zip</th>
+              <th class="text-center"><font color="gray">Addr. 1</font></th>
+              <th class="text-center"><font color="gray">Addr. 2</font></th>
+              <th class="text-center"><font color="gray">City</font></th>
+              <th class="text-center"><font color="gray">Zip</font></th>
 
             </tr>
 
@@ -234,10 +234,10 @@
               <th class="text-center">Shipping No.</th>
               <th class="text-center"><font color="gray">Country</font></th>
               <th class="text-center"><font color="gray">State</font></th>
-              <th class="text-center">Addr. 1</th>
-              <th class="text-center">Addr. 2</th>
-              <th class="text-center">City</th>
-              <th class="text-center">Zip</th>
+              <th class="text-center"><font color="gray">Addr. 1</font></th>
+              <th class="text-center"><font color="gray">Addr. 2</font></th>
+              <th class="text-center"><font color="gray">City</font></th>
+              <th class="text-center"><font color="gray">Zip</font></th>
 
             </tr>
 
@@ -276,10 +276,10 @@
                     <td class="text-left-align"><%= best_in_place order, :shipping_number %></td>
                     <td class="text-left-align"><%= order.country.country_name %></td>
                     <td class="text-left-align"><%= order.state.state_name %></td>
-                    <td class="text-left-align"><%= best_in_place order, :street_address_1 %></td>
-                    <td class="text-left-align"><%= best_in_place order, :street_address_2 %></td>
-                    <td class="text-left-align"><%= best_in_place order, :city %></td>
-                    <td class="text-left-align"><%= best_in_place order, :zip_code %></td>
+                    <td class="text-left-align"><%= order.street_address_1 %></td>
+                    <td class="text-left-align"><%= order.street_address_2 %></td>
+                    <td class="text-left-align"><%= order.city %></td>
+                    <td class="text-left-align"><%= order.zip_code %></td>
 
                   </tr>
 
