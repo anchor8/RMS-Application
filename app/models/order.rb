@@ -17,11 +17,19 @@ class Order < ApplicationRecord
   validates :purchase_order_number, uniqueness: true
   validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
-  validates :street_address_1, allow_blank: false, presence: true
-  validates :street_address_2, allow_blank: true, presence: false
-  validates :city, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for city allowed"}
-  validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
   validates :deleted_at, allow_blank: true, presence: false
+
+  after_save :set_state_save
+  after_save :set_street_address_1_save
+  after_save :set_street_address_2_save
+  after_save :set_city_save
+  after_save :set_zip_code_save
+
+  after_update :set_state_update
+  after_update :set_street_address_1_update
+  after_update :set_street_address_2_update
+  after_update :set_city_update
+  after_update :set_zip_code_update
 
   # Toggle order
   def toggle_order
@@ -54,5 +62,57 @@ class Order < ApplicationRecord
     CSV.foreach(file.path, headers: true) do |row|
       Order.create! row.to_hash
     end
+  end
+
+  private
+
+  def set_state_save
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:state_id, @customer.state_id)
+  end
+
+  def set_street_address_1_save
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:street_address_1, @customer.street_address_1)
+  end
+
+  def set_street_address_2_save
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:street_address_2, @customer.street_address_2)
+  end
+
+  def set_city_save
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:city, @customer.city)
+  end
+
+  def set_zip_code_save
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:zip_code, @customer.zip_code)
+  end
+
+  def set_state_update
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:state_id, @customer.state_id)
+  end
+
+  def set_street_address_1_update
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:street_address_1, @customer.street_address_1)
+  end
+
+  def set_street_address_2_update
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:street_address_2, @customer.street_address_2)
+  end
+
+  def set_city_update
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:city, @customer.city)
+  end
+
+  def set_zip_code_update
+    @customer = Customer.find(customer_id)
+    Order.find(id).update_column(:zip_code, @customer.zip_code)
   end
 end

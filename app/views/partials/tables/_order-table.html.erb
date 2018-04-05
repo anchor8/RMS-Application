@@ -169,7 +169,7 @@
 
       <div class="btn-right-2">
         <!-- Add New Product -->
-        <%= button_to 'Create New Product',
+        <%= button_to 'Add New Product',
             new_product_path,
             :method => :get,
             :class => 'btn btn-outline-primary' %>
@@ -191,17 +191,17 @@
 
             <tr>
 
-              <th class="text-center">Cancel</th>
-              <th class="text-center">Edit</th>
-              <th class="text-center">PO No.</th>
-              <th class="text-center">Date</th>
-              <th class="text-center">Status</th>
-              <th class="text-center">Company</th>
-              <th class="text-center">Customer</th>
-              <th class="text-center">Employee</th>
-              <th class="text-center">Vendor</th>
-              <th class="text-center">Total (USD)</th>
-              <th class="text-center">Payment Type</th>
+              <th class="text-center"><font color="gray">Cancel</font></th>
+              <th class="text-center"><font color="gray">Edit</font></th>
+              <th class="text-center"><font color="gray">PO No.</font></th>
+              <th class="text-center"><font color="gray">Date</font></th>
+              <th class="text-center"><font color="gray">Status</font></th>
+              <th class="text-center"><font color="gray">Company</font></th>
+              <th class="text-center"><font color="gray">Customer</font></th>
+              <th class="text-center"><font color="gray">Employee</font></th>
+              <th class="text-center"><font color="gray">Vendor</font></th>
+              <th class="text-center"><font color="gray">Total (USD)</font></th>
+              <th class="text-center"><font color="gray">Payment Type</font></th>
 
             </tr>
 
@@ -212,17 +212,17 @@
 
             <tr>
 
-              <th class="text-center">Cancel</th>
-              <th class="text-center">Edit</th>
-              <th class="text-center">PO No.</th>
-              <th class="text-center">Date</th>
-              <th class="text-center">Status</th>
-              <th class="text-center">Company</th>
-              <th class="text-center">Customer</th>
-              <th class="text-center">Employee</th>
-              <th class="text-center">Vendor</th>
-              <th class="text-center">Total (USD)</th>
-              <th class="text-center">Payment Type</th>
+              <th class="text-center"><font color="gray">Cancel</font></th>
+              <th class="text-center"><font color="gray">Edit</font></th>
+              <th class="text-center"><font color="gray">PO No.</font></th>
+              <th class="text-center"><font color="gray">Date</font></th>
+              <th class="text-center"><font color="gray">Status</font></th>
+              <th class="text-center"><font color="gray">Company</font></th>
+              <th class="text-center"><font color="gray">Customer</font></th>
+              <th class="text-center"><font color="gray">Employee</font></th>
+              <th class="text-center"><font color="gray">Vendor</font></th>
+              <th class="text-center"><font color="gray">Total (USD)</font></th>
+              <th class="text-center"><font color="gray">Payment Type</font></th>
 
 
 
@@ -302,6 +302,8 @@
             paging: true,
             "order": [[ 3, 'desc' ]]
         } );
+
+        jQuery(".best_in_place").best_in_place();
 
         // Set all buttons as active on page load
         $('a.toggle-vis').addClass('active')

@@ -40,75 +40,7 @@
       <!-- Card -->
       <div class="card mb-4">
 
-        <!-- Card Header 1 - Status -->
-        <div class="card-header text-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              Statuses
-            </button>
-        </div>
 
-        <!-- Content 1 - Status -->
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-
-          <!-- Content Body -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <!-- Order Status-->
-                <%= link_to reports_path(active_tab: "report2", origin: "dashboard") do %>
-                    <div class="card mb-3">
-                      <div class="card-header">
-                        <i class="fa fa-pie-chart"></i>
-                        Order Status
-                      </div>
-                      <div class="card-body">
-                        <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                                      colors: ["red", "green", "#6b6c6d"], defer: true,
-                                      donut: true, legend: "bottom", download: "order_status_chart",
-                                      library: { animation: { easing: 'easeInCirc' }}%>
-                      </div>
-                      <div class="card-footer small text-muted"></div>
-                    </div>
-                <% end %>
-              </div>
-              <div class="col-md-4">
-                <!-- Vendor Status-->
-                <%= link_to reports_path(active_tab: "report3", origin: "dashboard") do %>
-                    <div class="card mb-3">
-                      <div class="card-header">
-                        <i class="fa fa-pie-chart"></i>
-                        Vendor Status
-                      </div>
-                      <div class="card-body">
-                        <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
-                                      donut: true, legend: "bottom", download: "vendor_status_chart", defer: true,
-                                      library: { animation: { easing: 'easeInCirc' }}%>
-                      </div>
-                      <div class="card-footer small text-muted"></div>
-                    </div>
-                <% end %>
-              </div>
-
-              <div class="col-md-4">
-                <!-- Carrier use-->
-                <%= link_to reports_path(active_tab: "report4", origin: "dashboard") do %>
-                    <div class="card mb-3">
-                      <div class="card-header">
-                        <i class="fa fa-pie-chart"></i>
-                        Carrier Use</div>
-                      <div class="card-body">
-                        <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
-                                      donut: true, legend: "bottom", download: "carrier_use_chart", defer: true,
-                                      library: { animation: { easing: 'easeInCirc' }}%>
-                      </div>
-                      <div class="card-footer small text-muted"></div>
-                    </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- Card Header 2 - Products -->
         <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -280,6 +212,76 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+        <!-- Card Header 1 - Status -->
+        <div class="card-header text-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Statuses
+            </button>
+        </div>
+
+        <!-- Content 1 - Status -->
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+
+          <!-- Content Body -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <!-- Order Status-->
+                <%= link_to reports_path(active_tab: "report2", origin: "dashboard") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-pie-chart"></i>
+                        Order Status
+                      </div>
+                      <div class="card-body">
+                        <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
+                                      colors: ["red", "green", "#6b6c6d"], defer: true,
+                                      donut: true, legend: "bottom", download: "order_status_chart",
+                                      library: { animation: { easing: 'easeInCirc' }}%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+              <div class="col-md-4">
+                <!-- Vendor Status-->
+                <%= link_to reports_path(active_tab: "report3", origin: "dashboard") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-pie-chart"></i>
+                        Vendor Status
+                      </div>
+                      <div class="card-body">
+                        <%= pie_chart Vendor.joins(:vendor_status).group(:vendor_status_type).count,
+                                      donut: true, legend: "bottom", download: "vendor_status_chart", defer: true,
+                                      library: { animation: { easing: 'easeInCirc' }}%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+
+              <div class="col-md-4">
+                <!-- Carrier use-->
+                <%= link_to reports_path(active_tab: "report4", origin: "dashboard") do %>
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <i class="fa fa-pie-chart"></i>
+                        Carrier Use</div>
+                      <div class="card-body">
+                        <%= pie_chart Order.joins(:shipper).group(:shipper_description).count,
+                                      donut: true, legend: "bottom", download: "carrier_use_chart", defer: true,
+                                      library: { animation: { easing: 'easeInCirc' }}%>
+                      </div>
+                      <div class="card-footer small text-muted"></div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
 

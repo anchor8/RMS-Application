@@ -27,9 +27,11 @@
           <div class="row">
 
             <!-- Left Column -->
-            <div class="col-md-4">
+            <div class="col-md-6">
 
               <%= form.hidden_field :order_date, value: @order.order_date %>
+              <%= form.hidden_field :country_id, value: 1 %>
+              <%= form.hidden_field :state_id, value: 1 %>
 
               <div class="field">
                 <b><%= form.label "Customer Name" %></b> <font color="red">*</font>
@@ -51,28 +53,12 @@
                 <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
               </div>
 
-              <table class='table mt-4'>
-                <thead>
-                  <tr>
-                    <th>Remove</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-
-                  </tr>
-                </thead>
-                <tbody class="fields">
-                  <%= form.fields_for :order_lines do |order_line_form| %>
-                    <%= render 'order_line', form: order_line_form %>
-                  <% end %>
-                </div>
-              </table>
-              <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
             </div>
 
 
 
             <!-- Middle Column -->
-            <div class="col-md-4">
+            <div class="col-md-6">
 
               <div class="field">
                 <b><%= form.label "Shipping Status" %></b> <font color="red">*</font>
@@ -96,42 +82,24 @@
 
             </div>
 
-            <!-- Right Column -->
-            <div class="col-md-4">
-
-              <div class="field">
-                <b><%= form.label :street_address_1 %></b> <font color="red">*</font>
-                <%= form.text_field :street_address_1, size: "25", placeholder: '123 Street Address Rd. Bldg. 12', id: :order_street_address_1, required: true %>
-              </div>
-
-              <div class="field mt-1">
-                <b><%= form.label :street_address_2 %></b>
-                <%= form.text_field :street_address_2, placeholder: '123 Street Address Rd. Bldg. 12', size: "25", id: :order_street_address_2 %>
-              </div>
-
-              <div class="field mt-1">
-                <b><%= form.label "Country" %></b> <font color="red">*</font>
-                <%= form.collection_select :country_id, Country.all, :id, :country_name, { required: true, :selected => @order.country_id } %>
-              </div>
-
-              <div class="field mt-1">
-                <b><%= form.label "State" %></b> <font color="red">*</font>
-                <%= form.collection_select :state_id, State.all, :id, :state_name, {prompt: true}, { required: true, :selected => @order.state_id } %>
-              </div>
-
-              <div class="field mt-1">
-                <b><%= form.label :city %></b> <font color="red">*</font>
-                <%= form.text_field :city, size: "15", placeholder: 'Houston', id: :order_city, required: true %>
-              </div>
-
-              <div class="field mt-1">
-                <b><%= form.label :zip_code %></b> <font color="red">*</font>
-                <%= form.text_field :zip_code, size: "10", placeholder: '77777-8888', id: :order_zip_code, required: true %>
-              </div>
-
-            </div>
-
           </div>
+
+          <table class='table mt-4'>
+            <thead>
+              <tr>
+                <th>Remove</th>
+                <th>Product Name</th>
+                <th>Price</th>
+
+              </tr>
+            </thead>
+            <tbody class="fields">
+              <%= form.fields_for :order_lines do |order_line_form| %>
+                <%= render 'order_line', form: order_line_form %>
+              <% end %>
+            </div>
+          </table>
+          <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
 
           <!-- Submit -->
           <div class="actions">

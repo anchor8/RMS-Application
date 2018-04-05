@@ -270,10 +270,10 @@
 
             <tr>
 
-              <th class="text-center">New Order</th>
-              <th class="text-center">Disable</th>
-              <th class="text-center">Edit</th>
-              <th class="text-center">Status</th>
+              <th class="text-center"><font color="gray">New Order</font></th>
+              <th class="text-center"><font color="gray">Disable</font></th>
+              <th class="text-center"><font color="gray">Edit</font></th>
+              <th class="text-center"><font color="gray">Status</font></th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Company</th>
@@ -379,22 +379,22 @@
                             :class => 'btn btn-outline-success btn-sm' %></td>
 
                       <td class="text-left-align"><%= customer.customer_status.customer_status_description %></td>
-                      <td class="text-left-align"><%= customer.customer_first_name %></td>
-                      <td class="text-left-align"><%= customer.customer_last_name %></td>
-                      <td class="text-left-align"><%= customer.company_name %></td>
-                      <td class="text-left-align"><%= customer.job_title %></td>
-                      <td class="text-left-align"><%= customer.work_phone %></td>
-                      <td class="text-left-align"><%= customer.mobile %></td>
-                      <td class="text-left-align"><%= customer.fax %></td>
-                      <td class="text-left-align"><%= customer.customer_email %></td>
-                      <td class="text-left-align"><%= customer.customer_cc_email %></td>
-                      <td class="text-left-align"><%= customer.website %></td>
-                      <td class="text-left-align"><%= customer.social_media_address %></td>
-                      <td class="text-left-align"><%= customer.street_address_1 %></td>
-                      <td class="text-left-align"><%= customer.street_address_2 %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :customer_first_name %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :customer_last_name %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :company_name %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :job_title %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :work_phone %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :mobile %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :fax %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :customer_email %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :customer_cc_email %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :website %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :social_media_address %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :street_address_1 %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :street_address_2 %></td>
                       <td class="text-left-align"><%= customer.state.state_name %></td>
-                      <td class="text-left-align"><%= customer.city %></td>
-                      <td class="text-left-align"><%= customer.zip_code %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :city %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :zip_code %></td>
 
 
                   </tr>
@@ -422,6 +422,8 @@
           paging: true,
           "order": [[ 5, 'asc' ]]
         } );
+
+        jQuery(".best_in_place").best_in_place();
 
         // Set all buttons as active on page load
         $('a.toggle-vis').addClass('active')

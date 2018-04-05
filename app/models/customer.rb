@@ -23,6 +23,13 @@ class Customer < ApplicationRecord
   validates :zip_code, allow_blank: false, presence: true, format: { with: /\A^\d{5}(?:[-\s]\d{4})?$\z/, message: "Format ( 12345 ) or ( 12345-4321 )"}
   validates :deleted_at, allow_blank: true, presence: false
 
+  # After updating customer
+  after_update :set_state_update
+  after_update :set_street_address_1_update
+  after_update :set_street_address_2_update
+  after_update :set_city_update
+  after_update :set_zip_code_update
+
   # Toggle customer
   def toggle_customer
     if !deleted_at
@@ -46,5 +53,32 @@ class Customer < ApplicationRecord
   # Format customer first and last name
   def formatted_name
     "#{customer_first_name} #{customer_last_name}"
+  end
+
+  private
+
+  def set_state_update
+    @customer = Customer.find(id)
+    Order.find(id).update_column(:state_id, @customer.state_id)
+  end
+
+  def set_street_address_1_update
+    @customer = Customer.find(id)
+    Order.find(id).update_column(:street_address_1, @customer.street_address_1)
+  end
+
+  def set_street_address_2_update
+    @customer = Customer.find(id)
+    Order.find(id).update_column(:street_address_2, @customer.street_address_2)
+  end
+
+  def set_city_update
+    @customer = Customer.find(id)
+    Order.find(id).update_column(:city, @customer.city)
+  end
+
+  def set_zip_code_update
+    @customer = Customer.find(id)
+    Order.find(id).update_column(:zip_code, @customer.zip_code)
   end
 end
