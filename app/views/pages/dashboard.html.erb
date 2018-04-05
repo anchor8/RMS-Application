@@ -342,6 +342,13 @@
         </div>
       </div>
 
+      <a class="expand-dashboard btn btn-primary btn-block btn-sm mb-3 active"
+         type="button"
+         data-toggle="buttons"
+         aria-pressed="false"
+         autocomplete="off"
+         href="">Expand Dashboard</a>
+
   </div>
 </div>
 
@@ -361,6 +368,19 @@
       $('#collapseFour').removeClass('show')
       $('#collapseFive').removeClass('show')
       $('#collapseSix').removeClass('show')
+
+    } );
+
+    // On click collapse dashboard button
+    $('a.expand-dashboard').on( 'click', function (e) {
+
+      // Remove show class from dashboard accordians
+      $('#collapseOne').addClass('show')
+      $('#collapseTwo').addClass('show')
+      $('#collapseThree').addClass('show')
+      $('#collapseFour').addClass('show')
+      $('#collapseFive').addClass('show')
+      $('#collapseSix').addClass('show')
 
     } );
   })
