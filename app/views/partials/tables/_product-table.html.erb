@@ -56,7 +56,7 @@
                   <tr>
 
                     <!-- Columns to pull from order data -->
-                    <td class="text-center"><%= product.product_name %></td>
+                    <td class="text-center"><%= best_in_place product, :product_name %></td>
                     <td class="text-center"><%= product.deleted_at %></td>
                     <!-- Disable Button -->
                     <td class="text-center">
@@ -103,6 +103,8 @@
             paging: true,
             "order": [[ 0, 'asc' ]]
         } );
+
+        jQuery(".best_in_place").best_in_place();
 
     } );
 </script>

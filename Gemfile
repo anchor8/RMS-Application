@@ -66,6 +66,9 @@ gem 'breadcrumbs_on_rails'
 # Use validate timeliness to check date formats
 gem 'validates_timeliness'
 
+# Use best in place to inline edit tables
+gem 'best_in_place'
+
 # If Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
