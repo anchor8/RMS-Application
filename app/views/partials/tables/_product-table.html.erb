@@ -1,0 +1,84 @@
+<!-- Table Card -->
+<div class="card mt-3">
+
+  <!-- Card Header -->
+  <div class="card-header">
+
+      <!-- Table Icon -->
+      <i class="fa fa-table"></i>
+
+      <!-- Table Name -->
+      Product Table
+
+  </div>
+
+  <!-- Table Card Body -->
+  <div class="card-body">
+
+    <!-- Table Type -->
+    <div class="table-responsive">
+
+        <table class="table table-bordered table-hover table-striped" id="producttable" width="100%" cellspacing="0">
+
+
+          <!-- Top Column Names -->
+          <thead>
+
+            <tr>
+
+              <th class="text-center">Product Name</th>
+
+            </tr>
+
+          </thead>
+
+          <!-- Bottom Column Names -->
+          <tfoot>
+
+            <tr>
+
+              <th class="text-center">Product Name</th>
+
+            </tr>
+
+          </tfoot>
+
+          <!-- Content -->
+          <tbody>
+
+            <!-- Load order data -->
+              <% @products.each do |product| %>
+
+                  <tr>
+
+                    <!-- Columns to pull from order data -->
+                    <td class="text-left-align"><%= product.product_name %></td>
+
+                  </tr>
+
+              <% end %>
+
+          </tbody>
+
+        </table>
+
+    </div>
+
+  </div>
+
+  <!-- Footnote: Lastest date a order was created -->
+  <div class="card-footer small text-muted">
+
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#producttable').DataTable( {
+            paging: true,
+            "order": [[ 0, 'asc' ]]
+        } );
+
+    } );
+</script>

@@ -1,6 +1,23 @@
-<h1>Editing Product</h1>
+<% content_for :title, "Edit Product" %>
 
-<%= render 'form', product: @product %>
+<!-- Notice Banner -->
+<% if notice %>
+  <div class='h5 strong text-center mark'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+
+<div class="content-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Bread Crumbs -->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <!-- Product form -->
+    <%= render 'form', product: @product %>
+
+  </div>
+
+</div>

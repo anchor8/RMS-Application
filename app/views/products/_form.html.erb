@@ -13,10 +13,11 @@
 
   <div class="field">
     <%= form.label :product_name %>
-    <%= form.text_field :product_name, id: :product_product_name %>
+    <%= form.text_field :product_name, size: 40, id: :product_product_name %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions row">
+    <%= form.submit "Add Product", class: "btn btn-primary btn-sm btn-block ml-5 pl-5 pr-5 mt-3"%>
   </div>
+
 <% end %>

@@ -160,13 +160,19 @@
       Order Table
 
       <div class="btn-right">
-
         <!-- Add New Order -->
         <%= button_to 'Create New Order',
             new_order_path,
             :method => :get,
             :class => 'btn btn-outline-primary' %>
+      </div>
 
+      <div class="btn-right-2">
+        <!-- Add New Product -->
+        <%= button_to 'Create New Product',
+            new_product_path,
+            :method => :get,
+            :class => 'btn btn-outline-primary' %>
       </div>
 
   </div>
