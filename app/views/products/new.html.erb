@@ -7,16 +7,28 @@
     <!-- Bread Crumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
-    <div class="row">
-      <div class="col-md-6 mt-4">
-        <!-- Product form -->
-        <%= render 'form', product: @product %>
+    <div class="card">
+      <div class="card-header">
+
       </div>
-      <div class="col-md-6">
-        <!-- Product Table-->
-        <%= render partial: 'partials/tables/product-table' %>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 mt-4">
+            <!-- Product form -->
+            <%= render 'form', product: @product %>
+          </div>
+          <div class="col-md-6">
+            <!-- Product Table-->
+            <%= render partial: 'partials/tables/product-table' %>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+
       </div>
     </div>
+
+
 
   </div>
 
