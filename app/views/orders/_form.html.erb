@@ -35,17 +35,17 @@
 
               <div class="field">
                 <b><%= form.label "Customer Name" %></b> <font color="red">*</font>
-                <%= form.collection_select :customer_id, Customer.all, :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
+                <%= form.collection_select :customer_id, Customer.where("deleted_at is null").order(:customer_last_name), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
               </div>
 
               <div class="field mt-1">
                 <b><%= form.label :employee_id %></b> <font color="red">*</font>
-                <%= form.collection_select(:employee_id, Employee.all, :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
+                <%= form.collection_select(:employee_id, Employee.where("deleted_at is null").order(:lname), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
               </div>
 
               <div class="field mt-1">
                 <b><%= form.label :vendor_id %></b> <font color="red">*</font>
-                <%= form.collection_select(:vendor_id, Vendor.all, :id, :vendor_name, {prompt: true}, {required: true}) %>
+                <%= form.collection_select(:vendor_id, Vendor.where("deleted_at is null").order(:vendor_name), :id, :vendor_name, {prompt: true}, {required: true}) %>
               </div>
 
               <div class="field mt-5">

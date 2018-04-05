@@ -5,7 +5,7 @@
     <%= link_to 'Remove Product', '#', class: 'remove_record btn btn-sm btn-outline-danger'%>
   </td>
   <td>
-    <%= form.collection_select(:product_id, Product.all, :id, :product_name, {prompt: true}, {required: true}) %>
+    <%= form.collection_select(:product_id, Product.where("deleted_at is null").order(:product_name), :id, :product_name, {prompt: true}, {required: true}) %>
   </td>
   <td>
     <%= form.text_field :price, size: "10", placeholder: '$123456.99', id: :order_price, required: true %>
