@@ -89,6 +89,7 @@
               <tr>
                 <th>Remove</th>
                 <th>Product Name</th>
+                <th>Number of Items</th>
                 <th>Price</th>
 
               </tr>
@@ -99,11 +100,11 @@
               <% end %>
             </div>
           </table>
-          <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
-          <%= link_to "<button class='btn btn-outline-primary btn-sm'>Create New Product</button>".html_safe,
-          { :controller => "products",
-            :action => "new",
-            :origin => "new_order"} %>
+          <div class="mb-4">
+            <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
+
+          </div>
+
 
           <!-- Submit -->
           <div class="actions">

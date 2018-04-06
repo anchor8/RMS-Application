@@ -237,6 +237,7 @@ csv = CSV.parse(csv_text, headers: true)
 csv.each do |row|
   t = Product.new
   t.product_name = row['product_name']
+  t.price = row['price']
   t.save!
   puts "Product, #{t.product_name} saved"
 end
@@ -273,6 +274,7 @@ csv.each do |row|
   t.order_id = row['order_id']
   t.product_id = row['product_id']
   t.price = row['price']
+  t.number_of_items = row['number_of_items']
   t.save!
   puts "Order Line, for #{t.order_id} and #{t.product_id} saved"
 end

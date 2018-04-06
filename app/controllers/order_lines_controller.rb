@@ -15,10 +15,13 @@ class OrderLinesController < ApplicationController
   # GET /order_lines/new
   def new
     @order_line = OrderLine.new
+
   end
 
   # GET /order_lines/1/edit
   def edit
+    @order_line = OrderLine.find(id)
+    @order_line_price = Product.where('product_id = ?', order_line.product_id)
   end
 
   # POST /order_lines
@@ -81,6 +84,6 @@ class OrderLinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_line_params
-      params.require(:order_line).permit(:order_id, :product_id, :price)
+      params.require(:order_line).permit(:order_id, :product_id, :price, :number_of_items)
     end
 end
