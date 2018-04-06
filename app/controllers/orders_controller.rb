@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
 
     @order = Order.new
     @order.order_date = Date.current
-    @order.shipper_id = 7
+    @order.shipper_id = 5
 
     # Build Orderlines
     @order.order_lines.build
