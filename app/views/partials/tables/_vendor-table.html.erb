@@ -357,7 +357,7 @@
                           :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-left-align"><%= best_in_place vendor, :vendor_name %></td>
                     <td class="text-left-align"><%= best_in_place vendor, :state_id, :as => :select, :collection => State.order('state_name asc').map { |f| [f.id, f.state_name]}, :place_holder => vendor.state.state_name %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :vendor_status_id, :as => :select, :collection=> VendorStatus.order('vendor_status_type asc').map{|f| [f.id, f.vendor_status_type]}, :place_holder => vendor.vendor_status.vendor_status_type %></td>
+                    <td class="text-left-align"><%= best_in_place vendor, :vendor_status_id, :as => :select, :collection=> VendorStatus.order('vendor_status_type asc').where('id != ?', 4).map{|f| [f.id, f.vendor_status_type]}, :place_holder => vendor.vendor_status.vendor_status_type %></td>
                     <td class="text-left-align"><%= best_in_place vendor, :contact_name %></td>
                     <td class="text-left-align"><%= best_in_place vendor, :job_title %></td>
                     <td class="text-left-align"><%= best_in_place vendor, :work_phone %></td>

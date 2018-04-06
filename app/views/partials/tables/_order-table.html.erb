@@ -267,7 +267,7 @@
 
                     <td class="text-center"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.order_date %></td>
-                    <td class="text-left-align"><%= best_in_place order, :order_status_id, :as => :select, :collection => OrderStatus.order('order_status_description asc').map { |f| [f.id, f.order_status_description]}, :place_holder => order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= best_in_place order, :order_status_id, :as => :select, :collection => OrderStatus.order('order_status_description asc').where('id != ?', 3).map { |f| [f.id, f.order_status_description]}, :place_holder => order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.customer.customer_last_name + ", " + order.customer.customer_first_name%></td>
                     <td class="text-left-align"><%= order.employee.lname + ", " + order.employee.fname %></td>

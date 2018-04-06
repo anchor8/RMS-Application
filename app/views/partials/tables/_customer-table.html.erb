@@ -382,7 +382,7 @@
                             :method => :get,
                             :class => 'btn btn-outline-success btn-sm' %></td>
 
-                      <td class="text-left-align"><%= best_in_place customer, :customer_status_id, :as => :select, :collection=> CustomerStatus.order('customer_status_description asc').map{|f| [f.id, f.customer_status_description]}, :place_holder => customer.customer_status.customer_status_description %></td>
+                      <td class="text-left-align"><%= best_in_place customer, :customer_status_id, :as => :select, :collection=> CustomerStatus.order('customer_status_description asc').where('id != ?', 1).map{|f| [f.id, f.customer_status_description]}, :place_holder => customer.customer_status.customer_status_description %></td>
                       <td class="text-left-align"><%= best_in_place customer, :customer_first_name %></td>
                       <td class="text-left-align"><%= best_in_place customer, :customer_last_name %></td>
                       <td class="text-left-align"><%= best_in_place customer, :company_name %></td>
