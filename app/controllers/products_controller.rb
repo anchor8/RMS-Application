@@ -66,6 +66,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  # Import product data
+  def import
+    if params[:file].nil?
+      # File doesn't exist
+      redirect_to importmgmt_url, notice: 'Product data file is missing, please choose a csv file.'
+    else
+      # File exists
+      Product.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Product data imported!'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

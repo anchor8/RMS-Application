@@ -61,6 +61,18 @@ class OrderLinesController < ApplicationController
     end
   end
 
+  # Import order line data
+  def import
+    if params[:file].nil?
+      # File doesn't exist
+      redirect_to importmgmt_url, notice: 'Order line data file is missing, please choose a csv file.'
+    else
+      # File exists
+      OrderLine.import(params[:file])
+      redirect_to importmgmt_url, notice: 'Order line data imported!'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order_line
