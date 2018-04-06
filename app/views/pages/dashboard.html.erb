@@ -65,7 +65,7 @@
                         Top 10 Most Ordered Products
                       </div>
                       <div class="card-body">
-                        <%= column_chart OrderLine.joins(:product).group(:product_name).order("COUNT(product_id) desc").limit("10").count,
+                        <%= bar_chart OrderLine.joins(:product).group(:product_name).order("COUNT(product_id) desc").limit("10").count,
                                          colors: ["#697abc"],label: "Order Count", xtitle: "Product", ytitle: "Order Count", defer: true, download: "product_top10_column_chart", height: "300px",
                                          library: { animation: { easing: 'easeInQuad' }} %>
                       </div>
