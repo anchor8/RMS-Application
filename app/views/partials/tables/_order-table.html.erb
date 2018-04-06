@@ -195,7 +195,7 @@
               <th class="text-center"><font color="gray">Edit</font></th>
               <th class="text-center"><font color="gray">PO No.</font></th>
               <th class="text-center"><font color="gray">Date</font></th>
-              <th class="text-center"><font color="gray">Status</font></th>
+              <th class="text-center">Status</th>
               <th class="text-center"><font color="gray">Company</font></th>
               <th class="text-center"><font color="gray">Customer</font></th>
               <th class="text-center"><font color="gray">Employee</font></th>
@@ -216,7 +216,7 @@
               <th class="text-center"><font color="gray">Edit</font></th>
               <th class="text-center"><font color="gray">PO No.</font></th>
               <th class="text-center"><font color="gray">Date</font></th>
-              <th class="text-center"><font color="gray">Status</font></th>
+              <th class="text-center">Status</th>
               <th class="text-center"><font color="gray">Company</font></th>
               <th class="text-center"><font color="gray">Customer</font></th>
               <th class="text-center"><font color="gray">Employee</font></th>
@@ -267,7 +267,7 @@
 
                     <td class="text-center"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.order_date %></td>
-                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= best_in_place order, :order_status_id, :as => :select, :collection => OrderStatus.order('order_status_description asc').map { |f| [f.id, f.order_status_description]}, :place_holder => order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.customer.customer_last_name + ", " + order.customer.customer_first_name%></td>
                     <td class="text-left-align"><%= order.employee.lname + ", " + order.employee.fname %></td>
