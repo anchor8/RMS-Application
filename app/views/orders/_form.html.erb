@@ -100,6 +100,10 @@
             </div>
           </table>
           <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
+          <%= link_to "<button class='btn btn-outline-primary btn-sm'>Create New Product</button>".html_safe,
+          { :controller => "products",
+            :action => "new",
+            :origin => "new_order"} %>
 
           <!-- Submit -->
           <div class="actions">

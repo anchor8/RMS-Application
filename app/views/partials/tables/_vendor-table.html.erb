@@ -319,7 +319,8 @@
                         <%= link_to "<button class='btn btn-outline-primary btn-sm'>New Order</button>".html_safe,
                         { :controller => "orders",
                           :action => "new",
-                          :vendor_id => vendor.id} %>
+                          :vendor_id => vendor.id,
+                          :origin => "vendor"} %>
                       <% else %>
                         <button class='btn btn-outline-primary btn-sm disabled'>New Order</button>
                       <% end %>

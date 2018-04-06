@@ -19,6 +19,9 @@ class OrdersController < ApplicationController
     if params['origin'] == "customer"
       add_breadcrumb 'Customer Management', customermgmt_path
       add_breadcrumb 'Create New Order'
+    elsif params['origin'] == "vendor"
+      add_breadcrumb 'Vendor Management', vendormgmt_path
+      add_breadcrumb 'Create New Order'
     else
       add_breadcrumb 'Order Management', ordermgmt_path
       add_breadcrumb 'Create New Order'
@@ -27,6 +30,8 @@ class OrdersController < ApplicationController
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 7
+
+    # Build Orderlines
     @order.order_lines.build
 
     # Parameters from customer
