@@ -8,10 +8,10 @@
     <%= form.collection_select(:product_id, Product.where("deleted_at is null").order(:product_name), :id, :product_name, {prompt: true}, {required: true}) %>
   </td>
   <td>
-    <%= form.text_field :number_of_items, size: "10", id: :order_number_of_items, required: true %>
+    <%= form.text_field :number_of_items, size: "11", id: :order_number_of_items, required: true %>
   </td>
   <td>
+    <%= form.hidden_field :price, value: @order_line_price %>
     <%= form.hidden_field :order_id, value: @order.id %>
   </td>
-
 </tr>
