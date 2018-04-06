@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     $('form').on('click', '.remove_record', function(event) {
       $(this).prev('input[type=hidden]').val('1');
-      $(this).closest('tr').hide();
+      $(this).closest('tr:not(:first-child)').hide();
       return event.preventDefault();
     });
 
