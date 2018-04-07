@@ -26,6 +26,7 @@
 
             <tr>
 
+              <th class="text-center">Edit</th>
               <th class="text-center">Product Name</th>
               <th class="text-center">Price</th>
               <th class="text-center"><font color="gray">Discontinued Date</font></th>
@@ -40,6 +41,7 @@
 
             <tr>
 
+              <th class="text-center">Edit</th>
               <th class="text-center">Product Name</th>
               <th class="text-center">Price</th>
               <th class="text-center"><font color="gray">Discontinued Date</font></th>
@@ -58,9 +60,15 @@
                   <tr>
 
                     <!-- Columns to pull from order data -->
+                    <td class="text-center">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_product_modal" data-remote="<%= edit_product_path(product) %> #edit_product_modal"
+                        Edit
+                      </button>
+                    </td>
                     <td class="text-center"><%= best_in_place product, :product_name %></td>
                     <td class="text-center"><%= best_in_place product, :price %></td>
                     <td class="text-center"><%= product.deleted_at %></td>
+
                     <!-- Disable Button -->
                     <td class="text-center">
                       <% if !product.deleted_at %>
@@ -111,3 +119,7 @@
 
     } );
 </script>
+
+
+<!-- Edit Product Modal -->
+<%= render partial: 'partials/modals/edit-product-modal' %>

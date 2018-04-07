@@ -163,7 +163,7 @@
                 <div class="card mb-3">
                   <div class="card-header">
                     <i class="fa fa-bar-chart"></i>
-                    Top 10 Order Totals by Customer
+                    Top 10 Customers by Revenue
                   </div>
                   <div class="card-body">
                     <%= column_chart Order.joins(:customer).group(:company_name).order("sum(order_total) desc").limit("10").sum(:order_total), label: "Order Total", prefix: "$", thousands: ",", height: "300px",colors: ["#00639c"], xtitle: "Company Name", ytitle: "Order Total", download: "companytotals_top10_column_chart", library: { animation: { easing: 'easeInQuad' }}%>
