@@ -163,7 +163,8 @@ class PagesController < ApplicationController
       add_breadcrumb 'Dashboard', dashboard_path
     end
     add_breadcrumb 'Reports: Vendors'
-
+    
+    @orders = Order.all
     @vendors = Vendor.all
   end
 
