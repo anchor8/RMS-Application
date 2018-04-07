@@ -1,7 +1,9 @@
+# Product Model
 class Product < ApplicationRecord
+  # Relationships
   has_many :order_lines
 
-  # Toggle order
+  # Toggle product status
   def toggle_product_status
     if !deleted_at
       # Deleted at doesn't exist

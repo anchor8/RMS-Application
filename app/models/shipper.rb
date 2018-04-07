@@ -1,3 +1,4 @@
+# Shipper Model
 class Shipper < ApplicationRecord
   # Relationships
   has_many :orders

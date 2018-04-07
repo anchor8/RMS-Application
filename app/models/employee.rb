@@ -73,11 +73,10 @@ class Employee < ApplicationRecord
   def password_complexity
     if password.present?
       # Password is present
-       if !password.match(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W])/)
-         # Password doesn't match policy
-         errors.add :password, "Password requires at least 1 lowercase letter, 1 uppercase letter, 1 digit, 1 symbol."
-       end
+      if !password.match(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W])/)
+        # Password doesn't match policy
+        errors.add :password, "Password requires at least 1 lowercase letter, 1 uppercase letter, 1 digit, 1 symbol."
+      end
     end
   end
-
 end

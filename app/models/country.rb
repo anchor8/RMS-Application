@@ -1,3 +1,4 @@
+# Country Model
 class Country < ApplicationRecord
   # Relationships
   has_many :orders

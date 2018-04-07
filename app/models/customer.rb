@@ -57,28 +57,38 @@ class Customer < ApplicationRecord
 
   private
 
+  # Set state_id in order on update of customer
   def set_state_update
     @customer = Customer.find(id)
+
     Order.find(id).update_column(:state_id, @customer.state_id)
   end
 
+  # Set street_address_1 in order on update of customer
   def set_street_address_1_update
     @customer = Customer.find(id)
+
     Order.find(id).update_column(:street_address_1, @customer.street_address_1)
   end
 
+  # Set street_address_2 in order on update of customer
   def set_street_address_2_update
     @customer = Customer.find(id)
+
     Order.find(id).update_column(:street_address_2, @customer.street_address_2)
   end
 
+  # Set city in order on update of customer
   def set_city_update
     @customer = Customer.find(id)
+
     Order.find(id).update_column(:city, @customer.city)
   end
 
+  # Set zip_code in order on update of customer
   def set_zip_code_update
     @customer = Customer.find(id)
+
     Order.find(id).update_column(:zip_code, @customer.zip_code)
   end
 end

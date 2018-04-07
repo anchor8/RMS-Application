@@ -1,3 +1,4 @@
+# State Model
 class State < ApplicationRecord
   # Relationships
   has_many :customers

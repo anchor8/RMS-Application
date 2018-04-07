@@ -1,3 +1,4 @@
+# Payment Type Model
 class PaymentType < ApplicationRecord
   # Relationships
   has_many :orders

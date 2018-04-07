@@ -1,3 +1,4 @@
+# Vendor Model
 class Vendor < ApplicationRecord
   # Relationships
   belongs_to :state

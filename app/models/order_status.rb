@@ -1,3 +1,4 @@
+# Order Status Model
 class OrderStatus < ApplicationRecord
   # Relationships
   has_many :orders

@@ -1,3 +1,4 @@
+# Vendor Status Model
 class VendorStatus < ApplicationRecord
   # Relatinships
   has_many :vendors

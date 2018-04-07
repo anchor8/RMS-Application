@@ -1,3 +1,4 @@
+# Employee Status Model
 class EmployeeStatus < ApplicationRecord
   # Relationships
   has_many :employees

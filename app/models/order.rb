@@ -1,3 +1,4 @@
+# Order Model
 class Order < ApplicationRecord
   # Relationships
   belongs_to :vendor
@@ -19,12 +20,14 @@ class Order < ApplicationRecord
   validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :deleted_at, allow_blank: true, presence: false
 
+  # After save
   after_save :set_state_save
   after_save :set_street_address_1_save
   after_save :set_street_address_2_save
   after_save :set_city_save
   after_save :set_zip_code_save
 
+  # After update
   after_update :set_state_update
   after_update :set_street_address_1_update
   after_update :set_street_address_2_update
@@ -66,53 +69,73 @@ class Order < ApplicationRecord
 
   private
 
+  # Set state from customer after saving order
   def set_state_save
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:state_id, @customer.state_id)
   end
 
+  # Set street_address_1 from customer after saving order
   def set_street_address_1_save
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:street_address_1, @customer.street_address_1)
   end
 
+  # Set street_address_2 from customer after saving order
   def set_street_address_2_save
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:street_address_2, @customer.street_address_2)
   end
 
+  # Set city from customer after saving order
   def set_city_save
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:city, @customer.city)
   end
 
+  # Set zip_code from customer after saving order
   def set_zip_code_save
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:zip_code, @customer.zip_code)
   end
 
+  # Set state from customer after updating order
   def set_state_update
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:state_id, @customer.state_id)
   end
 
+  # Set street_address_1 from customer after updating order
   def set_street_address_1_update
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:street_address_1, @customer.street_address_1)
   end
 
+  # Set street_address_2 from customer after updating order
   def set_street_address_2_update
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:street_address_2, @customer.street_address_2)
   end
 
+  # Set city from customer after updating order
   def set_city_update
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:city, @customer.city)
   end
 
+  # Set zip_code from customer after updating order
   def set_zip_code_update
     @customer = Customer.find(customer_id)
+
     Order.find(id).update_column(:zip_code, @customer.zip_code)
   end
 end
