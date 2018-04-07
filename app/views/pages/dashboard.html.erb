@@ -223,7 +223,7 @@
                       </div>
                       <div class="card-body">
                         <%= geo_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']}, legend: {textStyle: {color: 'black', fontSize: 16}} }%>
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#415e3e']}, legend: {textStyle: {color: 'black', fontSize: 16}} }%>
                       </div>
                       <div class="card-footer small text-muted"></div>
                     </div>
