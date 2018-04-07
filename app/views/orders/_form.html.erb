@@ -100,8 +100,6 @@
               <%= form.fields_for :order_lines do |order_line_form| %>
                 <%= render 'order_line', form: order_line_form %>
               <% end %>
-
-            </div>
           </table>
           <div class="mb-4">
             <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
