@@ -1,3 +1,4 @@
+# Order Lines Controller
 class OrderLinesController < ApplicationController
   before_action :set_order_line, only: [:show, :edit, :update, :destroy]
 
@@ -15,7 +16,6 @@ class OrderLinesController < ApplicationController
   # GET /order_lines/new
   def new
     @order_line = OrderLine.new
-
   end
 
   # GET /order_lines/1/edit
@@ -58,6 +58,7 @@ class OrderLinesController < ApplicationController
   # DELETE /order_lines/1.json
   def destroy
     @order_line.destroy
+
     respond_to do |format|
       format.html { redirect_to order_lines_url, notice: 'Order line was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,18 +73,20 @@ class OrderLinesController < ApplicationController
     else
       # File exists
       OrderLine.import(params[:file])
+
       redirect_to importmgmt_url, notice: 'Order line data imported!'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order_line
-      @order_line = OrderLine.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_line_params
-      params.require(:order_line).permit(:order_id, :product_id, :price, :number_of_items)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order_line
+    @order_line = OrderLine.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_line_params
+    params.require(:order_line).permit(:order_id, :product_id, :price, :number_of_items)
+  end
 end

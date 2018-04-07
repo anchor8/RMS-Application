@@ -1,5 +1,5 @@
+# Customers Controller
 class CustomersController < ApplicationController
-  # Set customer before performing show, edit, update, destroy actions
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -15,16 +15,13 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
-    # Set breadcrumbs for new customer
     add_breadcrumb 'Customer Management', customermgmt_path
     add_breadcrumb 'Create New Customer'
-
     @customer = Customer.new
   end
 
   # GET /customers/1/edit
   def edit
-    # Set breadcrumbs for edit customer
     add_breadcrumb 'Customer Management', customermgmt_path
     add_breadcrumb 'Edit Customer'
   end
@@ -32,7 +29,6 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    # Set breadcrumbs for new customer
     add_breadcrumb 'Customer Management', customermgmt_path
     add_breadcrumb 'Create New Customer'
 
@@ -82,18 +78,20 @@ class CustomersController < ApplicationController
     else
       # File exists
       Customer.import(params[:file])
+
       redirect_to importmgmt_url, notice: 'Customer data imported!'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_customer
-      @customer = Customer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def customer_params
-      params.require(:customer).permit(:state_id, :company_name, :customer_first_name, :customer_last_name, :job_title, :work_phone, :mobile, :fax, :customer_email, :customer_cc_email, :website, :social_media_address, :street_address_1, :street_address_2, :city, :zip_code, :customer_status_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def customer_params
+    params.require(:customer).permit(:state_id, :company_name, :customer_first_name, :customer_last_name, :job_title, :work_phone, :mobile, :fax, :customer_email, :customer_cc_email, :website, :social_media_address, :street_address_1, :street_address_2, :city, :zip_code, :customer_status_id)
+  end
 end
