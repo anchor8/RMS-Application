@@ -38,14 +38,14 @@
                  autocomplete="off"
                  href="">Hide All Columns</a>
 
-              <a class="show-contact btn btn-primary btn-sm"
+              <a class="show-customer-contact btn btn-primary btn-sm"
                  type="button"
                  data-toggle="buttons"
                  aria-pressed="false"
                  autocomplete="off"
                  href="">Only Show Customer Contact Info</a>
 
-              <a class="show-info btn btn-primary btn-sm"
+              <a class="show-customer-info btn btn-primary btn-sm"
                  type="button"
                  data-toggle="buttons"
                  aria-pressed="false"
@@ -419,102 +419,3 @@
   </div>
 
 </div>
-
-<script>
-    $(document).ready(function() {
-        var table = $('#customertable').DataTable( {
-          paging: true,
-          "order": [[ 5, 'asc' ]]
-        } );
-
-        jQuery(".best_in_place").best_in_place();
-
-        // Set all buttons as active on page load
-        $('a.toggle-vis').addClass('active')
-
-        // On click hide column
-        $('a.toggle-vis').on( 'click', function (e) {
-
-          // Get the column API object
-          var column = table.column( $(this).attr('data-column') );
-
-          // Toggle the visibility
-          column.visible( ! column.visible() );
-
-        } );
-
-        // Show all columns
-        $('a.show-all-col').on( 'click', function (e) {
-
-          // Set all columns to visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( true, false );
-
-          // adjust column sizing and redraw
-          table.columns.adjust().draw( false );
-
-          // Remove inactive class from individual column buttons
-          $('a.toggle-vis').removeClass('inactive')
-
-          // Add active class to individual column buttons
-          $('a.toggle-vis').addClass('active')
-
-        } );
-
-        // Hide all columns
-        $('a.hide-all-col').on( 'click', function (e) {
-
-          // Set all columns to not visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( false, false );
-
-          // adjust column sizing and redraw
-          table.columns.adjust().draw( false );
-
-          // Remove active class from individual column buttons
-          $('a.toggle-vis').removeClass('active')
-
-          // Add inactive class to individual column buttons
-          $('a.toggle-vis').addClass('inactive')
-
-        } );
-
-        // Show only customer contact info
-        $('a.show-contact').on( 'click', function (e) {
-
-          // Set all columns to visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ] ).visible( true, false );
-
-          // Set columns that are not contact info to not visible
-          table.columns( [ 0, 1, 2, 6, 14, 15, 16, 17, 18, 19 ] ).visible( false, false );
-
-          // adjust column sizing and redraw
-          table.columns.adjust().draw( false );
-
-          // Remove active class from individual column buttons
-          $('a.toggle-vis').removeClass('active')
-
-          // Add active class to customer contact buttons
-          $('a.customer-contact').addClass('active')
-
-        } );
-
-        // Show only customer info
-        $('a.show-info').on( 'click', function (e) {
-
-          // Set all columns to visible
-          table.columns( [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( true, false );
-
-          // Set columns that are not customer info to not visible
-          table.columns( [ 0, 1, 2, 8, 9, 10, 11, 12, 13 ] ).visible( false, false );
-
-          // adjust column sizing and redraw
-          table.columns.adjust().draw( false );
-
-          // Remove active class from individual column buttons
-          $('a.toggle-vis').removeClass('active')
-
-          // Add active class to customer info buttons
-          $('a.customer-info').addClass('active')
-
-        } );
-    } );
-</script>
