@@ -27,7 +27,7 @@
           <div class="row">
 
 
-            <!-- Left Column -->
+            <!-- Column 1 -->
             <div class="col-md-auto">
               <fieldset><legend>Customer Info</legend>
               <div class="field">
@@ -45,16 +45,17 @@
                   <%= form.text_field :job_title, :size => '20', placeholder: 'Products Manager', id: :customer_job_title, required: true %>
                 </div>
 
-              <div class="field mt-4">
+              <div class="field mt-2">
                 <b><%= form.label :customer_status_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select :customer_status_id, CustomerStatus.all, :id, :customer_status_description, {prompt: true}, {required: true} %>
               </div>
               </fieldset>
             </div>
 
+            <!-- Column 2 -->
             <div class="col-md-auto">
               <fieldset><legend>Contact Info</legend>
-              <div class="field mt-4">
+              <div class="field mt-auto">
                 <b><%= form.label :Email  %></b> <font color="red">*</font><br />
                 <%= form.text_field :customer_email, :size => '25', type: 'email', required: true, placeholder: 'email@provider.com', id: :customer_customer_email %>
               </div>
@@ -81,7 +82,7 @@
               </fieldset>
             </div>
 
-            <!-- Right column -->
+            <!-- Column 3 -->
             <div class="col-md-auto">
               <fieldset><legend>Company Info</legend>
               <div class="field">
@@ -101,9 +102,10 @@
               </fieldset>
             </div>
 
+            <!-- Column 4 -->
             <div class="col-md-auto">
               <fieldset><legend>Company Address</legend>
-              <div class="field mt-4">
+              <div class="field mt-auto">
                 <b><%= form.label :street_address_1 %></b> <font color="red">*</font><br />
                 <%= form.text_field :street_address_1, :size => '30', Required: true, placeholder: '1234 Street Address Rd. Bldg. 12', id: :customer_street_address_1 %>
               </div>
