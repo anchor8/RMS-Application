@@ -1,24 +1,23 @@
-# app/controllers/registrations_controller.rb
+# Registrations Controller for Employee
 class RegistrationsController < Devise::RegistrationsController
-  # Only new and create actions
   before_action only: [:new, :create]
 
   layout "application"
 
-  # No authentication needed
   skip_before_action :require_no_authentication
 
   # GET /resource/sign_up
   def new
-    # Breadcrumbs
     add_breadcrumb 'User Management', usermgmt_path
     add_breadcrumb 'Create New Employee'
 
     if current_employee.admin?
+      # Current employee is admin
       build_resource
       yield resource if block_given?
       respond_with resource
     else
+      # Current employee is not admin
       redirect_to dashboard_path
       flash[:notice] = "Not authorized"
     end

@@ -1,5 +1,5 @@
+# Vendors Controller
 class VendorsController < ApplicationController
-  # Set vendor before performing show, edit, update, destroy actions
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
 
   # GET /vendors
@@ -15,7 +15,6 @@ class VendorsController < ApplicationController
 
   # GET /vendors/new
   def new
-    # Breadcrumb for new vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Create New Vendor'
 
@@ -24,7 +23,6 @@ class VendorsController < ApplicationController
 
   # GET /vendors/1/edit
   def edit
-    # Breadcrumb for edit vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Edit Vendor'
   end
@@ -32,7 +30,6 @@ class VendorsController < ApplicationController
   # POST /vendors
   # POST /vendors.json
   def create
-    # Breadcrumb for new vendor
     add_breadcrumb 'Vendor Management', vendormgmt_path
     add_breadcrumb 'Create New Vendor'
 
@@ -87,13 +84,14 @@ class VendorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vendor
-      @vendor = Vendor.find(params[:id])
-    end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vendor
+    @vendor = Vendor.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def vendor_params
-      params.require(:vendor).permit(:state_id, :vendor_status_id, :vendor_name, :contact_name, :job_title, :work_phone, :mobile, :fax, :vendor_email, :vendor_cc_email, :website, :street_address_1, :street_address_2, :city, :zip_code)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def vendor_params
+    params.require(:vendor).permit(:state_id, :vendor_status_id, :vendor_name, :contact_name, :job_title, :work_phone, :mobile, :fax, :vendor_email, :vendor_cc_email, :website, :street_address_1, :street_address_2, :city, :zip_code)
+  end
 end

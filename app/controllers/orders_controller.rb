@@ -1,5 +1,5 @@
+# Orders Controller
 class OrdersController < ApplicationController
-  # Set order status before performing show, edit, update, destroy actions
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -15,23 +15,24 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    # Breadcrumbs for new order
     if params['origin'] == "customer"
+      # From customermgmt
       add_breadcrumb 'Customer Management', customermgmt_path
-      add_breadcrumb 'Create New Order'
     elsif params['origin'] == "vendor"
+      # From vendormgmt
       add_breadcrumb 'Vendor Management', vendormgmt_path
-      add_breadcrumb 'Create New Order'
     else
+      # From anywhere else
       add_breadcrumb 'Order Management', ordermgmt_path
-      add_breadcrumb 'Create New Order'
     end
+
+    add_breadcrumb 'Create New Order'
 
     @order = Order.new
     @order.order_date = Date.current
     @order.shipper_id = 5
 
-    # Build Orderlines
+    # Build Orderlines form
     @order.order_lines.build
 
     # Parameters from customer
@@ -49,7 +50,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    # Breadcrumbs for edit order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Edit Order'
   end
@@ -57,7 +57,6 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    # Breadcrumbs for new order
     add_breadcrumb 'Order Management', ordermgmt_path
     add_breadcrumb 'Create New Order'
 
@@ -107,18 +106,20 @@ class OrdersController < ApplicationController
     else
       # File exists
       Order.import(params[:file])
+
       redirect_to importmgmt_url, notice: 'Order data imported!'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code, order_lines_attributes: OrderLine.attribute_names.map(&:to_sym).push(:_destroy))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:vendor_id, :order_status_id, :customer_id, :country_id, :employee_id, :payment_type_id, :shipper_id, :state_id, :shipping_number, :purchase_order_number, :order_date, :ship_date, :order_total, :street_address_1, :street_address_2, :city, :zip_code, order_lines_attributes: OrderLine.attribute_names.map(&:to_sym).push(:_destroy))
+  end
 end
