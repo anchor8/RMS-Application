@@ -34,7 +34,7 @@
        data-toggle="buttons"
        aria-pressed="false"
        autocomplete="off"
-       href="">Collapse Dashboard</a>
+       href="">Show / Hide</a>
 
     <!-- Dashboard Accordian -->
     <div id="accordian">
@@ -43,7 +43,7 @@
       <div class="card mb-4">
 
         <!-- Card Header 2 - Products -->
-        <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="card-header text-center dashboard-headers" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Products
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Card Header 3 - Customers -->
-        <div class="card-header text-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <div class="card-header text-center dashboard-headers" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               Customers
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Card Header 4 - Top 10 Vendors / States -->
-        <div class="card-header text-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+        <div class="card-header text-center dashboard-headers" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
               Vendors
@@ -234,7 +234,7 @@
         </div>
 
         <!-- Card Header 1 - Status -->
-        <div class="card-header text-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <div class="card-header text-center dashboard-headers" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               Statuses
@@ -314,7 +314,7 @@
         </div>
 
         <!-- Card Header 5 - Employees -->
-        <div class="card-header text-center" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+        <div class="card-header text-center dashboard-headers" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
               Employees
@@ -373,14 +373,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Expand dashboard button -->
-    <a class="expand-dashboard btn btn-primary btn-block btn-sm mb-3 active"
-       type="button"
-       data-toggle="buttons"
-       aria-pressed="false"
-       autocomplete="off"
-       href="">Expand Dashboard</a>
   </div>
 </div>
 
@@ -393,25 +385,24 @@
     // On click collapse dashboard button
     $('a.collapse-dashboard').on( 'click', function (e) {
 
-      // Remove show class from dashboard accordians
-      $('#collapseOne').removeClass('show')
-      $('#collapseTwo').removeClass('show')
-      $('#collapseThree').removeClass('show')
-      $('#collapseFour').removeClass('show')
-      $('#collapseFive').removeClass('show')
-      $('#collapseSix').removeClass('show')
-    } );
+      if ($(".show")[0]){
+        // Do something if class does not exist
+        $('#collapseOne').removeClass('show')
+        $('#collapseTwo').removeClass('show')
+        $('#collapseThree').removeClass('show')
+        $('#collapseFour').removeClass('show')
+        $('#collapseFive').removeClass('show')
+        $('#collapseSix').removeClass('show')
 
-    // On click collapse dashboard button
-    $('a.expand-dashboard').on( 'click', function (e) {
-
-      // Remove show class from dashboard accordians
-      $('#collapseOne').addClass('show')
-      $('#collapseTwo').addClass('show')
-      $('#collapseThree').addClass('show')
-      $('#collapseFour').addClass('show')
-      $('#collapseFive').addClass('show')
-      $('#collapseSix').addClass('show')
+      } else {
+        // Do something if class exists
+        $('#collapseOne').addClass('show')
+        $('#collapseTwo').addClass('show')
+        $('#collapseThree').addClass('show')
+        $('#collapseFour').addClass('show')
+        $('#collapseFive').addClass('show')
+        $('#collapseSix').addClass('show')
+      }
     } );
   })
 </script>
