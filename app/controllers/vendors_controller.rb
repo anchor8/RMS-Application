@@ -37,7 +37,7 @@ class VendorsController < ApplicationController
 
     respond_to do |format|
       if @vendor.save
-        format.html { redirect_to vendormgmt_url, notice: @vendor_name + " was successfully added." }
+        format.html { redirect_to vendormgmt_url, notice: @vendor_name.to_s + " was successfully added." }
         format.json { render :show, status: :created, location: @vendor }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class VendorsController < ApplicationController
   def update
     respond_to do |format|
       if @vendor.update(vendor_params)
-        format.html { redirect_to vendormgmt_url, notice: @vendor_name + " was successfully updated." }
+        format.html { redirect_to vendormgmt_url, notice: @vendor_name.to_s + " was successfully updated." }
         format.json { render :show, status: :ok, location: @vendor }
       else
         format.html { render :edit }
@@ -84,7 +84,7 @@ class VendorsController < ApplicationController
   end
 
   private
-  
+
   # Use callbacks to share common setup or constraints between actions.
   def set_vendor
     @vendor = Vendor.find(params[:id])
