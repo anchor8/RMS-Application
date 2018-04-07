@@ -27,59 +27,63 @@
           <div class="row">
 
             <!-- Left Column -->
-            <div class="col-md-6">
-
+            <div class="col-md-auto">
+              <fieldset><legend>Order Info</legend>
               <%= form.hidden_field :order_date, value: @order.order_date %>
               <%= form.hidden_field :country_id, value: 1 %>
               <%= form.hidden_field :state_id, value: 1 %>
 
               <div class="field">
-                <b><%= form.label "Customer Name" %></b> <font color="red">*</font>
+                <b><%= form.label "Customer Name" %></b> <font color="red">*</font><br />
                 <%= form.collection_select :customer_id, Customer.where("deleted_at is null").order(:customer_last_name), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
               </div>
 
               <div class="field mt-1">
-                <b><%= form.label :employee_id %></b> <font color="red">*</font>
+                <b><%= form.label :employee_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select(:employee_id, Employee.where("deleted_at is null").order(:lname), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
               </div>
 
               <div class="field mt-1">
-                <b><%= form.label :vendor_id %></b> <font color="red">*</font>
+                <b><%= form.label :vendor_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select(:vendor_id, Vendor.where("deleted_at is null").order(:vendor_name), :id, :vendor_name, {prompt: true}, {required: true}) %>
               </div>
+              </fieldset>
+            </div>
 
-              <div class="field mt-5">
-                <b><%= form.label :payment_type_id %></b> <font color="red">*</font>
+            <div class="col-md-auto">
+              <fieldset><legend>Payment</legend>
+              <div class="field mt-auto">
+                <b><%= form.label :payment_type_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
               </div>
-
+              </fieldset>
             </div>
 
 
 
             <!-- Middle Column -->
-            <div class="col-md-6">
-
+            <div class="col-md-auto">
+              <fieldset><legend>Shipping</legend>
               <div class="field">
-                <b><%= form.label "Shipping Status" %></b> <font color="red">*</font>
+                <b><%= form.label "Shipping Status" %></b> <font color="red">*</font><br />
                 <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true}) %>
               </div>
 
               <div class="field mt-1">
-                <b><%= form.label :shipping_number %></b>
+                <b><%= form.label :shipping_number %></b><br />
                 <%= form.number_field :shipping_number, :size => '10', placeholder: '123456789012345', id: :order_shipping_number %>
               </div>
 
               <div class="field mt-1">
-                <b><%= form.label :shipper_id %></b>
+                <b><%= form.label :shipper_id %></b><br />
                 <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {:selected => @order.shipper_id}) %>
               </div>
 
               <div class="field mt-1">
-                <b><%= form.label :ship_date %></b>
+                <b><%= form.label :ship_date %></b><br />
                 <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, start_year: 2000 %>
               </div>
-
+              </fieldset>
             </div>
 
           </div>
@@ -96,6 +100,7 @@
               <%= form.fields_for :order_lines do |order_line_form| %>
                 <%= render 'order_line', form: order_line_form %>
               <% end %>
+
             </div>
           </table>
           <div class="mb-4">
