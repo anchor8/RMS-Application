@@ -83,7 +83,7 @@
                       </div>
                       <div class="card-body">
                         <%= geo_chart OrderLine.joins(order: :state).group(:state_name).order("COUNT(state_id) asc").count,
-                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#c6d2ff', '#6b6c6d', '#697abc']} }%>
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#c6d2ff', '#6b6c6d', '#697abc']}, legend: {textStyle: {color: 'black', fontSize: 16}} }%>
                       </div>
                       <div class="card-footer small text-muted"></div>
                     </div>
@@ -136,7 +136,7 @@
                       </div>
                       <div class="card-body">
                         <%= geo_chart Customer.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#b7f6ff', '#00c7e2', '#00899c']} }%>
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#b7f6ff', '#00c7e2', '#00899c']}, legend: {textStyle: {color: 'black', fontSize: 16}} }%>
                       </div>
                       <div class="card-footer small text-muted"></div>
                     </div>
@@ -204,7 +204,7 @@
                       </div>
                       <div class="card-body">
                         <%= geo_chart Vendor.joins(:state).group(:state_name).order("COUNT(state_id) desc").count,
-                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']} }%>
+                                      library: { region: "US", resolution: "provinces", colorAxis: {colors: ['#9EEE95', '#8CD384', '#76B270']}, legend: {textStyle: {color: 'black', fontSize: 16}} }%>
                       </div>
                       <div class="card-footer small text-muted"></div>
                     </div>
