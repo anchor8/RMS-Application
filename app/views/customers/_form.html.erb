@@ -19,7 +19,7 @@
 
           <!-- Error Banner -->
           <% if customer.errors.any? %>
-            <div class="h5 strong text-center mark" id="flash">
+            <div class="h5 strong text-center mark">
               <% customer.errors.full_messages.each do |message| %>
                 * <%= message %> *
                 <br />
