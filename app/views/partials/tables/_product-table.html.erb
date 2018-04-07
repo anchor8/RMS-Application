@@ -60,11 +60,13 @@
                   <tr>
 
                     <!-- Columns to pull from order data -->
+
+                    <!-- Edit Button -->
                     <td class="text-center">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_product_modal" data-remote="<%= edit_product_path(product) %> #edit_product_modal"
-                        Edit
-                      </button>
-                    </td>
+                      <%= button_to 'Edit',
+                          edit_product_path(product.id),
+                          :method => :get,
+                          :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-center"><%= best_in_place product, :product_name %></td>
                     <td class="text-center"><%= best_in_place product, :price %></td>
                     <td class="text-center"><%= product.deleted_at %></td>

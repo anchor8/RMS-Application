@@ -27,6 +27,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    add_breadcrumb 'Products', new_product_path
+    add_breadcrumb 'Edit Product'
   end
 
   # POST /products
