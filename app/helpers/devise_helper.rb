@@ -1,4 +1,6 @@
+# Devise Helper
 module DeviseHelper
+  # Override devise error message helper
   def devise_error_messages!
     return "" unless devise_error_messages?
 
