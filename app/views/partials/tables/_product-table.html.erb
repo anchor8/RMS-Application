@@ -29,8 +29,8 @@
               <th class="text-center">Edit</th>
               <th class="text-center">Product Name</th>
               <th class="text-center">Price</th>
-              <th class="text-center"><font color="gray">Discontinued Date</font></th>
-              <th class="text-center"><font color="gray">Discontinue</th>
+              <th class="text-center">Discontinued Date</th>
+              <th class="text-center">Discontinue</th>
 
             </tr>
 
@@ -44,8 +44,8 @@
               <th class="text-center">Edit</th>
               <th class="text-center">Product Name</th>
               <th class="text-center">Price</th>
-              <th class="text-center"><font color="gray">Discontinued Date</font></th>
-              <th class="text-center"><font color="gray">Discontinue</font></th>
+              <th class="text-center">Discontinued Date</th>
+              <th class="text-center">Discontinue</th>
 
             </tr>
 
@@ -67,8 +67,8 @@
                           edit_product_path(product.id),
                           :method => :get,
                           :class => 'btn btn-outline-success btn-sm' %></td>
-                    <td class="text-center"><%= best_in_place product, :product_name %></td>
-                    <td class="text-center"><%= best_in_place product, :price %></td>
+                    <td class="text-center"><%= product.product_name %></td>
+                    <td class="text-center"><%= product.price %></td>
                     <td class="text-center"><%= product.deleted_at %></td>
 
                     <!-- Disable Button -->

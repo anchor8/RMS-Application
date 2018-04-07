@@ -254,9 +254,9 @@
 
             <tr>
 
-              <th class="text-center"><font color="gray">New Order</font></th>
-              <th class="text-center"><font color="gray">Disable</font></th>
-              <th class="text-center"><font color="gray">Edit</font></th>
+              <th class="text-center">New Order</th>
+              <th class="text-center">Disable</th>
+              <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">State</th>
               <th class="text-center">Status</th>
@@ -282,9 +282,9 @@
 
             <tr>
 
-              <th class="text-center"><font color="gray">New Order</font></th>
-              <th class="text-center"><font color="gray">Disable</font></th>
-              <th class="text-center"><font color="gray">Edit</font></th>
+              <th class="text-center">New Order</th>
+              <th class="text-center">Disable</th>
+              <th class="text-center">Edit</th>
               <th class="text-center">Vendor</th>
               <th class="text-center">State</th>
               <th class="text-center">Status</th>
@@ -355,21 +355,21 @@
                           edit_vendor_path(vendor.id),
                           :method => :get,
                           :class => 'btn btn-outline-success btn-sm' %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :vendor_name %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :state_id, :as => :select, :collection => State.order('state_name asc').map { |f| [f.id, f.state_name]}, :place_holder => vendor.state.state_name %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :vendor_status_id, :as => :select, :collection=> VendorStatus.order('vendor_status_type asc').where('id != ?', 4).map{|f| [f.id, f.vendor_status_type]}, :place_holder => vendor.vendor_status.vendor_status_type %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :contact_name %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :job_title %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :work_phone %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :mobile %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :fax %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :vendor_email %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :vendor_cc_email %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :website %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :street_address_1 %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :street_address_2 %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :city %></td>
-                    <td class="text-left-align"><%= best_in_place vendor, :zip_code %></td>
+                    <td class="text-left-align"><%= vendor.:vendor_name %></td>
+                    <td class="text-left-align"><%= vendor.state.state_name %></td>
+                    <td class="text-left-align"><%= vendor.vendor_status.vendor_status_type %></td>
+                    <td class="text-left-align"><%= vendor.contact_name %></td>
+                    <td class="text-left-align"><%= vendor.job_title %></td>
+                    <td class="text-left-align"><%= vendor.work_phone %></td>
+                    <td class="text-left-align"><%= vendor.mobile %></td>
+                    <td class="text-left-align"><%= vendor.fax %></td>
+                    <td class="text-left-align"><%= vendor.vendor_email %></td>
+                    <td class="text-left-align"><%= vendor.vendor_cc_email %></td>
+                    <td class="text-left-align"><%= vendor.website %></td>
+                    <td class="text-left-align"><%= vendor.street_address_1 %></td>
+                    <td class="text-left-align"><%= vendor.street_address_2 %></td>
+                    <td class="text-left-align"><%= vendor.city %></td>
+                    <td class="text-left-align"><%= vendor.zip_code %></td>
 
                   </tr>
 

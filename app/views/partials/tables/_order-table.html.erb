@@ -191,17 +191,17 @@
 
             <tr>
 
-              <th class="text-center"><font color="gray">Cancel</font></th>
-              <th class="text-center"><font color="gray">Edit</font></th>
-              <th class="text-center"><font color="gray">PO No.</font></th>
-              <th class="text-center"><font color="gray">Date</font></th>
+              <th class="text-center">Cancel</th>
+              <th class="text-center">Edit</th>
+              <th class="text-center">PO No.</th>
+              <th class="text-center">Date</th>
               <th class="text-center">Status</th>
-              <th class="text-center"><font color="gray">Company</font></th>
-              <th class="text-center"><font color="gray">Customer</font></th>
-              <th class="text-center"><font color="gray">Employee</font></th>
-              <th class="text-center"><font color="gray">Vendor</font></th>
-              <th class="text-center"><font color="gray">Total (USD)</font></th>
-              <th class="text-center"><font color="gray">Payment Type</font></th>
+              <th class="text-center">Company</th>
+              <th class="text-center">Customer</th>
+              <th class="text-center">Employee</th>
+              <th class="text-center">Vendor</th>
+              <th class="text-center">Total (USD)</th>
+              <th class="text-center">Payment Type</th>
 
             </tr>
 
@@ -212,17 +212,17 @@
 
             <tr>
 
-              <th class="text-center"><font color="gray">Cancel</font></th>
-              <th class="text-center"><font color="gray">Edit</font></th>
-              <th class="text-center"><font color="gray">PO No.</font></th>
-              <th class="text-center"><font color="gray">Date</font></th>
+              <th class="text-center">Cancel</th>
+              <th class="text-center">Edit</th>
+              <th class="text-center">PO No.</th>
+              <th class="text-center">Date</th>
               <th class="text-center">Status</th>
-              <th class="text-center"><font color="gray">Company</font></th>
-              <th class="text-center"><font color="gray">Customer</font></th>
-              <th class="text-center"><font color="gray">Employee</font></th>
-              <th class="text-center"><font color="gray">Vendor</font></th>
-              <th class="text-center"><font color="gray">Total (USD)</font></th>
-              <th class="text-center"><font color="gray">Payment Type</font></th>
+              <th class="text-center">Company</th>
+              <th class="text-center">Customer</th>
+              <th class="text-center">Employee</th>
+              <th class="text-center">Vendor</th>
+              <th class="text-center">Total (USD)</th>
+              <th class="text-center">Payment Type</th>
 
 
 
@@ -267,7 +267,7 @@
 
                     <td class="text-center"><%= order.purchase_order_number %></td>
                     <td class="text-left-align"><%= order.order_date %></td>
-                    <td class="text-left-align"><%= best_in_place order, :order_status_id, :as => :select, :collection => OrderStatus.order('order_status_description asc').where('id != ?', 3).map { |f| [f.id, f.order_status_description]}, :place_holder => order.order_status.order_status_description %></td>
+                    <td class="text-left-align"><%= order.order_status.order_status_description %></td>
                     <td class="text-left-align"><%= order.customer.company_name %></td>
                     <td class="text-left-align"><%= order.customer.customer_last_name + ", " + order.customer.customer_first_name%></td>
                     <td class="text-left-align"><%= order.employee.lname + ", " + order.employee.fname %></td>
