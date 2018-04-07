@@ -1,0 +1,339 @@
+<!-- Products by State -->
+<% if params[:active_tab] == 'report11' || !params[:active_tab] %>
+  <!-- Tab 11 - Report 11 (Active if active_tab is report 11) -->
+  <div class="tab-pane container-fluid active" id="report11">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        States - Products
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report11table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">States</th>
+                <th class="text-center">Products</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">States</th>
+                <th class="text-center">Products</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @order_lines.each do |order_line| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order_line.order.state.state_name %></td>
+                  <td class="text-center"><%= order_line.product.product_name %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% else %>
+  <!-- Tab 11 - Report 11 (Inactive) -->
+  <div class="tab-pane container-fluid" id="report11">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        States - Products
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report11table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">States</th>
+                <th class="text-center">Products</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">States</th>
+                <th class="text-center">Products</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @order_lines.each do |order_line| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order_line.order.state.state_name %></td>
+                  <td class="text-center"><%= order_line.product.product_name %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% end %>
+
+<!-- Product Orders -->
+<% if params[:active_tab] == 'report12' %>
+  <!-- Tab 10 - Report 10 (Active if active_tab is report 10) -->
+  <div class="tab-pane container-fluid active" id="report12">
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Product - Orders
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report12table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Product</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Product</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order_line.product_name %></td>
+                  <td class="text-center"><%= OrderLine.left_joins(:product).order("COUNT(products.id) DESC").where("product_id = ?", order_line.id).count %></td>
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+  </div>
+<% else %>
+  <!-- Tab 10 - Report 10 (Inactive) -->
+  <div class="tab-pane container-fluid" id="report12">
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Product - Orders
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report12table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Product</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Product</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order_line.product_name %></td>
+                  <td class="text-center"><%= OrderLine.left_joins(:product).order("COUNT(products.id) DESC").where("product_id = ?", order_line.id).count %></td>
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+  </div>
+
+</div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+
+      var report11table = $('#report11table').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true,
+        "order": [[ 0, 'asc' ]]
+      } );
+
+      var report12table = $('#report12table').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true,
+        "order": [[ 1, 'desc' ]]
+      } );
+
+  } );
+</script>

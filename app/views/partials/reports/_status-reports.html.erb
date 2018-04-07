@@ -1,0 +1,520 @@
+<!-- Customer Order Statuses -->
+<% if params[:active_tab] == 'report2' || !params[:active_tab] %>
+  <!-- Tab 2 - Report 2 (Active if active_tab is report 2) -->
+  <div class="tab-pane container-fluid active" id="report2">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Companies - Order Statuses
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report2table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Company</th>
+                <th class="text-center">Shipped</th>
+                <th class="text-center">Not Shipped</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Company</th>
+                <th class="text-center">Shipped</th>
+                <th class="text-center">Not Shipped</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @orders.group_by(&:customer).each do |order, customer| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order.company_name %></td>
+                  <td class="text-center"><%= Order.joins(:order_status, :customer).where("order_status_id = ? AND company_name = ?", 2,order.company_name).count %></td>
+                  <td class="text-center"><%= Order.joins(:order_status, :customer).where("order_status_id = ? AND company_name = ?", 1,order.company_name).count %></td>
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% else %>
+  <!-- Tab 2 - Report 2 (Inactive) -->
+  <div class="tab-pane container-fluid" id="report2">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Companies - Order Statuses
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report2table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Company</th>
+                <th class="text-center">Shipped</th>
+                <th class="text-center">Not Shipped</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Company</th>
+                <th class="text-center">Shipped</th>
+                <th class="text-center">Not Shipped</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @orders.group_by(&:customer).each do |order, customer| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order.company_name %></td>
+                  <td class="text-center"><%= Order.joins(:order_status, :customer).where("order_status_id = ? AND company_name = ?", 2,order.company_name).count %></td>
+                  <td class="text-center"><%= Order.joins(:order_status, :customer).where("order_status_id = ? AND company_name = ?", 1,order.company_name).count %></td>
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% end %>
+
+<!-- Vendor Statuses -->
+<% if params[:active_tab] == 'report3' %>
+  <!-- Tab 3 - Report 3 (Active if active_tab is report 3) -->
+  <div class="tab-pane container-fluid active" id="report3">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Statuses - Vendors
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report3table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Status</th>
+                <th class="text-center">Vendors</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Status</th>
+                <th class="text-center">Vendors</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @vendors.group_by(&:vendor_status).each do |vendor, vendor_status| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= vendor.vendor_status_type %></td>
+                  <td class="text-center"><%= vendor.vendor_ids.count %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% else %>
+  <!-- Tab 3 - Report 3 (Inactive) -->
+  <div class="tab-pane container-fluid" id="report3">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Statuses - Vendors
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report3table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Status</th>
+                <th class="text-center">Vendors</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Status</th>
+                <th class="text-center">Vendors</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @vendors.group_by(&:vendor_status).each do |vendor, vendor_status| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= vendor.vendor_status_type %></td>
+                  <td class="text-center"><%= vendor.vendor_ids.count %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% end %>
+
+<!-- Carrier Usage -->
+<% if params[:active_tab] == 'report4' %>
+  <!-- Tab 4 - Report 4 (Active if active_tab is report 4) -->
+  <div class="tab-pane container-fluid active" id="report4">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Carriers - Orders
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report4table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Carrier</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Carrier</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @orders.group_by(&:shipper).each do |order, shipper| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order.shipper_description %></td>
+                  <td class="text-center"><%= order.order_ids.count %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% else %>
+  <!-- Tab 4 - Report 4 (Inactive) -->
+  <div class="tab-pane container-fluid" id="report4">
+
+    <!-- Table Card -->
+    <div class="card mb-3">
+
+      <!-- Table Header -->
+      <div class="card-header">
+
+        <!-- Table Icon -->
+        <i class="fa fa-table"></i>
+
+        <!-- Table Name -->
+        Carriers - Orders
+
+      </div>
+
+      <!-- Table Card Body -->
+      <div class="card-body">
+
+        <!-- Table Type -->
+        <div class="table-responsive">
+
+          <!-- Report 1 Table -->
+          <table class="table table-bordered table-hover table-striped" id="report4table" width="100%" cellspacing="0">
+
+            <!-- Top Column Names -->
+            <thead>
+
+              <tr>
+
+                <th class="text-center">Carrier</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </thead>
+
+            <!-- Bottom Column Names -->
+            <tfoot>
+
+              <tr>
+
+                <th class="text-center">Carrier</th>
+                <th class="text-center">Orders</th>
+
+              </tr>
+
+            </tfoot>
+
+            <!-- Content -->
+            <tbody>
+
+              <!-- Load order data -->
+              <% @orders.group_by(&:shipper).each do |order, shipper| %>
+
+                <tr>
+                  <!-- Columns to pull from order data -->
+                  <td class="text-center"><%= order.shipper_description %></td>
+                  <td class="text-center"><%= order.order_ids.count %></td>
+
+                </tr>
+
+              <% end %>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Footnote: Lastest date a order was created -->
+      <div class="card-footer small text-muted"></div>
+
+    </div>
+
+  </div>
+<% end %>
+
+
+<script>
+  $(document).ready(function() {
+
+      // Declare report2table
+      var report2table = $('#report2table').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true,
+        "order": [[ 2, 'desc' ]]
+      } );
+
+      // Declare report3table
+      var report3table = $('#report3table').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true,
+        "order": [[ 0, 'asc' ]]
+      } );
+
+      // Declare report4table
+      var report4table = $('#report4table').DataTable( {
+        dom: 'Bflrtip',
+        "paging": true,
+        "order": [[ 1, 'desc' ]]
+      } );
+
+  } );
+</script>

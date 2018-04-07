@@ -1,0 +1,37 @@
+<% content_for :title, "Reports - Employees" %>
+
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+
+  <!-- Container (Fluid) -->
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <!-- Report Tabs -->
+    <ul class="nav nav-tabs">
+
+      <!-- Report 8 - Employee Orders -->
+      <li class="nav-item">
+        <!-- If active_tab is report1, activate -->
+        <% if params[:active_tab] == 'report8' %>
+          <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders</a>
+        <!-- If active_tab is empty, activate-->
+        <% elsif !params[:active_tab] %>
+          <a class="nav-link active" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders</a>
+        <!-- If active_tab is not report1 or empty, dont activate -->
+        <% else %>
+          <a class="nav-link" aria-controls="report8" role="tab" data-toggle="tab" href="#report8">Employee Orders</a>
+        <% end %>
+      </li>
+    </ul>
+
+    <!-- Content in Tab -->
+    <div class="tab-content">
+
+      <%= render partial: 'partials/reports/employee-reports' %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<% content_for :title, "Reports - Vendors" %>
+
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+
+  <!-- Container (Fluid) -->
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <%= render partial: 'partials/breadcrumbs' %>
+
+    <!-- Report Tabs -->
+    <ul class="nav nav-tabs">
+
+      <!-- Report 9 - Vendor Orders -->
+      <li class="nav-item">
+
+        <!-- If active_tab is report9, activate -->
+        <% if params[:active_tab] == 'report9' %>
+          <a class="nav-link active" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders</a>
+
+        <!-- If active_tab is empty, activate-->
+        <% elsif !params[:active_tab] %>
+          <a class="nav-link active" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders</a>
+
+        <!-- If active_tab is not report9, dont activate -->
+        <% else %>
+          <a class="nav-link" aria-controls="report9" role="tab" data-toggle="tab" href="#report9">Vendor Orders</a>
+
+        <% end %>
+      </li>
+
+      <!-- Report 7 - Vendors by State -->
+      <li class="nav-item">
+
+        <!-- If active_tab is report5, activate -->
+        <% if params[:active_tab] == 'report7' %>
+          <a class="nav-link active" aria-controls="report7" role="tab" data-toggle="tab" href="#report7">Vendors by State</a>
+
+        <!-- If active_tab is not report5, dont activate -->
+        <% else %>
+          <a class="nav-link" aria-controls="report7" role="tab" data-toggle="tab" href="#report7">Vendors by State</a>
+
+        <% end %>
+      </li>
+
+    </ul>
+
+    <!-- Content in Tab -->
+    <div class="tab-content">
+
+      <%= render partial: 'partials/reports/vendor-reports' %>
+
+    </div>
+
+  </div>
+
+</div>

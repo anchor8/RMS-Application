@@ -24,18 +24,63 @@
                 Dashboard
           </span>
         <% end %>
-
       </li>
 
       <!-- Reports Nav Button -->
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
+      <li class="nav-item dropdown" data-toggle="tooltip" data-placement="right" title="Reports">
 
-        <%= link_to(reports_url, class: "nav-link") do %>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bar-chart"></i>
           <span class="nav-link-text">
                 Reports
           </span>
-        <% end %>
+        </a>
+
+          <div class="dropdown-menu ml-12" aria-labelledby="navbarDropdown">
+
+            <%= link_to(reports_orders_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Orders
+              </span>
+            <% end %>
+
+            <%= link_to(reports_products_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Products
+              </span>
+            <% end %>
+
+            <%= link_to(reports_customers_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Customers
+              </span>
+            <% end %>
+
+            <%= link_to(reports_vendors_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Vendors
+              </span>
+            <% end %>
+
+            <%= link_to(reports_statuses_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Statuses
+              </span>
+            <% end %>
+
+            <%= link_to(reports_employees_url, class: "dropdown-item") do %>
+              <i class="fa fa-bar-chart"></i>
+              <span class="nav-link-text">
+                    Employees
+              </span>
+            <% end %>
+
+          </div>
 
       </li>
 
@@ -48,7 +93,6 @@
                 Customer Management
           </span>
         <% end %>
-
       </li>
 
       <!-- Order Management Nav Button -->
@@ -60,7 +104,6 @@
                 Order Management
           </span>
         <% end %>
-
       </li>
 
       <!-- Shipping Management Nav Button -->
@@ -72,7 +115,6 @@
                 Shipping Management
           </span>
         <% end %>
-
       </li>
 
       <!-- Vendor Management Nav Button -->
@@ -84,7 +126,6 @@
                 Vendor Management
           </span>
         <% end %>
-
       </li>
 
       <!-- Import Management Nav Button -->
@@ -137,5 +178,4 @@
     </ul>
 
   </div>
-
 </nav>

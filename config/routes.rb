@@ -70,29 +70,31 @@ Rails.application.routes.draw do
                                       via: 'patch'
 
   # Pages
-  get 'pages/dashboard', to: 'pages#dashboard',
-                         as: 'dashboard'
+  get 'pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
 
-  get 'pages/usermgmt', to: 'pages#usermgmt',
-                        as: 'usermgmt'
+  get 'pages/usermgmt', to: 'pages#usermgmt', as: 'usermgmt'
 
-  get 'pages/customermgmt', to: 'pages#customermgmt',
-                            as: 'customermgmt'
+  get 'pages/customermgmt', to: 'pages#customermgmt', as: 'customermgmt'
 
-  get 'pages/vendormgmt', to: 'pages#vendormgmt',
-                          as: 'vendormgmt'
+  get 'pages/vendormgmt', to: 'pages#vendormgmt', as: 'vendormgmt'
 
-  get 'pages/shippingmgmt', to: 'pages#shippingmgmt',
-                            as: 'shippingmgmt'
+  get 'pages/shippingmgmt', to: 'pages#shippingmgmt', as: 'shippingmgmt'
 
-  get 'pages/ordermgmt', to: 'pages#ordermgmt',
-                         as: 'ordermgmt'
+  get 'pages/ordermgmt', to: 'pages#ordermgmt', as: 'ordermgmt'
 
-  get 'pages/reports', to: 'pages#reports',
-                       as: 'reports'
+  get 'pages/reports_customers', to: 'pages#reports_customers', as: 'reports_customers'
 
-  get 'pages/importmgmt', to: 'pages#importmgmt',
-                          as: 'importmgmt'
+  get 'pages/reports_employees', to: 'pages#reports_employees', as: 'reports_employees'
+
+  get 'pages/reports_orders', to: 'pages#reports_orders', as: 'reports_orders'
+
+  get 'pages/reports_products', to: 'pages#reports_products', as: 'reports_products'
+
+  get 'pages/reports_statuses', to: 'pages#reports_statuses', as: 'reports_statuses'
+
+  get 'pages/reports_vendors', to: 'pages#reports_vendors', as: 'reports_vendors'
+
+  get 'pages/importmgmt', to: 'pages#importmgmt', as: 'importmgmt'
 
   # For details on the DSL available within this file,
   # see http://guides.rubyonrails.org/routing.html

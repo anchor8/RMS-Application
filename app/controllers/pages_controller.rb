@@ -111,20 +111,100 @@ class PagesController < ApplicationController
     @orders = Order.all
   end
 
-  # GET /pages/reports
-  def reports
+  def reports_orders
     # Breadcrumb for Reports
     if params['origin'] == "dashboard"
       add_breadcrumb 'Dashboard', dashboard_path
-      add_breadcrumb 'Reports'
+      add_breadcrumb 'Reports: Orders'
     else
-      add_breadcrumb 'Reports'
+      add_breadcrumb 'Reports: Orders'
     end
 
     @orders = Order.all
     @vendors = Vendor.all
     @customers = Customer.all
     @employees = Employee.all
+    @order_lines = OrderLine.all
+  end
+
+  def reports_products
+    # Breadcrumb for Reports
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports: Products'
+    else
+      add_breadcrumb 'Reports: Products'
+    end
+
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
+    @order_lines = OrderLine.all
+  end
+
+  def reports_customers
+    # Breadcrumb for Reports
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports: Customers'
+    else
+      add_breadcrumb 'Reports: Customers'
+    end
+
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
+    @order_lines = OrderLine.all
+  end
+
+  def reports_vendors
+    # Breadcrumb for Reports
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports: Vendors'
+    else
+      add_breadcrumb 'Reports: Vendors'
+    end
+
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
+    @order_lines = OrderLine.all
+  end
+
+  def reports_employees
+    # Breadcrumb for Reports
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports: Employees'
+    else
+      add_breadcrumb 'Reports: Employees'
+    end
+
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
+    @order_lines = OrderLine.all
+  end
+
+  def reports_statuses
+    # Breadcrumb for Reports
+    if params['origin'] == "dashboard"
+      add_breadcrumb 'Dashboard', dashboard_path
+      add_breadcrumb 'Reports: Statuses'
+    else
+      add_breadcrumb 'Reports: Statuses'
+    end
+
+    @orders = Order.all
+    @vendors = Vendor.all
+    @customers = Customer.all
+    @employees = Employee.all
+    @order_lines = OrderLine.all
   end
 
   # GET /pages/importmgmt
