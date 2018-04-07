@@ -33,45 +33,45 @@
           <!-- Import Customer Data -->
           <div class="mt-2 mb-2">
             <%= form_tag import_customers_path, multipart: true do %>
-              <%= label_tag 'Customers:', nil, class: 'h5 pr-15' %>
+              <%= label_tag 'Customers:', nil, class: 'h5 pr-9' %>
               <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
             <% end %>
           </div>
 
           <!-- Import Vendor Data -->
           <div class="mt-2 mb-2">
             <%= form_tag import_vendors_path, multipart: true do %>
-              <%= label_tag 'Vendors:', nil, class: 'h5 pr-4' %>
+              <%= label_tag 'Vendors:', nil, class: 'h5 pr-23' %>
               <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
             <% end %>
           </div>
 
           <!-- Import Product Data -->
           <div class="mt-2 mb-2">
             <%= form_tag import_products_path, multipart: true do %>
-              <%= label_tag 'Products:', nil, class: 'h5 pr-4' %>
+              <%= label_tag 'Products:', nil, class: 'h5 pr-19' %>
               <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
             <% end %>
           </div>
 
           <!-- Import Order Data -->
           <div class="mt-2 mb-2">
             <%= form_tag import_orders_path, multipart: true do %>
-              <%= label_tag 'Orders:', nil, class: 'h5 pr-26' %>
+              <%= label_tag 'Orders:', nil, class: 'h5 pr-30' %>
               <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
             <% end %>
           </div>
 
           <!-- Import Order Line Data -->
           <div class="mt-2 mb-2">
             <%= form_tag import_order_lines_path, multipart: true do %>
-              <%= label_tag 'Order Lines:', nil, class: 'h5 pr-1-3' %>
+              <%= label_tag 'Order Lines:', nil, class: 'h5 pr-7' %>
               <%= file_field_tag :file %>
-              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-4' %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
             <% end %>
           </div>
 
