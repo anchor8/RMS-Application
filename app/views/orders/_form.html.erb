@@ -1,10 +1,19 @@
+<!-- Order form card -->
 <div class="card">
-  <div class="card-header">
 
+  <!-- Order form header -->
+  <div class="card-header">
   </div>
+
+  <!-- Order form content -->
   <div class="card-body">
+
+    <!-- Order form row -->
     <div class="row">
+
+      <!-- Order form centered -->
       <div class="mx-auto">
+
         <!-- Order form -->
         <%= form_with(model: order, local: true) do |form| %>
 
@@ -33,58 +42,64 @@
               <%= form.hidden_field :country_id, value: 1 %>
               <%= form.hidden_field :state_id, value: 1 %>
 
+              <!-- Customer name -->
               <div class="field">
                 <b><%= form.label "Customer Name" %></b> <font color="red">*</font>
                 <%= form.collection_select :customer_id, Customer.where("deleted_at is null").order(:customer_last_name), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
               </div>
 
+              <!-- Employee -->
               <div class="field mt-1">
                 <b><%= form.label :employee_id %></b> <font color="red">*</font>
                 <%= form.collection_select(:employee_id, Employee.where("deleted_at is null").order(:lname), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
               </div>
 
+              <!-- Vendor -->
               <div class="field mt-1">
                 <b><%= form.label :vendor_id %></b> <font color="red">*</font>
                 <%= form.collection_select(:vendor_id, Vendor.where("deleted_at is null").order(:vendor_name), :id, :vendor_name, {prompt: true}, {required: true}) %>
               </div>
 
+              <!-- Payment type -->
               <div class="field mt-5">
                 <b><%= form.label :payment_type_id %></b> <font color="red">*</font>
                 <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
               </div>
-
             </div>
-
-
 
             <!-- Middle Column -->
             <div class="col-md-6">
 
+              <!-- Shipping status -->
               <div class="field">
                 <b><%= form.label "Shipping Status" %></b> <font color="red">*</font>
                 <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true}) %>
               </div>
 
+              <!-- Shipping number -->
               <div class="field mt-1">
                 <b><%= form.label :shipping_number %></b>
                 <%= form.number_field :shipping_number, :size => '10', placeholder: '123456789012345', id: :order_shipping_number %>
               </div>
 
+              <!-- Shipper -->
               <div class="field mt-1">
                 <b><%= form.label :shipper_id %></b>
                 <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {:selected => @order.shipper_id}) %>
               </div>
 
+              <!-- Ship date -->
               <div class="field mt-1">
                 <b><%= form.label :ship_date %></b>
                 <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, start_year: 2000 %>
               </div>
-
             </div>
-
           </div>
 
+          <!-- Order line table -->
           <table class='table mt-4'>
+
+            <!-- Order line table header -->
             <thead>
               <tr>
                 <th>Remove</th>
@@ -92,30 +107,30 @@
                 <th>Number of Items</th>
               </tr>
             </thead>
+
+            <!-- Order line table content -->
             <tbody class="fields">
               <%= form.fields_for :order_lines do |order_line_form| %>
                 <%= render 'order_line', form: order_line_form %>
               <% end %>
-            </div>
+            </tbody>
           </table>
+
+          <!-- Add new product button -->
           <div class="mb-4">
             <%= link_to_add_row('Add New Product', form, :order_lines, class: 'btn btn-sm btn-outline-primary ml-2') %>
-
           </div>
-
 
           <!-- Submit -->
           <div class="actions">
-
             <%= form.submit "Submit Order", :class => 'btn btn-primary btn-sm btn-block mt-4' %>
           </div>
-
         <% end %>
-
       </div>
     </div>
-
   </div>
+
+  <!-- Order form card footer -->
   <div class="card-footer">
 
   </div>

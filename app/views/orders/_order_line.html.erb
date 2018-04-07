@@ -1,15 +1,23 @@
 
 <tr>
+
+  <!-- Remove product button -->
   <td>
     <%= form.hidden_field :_destroy, as: :hidden %>
     <%= link_to 'Remove Product', '#', class: 'remove_record btn btn-sm btn-outline-danger'%>
   </td>
+
+  <!-- Products -->
   <td>
     <%= form.collection_select(:product_id, Product.where("deleted_at is null").order(:product_name), :id, :product_name, {prompt: true}, {required: true}) %>
   </td>
+
+  <!-- Number of items -->
   <td>
     <%= form.text_field :number_of_items, size: "11", id: :order_number_of_items, required: true %>
   </td>
+
+  <!-- hidden -->
   <td>
     <%= form.hidden_field :price, value: @order_line_price %>
     <%= form.hidden_field :order_id, value: @order.id %>

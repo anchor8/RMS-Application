@@ -1,19 +1,32 @@
+<!-- Container -->
 <div class="container">
+
+  <!-- Unlock card -->
   <div class="card card-login mx-auto mt-5">
+
+    <!-- Unlock card header -->
     <div class="card-header">Resend unlock instructions</div>
+
+    <!-- Unlock card content -->
     <div class="card-body">
+
+      <!-- Unlock form -->
       <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
 
+        <!-- Email -->
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
+        <!-- Submit -->
         <div class="actions">
           <%= f.submit "Resend unlock instructions" %>
         </div>
       <% end %>
+
+      <!-- Links -->
       <div class="text-center">
         <%= render "devise/shared/links" %>
       </div>

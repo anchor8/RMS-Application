@@ -1,90 +1,105 @@
+<!-- Edit employee card -->
 <div class="card">
-  <div class="card-header">
 
+  <!-- Edit employee card header -->
+  <div class="card-header">
   </div>
+
+  <!-- Edit employee card body -->
   <div class="card-body">
+
+    <!-- Edit employee row -->
     <div class="row">
 
+      <!-- Edit employee centered -->
       <div class="mx-auto">
 
+        <!-- Required Mark -->
         <div class="mb-3">
           <font color="red">*</font> = Required
         </div>
 
+        <!-- Edit employee fields row -->
         <div class="row">
 
+          <!-- Left Column -->
           <div class="col-md-6">
+
+            <!-- Edit employee form -->
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
+              <!-- Email -->
               <div class="field">
                 <b><%= f.label :email %></b> <font color="red">*</font> <br />
                 <%= f.email_field :email, type: 'email', value: current_employee.email, size: "37", placeholder: current_employee.email, autocomplete: "Email", required: true %>
               </div>
 
+              <!-- First name -->
               <div class="field mt-1">
                 <b><%= f.label "First Name" %></b>  <font color="red">*</font> <br />
                 <%= f.text_field :fname, value: current_employee.fname, size: "30", placeholder: current_employee.fname, autocomplete: "First Name", required: true %>
               </div>
 
+              <!-- Last name -->
               <div class="field mt-1">
                 <b><%= f.label "Last Name" %></b> <font color="red">*</font> <br />
                 <%= f.text_field :lname, value: current_employee.lname, size: "30", placeholder: current_employee.lname, autocomplete: "Last Name", required: true %>
               </div>
 
+              <!-- Phone -->
               <div class="field mt-1">
                 <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
                 <%= f.text_field :phone, type: 'tel', size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
               </div>
-
           </div>
 
-          <div class="col-md-6">
-
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-              <% end %>
-
-              <div class="field mt-3">
-                <b><%= f.label :password %></b> <br /><i>(leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "40", autocomplete: "off" %>
-                <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %> characters minimum</em>
+            <!-- Right column -->
+            <div class="col-md-6">
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <!-- user not confirmed -->
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                 <% end %>
-              </div>
 
-              <div class="field mt-3">
-                <b><%= f.label :password_confirmation %></b><br />
-                <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off" %>
-              </div>
-
-          </div>
-
-        </div>
-
-              <div class="row">
-
-                <div class="field mx-auto  mt-3">
-                  <b><%= f.label :current_password %></b> <font color="red">*</font>  <br /><i>(we need your current password to confirm your changes)</i><br />
-                  <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
+                <!-- Password -->
+                <div class="field mt-3">
+                  <b><%= f.label :password %></b> <br /><i>(leave blank if you don't want to change it)</i><br />
+                  <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "40", autocomplete: "off" %>
+                  <% if @minimum_password_length %>
+                  <!-- Password not min length -->
+                    <br />
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                  <% end %>
                 </div>
 
+                <!-- Confirm Password -->
+                <div class="field mt-3">
+                  <b><%= f.label :password_confirmation %></b><br />
+                  <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off" %>
+                </div>
+            </div>
+            </div>
+
+            <!-- Current password row -->
+            <div class="row">
+
+              <!-- Current password field centered -->
+              <div class="field mx-auto  mt-3">
+                <b><%= f.label :current_password %></b> <font color="red">*</font>  <br /><i>(we need your current password to confirm your changes)</i><br />
+                <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
               </div>
+            </div>
 
-              <div class="actions row">
-
-                <%= f.submit "Update Current Employee", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-5 pl-4 pr-4' %>
-
-              </div>
-
+            <!-- Submit -->
+            <div class="actions row">
+              <%= f.submit "Update Current Employee", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-5 pl-4 pr-4' %>
+            </div>
             <% end %>
-
-      </div>
+        </div>
     </div>
-
   </div>
-  <div class="card-footer">
 
+  <!-- Edit employee card footer -->
+  <div class="card-footer">
   </div>
 </div>

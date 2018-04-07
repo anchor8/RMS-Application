@@ -1,3 +1,4 @@
+<!-- Page title -->
 <% content_for :title, "User Management" %>
 
 <!-- Content Wrapper -->
@@ -31,9 +32,7 @@
     <div class="mb-4">
 
       <!-- Display Information -->
-
         <%= render :template => "devise/registrations/edit" %>
-
     </div>
 
     <% if current_employee.admin? %>
@@ -41,9 +40,6 @@
 
       <!-- Employee Table-->
       <%= render partial: 'partials/tables/employee-table' %>
-
     <% end %>
-
   </div>
-
 </div>

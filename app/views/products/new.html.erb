@@ -1,36 +1,43 @@
+<!-- Page title -->
 <% content_for :title, "Create New Product" %>
 
+<!-- Content wrapper -->
 <div class="content-wrapper">
 
+  <!-- Container fluid -->
   <div class="container-fluid">
 
     <!-- Bread Crumbs -->
     <%= render partial: 'partials/breadcrumbs' %>
 
+    <!-- New product card -->
     <div class="card">
-      <div class="card-header">
 
+      <!-- New product header -->
+      <div class="card-header">
       </div>
+
+      <!-- New product content -->
       <div class="card-body">
 
+        <!-- New product form -->
         <div>
-          <!-- New Product form -->
+
+          <!-- New product form -->
           <%= render 'form', product: @product %>
         </div>
 
+        <!-- Product table -->
         <div class="mt-3">
+
           <!-- Product Table-->
           <%= render partial: 'partials/tables/product-table' %>
         </div>
-
       </div>
-      <div class="card-footer">
 
+      <!-- New product footer -->
+      <div class="card-footer">
       </div>
     </div>
-
-
-
   </div>
-
 </div>

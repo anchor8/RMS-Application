@@ -1,3 +1,4 @@
+<!-- Page title -->
 <% content_for :title, "Dashboard" %>
 
 <!-- Content Wrapper -->
@@ -27,6 +28,7 @@
       <% end %>
     <% end %>
 
+    <!-- Collapse dashboard button -->
     <a class="collapse-dashboard btn btn-primary btn-block btn-sm mb-3 active"
        type="button"
        data-toggle="buttons"
@@ -39,8 +41,6 @@
 
       <!-- Card -->
       <div class="card mb-4">
-
-
 
         <!-- Card Header 2 - Products -->
         <div class="card-header text-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -55,8 +55,13 @@
 
           <!-- Content Body -->
           <div class="card-body">
+
+            <!-- Product row -->
             <div class="row">
+
+              <!-- Product left column -->
               <div class="col-md-6">
+
                 <!-- Top 10 Most Ordered Products -->
                 <%= link_to reports_products_path(active_tab: "report12", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -73,7 +78,10 @@
                     </div>
                 <% end %>
               </div>
+
+              <!-- Product right column -->
               <div class="col-md-6">
+
                 <!-- Products by State -->
                 <%= link_to reports_products_path(active_tab: "report11", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -107,9 +115,12 @@
           <!-- Content Body -->
           <div class="card-body">
 
+            <!-- Top 10 customers / state row -->
             <div class="row">
 
+              <!-- Top 10 customers / state left column -->
               <div class="col-md-6">
+
                 <!-- Customer Orders -->
                 <%= link_to reports_customers_path(active_tab: "report10", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -126,7 +137,10 @@
                     </div>
                 <% end %>
               </div>
+
+              <!-- Top 10 customers / state right column -->
               <div class="col-md-6">
+
                 <!-- Customers by State -->
                 <%= link_to reports_customers_path(active_tab: "report6", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -157,7 +171,6 @@
                   <div class="card-footer small text-muted"></div>
                 </div>
             <% end %>
-
           </div>
         </div>
 
@@ -175,9 +188,12 @@
           <!-- Content Body -->
           <div class="card-body">
 
+            <!-- Top 10 vendors / states row -->
             <div class="row">
 
+              <!-- Top 10 vendors / states left column -->
               <div class="col-md-6">
+
                 <!-- Vendor Orders -->
                 <%= link_to reports_vendors_path(active_tab: "report9", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -194,7 +210,10 @@
                     </div>
                 <% end %>
               </div>
+
+              <!-- Top 10 vendors / states right column -->
               <div class="col-md-6">
+
                 <!-- Vendors by State -->
                 <%= link_to reports_vendors_path(active_tab: "report7", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -211,7 +230,6 @@
                 <% end %>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -228,8 +246,13 @@
 
           <!-- Content Body -->
           <div class="card-body">
+
+            <!-- Status row -->
             <div class="row">
+
+              <!-- Status left column -->
               <div class="col-md-4">
+
                 <!-- Order Status-->
                 <%= link_to reports_statuses_path(active_tab: "report2", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -247,7 +270,10 @@
                     </div>
                 <% end %>
               </div>
+
+              <!-- Status middle column -->
               <div class="col-md-4">
+
                 <!-- Vendor Status-->
                 <%= link_to reports_statuses_path(active_tab: "report3", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -265,7 +291,9 @@
                 <% end %>
               </div>
 
+              <!-- Status right column -->
               <div class="col-md-4">
+
                 <!-- Carrier use-->
                 <%= link_to reports_statuses_path(active_tab: "report4", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -299,8 +327,12 @@
           <!-- Content Body -->
           <div class="card-body">
 
+            <!-- Employee row -->
             <div class="row">
+
+              <!-- Employee left column -->
               <div class="col-md-6">
+
                 <!-- Amount of Orders by Employee (30 Days - Line Chart) -->
                 <%= link_to reports_employees_path(active_tab: "report8", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -316,7 +348,10 @@
                     </div>
                 <% end %>
               </div>
+
+              <!-- Employee right column -->
               <div class="col-md-6">
+
                 <!-- Amount of Orders by Employee (30 Days - Column Chart) -->
                 <%= link_to reports_employees_path(active_tab: "report8", origin: "dashboard") do %>
                     <div class="card mb-3">
@@ -334,21 +369,18 @@
                 <% end %>
               </div>
             </div>
-
           </div>
         </div>
-
-
-        </div>
       </div>
+    </div>
 
-      <a class="expand-dashboard btn btn-primary btn-block btn-sm mb-3 active"
-         type="button"
-         data-toggle="buttons"
-         aria-pressed="false"
-         autocomplete="off"
-         href="">Expand Dashboard</a>
-
+    <!-- Expand dashboard button -->
+    <a class="expand-dashboard btn btn-primary btn-block btn-sm mb-3 active"
+       type="button"
+       data-toggle="buttons"
+       aria-pressed="false"
+       autocomplete="off"
+       href="">Expand Dashboard</a>
   </div>
 </div>
 
@@ -368,7 +400,6 @@
       $('#collapseFour').removeClass('show')
       $('#collapseFive').removeClass('show')
       $('#collapseSix').removeClass('show')
-
     } );
 
     // On click collapse dashboard button
@@ -381,7 +412,6 @@
       $('#collapseFour').addClass('show')
       $('#collapseFive').addClass('show')
       $('#collapseSix').addClass('show')
-
     } );
   })
 </script>

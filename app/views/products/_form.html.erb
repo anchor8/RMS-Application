@@ -1,4 +1,6 @@
+<!-- Product form -->
 <%= form_with(model: product, local: true) do |form| %>
+
   <!-- Notice Banner -->
   <% if notice %>
     <div class='h5 strong text-center mark'>
@@ -6,18 +8,18 @@
     </div>
   <% end %>
 
+  <!-- Product field row -->
   <div class="row">
 
-      <div class="field ml-3">
-        <%= form.label "Product name: " %>
-        <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
-      </div>
+    <!-- Product name -->
+    <div class="field ml-3">
+      <%= form.label "Product name: " %>
+      <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
+    </div>
 
-      <div class="actions">
-        <%= form.submit "Add Product", class: "btn btn-primary btn-sm ml-4"%>
-      </div>
-
+    <!-- Submit -->
+    <div class="actions">
+      <%= form.submit "Add Product", class: "btn btn-primary btn-sm ml-4"%>
+    </div>
   </div>
-
-
 <% end %>

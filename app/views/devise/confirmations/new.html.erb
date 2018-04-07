@@ -1,21 +1,35 @@
+<!-- Page Title -->
 <% content_for :title, "Confirmation" %>
 
+<!-- Container -->
 <div class="container">
+
+  <!-- Confirmation card, centered -->
   <div class="card card-login mx-auto mt-5">
+
+    <!-- Confirmation card header -->
     <div class="card-header">Resend confirmation instructions</div>
+
+    <!-- Confirmation card content -->
     <div class="card-body">
+
+      <!-- Confirmation form -->
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
 
+        <!-- Email -->
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
         </div>
 
+        <!-- Submit -->
         <div class="actions row">
           <%= f.submit "Resend confirmation instructions", :class => 'btn btn-primary btn-sm mx-auto' %>
         </div>
       <% end %>
+
+      <!-- Links -->
       <div class="text-center">
         <%= render "devise/shared/links" %>
       </div>

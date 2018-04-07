@@ -1,29 +1,36 @@
+<!-- Page title -->
 <% content_for :title, "Forgot Password" %>
 
+<!-- Container -->
 <div class="container">
+
+  <!-- Forgot password card -->
   <div class="card card-login mx-auto mt-5">
+
+    <!-- Forgot password header -->
     <div class="card-header">Forgot your password?</div>
+
+    <!-- Forgot password content -->
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
 
+        <!-- Email -->
         <div class="field ml-4">
           <%= f.label :email %><br />
           <%= f.email_field :email, size: "32", autofocus: true, autocomplete: "email", required: true %>
         </div>
 
+        <!-- Submit -->
         <div class="actions row">
           <%= f.submit "Send me reset password instructions", :class => 'btn btn-primary btn-sm mx-auto mt-3 pl-4 pr-4' %>
         </div>
-
       <% end %>
 
+      <!-- Links -->
       <div class="text-center">
         <%= render "devise/shared/links" %>
       </div>
-
     </div>
-
   </div>
-
 </div>

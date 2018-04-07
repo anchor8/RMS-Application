@@ -1,3 +1,4 @@
+<!-- Page title -->
 <% content_for :title, "Reports - Customers" %>
 
 <!-- Content Wrapper -->
@@ -26,9 +27,7 @@
         <!-- If active_tab is not report10, dont activate -->
         <% else %>
           <a class="nav-link" aria-controls="report10" role="tab" data-toggle="tab" href="#report10">Customer Orders</a>
-
         <% end %>
-
       </li>
 
       <!-- Report 5 - Customer Order Totals -->
@@ -41,7 +40,6 @@
         <!-- If active_tab is not report5, dont activate -->
         <% else %>
           <a class="nav-link" aria-controls="report5" role="tab" data-toggle="tab" href="#report5">Customer Order Totals</a>
-
         <% end %>
       </li>
 
@@ -55,16 +53,13 @@
         <!-- If active_tab is not report5, dont activate -->
         <% else %>
           <a class="nav-link" aria-controls="report6" role="tab" data-toggle="tab" href="#report6">Customers by State</a>
-
         <% end %>
       </li>
     </ul>
 
     <!-- Content in Tab -->
     <div class="tab-content">
-
       <%= render partial: 'partials/reports/customer-reports' %>
-
     </div>
   </div>
 </div>

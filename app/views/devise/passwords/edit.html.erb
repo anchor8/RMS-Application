@@ -1,13 +1,24 @@
+<!-- Page Title -->
 <% content_for :title, "Edit Password" %>
 
+<!-- Container -->
 <div class="container">
+
+  <!-- Edit password card -->
   <div class="card card-login mx-auto mt-5">
+
+    <!-- Edit password card header -->
     <div class="card-header">Change your password</div>
+
+    <!-- Edit password card content -->
     <div class="card-body">
+
+      <!-- Edit password form -->
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
         <%= f.hidden_field :reset_password_token %>
 
+        <!-- Password -->
         <div class="field ml-5 pl-4">
           <%= f.label :password, "New password" %><br />
           <% if @minimum_password_length %>
@@ -16,15 +27,19 @@
           <%= f.password_field :password, size: "21", autofocus: true, autocomplete: "off", required: true %>
         </div>
 
+        <!-- Password Confirmation -->
         <div class="field ml-5 pl-4">
           <%= f.label :password_confirmation, "Confirm new password" %><br />
           <%= f.password_field :password_confirmation, size: "21", autocomplete: "off", required: true %>
         </div>
 
+        <!-- Submit -->
         <div class="actions row">
           <%= f.submit "Change my password", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-2 pl-4 pr-4' %>
         </div>
       <% end %>
+
+      <!-- Links -->
       <div class="text-center">
         <%= render "devise/shared/links" %>
       </div>
