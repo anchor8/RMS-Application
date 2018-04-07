@@ -68,7 +68,7 @@
                           :method => :get,
                           :class => 'btn btn-outline-success btn-sm' %></td>
                     <td class="text-center"><%= product.product_name %></td>
-                    <td class="text-center"><%= product.price %></td>
+                    <td class="text-center"><%= number_to_currency(product.price, precision: 2) %></td>
                     <td class="text-center"><%= product.deleted_at %></td>
 
                     <!-- Disable Button -->
