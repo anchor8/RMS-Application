@@ -14386,7 +14386,7 @@ footer.sticky-footer {
 }
 
 .col-md-6 fieldset legend {
-  color: black;
+  color: #007bff;
   border-top: 1px solid #efefef;
   border-left: 1px solid #efefef;
   border-right: 1px solid #efefef;
@@ -14398,7 +14398,7 @@ footer.sticky-footer {
   font-size: 14px;
 }
 
-.field mx-auto  mt-3 fieldset {
+.col-md-auto fieldset {
   border-radius: 10px;
   margin: 0px 0px 10px 0px;
   border: 1px solid #F8F8F8;
@@ -14406,9 +14406,8 @@ footer.sticky-footer {
   background: #F8F8F8;
   box-shadow: inset 0px 0px 15px #efefef;
 }
-
-.field mx-auto  mt-3 fieldset legend {
-  color: black;
+.col-md-auto fieldset legend {
+  color: #007bff;
   border-top: 1px solid #efefef;
   border-left: 1px solid #efefef;
   border-right: 1px solid #efefef;
