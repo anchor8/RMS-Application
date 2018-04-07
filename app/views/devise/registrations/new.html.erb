@@ -39,7 +39,7 @@
                   <!-- Is an array -->
 
                     <!-- Error message list -->
-                    <div class="h5 strong text-center mark">
+                    <div class="h5 strong text-center mark" id="flash">
                       <% value.each do |message| %>
                           * <%= message %> *
                           </br>
@@ -49,7 +49,7 @@
                   <!-- Is not an array -->
 
                     <!-- Error message -->
-                    <div class="h5 strong text-center mark">
+                    <div class="h5 strong text-center mark" id="flash">
                       * <%= value %> *
                     </div>
                   <% end %>

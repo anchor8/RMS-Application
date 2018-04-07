@@ -14,14 +14,14 @@
     <% if notice %>
       <% flash.each do |key, value| %>
         <% if value.class == Array %>
-          <div class="h5 strong text-center mark" id="flash">
+          <div class="h5 strong text-center mark" id="#flash-dashboard">
             <% value.each do |message| %>
                 * <%= message %> *
                 </br>
             <% end %>
           </div>
         <% else %>
-          <div class="h5 strong text-center mark" id="flash">
+          <div class="h5 strong text-center mark" id="#flash-dashboard">
             * <%= value %> *
           </div>
         <% end %>
@@ -375,34 +375,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function(){
-    setTimeout(function(){
-      $('#flash').remove();
-    }, 2000);
-
-    // On click collapse dashboard button
-    $('a.collapse-dashboard').on( 'click', function (e) {
-
-      if ($(".show")[0]){
-        // Do something if class does not exist
-        $('#collapseOne').removeClass('show')
-        $('#collapseTwo').removeClass('show')
-        $('#collapseThree').removeClass('show')
-        $('#collapseFour').removeClass('show')
-        $('#collapseFive').removeClass('show')
-        $('#collapseSix').removeClass('show')
-
-      } else {
-        // Do something if class exists
-        $('#collapseOne').addClass('show')
-        $('#collapseTwo').addClass('show')
-        $('#collapseThree').addClass('show')
-        $('#collapseFour').addClass('show')
-        $('#collapseFive').addClass('show')
-        $('#collapseSix').addClass('show')
-      }
-    } );
-  })
-</script>

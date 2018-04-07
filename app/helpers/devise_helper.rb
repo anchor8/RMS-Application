@@ -11,7 +11,7 @@ module DeviseHelper
 
     html = <<-HTML
 
-    <div class="h5 strong text-center mark">
+    <div class="h5 strong text-center mark" id="flash">
       #{messages}
     </div>
     HTML
