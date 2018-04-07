@@ -8,19 +8,25 @@
     </div>
   <% end %>
 
-  <!-- Product field row -->
+    <!-- Required Mark -->
+    <div class="mb-3" align="center">
+      <font color="red">*</font> = Required
+    </div>
+
+
+    <!-- Product field row -->
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
         <fieldset><legend>Product Info</legend>
     <!-- Product name -->
     <div class="field ml-3">
-      <%= form.label "Product name: " %> <br />
+      <%= form.label "Product name: " %><font color="red">*</font> <br />
       <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
     </div>
 
     <!-- Price -->
     <div class="field ml-3">
-      <%= form.label "Price: " %> <br />
+      <%= form.label "Price: " %> <font color="red">*</font><br />
       <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true %>
     </div>
         </fieldset>
