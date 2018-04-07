@@ -15,8 +15,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    # Set breadcrumbs for new customer
     if params['origin'] == "new_order"
+      # Origin is new order page
       add_breadcrumb 'New Order', new_order_path
     end
     add_breadcrumb 'Create New Product'
