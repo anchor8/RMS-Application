@@ -17,6 +17,12 @@
       <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
     </div>
 
+    <!-- Price -->
+    <div class="field ml-3">
+      <%= form.label "Price: " %>
+      <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true %>
+    </div>
+
     <!-- Submit -->
     <div class="actions">
       <%= form.submit "Add Product", class: "btn btn-primary btn-sm ml-4"%>
