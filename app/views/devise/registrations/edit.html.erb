@@ -14,6 +14,7 @@
         <div class="row">
 
           <div class="col-md-6">
+            <fieldset><legend>Employee Info</legend>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
@@ -36,18 +37,23 @@
                 <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
                 <%= f.text_field :phone, type: 'tel', size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
               </div>
-
+                  </fieldset>
           </div>
 
           <div class="col-md-6">
-
+              <fieldset><legend>Passwords</legend>
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
 
+                <div class="field mx-auto  mt-3">
+                  <b><%= f.label :current_password %></b> <font color="red">*</font>  <br /><i>(We need your current password to confirm your changes)</i><br />
+                  <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
+                </div>
+
               <div class="field mt-3">
-                <b><%= f.label :password %></b> <br /><i>(leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "40", autocomplete: "off" %>
+                <b><%= f.label "New Password" %></b> <br /><i>(Leave blank if you don't want to change it)</i><br />
+                <%= f.password_field :password, placeholder: "1 Lower, 1 Upper, 1 Digit, 1 Symbol", size: "40", autocomplete: "off" %>
                 <% if @minimum_password_length %>
                   <br />
                   <em><%= @minimum_password_length %> characters minimum</em>
@@ -55,22 +61,14 @@
               </div>
 
               <div class="field mt-3">
-                <b><%= f.label :password_confirmation %></b><br />
+                <b><%= f.label "New Password Confirmation" %></b><br />
                 <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off" %>
               </div>
-
+            </fieldset>
           </div>
 
         </div>
 
-              <div class="row">
-
-                <div class="field mx-auto  mt-3">
-                  <b><%= f.label :current_password %></b> <font color="red">*</font>  <br /><i>(we need your current password to confirm your changes)</i><br />
-                  <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
-                </div>
-
-              </div>
 
               <div class="actions row">
 

@@ -14397,3 +14397,25 @@ footer.sticky-footer {
   font-weight: normal;
   font-size: 14px;
 }
+
+.field mx-auto  mt-3 fieldset {
+  border-radius: 10px;
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #F8F8F8;
+  padding: 20px;
+  background: #F8F8F8;
+  box-shadow: inset 0px 0px 15px #efefef;
+}
+
+.field mx-auto  mt-3 fieldset legend {
+  color: black;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-radius: 5px 5px 0px 0px;
+  background: #F8F8F8;
+  padding: 0px 8px 3px 8px;
+  box-shadow: -0px -1px 2px #efefef;
+  font-weight: normal;
+  font-size: 14px;
+}
