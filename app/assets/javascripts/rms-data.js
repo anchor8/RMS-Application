@@ -61,4 +61,27 @@ $(document).ready(function() {
       $('.fields').append($(this).data('fields').replace(regexp, time));
       return event.preventDefault();
     });
+
+    // On click collapse dashboard button
+    $('a.collapse-dashboard').on( 'click', function (e) {
+
+      if ($(".show")[0]){
+        // Do something if class does not exist
+        $('#collapseOne').removeClass('show')
+        $('#collapseTwo').removeClass('show')
+        $('#collapseThree').removeClass('show')
+        $('#collapseFour').removeClass('show')
+        $('#collapseFive').removeClass('show')
+        $('#collapseSix').removeClass('show')
+
+      } else {
+        // Do something if class exists
+        $('#collapseOne').addClass('show')
+        $('#collapseTwo').addClass('show')
+        $('#collapseThree').addClass('show')
+        $('#collapseFour').addClass('show')
+        $('#collapseFive').addClass('show')
+        $('#collapseSix').addClass('show')
+      }
+    } );
   });
