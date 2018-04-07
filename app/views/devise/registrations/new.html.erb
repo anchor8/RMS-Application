@@ -44,6 +44,7 @@
 
               <div class="row">
                 <div class="col-md-6">
+                  <fieldset><legend>Employee Info</legend>
                   <div class="field">
                     <b><%= f.label :email %></b> <font color="red">*</font>
                     <%= f.email_field :email, type: 'email', size: "30", autofocus: true, placeholder: "email@provider.com", autocomplete: "email", required: true %>
@@ -63,9 +64,11 @@
                     <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
                     <%= f.text_field :phone, type: 'tel', placeholder: "+1-123-123-1234", size: "15", autocomplete: "phone number", required: true %>
                   </div>
+                  </fieldset>
                 </div>
 
                 <div class="col-md-6">
+                  <fieldset><legend>Passwords</legend>
                   <div class="field">
                     <b><%= f.label :password %></b>  <font color="red">*</font>
                     <% if @minimum_password_length %>
@@ -78,6 +81,7 @@
                     <b><%= f.label :password_confirmation %></b> <font color="red">*</font> <br />
                     <%= f.password_field :password_confirmation, placeholder: "Must match", size: "30",autocomplete: "off", required: true %>
                   </div>
+                  </fieldset>
                 </div>
               </div>
                 <%= f.hidden_field :employee_status_id, value: 2 %>
