@@ -66,6 +66,7 @@
 
                 <!-- Left column -->
                 <div class="col-md-6">
+                  <fieldset><legend>Employee Info</legend>
 
                   <!-- Email -->
                   <div class="field">
@@ -90,10 +91,12 @@
                     <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
                     <%= f.text_field :phone, type: 'tel', placeholder: "+1-123-123-1234", size: "15", autocomplete: "phone number", required: true %>
                   </div>
+                  </fieldset>
                 </div>
 
                 <!-- Right column -->
                 <div class="col-md-6">
+                  <fieldset><legend>Passwords</legend>
 
                   <!-- Password -->
                   <div class="field">
@@ -110,6 +113,7 @@
                     <b><%= f.label :password_confirmation %></b> <font color="red">*</font> <br />
                     <%= f.password_field :password_confirmation, placeholder: "Must match", size: "30",autocomplete: "off", required: true %>
                   </div>
+                  </fieldset>
                 </div>
               </div>
 
