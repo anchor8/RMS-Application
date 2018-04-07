@@ -3,6 +3,11 @@ class Product < ApplicationRecord
   # Relationships
   has_many :order_lines
 
+  # Validations
+  validates :product_name, allow_blank: false, presence: true
+  validates :price, allow_blank: false, presence: true, :numericality => true, :format => { :with => /\A^\d{1,10}(\.\d{0,2})?$\z/, :message => "Only numbers greater than zero in the format of ( 11.99 ) for price allowed" }
+
+
   # Toggle product status
   def toggle_product_status
     if !deleted_at
