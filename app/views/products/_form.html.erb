@@ -9,23 +9,26 @@
   <% end %>
 
   <!-- Product field row -->
-  <div class="row">
-
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <fieldset><legend>Product Info</legend>
     <!-- Product name -->
     <div class="field ml-3">
-      <%= form.label "Product name: " %>
+      <%= form.label "Product name: " %> <br />
       <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
     </div>
 
     <!-- Price -->
     <div class="field ml-3">
-      <%= form.label "Price: " %>
+      <%= form.label "Price: " %> <br />
       <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true %>
     </div>
+        </fieldset>
 
     <!-- Submit -->
-    <div class="actions">
+    <div class="actions" align="center">
       <%= form.submit class: "btn btn-primary btn-sm ml-4"%>
     </div>
+      </div>
   </div>
 <% end %>
