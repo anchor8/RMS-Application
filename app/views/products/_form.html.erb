@@ -21,7 +21,7 @@
     <!-- Product name -->
     <div class="field ml-3">
       <%= form.label "Product name: " %><font color="red">*</font> <br />
-      <%= form.text_field :product_name, value: @product.product_name, size: 40, id: :product_product_name, required: true %>
+      <%= form.text_field :product_name, value: @product.product_name, placeholder: "Product Name", size: 40, id: :product_product_name, required: true %>
     </div>
 
     <!-- Price -->
