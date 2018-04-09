@@ -18,5 +18,9 @@
 
 .byebug_history
 
-# Ignore IntelliJ files
+# Ignore editor files
 .idea/
+.vscode/
+
+# Ignore rubocop config
+/.rubocop.yml
