@@ -64,28 +64,13 @@
                  data-column="1"
                  href="">Admin</a>
 
+
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
                  data-column="2"
-                 href="">Employee Status</a>
-
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-                 type="button"
-                 data-toggle="button"
-                 aria-pressed="false"
-                 autocomplete="off"
-                 data-column="3"
-                 href="">Admin Status</a>
-
-              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
-                 type="button"
-                 data-toggle="button"
-                 aria-pressed="false"
-                 autocomplete="off"
-                 data-column="4"
                  href="">ID</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
@@ -93,7 +78,7 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="5"
+                 data-column="3"
                  href="">First</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
@@ -101,8 +86,24 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="6"
+                 data-column="4"
                  href="">Last</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="5"
+                 href="">Employee Status</a>
+
+              <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="6"
+                 href="">Admin Status</a>
 
               <a class="toggle-vis btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -210,11 +211,11 @@
 
               <th class="text-center">Toggle</th>
               <th class="text-center">Admin</th>
-              <th class="text-center">Employee Status</th>
-              <th class="text-center">Admin Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
+              <th class="text-center">Employee Status</th>
+              <th class="text-center">Admin Status</th>
               <th class="text-center">Email</th>
               <th class="text-center">Phone</th>
               <th class="text-center">Sign-in Count</th>
@@ -234,11 +235,11 @@
 
               <th class="text-center">Toggle</th>
               <th class="text-center">Admin</th>
-              <th class="text-center">Employee Status</th>
-              <th class="text-center">Admin Status</th>
               <th class="text-center">ID</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
+              <th class="text-center">Employee Status</th>
+              <th class="text-center">Admin Status</th>
               <th class="text-center">Email</th>
               <th class="text-center">Phone</th>
               <th class="text-center">Sign-in Count</th>
@@ -328,11 +329,11 @@
 
                   <% end %>
                 </td>
-                <td class="text-center"><%= employee.employee_status.employee_status_type %></td>
-                <td class="text-center"><%= employee.admin %></td>
                 <td class="text-center"><%= employee.id %></td>
                 <td class="text-center"><%= employee.fname %></td>
                 <td class="text-center"><%= employee.lname %></td>
+                <td class="text-center"><%= employee.employee_status.employee_status_type %></td>
+                <td class="text-center"><%= employee.admin %></td>
                 <td class="text-center"><%= employee.email %></td>
                 <td class="text-center"><%= employee.phone %></td>
                 <td class="text-center"><%= employee.sign_in_count %></td>
