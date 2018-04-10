@@ -134,7 +134,7 @@
             <tbody>
 
               <!-- Load order data -->
-              <% @order_lines.each do |order_line| %>
+              <% @order_lines.left_joins(:order).select("DISTINCT ON (orders.state_id, order_lines.product_id) *").each do |order_line| %>
 
                 <tr>
                   <!-- Columns to pull from order data -->
