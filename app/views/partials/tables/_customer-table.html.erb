@@ -86,20 +86,13 @@
                  data-column="2"
                  href="">Edit</a>
 
-              <a class="toggle-vis customer-info customer-contact btn btn-outline-primary btn-sm mb-1"
-                 type="button"
-                 data-toggle="button"
-                 aria-pressed="false"
-                 autocomplete="off"
-                 data-column="3"
-                 href="">Status</a>
 
               <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
                  type="button"
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="4"
+                 data-column="3"
                  href="">First</a>
 
               <a class="toggle-vis customer-contact customer-info btn btn-outline-primary btn-sm mb-1"
@@ -107,8 +100,16 @@
                  data-toggle="button"
                  aria-pressed="false"
                  autocomplete="off"
-                 data-column="5"
+                 data-column="4"
                  href="">Last</a>
+
+              <a class="toggle-vis customer-info customer-contact btn btn-outline-primary btn-sm mb-1"
+                 type="button"
+                 data-toggle="button"
+                 aria-pressed="false"
+                 autocomplete="off"
+                 data-column="5"
+                 href="">Status</a>
 
               <a class="toggle-vis customer-info btn btn-outline-primary btn-sm mb-1"
                  type="button"
@@ -273,10 +274,10 @@
               <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
-              <th class="text-center">Status</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Company</th>
+              <th class="text-center">Status</th>
               <th class="text-center">Job</th>
               <th class="text-center">Work</th>
               <th class="text-center">Mobile</th>
@@ -303,10 +304,10 @@
               <th class="text-center">New Order</th>
               <th class="text-center">Disable</th>
               <th class="text-center">Edit</th>
-              <th class="text-center">Status</th>
               <th class="text-center">First</th>
               <th class="text-center">Last</th>
               <th class="text-center">Company</th>
+              <th class="text-center">Status</th>
               <th class="text-center">Job</th>
               <th class="text-center">Work</th>
               <th class="text-center">Mobile</th>
@@ -382,10 +383,10 @@
                             :method => :get,
                             :class => 'btn btn-outline-success btn-sm' %></td>
 
-                      <td class="text-left-align"><%= customer.customer_status.customer_status_description %></td>
                       <td class="text-left-align"><%= customer.customer_first_name %></td>
                       <td class="text-left-align"><%= customer.customer_last_name %></td>
                       <td class="text-left-align"><%= customer.company_name %></td>
+                      <td class="text-left-align"><%= customer.customer_status.customer_status_description %></td>
                       <td class="text-left-align"><%= customer.job_title %></td>
                       <td class="text-left-align"><%= customer.work_phone %></td>
                       <td class="text-left-align"><%= customer.mobile %></td>
