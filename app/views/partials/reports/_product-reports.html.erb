@@ -165,79 +165,420 @@
 <% if params[:active_tab] == 'report12' %>
   <!-- Tab 10 - Report 10 (Active if active_tab is report 10) -->
   <div class="tab-pane container-fluid active" id="report12">
-    <!-- Table Card -->
-    <div class="card mb-3">
 
-      <!-- Table Header -->
-      <div class="card-header">
+    <!-- Time Tabs -->
+    <ul class="nav nav-tabs mb-3 mt-4">
+      <li class="nav-item">
+        <a class="nav-link" aria-controls="report12tab7day" role="tab" data-toggle="tab" href="#report12tab7day">7 Days</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-controls="report12tab30day" role="tab" data-toggle="tab" href="#report12tab30day">30 Days</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-controls="report12tab3month" role="tab" data-toggle="tab" href="#report12tab3month">3 Months</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-controls="report12tab6month" role="tab" data-toggle="tab" href="#report12tab6month">6 Months</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-controls="report12tab1year" role="tab" data-toggle="tab" href="#report12tab1year">1 Year</a>
+      </li>
+    </ul>
 
-        <!-- Table Icon -->
-        <i class="fa fa-table"></i>
+    <div class="tab-content">
 
-        <!-- Table Name -->
-        Product - Orders
+      <!-- 7 Days -->
+      <div class="tab-pane container-fluid" id="report12tab7day">
 
-      </div>
+        <!-- Table Card -->
+        <div class="card mb-3">
 
-      <!-- Table Card Body -->
-      <div class="card-body">
+          <!-- Table Header -->
+          <div class="card-header">
 
-        <!-- Table Type -->
-        <div class="table-responsive">
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
 
-          <!-- Report 1 Table -->
-          <table class="table table-bordered table-hover table-striped" id="report12table" width="100%" cellspacing="0">
+            <!-- Table Name -->
+            Product - Orders
 
-            <!-- Top Column Names -->
-            <thead>
+          </div>
 
-              <tr>
+          <!-- Table Card Body -->
+          <div class="card-body">
 
-                <th class="text-center">Product</th>
-                <th class="text-center">Orders</th>
+            <!-- Table Type -->
+            <div class="table-responsive">
 
-              </tr>
+              <!-- Report 1 Table -->
+              <table class="table table-bordered table-hover table-striped" id="report12table7d" width="100%" cellspacing="0">
 
-            </thead>
+                <!-- Top Column Names -->
+                <thead>
 
-            <!-- Bottom Column Names -->
-            <tfoot>
+                  <tr>
 
-              <tr>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
 
-                <th class="text-center">Product</th>
-                <th class="text-center">Orders</th>
+                  </tr>
 
-              </tr>
+                </thead>
 
-            </tfoot>
+                <!-- Bottom Column Names -->
+                <tfoot>
 
-            <!-- Content -->
-            <tbody>
+                  <tr>
 
-              <!-- Load order data -->
-              <% @order_lines.group_by(&:product).each do |order_line, product| %>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
 
-                <tr>
-                  <!-- Columns to pull from order data -->
-                  <td class="text-center"><%= order_line.product_name %></td>
-                  <td class="text-center"><%= OrderLine.left_joins(:product).order("COUNT(products.id) DESC").where("product_id = ?", order_line.id).count %></td>
-                </tr>
+                  </tr>
 
-              <% end %>
+                </tfoot>
 
-            </tbody>
+                <!-- Content -->
+                <tbody>
 
-          </table>
+                  <!-- Load order data -->
+                  <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                    <tr>
+                      <!-- Columns to pull from order data -->
+                      <td class="text-center"><%= order_line.product_name %></td>
+                      <td class="text-center"><%= OrderLine.left_joins(:product, :order).order("COUNT(products.id) DESC").where("product_id = ? AND order_date > ?", order_line.id, Date.today-7.days).count %></td>
+                    </tr>
+
+                  <% end %>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted"></div>
 
         </div>
-
       </div>
 
-      <!-- Footnote: Lastest date a order was created -->
-      <div class="card-footer small text-muted"></div>
+      <!-- 30 Days -->
+      <div class="tab-pane container-fluid" id="report12tab30day">
 
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Product - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+              <!-- Report 1 Table -->
+              <table class="table table-bordered table-hover table-striped" id="report12table30d" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                  <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                    <tr>
+                      <!-- Columns to pull from order data -->
+                      <td class="text-center"><%= order_line.product_name %></td>
+                      <td class="text-center"><%= OrderLine.left_joins(:product, :order).order("COUNT(products.id) DESC").where("product_id = ? AND order_date > ?", order_line.id, Date.today-30.days).count %></td>
+                    </tr>
+
+                  <% end %>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted"></div>
+
+        </div>
+      </div>
+
+      <!-- 3 Month -->
+      <div class="tab-pane container-fluid" id="report12tab3month">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Product - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+              <!-- Report 1 Table -->
+              <table class="table table-bordered table-hover table-striped" id="report12table3m" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                  <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                    <tr>
+                      <!-- Columns to pull from order data -->
+                      <td class="text-center"><%= order_line.product_name %></td>
+                      <td class="text-center"><%= OrderLine.left_joins(:product, :order).order("COUNT(products.id) DESC").where("product_id = ? AND order_date > ?", order_line.id, Date.today-3.months).count %></td>
+                    </tr>
+
+                  <% end %>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted"></div>
+
+        </div>
+      </div>
+
+      <!-- 6 Month -->
+      <div class="tab-pane container-fluid active" id="report12tab6month">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Product - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+              <!-- Report 1 Table -->
+              <table class="table table-bordered table-hover table-striped" id="report12table6m" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                  <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                    <tr>
+                      <!-- Columns to pull from order data -->
+                      <td class="text-center"><%= order_line.product_name %></td>
+                      <td class="text-center"><%= OrderLine.left_joins(:product, :order).order("COUNT(products.id) DESC").where("product_id = ? AND order_date > ?", order_line.id, Date.today-6.months).count %></td>
+                    </tr>
+
+                  <% end %>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted"></div>
+
+        </div>
+      </div>
+
+      <!-- 1 Year -->
+      <div class="tab-pane container-fluid" id="report12tab1year">
+
+        <!-- Table Card -->
+        <div class="card mb-3">
+
+          <!-- Table Header -->
+          <div class="card-header">
+
+            <!-- Table Icon -->
+            <i class="fa fa-table"></i>
+
+            <!-- Table Name -->
+            Product - Orders
+
+          </div>
+
+          <!-- Table Card Body -->
+          <div class="card-body">
+
+            <!-- Table Type -->
+            <div class="table-responsive">
+
+              <!-- Report 1 Table -->
+              <table class="table table-bordered table-hover table-striped" id="report12table1y" width="100%" cellspacing="0">
+
+                <!-- Top Column Names -->
+                <thead>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </thead>
+
+                <!-- Bottom Column Names -->
+                <tfoot>
+
+                  <tr>
+
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Orders</th>
+
+                  </tr>
+
+                </tfoot>
+
+                <!-- Content -->
+                <tbody>
+
+                  <!-- Load order data -->
+                  <% @order_lines.group_by(&:product).each do |order_line, product| %>
+
+                    <tr>
+                      <!-- Columns to pull from order data -->
+                      <td class="text-center"><%= order_line.product_name %></td>
+                      <td class="text-center"><%= OrderLine.left_joins(:product, :order).order("COUNT(products.id) DESC").where("product_id = ? AND order_date > ?", order_line.id, Date.today-1.year).count %></td>
+                    </tr>
+
+                  <% end %>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <!-- Footnote: Lastest date a order was created -->
+          <div class="card-footer small text-muted"></div>
+
+        </div>
+      </div>
     </div>
+
+
   </div>
 <% else %>
   <!-- Tab 10 - Report 10 (Inactive) -->
