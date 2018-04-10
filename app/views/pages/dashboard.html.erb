@@ -67,10 +67,10 @@
                     <div class="card mb-3">
                       <div class="card-header">
                         <i class="fa fa-pie-chart"></i>
-                        Top 10 Most Ordered Products
+                        Top 10 Most Ordered Products ( 6 Months )
                       </div>
                       <div class="card-body">
-                        <%= bar_chart OrderLine.joins(:product).group(:product_name).order("COUNT(product_id) desc").limit("10").count,
+                        <%= bar_chart OrderLine.joins(:product, :order).group(:product_name).order("COUNT(product_id) desc").where("order_date > ?", Date.today-6.months).limit("10").count,
                                          colors: ["#697abc"],label: "Order Count", xtitle: "Product", ytitle: "Order Count", defer: true, download: "product_top10_column_chart", height: "300px",
                                          library: { animation: { easing: 'easeInQuad' }} %>
                       </div>

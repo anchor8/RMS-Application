@@ -195,12 +195,32 @@ $(document).ready(function() {
         "order": [[ 0, 'asc' ]]
       } );
 
-  // Declare report12table
-  var report12table = $('#report12table').DataTable( {
-    dom: 'Bflrtip',
-    "paging": true,
-    "order": [[ 1, 'desc' ]]
-  } );
+  // Declare report12tables
+  var report12table7d = $("#report12table7d").DataTable({
+    dom: "Bflrtip",
+    paging: true,
+    order: [[1, "desc"]]
+  });
+  var report12table30d = $("#report12table30d").DataTable({
+    dom: "Bflrtip",
+    paging: true,
+    order: [[1, "desc"]]
+  });
+  var report12table3m = $("#report12table3m").DataTable({
+    dom: "Bflrtip",
+    paging: true,
+    order: [[1, "desc"]]
+  });
+  var report12table6m = $("#report12table6m").DataTable({
+    dom: "Bflrtip",
+    paging: true,
+    order: [[1, "desc"]]
+  });
+  var report12table1y = $("#report12table1y").DataTable({
+    dom: "Bflrtip",
+    paging: true,
+    order: [[1, "desc"]]
+  });
 
   // Set all buttons as active on page load
   $('a.toggle-vis').addClass('active')
