@@ -13913,6 +13913,11 @@ body.fixed-nav {
   padding-top: 56px;
 }
 
+body.bg-img {
+  background-image: url("hazyblue.png");
+  background-size: cover;
+}
+
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem;
