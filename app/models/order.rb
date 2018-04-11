@@ -21,6 +21,7 @@ class Order < ApplicationRecord
   validates :deleted_at, allow_blank: true, presence: false
 
   # After save
+  after_save :set_shipper_save
   after_save :set_state_save
   after_save :set_street_address_1_save
   after_save :set_street_address_2_save
@@ -28,6 +29,7 @@ class Order < ApplicationRecord
   after_save :set_zip_code_save
 
   # After update
+  after_save :set_shipper_update
   after_update :set_state_update
   after_update :set_street_address_1_update
   after_update :set_street_address_2_update
@@ -69,6 +71,15 @@ class Order < ApplicationRecord
 
   private
 
+  # Set shipper to none if not shipped
+  def set_shipper_save
+    if order_status_id == 1
+      Order.find(id).update_column(:shipper_id, 7)
+      Order.find(id).update_column(:ship_date, nil)
+      Order.find(id).update_column(:shipping_number, nil)
+    end
+  end
+
   # Set state from customer after saving order
   def set_state_save
     @customer = Customer.find(customer_id)
@@ -102,6 +113,15 @@ class Order < ApplicationRecord
     @customer = Customer.find(customer_id)
 
     Order.find(id).update_column(:zip_code, @customer.zip_code)
+  end
+
+  # Set shipper to none if not shipped
+  def set_shipper_update
+    if order_status_id == 1
+      Order.find(id).update_column(:shipper_id, 7)
+      Order.find(id).update_column(:ship_date, nil)
+      Order.find(id).update_column(:shipping_number, nil)
+    end
   end
 
   # Set state from customer after updating order
