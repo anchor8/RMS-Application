@@ -18,3 +18,4 @@ Rails.application.config.assets.precompile += %w[datatables.scss]
 # Rails.application.config.assets.precompile += %w[jquery.easing.js]
 # Rails.application.config.assets.precompile += %w[sb-admin-datatables.js]
 # Rails.application.config.assets.precompile += %w[sb-admin.js]
+Rails.application.config.assets.precompile += %w( Chart.bundle )
