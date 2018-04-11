@@ -13,9 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w[datatables.scss]
-# Rails.application.config.assets.precompile += %w[dataTables.bootstrap4.js]
-# Rails.application.config.assets.precompile += %w[jquery.dataTables.js]
-# Rails.application.config.assets.precompile += %w[jquery.easing.js]
-# Rails.application.config.assets.precompile += %w[sb-admin-datatables.js]
-# Rails.application.config.assets.precompile += %w[sb-admin.js]
-Rails.application.config.assets.precompile += %w( Chart.bundle )
+Rails.application.config.assets.precompile += %w[Chart.bundle.js]
