@@ -41,26 +41,31 @@ $(document).ready(function() {
   // Declare report1-tables
   var report1table7d = $('#report1table7d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 2, 'desc' ]]
   } );
-  var report1table30d = $('#report1table30d').DataTable( {
-    dom: 'Bflrtip',
-    "paging": true,
-    "order": [[ 2, 'desc' ]]
-  } );
-  var report1table3m = $('#report1table3m').DataTable( {
-    dom: 'Bflrtip',
-    "paging": true,
-    "order": [[ 2, 'desc' ]]
-  } );
-  var report1table6m = $('#report1table6m').DataTable( {
-    dom: 'Bflrtip',
-    "paging": true,
-    "order": [[ 2, 'desc' ]]
-  } );
+  var report1table30d = $("#report1table30d").DataTable({
+    dom: "Bflrtip",
+    buttons: ["copy", "excel", "csv", "print"],
+    paging: true,
+    order: [[2, "desc"]]
+  });
+  var report1table3m = $("#report1table3m").DataTable({
+    dom: "Bflrtip",
+    buttons: ["copy", "excel", "csv", "print"],
+    paging: true,
+    order: [[2, "desc"]]
+  });
+  var report1table6m = $("#report1table6m").DataTable({
+    dom: "Bflrtip",
+    buttons: ["copy", "excel", "csv", "print"],
+    paging: true,
+    order: [[2, "desc"]]
+  });
   var report1table1y = $('#report1table1y').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 2, 'desc' ]]
   } );
@@ -68,6 +73,7 @@ $(document).ready(function() {
   // Declare report2table
   var report2table = $('#report2table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 2, 'desc' ]]
   } );
@@ -75,6 +81,7 @@ $(document).ready(function() {
   // Declare report3table
   var report3table = $('#report3table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 0, 'asc' ]]
   } );
@@ -82,6 +89,7 @@ $(document).ready(function() {
   // Declare report4table
   var report4table = $('#report4table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -89,6 +97,7 @@ $(document).ready(function() {
   // Declare report5table
   var report5table = $('#report5table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -96,6 +105,7 @@ $(document).ready(function() {
   // Declare report6table
   var report6table = $('#report6table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -103,6 +113,7 @@ $(document).ready(function() {
   // Declare report7table
   var report7table = $('#report7table').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -110,26 +121,31 @@ $(document).ready(function() {
   // Declare report8tables
   var report8table7d = $('#report8table7d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report8table30d = $('#report8table30d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report8table3m = $('#report8table3m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report8table6m = $('#report8table6m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report8table1y = $('#report8table1y').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -137,26 +153,31 @@ $(document).ready(function() {
   // Declare report9tables
   var report9table7d = $('#report9table7d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report9table30d = $('#report9table30d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report9table3m = $('#report9table3m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report9table6m = $('#report9table6m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report9table1y = $('#report9table1y').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
@@ -164,60 +185,71 @@ $(document).ready(function() {
   // Declare report10tables
   var report10table7d = $('#report10table7d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report10table30d = $('#report10table30d').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report10table3m = $('#report10table3m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report10table6m = $('#report10table6m').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
   var report10table1y = $('#report10table1y').DataTable( {
     dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
     "paging": true,
     "order": [[ 1, 'desc' ]]
   } );
 
   // Declare report11table
   var report11table = $('#report11table').DataTable( {
-        dom: 'Bflrtip',
-        "paging": true,
-        "order": [[ 0, 'asc' ]]
-      } );
+    dom: 'Bflrtip',
+    buttons: ['copy','excel','csv','print'],
+    "paging": true,
+    "order": [[ 0, 'asc' ]]
+  } );
 
   // Declare report12tables
   var report12table7d = $("#report12table7d").DataTable({
     dom: "Bflrtip",
+    buttons: ['copy','excel','csv','print'],
     paging: true,
     order: [[1, "desc"]]
   });
   var report12table30d = $("#report12table30d").DataTable({
     dom: "Bflrtip",
+    buttons: ['copy','excel','csv','print'],
     paging: true,
     order: [[1, "desc"]]
   });
   var report12table3m = $("#report12table3m").DataTable({
     dom: "Bflrtip",
+    buttons: ['copy','excel','csv','print'],
     paging: true,
     order: [[1, "desc"]]
   });
   var report12table6m = $("#report12table6m").DataTable({
     dom: "Bflrtip",
+    buttons: ['copy','excel','csv','print'],
     paging: true,
     order: [[1, "desc"]]
   });
   var report12table1y = $("#report12table1y").DataTable({
     dom: "Bflrtip",
+    buttons: ['copy','excel','csv','print'],
     paging: true,
     order: [[1, "desc"]]
   });
