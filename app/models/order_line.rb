@@ -4,6 +4,9 @@ class OrderLine < ApplicationRecord
   belongs_to :product
   belongs_to :order
 
+  # Validations
+  validates :number_of_items, format: { with: /\A^\d{1,8}\z/, message: 'Number of items must be between 1 - 8 digits'}
+
   # After save
   after_save :set_price_save
   after_save :calculate_order_total_save

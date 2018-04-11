@@ -16,7 +16,7 @@ class Order < ApplicationRecord
   validates :order_date, allow_blank: false, presence: true, :timeliness => {:type => :date}
   validates :ship_date, allow_blank: true, presence: false, :timeliness => {:type => :date}
   validates :purchase_order_number, uniqueness: true
-  validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}
+  validates :shipping_number, presence: true, unless: ->(order){order.order_status_id == 1}, format: { with: /\A^\d{1,15}\z/, message: 'Shipping number is between 1 - 15 digits'}
   validates :ship_date, presence: true, unless: ->(order){order.order_status_id == 1}
   validates :deleted_at, allow_blank: true, presence: false
 
