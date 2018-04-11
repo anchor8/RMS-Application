@@ -9,12 +9,16 @@
 
   <!-- Products -->
   <td>
-    <%= form.collection_select(:product_id, Product.where("deleted_at is null").order(:product_name), :id, :product_name, {prompt: true}, {required: true}) %>
+    <div class="field">
+      <%= form.collection_select(:product_id, Product.where("deleted_at is null").order(:product_name), :id, :product_name, {prompt: true}, {required: true, class: 'form-control'}) %>
+    </div>
   </td>
 
   <!-- Number of items -->
   <td>
-    <%= form.text_field :number_of_items, placeholder: "1", size: "3", id: :order_number_of_items, required: true %>
+    <div class="field">
+      <%= form.text_field :number_of_items, placeholder: "1", size: "3", id: :order_number_of_items, required: true, class: 'form-control' %>
+    </div>
   </td>
 
   <!-- hidden -->

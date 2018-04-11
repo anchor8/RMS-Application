@@ -62,34 +62,34 @@
               </div>
 
               <!-- New employee form row -->
-              <div class="row">
+              <div class="row form-group ">
 
                 <!-- Left column -->
                 <div class="col-md-6">
                   <fieldset><legend>Employee Info</legend>
 
                   <!-- Email -->
-                  <div class="field">
+                  <div class="field col-md-12">
                     <b><%= f.label :email %></b> <font color="red">*</font>
-                    <%= f.email_field :email, type: 'email', size: "30", autofocus: true, placeholder: "email@provider.com", autocomplete: "email", required: true %>
+                    <%= f.email_field :email, type: 'email', size: "30", autofocus: true, placeholder: "email@provider.com", autocomplete: "email", required: true, class: 'form-control' %>
                   </div>
 
                   <!-- First Name -->
-                  <div class="field mt-1">
+                  <div class="field mt-1 col-md-8">
                     <b><%= f.label "First Name" %></b>  <font color="red">*</font> <br />
-                    <%= f.text_field :fname, size: "20", placeholder: "John", autocomplete: "first name", required: true %>
+                    <%= f.text_field :fname, size: "20", placeholder: "John", autocomplete: "first name", required: true, class: 'form-control' %>
                   </div>
 
                   <!-- Last name -->
-                  <div class="field mt-1">
+                  <div class="field mt-1 col-md-8">
                     <b><%= f.label "Last Name" %></b>  <font color="red">*</font> <br />
-                    <%= f.text_field :lname, size: "20", placeholder: "Smith", autocomplete: "last name", required: true %>
+                    <%= f.text_field :lname, size: "20", placeholder: "Smith", autocomplete: "last name", required: true, class: 'form-control' %>
                   </div>
 
                   <!-- Phone -->
-                  <div class="field mt-1">
+                  <div class="field mt-1 col-md-7">
                     <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
-                    <%= f.text_field :phone, type: 'tel', placeholder: "+1-123-123-1234", size: "15", autocomplete: "phone number", required: true %>
+                    <%= f.text_field :phone, type: 'tel', placeholder: "+1-123-123-1234", size: "15", autocomplete: "phone number", required: true, class: 'form-control' %>
                   </div>
                   </fieldset>
                 </div>
@@ -105,13 +105,13 @@
                       <!-- Not minimum length -->
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
-                    <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "30",autocomplete: "off", required: true %>
+                    <%= f.password_field :password, placeholder: "1 lower, 1 upper, 1 digit, 1 symbol", size: "30",autocomplete: "off", required: true, class: 'form-control' %>
                   </div>
 
                   <!-- Password Confirmation -->
                   <div class="field mt-4">
                     <b><%= f.label :password_confirmation %></b> <font color="red">*</font> <br />
-                    <%= f.password_field :password_confirmation, placeholder: "Must match", size: "30",autocomplete: "off", required: true %>
+                    <%= f.password_field :password_confirmation, placeholder: "Must match", size: "30",autocomplete: "off", required: true, class: 'form-control' %>
                   </div>
                   </fieldset>
                 </div>

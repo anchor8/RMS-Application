@@ -33,7 +33,7 @@
           </div>
 
           <!-- Row -->
-          <div class="row">
+          <div class="row form-group">
 
             <!-- Left Column -->
             <div class="col-md-auto ml-5">
@@ -44,21 +44,21 @@
               <%= form.hidden_field :state_id, value: 1 %>
 
               <!-- Customer name -->
-              <div class="field">
+              <div class="field col-md-12">
                 <b><%= form.label "Customer Name" %></b> <font color="red">*</font><br />
-                <%= form.collection_select :customer_id, Customer.where("deleted_at is null").order(:customer_last_name), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id } %>
+                <%= form.collection_select :customer_id, Customer.where("deleted_at is null").order(:customer_last_name), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.customer_id, class: 'form-control' } %>
               </div>
 
               <!-- Employee -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-12">
                 <b><%= form.label :employee_id %></b> <font color="red">*</font><br />
-                <%= form.collection_select(:employee_id, Employee.where("deleted_at is null").order(:lname), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id }) %>
+                <%= form.collection_select(:employee_id, Employee.where("deleted_at is null").order(:lname), :id, :formatted_name, {prompt: true}, { required: true, :selected => @order.vendor_id, class: 'form-control' }) %>
               </div>
 
               <!-- Vendor -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-12">
                 <b><%= form.label :vendor_id %></b> <font color="red">*</font><br />
-                <%= form.collection_select(:vendor_id, Vendor.where("deleted_at is null").order(:vendor_name), :id, :vendor_name, {prompt: true}, {required: true}) %>
+                <%= form.collection_select(:vendor_id, Vendor.where("deleted_at is null").order(:vendor_name), :id, :vendor_name, {prompt: true}, {required: true, class: 'form-control'}) %>
               </div>
               </fieldset>
             </div>
@@ -67,9 +67,9 @@
               <fieldset><legend>Payment</legend>
 
               <!-- Payment type -->
-              <div class="field mt-auto">
+              <div class="field mt-auto col-md-12">
                 <b><%= form.label :payment_type_id %></b> <font color="red">*</font><br />
-                <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true}) %>
+                <%= form.collection_select(:payment_type_id, PaymentType.all, :id, :payment_type_description, {prompt: true}, {required: true, class: 'form-control'}) %>
               </div>
               </fieldset>
             </div>
@@ -79,27 +79,27 @@
               <fieldset><legend>Shipping</legend>
 
               <!-- Shipping status -->
-              <div class="field">
+              <div class="field col-md-12">
                 <b><%= form.label "Shipping Status" %></b> <font color="red">*</font><br />
-                <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true}) %>
+                <%= form.collection_select(:order_status_id, OrderStatus.all, :id, :order_status_description, {prompt: true}, {required: true, class: 'form-control'}) %>
               </div>
 
               <!-- Shipping number -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-12">
                 <b><%= form.label :shipping_number %></b><br />
-                <%= form.number_field :shipping_number, :size => '10', placeholder: '123456789012345', id: :order_shipping_number %>
+                <%= form.number_field :shipping_number, :size => '10', placeholder: '123456789012345', id: :order_shipping_number, class: 'form-control' %>
               </div>
 
               <!-- Shipper -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-10">
                 <b><%= form.label :shipper_id %></b><br />
-                <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {:selected => @order.shipper_id}) %>
+                <%= form.collection_select(:shipper_id, Shipper.all, :id, :shipper_description, {prompt: true}, {:selected => @order.shipper_id, class: 'form-control'}) %>
               </div>
 
               <!-- Ship date -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-12">
                 <b><%= form.label :ship_date %></b><br />
-                <%= form.date_select :ship_date, id: :order_ship_date, prompt: true, start_year: 2000 %>
+                <%= form.date_select(:ship_date, {prompt: true, start_year: 2000, use_short_month: true}, {class: 'form-control date-select'}) %>
               </div>
               </fieldset>
             </div>

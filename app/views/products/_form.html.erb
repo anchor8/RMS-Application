@@ -15,26 +15,26 @@
 
 
     <!-- Product field row -->
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center form-group">
       <div class="col-md-auto">
         <fieldset><legend>Product Info</legend>
-    <!-- Product name -->
-    <div class="field ml-3">
-      <%= form.label "Product name: " %><font color="red">*</font> <br />
-      <%= form.text_field :product_name, value: @product.product_name, placeholder: "Product Name", size: 40, id: :product_product_name, required: true %>
-    </div>
+        <!-- Product name -->
+        <div class="field col-12">
+          <%= form.label "Product name: " %><font color="red">*</font> <br />
+          <%= form.text_field :product_name, value: @product.product_name, placeholder: "Product Name", id: :product_product_name, required: true, class: 'form-control' %>
+        </div>
 
-    <!-- Price -->
-    <div class="field ml-3">
-      <%= form.label "Price: " %> <font color="red">*</font><br />
-      <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true %>
-    </div>
-        </fieldset>
+        <!-- Price -->
+        <div class="field col-md-8">
+          <%= form.label "Price: " %> <font color="red">*</font><br />
+          <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true, class: 'form-control' %>
+        </div>
+            </fieldset>
 
-    <!-- Submit -->
-    <div class="actions" align="center">
-      <%= form.submit class: "btn btn-primary btn-sm ml-4"%>
-    </div>
+        <!-- Submit -->
+        <div class="actions" align="center">
+          <%= form.submit class: "btn btn-primary btn-sm ml-4"%>
+        </div>
       </div>
   </div>
 <% end %>

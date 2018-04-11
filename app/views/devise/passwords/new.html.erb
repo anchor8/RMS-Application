@@ -15,20 +15,21 @@
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
 
-        <!-- Email -->
-        <div class="field ml-4">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, size: "32", autofocus: true, autocomplete: "email", required: true %>
-        </div>
+        <div class="form-group">
+          <!-- Email -->
+          <div class="field col-md-12">
+            <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", required: true, class: "form-control" %>
+          </div>
 
-        <!-- Submit -->
-        <div class="actions row">
-          <%= f.submit "Send me reset password instructions", :class => 'btn btn-primary btn-sm mx-auto mt-3 pl-4 pr-4' %>
+          <!-- Submit -->
+          <div class="actions row">
+            <%= f.submit "Send me reset password instructions", :class => 'btn btn-primary btn-sm mx-auto mt-3 pl-5 pr-5' %>
+          </div>
         </div>
       <% end %>
 
       <!-- Links -->
-      <div class="text-center">
+      <div class="text-center mt-3">
         <%= render "devise/shared/links" %>
       </div>
     </div>

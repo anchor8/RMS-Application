@@ -24,13 +24,13 @@
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em><br />
           <% end %>
-          <%= f.password_field :password, size: "21", autofocus: true, autocomplete: "off", required: true %>
+          <%= f.password_field :password, size: "21", autofocus: true, autocomplete: "off", required: true, class: "form-control" %>
         </div>
 
         <!-- Password Confirmation -->
         <div class="field ml-5 pl-4">
           <%= f.label :password_confirmation, "Confirm new password" %><br />
-          <%= f.password_field :password_confirmation, size: "21", autocomplete: "off", required: true %>
+          <%= f.password_field :password_confirmation, size: "21", autocomplete: "off", required: true, class: "form-control" %>
         </div>
 
         <!-- Submit -->

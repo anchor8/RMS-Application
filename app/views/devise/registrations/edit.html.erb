@@ -20,7 +20,7 @@
         </div>
 
         <!-- Edit employee fields row -->
-        <div class="row">
+        <div class="form-group row">
 
           <!-- Left Column -->
           <div class="col-md-6">
@@ -29,29 +29,31 @@
               <%= devise_error_messages! %>
 
               <!-- Email -->
-              <div class="field">
+              <div class="field col-md-12">
                 <b><%= f.label :email %></b> <font color="red">*</font> <br />
-                <%= f.email_field :email, type: 'email', value: current_employee.email, size: "37", placeholder: current_employee.email, autocomplete: "Email", required: true %>
+                <%= f.email_field :email, type: 'email', value: current_employee.email, placeholder: current_employee.email, autocomplete: "Email", required: true, class: 'form-control' %>
               </div>
 
               <!-- First name -->
-              <div class="field mt-1">
+              <div class="field mt-1 col-md-8">
                 <b><%= f.label "First Name" %></b>  <font color="red">*</font> <br />
-                <%= f.text_field :fname, value: current_employee.fname, size: "30", placeholder: current_employee.fname, autocomplete: "First Name", required: true %>
+                <%= f.text_field :fname, value: current_employee.fname, placeholder: current_employee.fname, autocomplete: "First Name", required: true, class: 'form-control' %>
               </div>
 
+
+
               <!-- Last name -->
-              <div class="field mt-1">
+              <div class="field col-md-8">
                 <b><%= f.label "Last Name" %></b> <font color="red">*</font> <br />
-                <%= f.text_field :lname, value: current_employee.lname, size: "30", placeholder: current_employee.lname, autocomplete: "Last Name", required: true %>
+                <%= f.text_field :lname, value: current_employee.lname, placeholder: current_employee.lname, autocomplete: "Last Name", required: true, class: 'form-control' %>
               </div>
 
               <!-- Phone -->
-              <div class="field mt-1">
+              <div class="field col-md-7">
                 <b><%= f.label :phone %></b>  <font color="red">*</font> <br />
-                <%= f.text_field :phone, type: 'tel', size: "12", value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true %>
+                <%= f.text_field :phone, type: 'tel', value: current_employee.phone, placeholder: current_employee.phone, autocomplete: "Phone Number", required: true, class: 'form-control' %>
               </div>
-                  </fieldset>
+            </fieldset>
           </div>
 
           <!-- Right column -->
@@ -61,14 +63,14 @@
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
 
-                <div class="field mx-auto  mt-3">
+                <div class="field mx-auto">
                   <b><%= f.label :current_password %></b> <font color="red">*</font>  <br /><i>(We need your current password to confirm your changes)</i><br />
-                  <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true %>
+                  <%= f.password_field :current_password, size: "40", placeholder: "Current Password", autocomplete: "off", required: true, class: 'form-control' %>
                 </div>
 
               <div class="field mt-3">
                 <b><%= f.label "New Password" %></b> <br /><i>(Leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, placeholder: "1 Lower, 1 Upper, 1 Digit, 1 Symbol", size: "40", autocomplete: "off" %>
+                <%= f.password_field :password, placeholder: "1 Lower, 1 Upper, 1 Digit, 1 Symbol", size: "40", autocomplete: "off", class: 'form-control' %>
                 <% if @minimum_password_length %>
                   <br />
                   <em><%= @minimum_password_length %> characters minimum</em>
@@ -78,7 +80,7 @@
               <!-- Confirm Password -->
               <div class="field mt-3">
                 <b><%= f.label "New Password Confirmation" %></b><br />
-                <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off" %>
+                <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off", class: 'form-control' %>
               </div>
             </fieldset>
           </div>
@@ -86,7 +88,7 @@
         </div>
           <!-- Submit -->
           <div class="actions row">
-            <%= f.submit "Update Current Employee", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-5 pl-4 pr-4' %>
+            <%= f.submit "Update Current Employee", :class => 'btn btn-primary btn-sm mx-auto mt-3 mb-5 btn-block' %>
           </div>
           <% end %>
     </div>
