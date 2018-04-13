@@ -1,3 +1,4 @@
+# Routes
 Rails.application.routes.draw do
 
   # Devise
