@@ -57,7 +57,7 @@
                 </div>
 
               <!-- Status -->
-              <div class="field mt-2 col-md-8">
+              <div class="field mt-2 col-md-9">
                 <b><%= form.label :customer_status_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select :customer_status_id, CustomerStatus.all, :id, :customer_status_description, {prompt: true}, {required: true, class: 'form-control'} %>
               </div>
