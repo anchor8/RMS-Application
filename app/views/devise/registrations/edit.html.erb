@@ -69,7 +69,7 @@
                 </div>
 
               <div class="field mt-3">
-                <b><%= f.label "New Password" %></b> <br /><i>(Leave blank if you don't want to change it)</i><br />
+                <b><%= f.label "New Password" %></b> <font color="red">*</font> <br /><i>(Leave blank if you don't want to change it)</i><br />
                 <%= f.password_field :password, placeholder: "1 Lower, 1 Upper, 1 Digit, 1 Symbol", size: "40", autocomplete: "off", class: 'form-control' %>
                 <% if @minimum_password_length %>
                   <br />
@@ -79,7 +79,7 @@
 
               <!-- Confirm Password -->
               <div class="field mt-3">
-                <b><%= f.label "New Password Confirmation" %></b><br />
+                <b><%= f.label "New Password Confirmation" %></b> <font color="red">*</font><br />
                 <%= f.password_field :password_confirmation, placeholder: "Must Match", size: "40",autocomplete: "off", class: 'form-control' %>
               </div>
             </fieldset>
