@@ -20,13 +20,13 @@
         <fieldset><legend>Product Info</legend>
         <!-- Product name -->
         <div class="field col-12">
-          <%= form.label "Product name: " %><font color="red">*</font> <br />
+          <b><%= form.label "Product name: " %></b><font color="red">*</font> <br />
           <%= form.text_field :product_name, value: @product.product_name, placeholder: "Product Name", id: :product_product_name, required: true, class: 'form-control' %>
         </div>
 
         <!-- Price -->
         <div class="field col-md-8">
-          <%= form.label "Price: " %> <font color="red">*</font><br />
+          <b><%= form.label "Price: " %></b> <font color="red">*</font><br />
           <%= form.text_field :price, value: @product.price, placeholder: '$10.00', size: 20, id: :product_price, required: true, class: 'form-control' %>
         </div>
             </fieldset>
