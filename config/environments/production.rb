@@ -91,13 +91,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host:'localhost', port: '3000' }
+  config.action_mailer.default_url_options = { host:'cot-cis4375-02.e.uh.edu' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default charset: 'utf-8'
   config.action_mailer.smtp_settings = {  address: 'smtp.gmail.com',
                                           port: 587,
-                                          domain: 'localhost:3000',
+                                          domain: 'cot-cis4375-02.e.uh.edu',
                                           user_name: 'rmspassreset@gmail.com',
                                           password: 'Controls1!',
                                           authentication: :plain,
