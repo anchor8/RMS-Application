@@ -63,7 +63,7 @@
               </div>
 
               <!-- Vendor status -->
-              <div class="field mt-2 col-md-6">
+              <div class="field mt-2 col-md-8">
                 <b><%= form.label :vendor_status_id %></b> <font color="red">*</font><br />
                 <%= form.collection_select(:vendor_status_id, VendorStatus.all, :id, :vendor_status_type, {prompt: true}, {class: 'form-control'}) %>
               </div>
