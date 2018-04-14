@@ -5,7 +5,7 @@
 <div class="container">
 
   <!-- Edit password card -->
-  <div class="card card-login mx-auto mt-5">
+  <div class="card card-login mx-auto mt-5 items-centered">
 
     <!-- Edit password card header -->
     <div class="card-header">Change your password</div>
@@ -19,7 +19,7 @@
         <%= f.hidden_field :reset_password_token %>
 
         <!-- Password -->
-        <div class="field ml-5 pl-4">
+        <div class="field pl-4">
           <%= f.label :password, "New password" %><br />
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em><br />
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Password Confirmation -->
-        <div class="field ml-5 pl-4">
+        <div class="field pl-4">
           <%= f.label :password_confirmation, "Confirm new password" %><br />
           <%= f.password_field :password_confirmation, size: "21", autocomplete: "off", required: true, class: "form-control" %>
         </div>
