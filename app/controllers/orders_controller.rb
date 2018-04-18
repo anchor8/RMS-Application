@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to ordermgmt_url, notice: " Order was successfully added." }
+        format.html { redirect_to ordermgmt_url, notice: "Order was successfully added." }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -78,7 +78,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to ordermgmt_url, notice: " Order was successfully updated." }
+        format.html { redirect_to ordermgmt_url, notice: "Order was successfully updated." }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
