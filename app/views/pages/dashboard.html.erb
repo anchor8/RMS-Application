@@ -262,7 +262,7 @@
                       </div>
                       <div class="card-body">
                         <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                                      colors: ["green", "red", "#6b6c6d"], defer: true,
+                                      colors: ["red", "green", "#6b6c6d"], defer: true,
                                       donut: true, legend: "bottom", download: "order_status_chart",
                                       library: { animation: { easing: 'easeInCirc' }}%>
                       </div>
