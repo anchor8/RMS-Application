@@ -6,8 +6,8 @@ class Vendor < ApplicationRecord
   has_many :orders
 
   # Validations
-  validates :contact_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z-',\s]+\s*$\z/, message: "Only letters, commas, or spaces for contact name allowed"}
-  validates :job_title, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z-,\s]+\s*$\z/, message: "Only letters, commas, or spaces for job title allowed"}
+  validates :contact_name, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for contact name allowed"}
+  validates :job_title, allow_blank: false, presence: true, format: { with: /\A^\s*[a-zA-Z,\s]+\s*$\z/, message: "Only letters, commas, or spaces for job title allowed"}
   validates :work_phone, allow_blank: false, presence: true, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )"}
   validates :mobile, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )"}
   validates :fax, allow_blank: true, presence: false, format: { with: /\A^(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[-]?\d{3}[-]?\d{4}$\z/, message: "Format ( +1-123-123-1234 )" }

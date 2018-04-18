@@ -130,6 +130,7 @@
 
       <!-- Import Management Nav Button -->
       <% if current_employee.admin? %>
+        <!-- Admin true -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Import Management">
 
           <%= link_to(importmgmt_url, class: "nav-link") do %>
