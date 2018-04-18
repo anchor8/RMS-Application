@@ -71,7 +71,7 @@
                       </div>
                       <div class="card-body">
                         <%= bar_chart OrderLine.joins(:product, :order).group(:product_name).order("COUNT(product_id) desc").where("order_date > ?", Date.today-6.months).limit("10").count,
-                                         colors: ["#697abc"],label: "Order Count", xtitle: "Product", ytitle: "Order Count", defer: true, download: "product_top10_column_chart", height: "300px",
+                                         colors: ["#697abc"],label: "Order Count", xtitle: "Order Count", ytitle: "Product", defer: true, download: "product_top10_column_chart", height: "300px",
                                          library: { animation: { easing: 'easeInQuad' }} %>
                       </div>
                       <div class="card-footer small text-muted"></div>
@@ -262,7 +262,7 @@
                       </div>
                       <div class="card-body">
                         <%= pie_chart Order.joins(:order_status).group(:order_status_description).count,
-                                      colors: ["red", "green", "#6b6c6d"], defer: true,
+                                      colors: ["green", "red", "#6b6c6d"], defer: true,
                                       donut: true, legend: "bottom", download: "order_status_chart",
                                       library: { animation: { easing: 'easeInCirc' }}%>
                       </div>
