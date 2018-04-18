@@ -64,8 +64,12 @@ class Order < ApplicationRecord
 
   # Import orders
   def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Order.create! row.to_hash
+    CSV.foreach(file.path, headers: true, header_converters: [:downcase, :symbol]) do |row|
+      if [:order_status_id].all? { |header| row.headers.include? header }
+        Order.create! row.to_hash
+      else
+        raise "Wrong file."
+      end
     end
   end
 

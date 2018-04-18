@@ -35,9 +35,12 @@ class Vendor < ApplicationRecord
 
   # Import vendors
   def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Vendor.create! row.to_hash
+    CSV.foreach(file.path, headers: true, header_converters: [:downcase, :symbol]) do |row|
+      if [:vendor_email].all? { |header| row.headers.include? header }
+        Vendor.create! row.to_hash
+      else
+        raise "Wrong file."
+      end
     end
   end
-
 end

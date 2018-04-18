@@ -21,8 +21,12 @@ class Product < ApplicationRecord
 
   # Import vendors
   def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Product.create! row.to_hash
+    CSV.foreach(file.path, headers: true, header_converters: [:downcase, :symbol]) do |row|
+      if [:product_name].all? { |header| row.headers.include? header }
+        Product.create! row.to_hash
+      else
+        raise "Wrong file."
+      end
     end
   end
 end

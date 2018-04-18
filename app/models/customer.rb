@@ -45,8 +45,12 @@ class Customer < ApplicationRecord
 
   # Import customers
   def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Customer.create! row.to_hash
+    CSV.foreach(file.path, headers: true, header_converters: [:downcase, :symbol]) do |row|
+      if [:customer_email].all? { |header| row.headers.include? header }
+        Customer.create! row.to_hash
+      else
+        raise "Wrong file."
+      end
     end
   end
 
