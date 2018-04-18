@@ -77,7 +77,6 @@ class ProductsController < ApplicationController
     else
       # File exists
       Product.import(params[:file])
-
       redirect_to importmgmt_url, notice: 'Product data imported!'
     end
   end

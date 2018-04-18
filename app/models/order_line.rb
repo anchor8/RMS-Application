@@ -15,6 +15,13 @@ class OrderLine < ApplicationRecord
   after_update :set_price_update
   after_update :calculate_order_total_update
 
+  # Import vendors
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      OrderLine.create! row.to_hash
+    end
+  end
+
   private
 
   # Calculate and set order_total in order after saving order line

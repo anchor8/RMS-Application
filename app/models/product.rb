@@ -18,4 +18,11 @@ class Product < ApplicationRecord
       update_attribute(:deleted_at, nil)
     end
   end
+
+  # Import vendors
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Product.create! row.to_hash
+    end
+  end
 end
