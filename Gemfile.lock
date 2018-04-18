@@ -207,7 +207,7 @@ GEM
       timeliness (~> 0.3.7)
     warden (1.2.7)
       rack (>= 1.0)
-    wdm (>= 0.1.0)
+    wdm (0.1.1)
     web-console (3.6.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
