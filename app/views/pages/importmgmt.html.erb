@@ -68,13 +68,13 @@
           </div>
 
           <!-- Import Order Line Data -->
-          <!-- <div class="mt-2 mb-2">
-            form_tag import_order_lines_path, multipart: true do
-              label_tag 'Order Lines:', nil, class: 'h5 pr-7'
-              file_field_tag :file
-              submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14'
-            end
-          </div> -->
+          <div class="mt-2 mb-2">
+            <%= form_tag import_order_lines_path, multipart: true do %>
+              <%= label_tag 'Order Lines:', nil, class: 'h5 pr-7' %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Import", class: 'btn btn-primary btn-sm pl-4 pr-14' %>
+            <% end %>
+          </div>
 
           <!-- Import State Data -->
           <!-- <div class="mt-2 mb-2">
